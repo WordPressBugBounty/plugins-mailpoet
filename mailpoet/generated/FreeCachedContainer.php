@@ -302,6 +302,7 @@ class FreeCachedContainer extends Container
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Cli' => 'getCliService',
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\EmailApiController' => 'getEmailApiController2Service',
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\EmailEditor' => 'getEmailEditor3Service',
+            'MailPoet\\EmailEditor\\Utils\\CdnAssetUrl' => 'getCdnAssetUrlService',
             'MailPoet\\Features\\FeatureFlagsController' => 'getFeatureFlagsControllerService',
             'MailPoet\\Features\\FeatureFlagsRepository' => 'getFeatureFlagsRepositoryService',
             'MailPoet\\Features\\FeaturesController' => 'getFeaturesControllerService',
@@ -499,7 +500,7 @@ class FreeCachedContainer extends Container
             'MailPoet\\SystemReport\\SystemReportCollector' => 'getSystemReportCollectorService',
             'MailPoet\\Tags\\TagRepository' => 'getTagRepositoryService',
             'MailPoet\\Util\\APIPermissionHelper' => 'getAPIPermissionHelperService',
-            'MailPoet\\Util\\CdnAssetUrl' => 'getCdnAssetUrlService',
+            'MailPoet\\Util\\CdnAssetUrl' => 'getCdnAssetUrl2Service',
             'MailPoet\\Util\\Cookies' => 'getCookiesService',
             'MailPoet\\Util\\DataInconsistency\\DataInconsistencyController' => 'getDataInconsistencyControllerService',
             'MailPoet\\Util\\DataInconsistency\\DataInconsistencyRepository' => 'getDataInconsistencyRepositoryService',
@@ -1141,7 +1142,7 @@ class FreeCachedContainer extends Container
      */
     protected function getEmailEditorService()
     {
-        return $this->services['MailPoet\\AdminPages\\Pages\\EmailEditor'] = new \MailPoet\AdminPages\Pages\EmailEditor(($this->services['MailPoet\\WP\\Functions'] ?? ($this->services['MailPoet\\WP\\Functions'] = new \MailPoet\WP\Functions())), ($this->services['MailPoet\\EmailEditor\\Engine\\SettingsController'] ?? $this->getSettingsControllerService()), ($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrlService()), ($this->services['MailPoet\\Config\\ServicesChecker'] ?? ($this->services['MailPoet\\Config\\ServicesChecker'] = new \MailPoet\Config\ServicesChecker())), ($this->services['MailPoet\\Util\\License\\Features\\Subscribers'] ?? $this->getSubscribers4Service()), ($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] = new \MailPoet\EmailEditor\Engine\ThemeController())), ($this->services['MailPoet\\Settings\\SettingsController'] ?? $this->getSettingsController2Service()), ($this->services['MailPoet\\Newsletter\\NewslettersRepository'] ?? $this->getNewslettersRepositoryService()));
+        return $this->services['MailPoet\\AdminPages\\Pages\\EmailEditor'] = new \MailPoet\AdminPages\Pages\EmailEditor(($this->services['MailPoet\\WP\\Functions'] ?? ($this->services['MailPoet\\WP\\Functions'] = new \MailPoet\WP\Functions())), ($this->services['MailPoet\\EmailEditor\\Engine\\SettingsController'] ?? $this->getSettingsControllerService()), ($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrl2Service()), ($this->services['MailPoet\\Config\\ServicesChecker'] ?? ($this->services['MailPoet\\Config\\ServicesChecker'] = new \MailPoet\Config\ServicesChecker())), ($this->services['MailPoet\\Util\\License\\Features\\Subscribers'] ?? $this->getSubscribers4Service()), ($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] = new \MailPoet\EmailEditor\Engine\ThemeController())), ($this->services['MailPoet\\Settings\\SettingsController'] ?? $this->getSettingsController2Service()), ($this->services['MailPoet\\Newsletter\\NewslettersRepository'] ?? $this->getNewslettersRepositoryService()));
     }
 
     /**
@@ -3307,7 +3308,7 @@ class FreeCachedContainer extends Container
      */
     protected function getPatternsService()
     {
-        return $this->services['MailPoet\\EmailEditor\\Engine\\Patterns\\Patterns'] = new \MailPoet\EmailEditor\Engine\Patterns\Patterns(($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrlService()));
+        return $this->services['MailPoet\\EmailEditor\\Engine\\Patterns\\Patterns'] = new \MailPoet\EmailEditor\Engine\Patterns\Patterns(($this->services['MailPoet\\EmailEditor\\Utils\\CdnAssetUrl'] ?? $this->getCdnAssetUrlService()));
     }
 
     /**
@@ -3487,7 +3488,7 @@ class FreeCachedContainer extends Container
      */
     protected function getPoweredByMailpoetService()
     {
-        return $this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet'] = new \MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes\PoweredByMailpoet(($this->services['MailPoet\\Config\\ServicesChecker'] ?? ($this->services['MailPoet\\Config\\ServicesChecker'] = new \MailPoet\Config\ServicesChecker())), ($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrlService()));
+        return $this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet'] = new \MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes\PoweredByMailpoet(($this->services['MailPoet\\Config\\ServicesChecker'] ?? ($this->services['MailPoet\\Config\\ServicesChecker'] = new \MailPoet\Config\ServicesChecker())), ($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrl2Service()));
     }
 
     /**
@@ -3518,6 +3519,16 @@ class FreeCachedContainer extends Container
     protected function getEmailEditor3Service()
     {
         return $this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\EmailEditor'] = new \MailPoet\EmailEditor\Integrations\MailPoet\EmailEditor(($this->services['MailPoet\\WP\\Functions'] ?? ($this->services['MailPoet\\WP\\Functions'] = new \MailPoet\WP\Functions())), ($this->services['MailPoet\\Features\\FeaturesController'] ?? $this->getFeaturesControllerService()), ($this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\EmailApiController'] ?? $this->getEmailApiController2Service()), ($this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Cli'] ?? $this->getCliService()));
+    }
+
+    /**
+     * Gets the public 'MailPoet\EmailEditor\Utils\CdnAssetUrl' shared autowired service.
+     *
+     * @return \MailPoet\EmailEditor\Utils\CdnAssetUrl
+     */
+    protected function getCdnAssetUrlService()
+    {
+        return $this->services['MailPoet\\EmailEditor\\Utils\\CdnAssetUrl'] = \MailPoet\DI\ContainerConfigurator::getEmailEditorCdnAssetsUrl();
     }
 
     /**
@@ -5511,7 +5522,7 @@ class FreeCachedContainer extends Container
      *
      * @return \MailPoet\Util\CdnAssetUrl
      */
-    protected function getCdnAssetUrlService()
+    protected function getCdnAssetUrl2Service()
     {
         return $this->services['MailPoet\\Util\\CdnAssetUrl'] = \MailPoet\DI\ContainerConfigurator::getCdnAssetsUrl();
     }
@@ -5723,7 +5734,7 @@ class FreeCachedContainer extends Container
      */
     protected function getMPMarketingChannelDataControllerService()
     {
-        return $this->services['MailPoet\\WooCommerce\\MultichannelMarketing\\MPMarketingChannelDataController'] = new \MailPoet\WooCommerce\MultichannelMarketing\MPMarketingChannelDataController(($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrlService()), ($this->services['MailPoet\\Settings\\SettingsController'] ?? $this->getSettingsController2Service()), ($this->services['MailPoet\\Services\\Bridge'] ?? $this->getBridgeService()), ($this->services['MailPoet\\Newsletter\\NewslettersRepository'] ?? $this->getNewslettersRepositoryService()), ($this->services['MailPoet\\WooCommerce\\Helper'] ?? $this->getHelperService()), ($this->services['MailPoet\\Automation\\Engine\\Storage\\AutomationStorage'] ?? ($this->services['MailPoet\\Automation\\Engine\\Storage\\AutomationStorage'] = new \MailPoet\Automation\Engine\Storage\AutomationStorage())), ($this->services['MailPoet\\Newsletter\\Statistics\\NewsletterStatisticsRepository'] ?? $this->getNewsletterStatisticsRepositoryService()), ($this->services['MailPoet\\Automation\\Integrations\\MailPoet\\Analytics\\Controller\\OverviewStatisticsController'] ?? $this->getOverviewStatisticsControllerService()));
+        return $this->services['MailPoet\\WooCommerce\\MultichannelMarketing\\MPMarketingChannelDataController'] = new \MailPoet\WooCommerce\MultichannelMarketing\MPMarketingChannelDataController(($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrl2Service()), ($this->services['MailPoet\\Settings\\SettingsController'] ?? $this->getSettingsController2Service()), ($this->services['MailPoet\\Services\\Bridge'] ?? $this->getBridgeService()), ($this->services['MailPoet\\Newsletter\\NewslettersRepository'] ?? $this->getNewslettersRepositoryService()), ($this->services['MailPoet\\WooCommerce\\Helper'] ?? $this->getHelperService()), ($this->services['MailPoet\\Automation\\Engine\\Storage\\AutomationStorage'] ?? ($this->services['MailPoet\\Automation\\Engine\\Storage\\AutomationStorage'] = new \MailPoet\Automation\Engine\Storage\AutomationStorage())), ($this->services['MailPoet\\Newsletter\\Statistics\\NewsletterStatisticsRepository'] ?? $this->getNewsletterStatisticsRepositoryService()), ($this->services['MailPoet\\Automation\\Integrations\\MailPoet\\Analytics\\Controller\\OverviewStatisticsController'] ?? $this->getOverviewStatisticsControllerService()));
     }
 
     /**
@@ -5883,7 +5894,7 @@ class FreeCachedContainer extends Container
      */
     protected function getTemplateRepositoryService()
     {
-        return $this->privates['MailPoet\\Form\\Templates\\TemplateRepository'] = new \MailPoet\Form\Templates\TemplateRepository(($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrlService()), ($this->services['MailPoet\\Settings\\SettingsController'] ?? $this->getSettingsController2Service()), ($this->services['MailPoet\\WP\\Functions'] ?? ($this->services['MailPoet\\WP\\Functions'] = new \MailPoet\WP\Functions())));
+        return $this->privates['MailPoet\\Form\\Templates\\TemplateRepository'] = new \MailPoet\Form\Templates\TemplateRepository(($this->services['MailPoet\\Util\\CdnAssetUrl'] ?? $this->getCdnAssetUrl2Service()), ($this->services['MailPoet\\Settings\\SettingsController'] ?? $this->getSettingsController2Service()), ($this->services['MailPoet\\WP\\Functions'] ?? ($this->services['MailPoet\\WP\\Functions'] = new \MailPoet\WP\Functions())));
     }
 
     /**

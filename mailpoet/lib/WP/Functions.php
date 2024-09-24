@@ -589,6 +589,10 @@ class Functions {
     return wp_get_theme($stylesheet, $themeRoot);
   }
 
+  public function wpGetThemeSupport($feature = null, $args = null) {
+    return get_theme_support($feature, $args);
+  }
+
   public function wpInsertPost(array $postarr, $wpError = false) {
     return wp_insert_post($postarr, $wpError);
   }
@@ -989,5 +993,13 @@ class Functions {
 
   public function wpIsMaintenanceMode(): bool {
     return wp_is_maintenance_mode();
+  }
+
+  public function headersSent(): bool {
+    return headers_sent();
+  }
+
+  public function nocacheHeaders(): void {
+    nocache_headers();
   }
 }
