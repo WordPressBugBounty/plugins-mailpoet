@@ -48,7 +48,7 @@ class BlockRendererHelper {
         __('Addresses in names are not permitted, please add your name instead.', 'mailpoet'),
       ];
       $rules['names'] = '[' . implode(',', array_map(function (string $errorMessage): string {
-        return htmlspecialchars((string)json_encode($errorMessage), ENT_QUOTES);
+        return $this->wp->escAttr('"' . $errorMessage . '"');
       }, $errorMessages)) . ']';
     }
 
@@ -84,22 +84,23 @@ class BlockRendererHelper {
       $rules['group'] = 'custom_field_' . $blockId;
     }
 
-    $validation = [];
-
     $rules = array_merge($rules, $extraRules);
 
-    if (!empty($rules)) {
-      $rules = array_unique($rules);
-      foreach ($rules as $rule => $value) {
-        if (is_bool($value)) {
-          $value = ($value) ? 'true' : 'false';
-        }
-        // We need to use single quotes because we need to pass array of strings as a parameter for custom validation
-        if ($rule === 'names') {
-          $validation[] = 'data-parsley-' . $rule . '=\'' . $value . '\'';
-        } else {
-          $validation[] = 'data-parsley-' . $rule . '="' . $value . '"';
-        }
+    if (empty($rules)) {
+      return '';
+    }
+
+    $validation = [];
+    $rules = array_unique($rules);
+    foreach ($rules as $rule => $value) {
+      if (is_bool($value)) {
+        $value = ($value) ? 'true' : 'false';
+      }
+      // We need to use single quotes because we need to pass array of strings as a parameter for custom validation
+      if ($rule === 'names') {
+        $validation[] = 'data-parsley-' . $rule . '=\'' . $this->wp->wpKsesPost($value) . '\''; // The value has been escaped above.
+      } else {
+        $validation[] = 'data-parsley-' . $this->wp->escAttr($rule) . '="' . $this->wp->escAttr($this->wp->wpKsesPost($value)) . '"';
       }
     }
     return join(' ', $validation);
@@ -207,7 +208,7 @@ class BlockRendererHelper {
     ) {
       // display only label
       $html .= ' placeholder="';
-      $html .= static::getFieldLabel($block);
+      $html .= $this->wp->escAttr(static::getFieldLabel($block));
       // add an asterisk if it's a required field
       if (isset($block['params']['required']) && $block['params']['required']) {
         $html .= ' *';
@@ -219,10 +220,11 @@ class BlockRendererHelper {
 
   // return field name depending on block data
   public function getFieldName(array $block = []): string {
-    if ((int)$block['id'] > 0) {
-      return 'cf_' . $block['id'];
+    $blockId = $this->wp->escAttr($block['id']);
+    if ((int)$blockId > 0) {
+      return 'cf_' . $blockId;
     } elseif (isset($block['params']['obfuscate']) && !$block['params']['obfuscate']) {
-      return $block['id'];
+      return $blockId;
     } else {
       return $this->fieldNameObfuscator->obfuscate($block['id']);//obfuscate field name for spambots
     }

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.3.1\n"
+"Project-Id-Version: MailPoet 5.3.2\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-15T06:48:40+00:00\n"
+"POT-Creation-Date: 2024-10-22T12:38:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -5664,38 +5664,38 @@ msgstr ""
 
 #: views/parsley-translations.html:3
 #: views/parsley-translations.html:14
-#: lib/Form/Block/BlockRendererHelper.php:299
+#: lib/Form/Block/BlockRendererHelper.php:301
 msgid "This value seems to be invalid."
 msgstr ""
 
 #: views/parsley-translations.html:5
 #: lib/Form/Block/BlockRendererHelper.php:39
-#: lib/Form/Block/BlockRendererHelper.php:287
+#: lib/Form/Block/BlockRendererHelper.php:289
 msgid "This value should be a valid email."
 msgstr ""
 
 #: views/parsley-translations.html:6
-#: lib/Form/Block/BlockRendererHelper.php:289
+#: lib/Form/Block/BlockRendererHelper.php:291
 msgid "This value should be a valid url."
 msgstr ""
 
 #: views/parsley-translations.html:7
-#: lib/Form/Block/BlockRendererHelper.php:291
+#: lib/Form/Block/BlockRendererHelper.php:293
 msgid "This value should be a valid number."
 msgstr ""
 
 #: views/parsley-translations.html:8
-#: lib/Form/Block/BlockRendererHelper.php:293
+#: lib/Form/Block/BlockRendererHelper.php:295
 msgid "This value should be a valid integer."
 msgstr ""
 
 #: views/parsley-translations.html:9
-#: lib/Form/Block/BlockRendererHelper.php:295
+#: lib/Form/Block/BlockRendererHelper.php:297
 msgid "This value should be digits."
 msgstr ""
 
 #: views/parsley-translations.html:10
-#: lib/Form/Block/BlockRendererHelper.php:297
+#: lib/Form/Block/BlockRendererHelper.php:299
 msgid "This value should be alphanumeric."
 msgstr ""
 
@@ -12533,6 +12533,16 @@ msgid "After no activity for"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
+#: assets/dist/js/commons.js:9
+msgid "weeks"
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+#: assets/dist/js/commons.js:9
+msgid "months"
+msgstr ""
+
+#: assets/dist/js/admin.js:2
 msgid "Disengaged subscribers will [link]become inactive[/link] after {$months} months and won’t receive this email. Please select a shorter period."
 msgstr ""
 
@@ -15316,14 +15326,6 @@ msgid "and"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgid "weeks"
-msgstr ""
-
-#: assets/dist/js/commons.js:9
-msgid "months"
-msgstr ""
-
-#: assets/dist/js/commons.js:9
 msgid "unknown unit"
 msgstr ""
 
@@ -15544,67 +15546,55 @@ msgid "Revenues by customers who clicked on this email in the last 2 weeks."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Excellent open rate"
+msgid "Critical"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
 msgid "above 30%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Good open rate"
 msgid "between 10 and 30%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Critical open rate"
 msgid "under 10%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Excellent click rate"
 msgid "above 3%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Good click rate"
 msgid "between 1 and 3%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Critical click rate"
 msgid "under 1%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Excellent bounce rate"
 msgid "below 0.5%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Good bounce rate"
 msgid "between 0.5% and 1.5%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Critical bounce rate"
 msgid "above 1.5%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Excellent unsubscribe rate"
 msgid "Below 0.3%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Good unsubscribe rate"
 msgid "between 0.3% and 0.7%"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgctxt "Critical unsubscribe rate"
 msgid "above 0.7%"
-msgstr ""
-
-#: assets/dist/js/commons.js:9
-msgid "Critical"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
