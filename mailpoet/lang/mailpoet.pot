@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.3.3\n"
+"Project-Id-Version: MailPoet 5.3.4\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-22T18:14:09+00:00\n"
+"POT-Creation-Date: 2024-10-28T12:13:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -7216,7 +7216,7 @@ msgid "This form does not exist."
 msgstr ""
 
 #: lib/API/JSON/v1/Forms.php:108
-#: lib/API/JSON/v1/Newsletters.php:182
+#: lib/API/JSON/v1/Newsletters.php:183
 msgid "You need to specify a status."
 msgstr ""
 
@@ -7253,39 +7253,39 @@ msgstr ""
 msgid "The email could not be sent: %s"
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:133
-#: lib/API/JSON/v1/Newsletters.php:150
-#: lib/API/JSON/v1/Newsletters.php:195
-#: lib/API/JSON/v1/Newsletters.php:260
-#: lib/API/JSON/v1/Newsletters.php:276
-#: lib/API/JSON/v1/Newsletters.php:290
-#: lib/API/JSON/v1/Newsletters.php:307
-#: lib/API/JSON/v1/Newsletters.php:322
-#: lib/API/JSON/v1/Newsletters.php:346
+#: lib/API/JSON/v1/Newsletters.php:134
+#: lib/API/JSON/v1/Newsletters.php:151
+#: lib/API/JSON/v1/Newsletters.php:196
+#: lib/API/JSON/v1/Newsletters.php:272
+#: lib/API/JSON/v1/Newsletters.php:288
+#: lib/API/JSON/v1/Newsletters.php:302
+#: lib/API/JSON/v1/Newsletters.php:319
+#: lib/API/JSON/v1/Newsletters.php:334
+#: lib/API/JSON/v1/Newsletters.php:358
 #: assets/dist/js/admin.js:2
 msgid "This email does not exist."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:188
+#: lib/API/JSON/v1/Newsletters.php:189
 #: lib/API/JSON/v1/SendingQueue.php:95
 #: lib/API/JSON/v1/SendingQueue.php:226
 #: lib/Services/Bridge/API.php:376
 msgid "Subscribers limit reached."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:201
+#: lib/API/JSON/v1/Newsletters.php:202
 msgid "The sender address is not an authorized sender domain."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:220
+#: lib/API/JSON/v1/Newsletters.php:232
 msgid "This email has incorrect state."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:315
+#: lib/API/JSON/v1/Newsletters.php:327
 msgid "Newsletter data is missing."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:339
+#: lib/API/JSON/v1/Newsletters.php:351
 msgid "Please specify receiver information."
 msgstr ""
 
@@ -10155,7 +10155,6 @@ msgid "Please select a list."
 msgstr ""
 
 #: lib/Form/Block/BlockRendererHelper.php:62
-#: lib/Form/Block/BlockRendererHelper.php:77
 #: lib/Form/Renderer.php:118
 msgid "This field is required."
 msgstr ""

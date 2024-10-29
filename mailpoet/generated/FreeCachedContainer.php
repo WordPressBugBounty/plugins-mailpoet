@@ -3428,7 +3428,7 @@ class FreeCachedContainer extends Container
      */
     protected function getTemplatePreviewService()
     {
-        return $this->services['MailPoet\\EmailEditor\\Engine\\Templates\\TemplatePreview'] = new \MailPoet\EmailEditor\Engine\Templates\TemplatePreview(($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] = new \MailPoet\EmailEditor\Engine\ThemeController())), ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] ?? $this->getTemplatesService()));
+        return $this->services['MailPoet\\EmailEditor\\Engine\\Templates\\TemplatePreview'] = new \MailPoet\EmailEditor\Engine\Templates\TemplatePreview(($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\ThemeController'] = new \MailPoet\EmailEditor\Engine\ThemeController())), ($this->services['MailPoet\\EmailEditor\\Engine\\SettingsController'] ?? $this->getSettingsControllerService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] ?? $this->getTemplatesService()));
     }
 
     /**
