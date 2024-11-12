@@ -1,13 +1,19 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types = 1);
 if (!defined('ABSPATH')) exit;
-$console = new \Codeception\Lib\Console\Output([]);
-if (!function_exists('esc_attr')) {
- function esc_attr($attr) {
+$console = new \Codeception\Lib\Console\Output( array() );
+if ( ! function_exists( 'esc_attr' ) ) {
+ function esc_attr( $attr ) {
  return $attr;
  }
 }
-abstract class MailPoetUnitTest extends \Codeception\TestCase\Test {
- protected $runTestInSeparateProcess = false;
- protected $preserveGlobalState = false;
+if ( ! function_exists( 'esc_html' ) ) {
+ function esc_html( $text ) {
+ return $text;
+ }
 }
-include '_stubs.php';
+abstract class MailPoetUnitTest extends \Codeception\TestCase\Test {
+ protected $runTestInSeparateProcess = false; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
+ protected $preserveGlobalState = false; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
+}
+require '_stubs.php';

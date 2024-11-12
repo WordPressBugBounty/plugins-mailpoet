@@ -622,6 +622,17 @@ class NewsletterEntity extends \MailPoet\Entities\NewsletterEntity implements \M
     /**
      * {@inheritDoc}
      */
+    public function getUnfinishedQueues(): \MailPoetVendor\Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUnfinishedQueues', []);
+
+        return parent::getUnfinishedQueues();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getGlobalStyle(string $category, string $style): ?string
     {
 

@@ -9,8 +9,8 @@ use MailPoet\API\JSON\API;
 use MailPoet\Config\Env;
 use MailPoet\Config\Installer;
 use MailPoet\Config\ServicesChecker;
-use MailPoet\EmailEditor\Engine\SettingsController;
-use MailPoet\EmailEditor\Engine\ThemeController;
+use MailPoet\EmailEditor\Engine\Settings_Controller;
+use MailPoet\EmailEditor\Engine\Theme_Controller;
 use MailPoet\EmailEditor\Integrations\MailPoet\EmailEditor as EditorInitController;
 use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Settings\SettingsController as MailPoetSettings;
@@ -21,9 +21,9 @@ use MailPoet\WP\Functions as WPFunctions;
 class EmailEditor {
   private WPFunctions $wp;
 
-  private SettingsController $settingsController;
+  private Settings_Controller $settingsController;
 
-  private ThemeController $themeController;
+  private Theme_Controller $themeController;
 
   private CdnAssetUrl $cdnAssetUrl;
 
@@ -37,11 +37,11 @@ class EmailEditor {
 
   public function __construct(
     WPFunctions $wp,
-    SettingsController $settingsController,
+    Settings_Controller $settingsController,
     CdnAssetUrl $cdnAssetUrl,
     ServicesChecker $servicesChecker,
     SubscribersFeature $subscribersFeature,
-    ThemeController $themeController,
+    Theme_Controller $themeController,
     MailPoetSettings $mailpoetSettings,
     NewslettersRepository $newslettersRepository
   ) {
@@ -91,8 +91,8 @@ class EmailEditor {
         'cdn_url' => esc_js($this->cdnAssetUrl->generateCdnUrl("")),
         'is_premium_plugin_active' => (bool)$this->servicesChecker->isPremiumPluginActive(),
         'current_wp_user_email' => esc_js($currentUserEmail),
-        'editor_settings' => $this->settingsController->getSettings(),
-        'editor_theme' => $this->themeController->getTheme()->get_raw_data(),
+        'editor_settings' => $this->settingsController->get_settings(),
+        'editor_theme' => $this->themeController->get_theme()->get_raw_data(),
         'urls' => [
           'listings' => admin_url('admin.php?page=mailpoet-newsletters'),
         ],
@@ -101,6 +101,7 @@ class EmailEditor {
 
     // Renders additional script data that some components require e.g. PremiumModal. This is done here instead of using
     // PageRenderer since that introduces other dependencies we want to avoid. Used by getUpgradeInfo.
+    // some of these values are used by the powered by mailpoet block: mailpoet/assets/js/src/mailpoet-custom-email-editor-blocks/powered-by-mailpoet/
     $installer = new Installer(Installer::PREMIUM_PLUGIN_SLUG);
     $inline_script_data = [
       'mailpoet_premium_plugin_installed' => Installer::isPluginInstalled(Installer::PREMIUM_PLUGIN_SLUG),
@@ -120,6 +121,7 @@ class EmailEditor {
       'mailpoet_display_nps_poll' => true,
       'mailpoet_current_wp_user' => $this->wp->wpGetCurrentUser()->to_array(),
       'mailpoet_current_wp_user_firstname' => $this->wp->wpGetCurrentUser()->user_firstname,
+      'mailpoet_cdn_url' => $this->cdnAssetUrl->generateCdnUrl(""),
       'mailpoet_site_url' => $this->wp->siteUrl(),
     ];
     $this->wp->wpAddInlineScript('mailpoet_email_editor', implode('', array_map(function ($key) use ($inline_script_data) {
