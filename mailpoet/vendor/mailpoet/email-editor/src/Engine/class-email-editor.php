@@ -14,18 +14,21 @@ class Email_Editor {
  private Template_Preview $template_preview;
  private Patterns $patterns;
  private Settings_Controller $settings_controller;
+ private Send_Preview_Email $send_preview_email;
  public function __construct(
  Email_Api_Controller $email_api_controller,
  Templates $templates,
  Template_Preview $template_preview,
  Patterns $patterns,
- Settings_Controller $settings_controller
+ Settings_Controller $settings_controller,
+ Send_Preview_Email $send_preview_email
  ) {
  $this->email_api_controller = $email_api_controller;
  $this->templates = $templates;
  $this->template_preview = $template_preview;
  $this->patterns = $patterns;
  $this->settings_controller = $settings_controller;
+ $this->send_preview_email = $send_preview_email;
  }
  public function initialize(): void {
  do_action( 'mailpoet_email_editor_initialized' );
@@ -39,6 +42,8 @@ class Email_Editor {
  $this->extend_email_post_api();
  $this->settings_controller->init();
  }
+ add_action( 'rest_api_init', array( $this, 'register_email_editor_api_routes' ) );
+ add_filter( 'mailpoet_email_editor_send_preview_email', array( $this->send_preview_email, 'send_preview_email' ), 11, 1 ); // allow for other filter methods to take precedent.
  }
  private function register_block_templates(): void {
  // Since we cannot currently disable blocks in the editor for specific templates, disable templates when viewing site editor. @see https://github.com/WordPress/gutenberg/issues/41062.
@@ -95,6 +100,19 @@ class Email_Editor {
  'get_callback' => array( $this->email_api_controller, 'get_email_data' ),
  'update_callback' => array( $this->email_api_controller, 'save_email_data' ),
  'schema' => $this->email_api_controller->get_email_data_schema(),
+ )
+ );
+ }
+ public function register_email_editor_api_routes() {
+ register_rest_route(
+ 'mailpoet-email-editor/v1',
+ '/send_preview_email',
+ array(
+ 'methods' => 'POST',
+ 'callback' => array( $this->email_api_controller, 'send_preview_email_data' ),
+ 'permission_callback' => function () {
+ return current_user_can( 'edit_posts' );
+ },
  )
  );
  }

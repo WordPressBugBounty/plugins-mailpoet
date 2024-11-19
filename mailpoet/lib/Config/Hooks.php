@@ -16,6 +16,7 @@ use MailPoet\Subscription\Comment;
 use MailPoet\Subscription\Form;
 use MailPoet\Subscription\Manage;
 use MailPoet\Subscription\Registration;
+use MailPoet\WooCommerce\Helper as WooHelper;
 use MailPoet\WooCommerce\Integrations\AutomateWooHooks;
 use MailPoet\WooCommerce\Subscription;
 use MailPoet\WooCommerce\WooSystemInfoController;
@@ -73,6 +74,9 @@ class Hooks {
   /** @var HooksWooCommerce */
   private $hooksWooCommerce;
 
+  /** @var HooksReCaptcha */
+  private $reCaptcha;
+
   /** @var SubscriberChangesNotifier */
   private $subscriberChangesNotifier;
 
@@ -88,6 +92,9 @@ class Hooks {
   /** @var CronTrigger */
   private $cronTrigger;
 
+  /** @var WooHelper */
+  private $wooHelper;
+
   public function __construct(
     Form $subscriptionForm,
     Comment $subscriptionComment,
@@ -99,13 +106,15 @@ class Hooks {
     WordpressMailerReplacer $wordpressMailerReplacer,
     DisplayFormInWPContent $displayFormInWPContent,
     HooksWooCommerce $hooksWooCommerce,
+    HooksReCaptcha $reCaptcha,
     SubscriberHandler $subscriberHandler,
     SubscriberChangesNotifier $subscriberChangesNotifier,
     WP $wpSegment,
     DotcomLicenseProvisioner $dotcomLicenseProvisioner,
     AutomateWooHooks $automateWooHooks,
     WooSystemInfoController $wooSystemInfoController,
-    CronTrigger $cronTrigger
+    CronTrigger $cronTrigger,
+    WooHelper $wooHelper
   ) {
     $this->subscriptionForm = $subscriptionForm;
     $this->subscriptionComment = $subscriptionComment;
@@ -119,11 +128,13 @@ class Hooks {
     $this->wpSegment = $wpSegment;
     $this->subscriberHandler = $subscriberHandler;
     $this->hooksWooCommerce = $hooksWooCommerce;
+    $this->reCaptcha = $reCaptcha;
     $this->subscriberChangesNotifier = $subscriberChangesNotifier;
     $this->dotcomLicenseProvisioner = $dotcomLicenseProvisioner;
     $this->automateWooHooks = $automateWooHooks;
     $this->wooSystemInfoController = $wooSystemInfoController;
     $this->cronTrigger = $cronTrigger;
+    $this->wooHelper = $wooHelper;
   }
 
   public function init() {
@@ -151,7 +162,6 @@ class Hooks {
   }
 
   public function setupSubscriptionEvents() {
-
     $subscribe = $this->settings->get('subscribe', []);
     // Subscribe in comments
     if (
@@ -229,6 +239,44 @@ class Hooks {
         60,
         3
       );
+    }
+
+    // reCAPTCHA on WP registration form
+    if ($this->reCaptcha->isEnabled()) {
+      $this->wp->addAction(
+        'login_enqueue_scripts',
+        [$this->reCaptcha, 'enqueueScripts']
+      );
+
+      $this->wp->addAction(
+        'register_form',
+        [$this->reCaptcha, 'render']
+      );
+
+      $this->wp->addFilter(
+        'registration_errors',
+        [$this->reCaptcha, 'validate'],
+        10,
+        3
+      );
+
+      // reCAPTCHA on WC registration form
+      if ($this->wooHelper->isWooCommerceActive()) {
+        $this->wp->addAction(
+          'woocommerce_before_customer_login_form',
+          [$this->reCaptcha, 'enqueueScripts']
+        );
+
+        $this->wp->addAction(
+          'woocommerce_register_form',
+          [$this->reCaptcha, 'render']
+        );
+
+        $this->wp->addAction(
+          'woocommerce_process_registration_errors',
+          [$this->reCaptcha, 'validate']
+        );
+      }
     }
 
     // Manage subscription
@@ -532,7 +580,6 @@ class Hooks {
   }
 
   public function setFooter(): string {
-
     if (Menu::isOnMailPoetAutomationPage()) {
       return '';
     }
@@ -596,7 +643,7 @@ class Hooks {
    * The cron will be reactivated automatically later in Initializer::initialize -> setupCronTrigger()
    *
    * @param bool|\WP_Error $response The installation response before the installation has started.
-   * @param array         $plugin   Plugin package arguments.
+   * @param array $plugin Plugin package arguments.
    * @return bool|\WP_Error The original `$response` parameter or WP_Error.
    */
   public function deactivateCronActions($response, array $plugin) {

@@ -1593,6 +1593,7 @@ class ComposerStaticInit23056af045c4c76349e6fc8a7b82365a
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Preprocessors\\Typography_Preprocessor' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/Preprocessors/class-typography-preprocessor.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Process_Manager' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/class-process-manager.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\Renderer' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/class-renderer.php',
+ 'MailPoet\\EmailEditor\\Engine\\Send_Preview_Email' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-send-preview-email.php',
  'MailPoet\\EmailEditor\\Engine\\Settings_Controller' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-settings-controller.php',
  'MailPoet\\EmailEditor\\Engine\\Templates\\Template_Preview' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Templates/class-template-preview.php',
  'MailPoet\\EmailEditor\\Engine\\Templates\\Templates' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Templates/class-templates.php',

@@ -7,7 +7,6 @@ if (!defined('ABSPATH')) exit;
 
 class ValidationError extends \RuntimeException {
 
-
   private $meta = [];
 
   public function __construct(
