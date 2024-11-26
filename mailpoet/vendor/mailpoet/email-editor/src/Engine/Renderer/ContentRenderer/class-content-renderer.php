@@ -47,7 +47,7 @@ class Content_Renderer {
  public function preprocess_parsed_blocks( array $parsed_blocks ): array {
  return $this->process_manager->preprocess( $parsed_blocks, $this->theme_controller->get_layout_settings(), $this->theme_controller->get_styles( $this->post, $this->template ) );
  }
- public function render_block( $block_content, $parsed_block ) {
+ public function render_block( string $block_content, array $parsed_block ): string {
  $renderer = $this->blocks_registry->get_block_renderer( $parsed_block['blockName'] );
  if ( ! $renderer ) {
  $renderer = $this->blocks_registry->get_fallback_renderer();

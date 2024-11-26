@@ -5,6 +5,7 @@ namespace MailPoet\EmailEditor\Integrations\MailPoet;
 if (!defined('ABSPATH')) exit;
 
 
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\PatternsController;
 use MailPoet\Features\FeaturesController;
 use MailPoet\WP\Functions as WPFunctions;
 
@@ -19,6 +20,8 @@ class EmailEditor {
 
   private EditorPageRenderer $editorPageRenderer;
 
+  private PatternsController $patternsController;
+
   private Cli $cli;
 
   private EmailEditorPreviewEmail $emailEditorPreviewEmail;
@@ -28,13 +31,15 @@ class EmailEditor {
     FeaturesController $featuresController,
     EmailApiController $emailApiController,
     EditorPageRenderer $editorPageRenderer,
-    Cli $cli,
-    EmailEditorPreviewEmail $emailEditorPreviewEmail
+    EmailEditorPreviewEmail $emailEditorPreviewEmail,
+    PatternsController $patternsController,
+    Cli $cli
   ) {
     $this->wp = $wp;
     $this->featuresController = $featuresController;
     $this->emailApiController = $emailApiController;
     $this->editorPageRenderer = $editorPageRenderer;
+    $this->patternsController = $patternsController;
     $this->cli = $cli;
     $this->emailEditorPreviewEmail = $emailEditorPreviewEmail;
   }
@@ -49,6 +54,7 @@ class EmailEditor {
     $this->wp->addFilter('mailpoet_is_email_editor_page', [$this, 'isEditorPage'], 10, 1);
     $this->wp->addFilter('replace_editor', [$this, 'replaceEditor'], 10, 2);
     $this->wp->addFilter('mailpoet_email_editor_send_preview_email', [$this->emailEditorPreviewEmail, 'sendPreviewEmail'], 10, 1);
+    $this->patternsController->registerPatterns();
     $this->extendEmailPostApi();
   }
 

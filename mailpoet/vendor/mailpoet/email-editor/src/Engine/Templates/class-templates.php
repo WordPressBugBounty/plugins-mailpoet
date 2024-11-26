@@ -6,18 +6,17 @@ use MailPoet\EmailEditor\Engine\Email_Styles_Schema;
 use WP_Block_Template;
 class Templates {
  const MAILPOET_EMAIL_META_THEME_TYPE = 'mailpoet_email_theme';
- const MAILPOET_TEMPLATE_EMPTY_THEME = array( 'version' => 2 ); // The version 2 is important to merge themes correctly.
+ const MAILPOET_TEMPLATE_EMPTY_THEME = array( 'version' => 3 ); // The version 3 is important to merge themes correctly.
  private Utils $utils;
  private string $plugin_slug = 'mailpoet/mailpoet';
  private string $post_type = 'mailpoet_email';
- private string $template_directory;
+ private string $template_directory = __DIR__ . DIRECTORY_SEPARATOR;
  private array $templates = array();
  private array $theme_json = array();
  public function __construct(
  Utils $utils
  ) {
  $this->utils = $utils;
- $this->template_directory = __DIR__ . DIRECTORY_SEPARATOR;
  }
  public function initialize(): void {
  add_filter( 'pre_get_block_file_template', array( $this, 'get_block_file_template' ), 10, 3 );
