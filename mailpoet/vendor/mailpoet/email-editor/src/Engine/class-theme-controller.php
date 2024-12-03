@@ -3,7 +3,6 @@ declare(strict_types = 1);
 namespace MailPoet\EmailEditor\Engine;
 if (!defined('ABSPATH')) exit;
 use MailPoet\EmailEditor\Engine\Renderer\Renderer;
-use MailPoet\EmailEditor\Utils\Filesystem;
 use WP_Block_Template;
 use WP_Post;
 use WP_Theme_JSON;
@@ -41,6 +40,7 @@ class Theme_Controller {
  if ( is_array( $style_value ) ) {
  $styles[ $key ] = $this->recursive_extract_preset_variables( $style_value );
  } elseif ( strpos( $style_value, 'var:preset|' ) === 0 ) {
+ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
  $styles[ $key ] = 'var(--wp--' . str_replace( '|', '--', str_replace( 'var:', '', $style_value ) ) . ')';
  } else {
  $styles[ $key ] = $style_value;
@@ -65,8 +65,7 @@ class Theme_Controller {
  $pattern = '/var\(' . preg_quote( $name, '/' ) . '\)/i';
  $presets[ $pattern ] = $value;
  }
- $theme_styles = $this->recursive_replace_presets( $theme_styles, $presets );
- return $theme_styles;
+ return $this->recursive_replace_presets( $theme_styles, $presets );
  }
  public function get_settings(): array {
  $email_editor_theme_settings = $this->get_theme()->get_settings();

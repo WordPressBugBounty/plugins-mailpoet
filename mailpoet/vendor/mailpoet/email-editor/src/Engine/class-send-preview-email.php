@@ -19,7 +19,7 @@ class Send_Preview_Email {
  $email = $data['email'];
  $post_id = $data['postId'];
  $post = $this->fetch_post( $post_id );
- $subject = $post->post_title ?? __( 'Email Preview', 'mailpoet' );
+ $subject = $post->post_title;
  $language = get_bloginfo( 'language' );
  $rendered_data = $this->renderer->render(
  $post,

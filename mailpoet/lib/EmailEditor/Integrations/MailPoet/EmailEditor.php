@@ -26,6 +26,8 @@ class EmailEditor {
 
   private EmailEditorPreviewEmail $emailEditorPreviewEmail;
 
+  private PersonalizationTagManager $personalizationTagManager;
+
   public function __construct(
     WPFunctions $wp,
     FeaturesController $featuresController,
@@ -33,7 +35,8 @@ class EmailEditor {
     EditorPageRenderer $editorPageRenderer,
     EmailEditorPreviewEmail $emailEditorPreviewEmail,
     PatternsController $patternsController,
-    Cli $cli
+    Cli $cli,
+    PersonalizationTagManager $personalizationTagManager
   ) {
     $this->wp = $wp;
     $this->featuresController = $featuresController;
@@ -42,6 +45,7 @@ class EmailEditor {
     $this->patternsController = $patternsController;
     $this->cli = $cli;
     $this->emailEditorPreviewEmail = $emailEditorPreviewEmail;
+    $this->personalizationTagManager = $personalizationTagManager;
   }
 
   public function initialize(): void {
@@ -56,6 +60,7 @@ class EmailEditor {
     $this->wp->addFilter('mailpoet_email_editor_send_preview_email', [$this->emailEditorPreviewEmail, 'sendPreviewEmail'], 10, 1);
     $this->patternsController->registerPatterns();
     $this->extendEmailPostApi();
+    $this->personalizationTagManager->initialize();
   }
 
   public function addEmailPostType(array $postTypes): array {

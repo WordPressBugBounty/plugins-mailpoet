@@ -12,6 +12,7 @@ class Patterns_Test extends \MailPoetTest {
  public function testItRegistersPatternCategories() {
  $this->patterns->initialize();
  $categories = \WP_Block_Pattern_Categories_Registry::get_instance()->get_all_registered();
+ // phpcs:ignore
  $category = array_pop( $categories );
  $this->assertEquals( 'email-contents', $category['name'] );
  $this->assertEquals( 'Email Contents', $category['label'] );

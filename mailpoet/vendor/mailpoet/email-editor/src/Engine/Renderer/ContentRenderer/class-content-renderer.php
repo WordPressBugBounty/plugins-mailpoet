@@ -105,6 +105,6 @@ class Content_Renderer {
  );
  $styles .= $block_support_styles;
  $styles = '<style>' . wp_strip_all_tags( (string) apply_filters( 'mailpoet_email_content_renderer_styles', $styles, $post ) ) . '</style>';
- return CssInliner::fromHtml( $styles . $html )->inlineCss()->render();
+ return CssInliner::fromHtml( $styles . $html )->inlineCss()->render(); // TODO: Install CssInliner.
  }
 }

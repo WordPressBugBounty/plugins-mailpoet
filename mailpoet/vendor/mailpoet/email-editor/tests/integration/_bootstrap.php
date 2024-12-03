@@ -6,6 +6,7 @@ use MailPoet\EmailEditor\Container;
 use MailPoet\EmailEditor\Engine\Email_Api_Controller;
 use MailPoet\EmailEditor\Engine\Email_Editor;
 use MailPoet\EmailEditor\Engine\Patterns\Patterns;
+use MailPoet\EmailEditor\Engine\PersonalizationTags\Personalization_Tags_Registry;
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Blocks_Registry;
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Content_Renderer;
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Postprocessors\Highlighting_Postprocessor;
@@ -56,7 +57,7 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  libxml_clear_errors();
  $this->assertEmpty( $errors, 'HTML is not valid: ' . $html );
  }
- public function getServiceWithOverrides( string $id, array $overrides ) {
+ public function getServiceWithOverrides( $id, array $overrides ) {
  $instance = $this->di_container->get( $id );
  return Stub::copy( $instance, $overrides );
  }
@@ -213,6 +214,12 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  }
  );
  $container->set(
+ Personalization_Tags_Registry::class,
+ function () {
+ return new Personalization_Tags_Registry();
+ }
+ );
+ $container->set(
  Email_Editor::class,
  function ( $container ) {
  return new Email_Editor(
@@ -222,6 +229,7 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  $container->get( Patterns::class ),
  $container->get( Settings_Controller::class ),
  $container->get( Send_Preview_Email::class ),
+ $container->get( Personalization_Tags_Registry::class ),
  );
  }
  );

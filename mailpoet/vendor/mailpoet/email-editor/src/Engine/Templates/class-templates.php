@@ -208,6 +208,7 @@ class Templates {
  $custom_templates = $check_query->posts;
  return array_map(
  function ( $custom_template ) {
+ // phpcs:ignore Generic.Commenting.DocComment.MissingShort -- used for phpstan
  return $this->utils->build_block_template_from_post( $custom_template );
  },
  $custom_templates

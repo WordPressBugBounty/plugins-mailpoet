@@ -13,6 +13,27 @@ if ( ! function_exists( 'esc_html' ) ) {
  return $text;
  }
 }
+if ( ! function_exists( 'add_filter' ) ) {
+ function add_filter( $tag, $callback, $priority = 10, $accepted_args = 1 ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+ global $wp_filters;
+ if ( ! isset( $wp_filters ) ) {
+ $wp_filters = array();
+ }
+ $wp_filters[ $tag ][] = $callback;
+ return true;
+ }
+}
+if ( ! function_exists( 'apply_filters' ) ) {
+ function apply_filters( $tag, $value, ...$args ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+ global $wp_filters;
+ if ( isset( $wp_filters[ $tag ] ) ) {
+ foreach ( $wp_filters[ $tag ] as $callback ) {
+ $value = call_user_func( $callback, $value );
+ }
+ }
+ return $value;
+ }
+}
 abstract class MailPoetUnitTest extends \Codeception\TestCase\Test {
  protected $runTestInSeparateProcess = false; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
  protected $preserveGlobalState = false; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase

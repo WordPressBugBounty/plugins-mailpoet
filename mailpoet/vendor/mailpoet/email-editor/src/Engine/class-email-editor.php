@@ -3,6 +3,7 @@ declare(strict_types = 1);
 namespace MailPoet\EmailEditor\Engine;
 if (!defined('ABSPATH')) exit;
 use MailPoet\EmailEditor\Engine\Patterns\Patterns;
+use MailPoet\EmailEditor\Engine\PersonalizationTags\Personalization_Tags_Registry;
 use MailPoet\EmailEditor\Engine\Templates\Template_Preview;
 use MailPoet\EmailEditor\Engine\Templates\Templates;
 use WP_Post;
@@ -15,13 +16,15 @@ class Email_Editor {
  private Patterns $patterns;
  private Settings_Controller $settings_controller;
  private Send_Preview_Email $send_preview_email;
+ private Personalization_Tags_Registry $personalization_tags_registry;
  public function __construct(
  Email_Api_Controller $email_api_controller,
  Templates $templates,
  Template_Preview $template_preview,
  Patterns $patterns,
  Settings_Controller $settings_controller,
- Send_Preview_Email $send_preview_email
+ Send_Preview_Email $send_preview_email,
+ Personalization_Tags_Registry $personalization_tags_controller
  ) {
  $this->email_api_controller = $email_api_controller;
  $this->templates = $templates;
@@ -29,6 +32,7 @@ class Email_Editor {
  $this->patterns = $patterns;
  $this->settings_controller = $settings_controller;
  $this->send_preview_email = $send_preview_email;
+ $this->personalization_tags_registry = $personalization_tags_controller;
  }
  public function initialize(): void {
  do_action( 'mailpoet_email_editor_initialized' );
@@ -37,6 +41,7 @@ class Email_Editor {
  $this->register_block_patterns();
  $this->register_wmail_post_types();
  $this->register_email_post_send_status();
+ $this->register_personalization_tags();
  $is_editor_page = apply_filters( 'mailpoet_is_email_editor_page', false );
  if ( $is_editor_page ) {
  $this->extend_email_post_api();
@@ -63,6 +68,9 @@ class Email_Editor {
  );
  }
  }
+ private function register_personalization_tags(): void {
+ $this->personalization_tags_registry->initialize();
+ }
  private function get_post_types(): array {
  $post_types = array();
  return apply_filters( 'mailpoet_email_editor_post_types', $post_types );
@@ -77,6 +85,7 @@ class Email_Editor {
  'supports' => array( 'editor', 'title', 'custom-fields' ), // 'custom-fields' is required for loading meta fields via API.
  'has_archive' => true,
  'show_in_rest' => true, // Important to enable Gutenberg editor.
+ 'default_rendering_mode' => 'template-locked',
  );
  }
  private function register_email_post_send_status(): void {

@@ -1,9 +1,9 @@
 === MailPoet - Newsletters, Email Marketing, and Automation ===
 Contributors: mailpoet, woocommerce, automattic
 Tags: email marketing, post notification, woocommerce emails, email automation, newsletter
-Requires at least: 6.5
-Tested up to: 6.6
-Stable tag: 5.4.1
+Requires at least: 6.6
+Tested up to: 6.7
+Stable tag: 5.4.2
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -12,21 +12,13 @@ Send beautiful newsletters from WordPress. Collect subscribers with signup forms
 
 == Description ==
 
-= Save 40% on all MailPoet annual plans and upgrades =
-
-For a limited time, save 40% when you switch to (or upgrade) an annual plan — no coupon needed. Offer ends at 3 pm UTC, December 3, 2024.
-
-[Pick a plan and save big](https://account.mailpoet.com/?billing=yearly&ref=sale-bfcm-2024-wporg&utm_source=wordpress.org&utm_medium=description&utm_campaign=sale_bfcm_2024)
-
-= What is MailPoet? =
-
 Use MailPoet to create, send, manage, and grow your email marketing campaigns – all without leaving your WordPress dashboard.
 
 Our newsletter builder integrates perfectly with WordPress so any website owner can create beautiful emails from scratch, or by using our responsive templates that display flawlessly across all devices.
 
 Schedule your newsletters, send them right away, or set up new blog post notifications to send automatically, in just a few clicks.
 
-Trusted by 700,000 WordPress websites since 2011.
+Trusted by 600,000 WordPress websites since 2011.
 
 **With a free plan to get started, and scaling paid plans with enhanced functionality available, MailPoet is an email marketing solution suitable for both beginners and proficient email marketers.**
 
@@ -238,7 +230,8 @@ Check our [Knowledge Base](https://kb.mailpoet.com) or contact us through our [s
 
 == Changelog ==
 
-= 5.4.1 - 2024-11-25 =
-* Improved: minor changes and fixes.
+= 5.4.2 - 2024-12-02 =
+* Improved: stability of post notification scheduling;
+* Changed: minimum required WordPress version to 6.6 and WooCommerce to 9.3.
 
 [See the changelog for all versions.](https://github.com/mailpoet/mailpoet/blob/trunk/mailpoet/CHANGELOG.md)

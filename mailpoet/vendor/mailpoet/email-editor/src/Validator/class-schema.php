@@ -44,7 +44,7 @@ abstract class Schema {
  $json = wp_json_encode( $this->schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION );
  $error = json_last_error();
  if ( $error || false === $json ) {
- throw new \Exception( \esc_html( json_last_error_msg() ), \esc_html( (string) $error ) );
+ throw new \Exception( \esc_html( json_last_error_msg() ), 0 );
  }
  return $json;
  }

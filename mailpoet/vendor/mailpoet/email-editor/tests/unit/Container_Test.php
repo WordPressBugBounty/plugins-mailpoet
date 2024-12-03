@@ -4,30 +4,31 @@ namespace MailPoet\EmailEditor;
 if (!defined('ABSPATH')) exit;
 use Exception;
 use PHPUnit\Framework\TestCase;
-use stdClass;
-class Container_Test extends TestCase {
+class Simple_Service {} // phpcs:ignore -- Ignore Only one object structure is allowed in a file.
+class Singleton_Service {} // phpcs:ignore -- Ignore Only one object structure is allowed in a file.
+class Container_Test extends TestCase { // phpcs:ignore
  public function testSetAndGetService(): void {
  $container = new Container();
  $container->set(
- 'simple_service',
+ Simple_Service::class,
  function () {
- return new stdClass();
+ return new Simple_Service();
  }
  );
- $service = $container->get( 'simple_service' );
- $this->assertInstanceOf( stdClass::class, $service );
+ $service = $container->get( Simple_Service::class );
+ $this->assertInstanceOf( Simple_Service::class, $service );
  }
  public function testGetReturnsSameInstance(): void {
  $container = new Container();
  $container->set(
- 'singleton_service',
+ Singleton_Service::class,
  function () {
- return new stdClass();
+ return new Singleton_Service();
  }
  );
  // Retrieve the service twice.
- $service1 = $container->get( 'singleton_service' );
- $service2 = $container->get( 'singleton_service' );
+ $service1 = $container->get( Singleton_Service::class );
+ $service2 = $container->get( Singleton_Service::class );
  // Check that both instances are the same.
  $this->assertSame( $service1, $service2 );
  }
@@ -36,7 +37,7 @@ class Container_Test extends TestCase {
  $container = new Container();
  // Attempt to get a non-existing service should throw an exception.
  $this->expectException( Exception::class );
- $this->expectExceptionMessage( 'Service not found: non_existing_service' );
- $container->get( 'non_existing_service' );
+ $this->expectExceptionMessage( 'Service not found: MailPoet\EmailEditor\Simple_Service' );
+ $container->get( Simple_Service::class );
  }
 }

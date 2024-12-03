@@ -2,7 +2,7 @@
 declare( strict_types = 1 );
 namespace MailPoet\EmailEditor\Validator;
 if (!defined('ABSPATH')) exit;
-use MailPoet\UnexpectedValueException;
+use MailPoet\EmailEditor\UnexpectedValueException;
 use WP_Error;
 class Validation_Exception extends UnexpectedValueException {
  protected $wp_error;
