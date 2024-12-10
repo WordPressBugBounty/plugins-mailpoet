@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.4.2\n"
+"Project-Id-Version: MailPoet 5.5.0\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-02T13:11:08+00:00\n"
+"POT-Creation-Date: 2024-12-09T16:25:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -335,7 +335,7 @@ msgstr ""
 
 #: views/form/templatesLegacy/settings/segment_selection.hbs:8
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Add"
 msgstr ""
 
@@ -399,7 +399,7 @@ msgstr ""
 #: views/form/editor.html:48
 #: views/newsletter/templates/blocks/social/settings.hbs:27
 #: views/newsletter/templates/components/sidebar/styles.hbs:2
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Styles"
 msgstr ""
 
@@ -540,8 +540,8 @@ msgstr ""
 
 #: views/form/editor.html:119
 #: assets/dist/js/email-editor/email_editor.js:1
-#: assets/dist/js/email-editor/email_editor.js:14
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:13
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Layout"
 msgstr ""
 
@@ -638,7 +638,6 @@ msgstr ""
 msgid "Select the list that you want to add"
 msgstr ""
 
-#. translators: accessibility text for the footer landmark region.
 #: views/form/editor.html:164
 #: views/newsletter/editor.html:1051
 #: views/newsletter/editor.html:1052
@@ -1134,7 +1133,7 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Close"
 msgstr ""
@@ -1602,7 +1601,7 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Cancel"
 msgstr ""
 
@@ -1641,7 +1640,7 @@ msgstr ""
 #: views/newsletter/templates/blocks/text/settings.hbs:2
 #: views/newsletter/templates/blocks/text/widget.hbs:4
 #: views/newsletter/templates/components/sidebar/styles.hbs:19
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Text"
 msgstr ""
 
@@ -1823,7 +1822,7 @@ msgstr ""
 #: views/newsletter/templates/blocks/header/settings.hbs:30
 #: views/newsletter/templates/components/sidebar/styles.hbs:160
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:88
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Links"
 msgstr ""
 
@@ -2179,7 +2178,7 @@ msgid "Send preview to"
 msgstr ""
 
 #: views/newsletter/templates/components/newsletterPreview.hbs:43
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Sending…"
 msgstr ""
 
@@ -2226,6 +2225,7 @@ msgstr ""
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:81
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Save"
 msgstr ""
 
@@ -2250,7 +2250,7 @@ msgstr ""
 #: views/settings_translations.html:31
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Preview"
 msgstr ""
 
@@ -2467,7 +2467,7 @@ msgstr ""
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:34
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:94
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Unsubscribe"
 msgstr ""
 
@@ -2475,7 +2475,7 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/ConfirmInterestBeforeDeactivation.php:163
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:34
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:102
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Manage subscription"
 msgstr ""
 
@@ -2931,7 +2931,7 @@ msgstr ""
 #: views/forms.html:80
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Move to trash"
 msgstr ""
 
@@ -5940,6 +5940,7 @@ msgid "Read our guide"
 msgstr ""
 
 #: views/settings_translations.html:68
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:43
 msgid "Invalid email address"
 msgstr ""
 
@@ -6460,7 +6461,7 @@ msgid "Test the sending method"
 msgstr ""
 
 #: views/settings_translations.html:216
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Send a test email"
 msgstr ""
 
@@ -6667,7 +6668,7 @@ msgid "Get started today!"
 msgstr ""
 
 #: views/upgrade.html:116
-msgid "Over %s people trust MailPoet to power their email marketing campaigns – why not join them?!"
+msgid "Over %s people trust MailPoet to power their email marketing campaigns – why not join them?"
 msgstr ""
 
 #: views/upgrade.html:117
@@ -7316,17 +7317,21 @@ msgstr ""
 msgid "This newsletter has not been sent yet."
 msgstr ""
 
-#: lib/API/JSON/v1/SendingTaskSubscribers.php:71
-#: lib/API/JSON/v1/SendingTaskSubscribers.php:124
+#: lib/API/JSON/v1/SendingTaskSubscribers.php:72
+#: lib/API/JSON/v1/SendingTaskSubscribers.php:125
 msgid "Newsletter not found!"
 msgstr ""
 
-#: lib/API/JSON/v1/SendingTaskSubscribers.php:78
+#: lib/API/JSON/v1/SendingTaskSubscribers.php:79
 msgid "This email has not been sent yet."
 msgstr ""
 
-#: lib/API/JSON/v1/SendingTaskSubscribers.php:117
+#: lib/API/JSON/v1/SendingTaskSubscribers.php:118
 msgid "Failed sending task not found!"
+msgstr ""
+
+#: lib/API/JSON/v1/SendingTaskSubscribers.php:131
+msgid "Failed to resend! The email is not active. Please activate it first."
 msgstr ""
 
 #: lib/API/JSON/v1/Services.php:99
@@ -9240,8 +9245,8 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/WordPressTheme.php:1266
 #: lib/Config/PopulatorData/Templates/WorldCup.php:725
 #: lib/Config/PopulatorData/Templates/YogaStudio.php:699
-#: lib/Subscription/Pages.php:398
-#: lib/Subscription/Pages.php:495
+#: lib/Subscription/Pages.php:401
+#: lib/Subscription/Pages.php:498
 msgid "Manage your subscription"
 msgstr ""
 
@@ -10098,10 +10103,6 @@ msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:39
 msgid "Missing required data"
-msgstr ""
-
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:43
-msgid "Invalid email"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContent.php:19
@@ -11006,7 +11007,7 @@ msgid "You have reached the subscriber limit of your plan. Please [link1]upgrade
 msgstr ""
 
 #: lib/Mailer/Methods/ErrorMappers/MailPoetMapper.php:163
-msgid "MailPoet Sending Service has been temporarily suspended for your site due to [link1]degraded email deliverability[/link1]. Please [link2]contact our support team[/link2] to resolve the issue."
+msgid "The MailPoet Sending Service has been temporarily suspended for your site due to a high number of [link1]undeliverable emails or emails marked as unwanted by recipients[/link1]. Please [link2]contact our support team[/link2] to resolve the issue."
 msgstr ""
 
 #: lib/Mailer/Methods/ErrorMappers/MailPoetMapper.php:187
@@ -11623,44 +11624,44 @@ msgstr ""
 msgid "Your email address doesn't appear in our lists anymore. Sign up again or contact us if this appears to be a mistake."
 msgstr ""
 
-#: lib/Subscription/Pages.php:384
+#: lib/Subscription/Pages.php:387
 msgid "You are now subscribed!"
 msgstr ""
 
 #. translators: %s is the website title or website name.
-#: lib/Subscription/Pages.php:388
+#: lib/Subscription/Pages.php:391
 msgid "You have subscribed to %s"
 msgstr ""
 
-#: lib/Subscription/Pages.php:404
+#: lib/Subscription/Pages.php:407
 msgid "You are now unsubscribed."
 msgstr ""
 
-#: lib/Subscription/Pages.php:410
+#: lib/Subscription/Pages.php:413
 msgid "Thank you for letting us know!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:416
+#: lib/Subscription/Pages.php:419
 msgid "Confirm you want to unsubscribe"
 msgstr ""
 
-#: lib/Subscription/Pages.php:422
+#: lib/Subscription/Pages.php:425
 msgid "Yup, we've added you to our email list. You'll hear from us shortly."
 msgstr ""
 
-#: lib/Subscription/Pages.php:438
+#: lib/Subscription/Pages.php:441
 msgid "Subscription management form is only available to mailing lists subscribers."
 msgstr ""
 
-#: lib/Subscription/Pages.php:454
+#: lib/Subscription/Pages.php:457
 msgid "Accidentally unsubscribed?"
 msgstr ""
 
-#: lib/Subscription/Pages.php:464
+#: lib/Subscription/Pages.php:467
 msgid "We appreciate your continued interest in our updates. Expect to hear from us again soon!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:490
+#: lib/Subscription/Pages.php:493
 msgid "Link to subscription management page is only available to mailing lists subscribers."
 msgstr ""
 
@@ -12039,11 +12040,15 @@ msgid "Last purchase"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-msgid "New editor"
+msgid "Try the new email editor"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-msgid "Beta version"
+msgid "Alpha version"
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+msgid "Get a sneak peek of an early version of the upcoming email design experience and help shape its development."
 msgstr ""
 
 #: assets/dist/js/admin.js:2
@@ -12055,6 +12060,7 @@ msgid "Emails created in the new editor cannot be reverted to the legacy version
 msgstr ""
 
 #: assets/dist/js/admin.js:2
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Continue"
 msgstr ""
 
@@ -12063,7 +12069,7 @@ msgid "Create"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-msgid "Create using new editor (Beta)"
+msgid "Create using the new email editor (Alpha)"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
@@ -12304,7 +12310,7 @@ msgid "Google Analytics Campaign"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Send to"
 msgstr ""
 
@@ -12413,7 +12419,7 @@ msgstr ""
 
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Send"
 msgstr ""
 
@@ -12529,7 +12535,7 @@ msgid "Disengaged subscribers will [link]become inactive[/link] after {$months} 
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 #: assets/dist/js/newsletter_editor.js:2
 msgid "This email has already been sent. It can be edited, but not sent again. Duplicate this email if you want to send it again."
 msgstr ""
@@ -13217,7 +13223,7 @@ msgstr ""
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_analytics.js:9
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "More"
 msgstr ""
 
@@ -13774,7 +13780,7 @@ msgid "Set up automated abandoned cart emails to win customers back and recover 
 msgstr ""
 
 #: assets/dist/js/automation.js:1
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Undo"
 msgstr ""
 
@@ -14381,7 +14387,7 @@ msgid "Change automation name"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Rename"
 msgstr ""
 
@@ -14398,28 +14404,28 @@ msgid "Toggle step inserter"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgctxt "noun"
 msgid "View"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Fullscreen mode"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Work without distraction"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Fullscreen mode activated"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Fullscreen mode deactivated"
 msgstr ""
 
@@ -14468,12 +14474,12 @@ msgid "Updating…"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Saving"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Saved"
 msgstr ""
 
@@ -15857,8 +15863,9 @@ msgstr ""
 msgid "Post Notification"
 msgstr ""
 
+#. translators: accessibility text for the footer landmark region.
 #: assets/dist/js/commons.js:9
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Template"
 msgstr ""
 
@@ -16023,318 +16030,358 @@ msgid "<link>This text</link> will appear in the inbox, underneath the subject l
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
+msgid "Note that the same template can be used by multiple emails, so any changes made here may affect other emails on the site. To switch back to editing the page content click the ‘Back’ button in the toolbar."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "rendering template"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Templates created on the legacy editor will not appear here."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Select a template"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Start from scratch"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Send or schedule a newsletter to connect with your subscribers."
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
-msgid "Templates Experiment"
+msgid "Template actions"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Edit template"
 msgstr ""
 
-#. translators: The template/part's name.
-#: assets/dist/js/email-editor/email_editor.js:14
-msgid "\"%s\" reset."
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Swap template"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
-msgid "An error occurred while reverting the template."
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "This will clear ANY and ALL template customization. All updates made to the template will be lost. Do you want to proceed?"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
-msgid "Revert customizations"
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Reset"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Reset to default to clear all customizations"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Edit this template to be used across multiple emails."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "No title"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Border display may vary or be unsupported in some email clients."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Select a background color for email clients that do not support background images."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Are you sure you want to move this email to trash?"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "An error occurred while moving the email to the trash."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Top toolbar"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Access all block and document tools in a single place"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Top toolbar activated"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Top toolbar deactivated"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Spotlight mode"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Focus at one block at a time"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Spotlight mode activated"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Spotlight mode deactivated"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Restore from trash"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Sorry, we were unable to send this email."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Please check your <link>sending method configuration</link> with your hosting provider."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Or, sign up for MailPoet Sending Service to easily send emails. <link>Sign up for free</link>"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Send yourself a test email to test how your email would look like in different email apps. You can also test your spam score by sending a test email to <link1>{$serviceName}</link1>. <link2>Learn more</link2>."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Test email sent successfully!"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Send test email"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Desktop"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Mobile"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Preview in new tab"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Save Draft"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
-msgid "Save email & template"
-msgstr ""
-
-#: assets/dist/js/email-editor/email_editor.js:14
-msgid "Save template"
-msgstr ""
-
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Editing email:"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Change campaign name"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Campaign name"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Name your email campaign to indicate its purpose. This would only be visible to you and not shown to your subscribers."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "All emails must include an \"Unsubscribe\" link."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Insert link"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Templates"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "This change will affect emails that use this template."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Email document tools"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Redo"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "List view"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Show block tools"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Hide block tools"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Fix errors to continue:"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Template updated."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Typography"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:14
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:13
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Colors"
 msgstr ""
 
 #. translators: %s: is a subset of Typography, e.g., 'text' or 'links'.
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Typography %s styles"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Elements"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Headings"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Buttons"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Navigate to the previous view"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Manage the typography settings for different elements."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Font family"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Font size"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Appearance"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Line height"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Letter spacing"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Text decoration"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Letter case"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Manage the fonts and typography used on text."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Manage the fonts and typography used on links."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Manage the fonts and typography used on headings."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Manage the fonts and typography used on buttons."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Select heading level"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgctxt "heading levels"
 msgid "All"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgctxt "Heading Level"
 msgid "H1"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgctxt "Heading Level"
 msgid "H2"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgctxt "Heading Level"
 msgid "H3"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgctxt "Heading Level"
 msgid "H4"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Manage palettes and the default color of different global elements."
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Dimensions"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Padding"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Block spacing"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
-msgid "You’ve tried to select a block that is part of a template, which may be used on other emails. Would you like to edit the template?"
+#: assets/dist/js/email-editor/email_editor.js:16
+msgid "The block you’ve selected is part of a template that might be used in other emails. Are you sure you want to edit the template?"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Email saved!"
 msgstr ""
 
-#: assets/dist/js/email-editor/email_editor.js:17
+#: assets/dist/js/email-editor/email_editor.js:16
 #: assets/dist/js/newsletter_editor.js:2
 msgid "The email could not be saved. Please, clear browser cache and reload the page. If the problem persists, duplicate the email and try again."
+msgstr ""
+
+#. translators: The template/part's name.
+#: assets/dist/js/email-editor/email_editor.js:17
+msgid "\"%s\" reset."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:17
+msgid "An error occurred while reverting the template."
 msgstr ""
 
 #: assets/dist/js/marketing-optin-block/marketing-optin-block.js:1

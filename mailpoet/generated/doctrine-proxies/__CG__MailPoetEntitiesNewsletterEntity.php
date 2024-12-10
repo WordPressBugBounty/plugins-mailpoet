@@ -688,6 +688,17 @@ class NewsletterEntity extends \MailPoet\Entities\NewsletterEntity implements \M
     /**
      * {@inheritDoc}
      */
+    public function canBeSetActive(): bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'canBeSetActive', []);
+
+        return parent::canBeSetActive();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getWpPost(): ?\MailPoet\Entities\WpPostEntity
     {
 

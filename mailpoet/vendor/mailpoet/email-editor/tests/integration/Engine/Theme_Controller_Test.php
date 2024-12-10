@@ -8,6 +8,13 @@ class Theme_Controller_Test extends \MailPoetTest {
  parent::_before();
  $this->theme_controller = $this->di_container->get( Theme_Controller::class );
  }
+ public function testItGetThemeJson(): void {
+ $theme_json = $this->theme_controller->get_theme();
+ $theme_settings = $theme_json->get_settings();
+ verify( $theme_settings['layout']['contentSize'] )->equals( '660px' ); // from email editor theme.json file.
+ verify( $theme_settings['spacing']['margin'] )->false();
+ verify( $theme_settings['typography']['dropCap'] )->false();
+ }
  public function testItGeneratesCssStylesForRenderer() {
  $css = $this->theme_controller->get_stylesheet_for_rendering();
  // Font families.

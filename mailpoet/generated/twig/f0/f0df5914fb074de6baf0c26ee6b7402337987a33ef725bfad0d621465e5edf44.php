@@ -265,7 +265,7 @@ class __TwigTemplate_dada0e5bfec8608eb9f123444f9396788d2220a0663c5d2c4a893ecbc6a
     <p class=\"mailpoet-premium-page-text-large\">
       ";
         // line 116
-        yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape(MailPoetVendor\Twig\Extension\CoreExtension::replace($this->extensions['MailPoet\Twig\I18n']->translate("Over %s people trust MailPoet to power their email marketing campaigns – why not join them?!"), ["%s" => "600,000"]), "html", null, true);
+        yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape(MailPoetVendor\Twig\Extension\CoreExtension::replace($this->extensions['MailPoet\Twig\I18n']->translate("Over %s people trust MailPoet to power their email marketing campaigns – why not join them?"), ["%s" => "600,000"]), "html", null, true);
         yield "
       ";
         // line 117

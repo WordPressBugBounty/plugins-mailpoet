@@ -1,40 +1,29 @@
-# MailPoet Email Editor
+# MailPoet Plugin Email Editor Integration
 
-This folder contains the code for the MailPoet Email Editor.
-We aim to extract the engine as an independent library, so it can be used in other projects.
-As we are still in an exploration phase we keep it together with the MailPoet codebase.
+This folder contains the code for the MailPoet Plugin Email Editor Integration.
 
-## Development
+**MailPoet** specific code and features should be placed here.
 
-Both **PHP** **and** JS codes are divided into `engine` and `integrations` subdirectories.
-Anything **MailPoet** specific is in the `integrations/MailPoet` folder.
+Documentation for the core email editor packages can be located here:
 
-For the core stuff that goes to the engine folder, avoid using other MailPoet-specific services and modules. The code in the Engine folder should work only with WP code or other stuff from the engine.
+- Email Editor PHP Package: [docs-->packages/php/email-editor/README.md](../../../packages/php/email-editor/README.md)
+- Email Editor JS Package: [docs-->packages/js/email-editor/README.md](../../../packages/js/email-editor/README.md)
 
-## Known rendering issues
+### Integrations
 
-- In some (not all) Outlook versions the width of columns is not respected. The columns will be rendered with the full width.
+- PHP Integration can be found [here-->mailpoet/lib/EmailEditor/Integrations/MailPoet](Integrations/MailPoet)
+- JS Integration is subdivided.
+  - Custom Gutenberg blocks should be [here-->mailpoet/assets/js/src/mailpoet-custom-email-editor-blocks](../../assets/js/src/mailpoet-custom-email-editor-blocks)
+  - MailPoet extended integration (i.e., using MailPoet components within the email editor) should be [here-->mailpoet/assets/js/src/mailpoet-email-editor-integration](../../assets/js/src/mailpoet-email-editor-integration)
 
-## Actions and Filters
+## FAQ
 
-These actions and filters are currently Work-in-progress.
-We may add, update and delete any of them.
-
-Please use with caution.
-
-### Actions
-
-| Name                                   | Argument         | Description                                                                                        |
-| -------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------- |
-| `mailpoet_email_editor_initialized`    | `null`           | Called when the Email Editor is initialized                                                        |
-| `mailpoet_blocks_renderer_initialized` | `BlocksRegistry` | Called when the block content renderer is initialized. You may use this to add a new BlockRenderer |
-
-### Filters
-
-| Name                                     | Argument                                  | Return                            | Description                                                                                                                                                         |
-| ---------------------------------------- | ----------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| `mailpoet_email_editor_post_types`       | `Array` $postTypes                        | `Array` EmailPostType             | Applied to the list of post types used by the `getPostTypes` method                                                                                                 |
-| `mailpoet_email_editor_theme_json`       | `WP_Theme_JSON` $coreThemeData            | `WP_Theme_JSON` $themeJson        | Applied to the theme json data. This theme json data is created from the merging of the `WP_Theme_JSON_Resolver::get_core_data` and MailPoet owns `theme.json` file |
-| `mailpoet_email_renderer_styles`         | `string` $templateStyles, `WP_Post` $post | `string` $templateStyles          | Applied to the email editor template styles.                                                                                                                        |
-| `mailpoet_blocks_renderer_parsed_blocks` | `WP_Block_Parser_Block[]` $output         | `WP_Block_Parser_Block[]` $output | Applied to the result of parsed blocks created by the BlocksParser.                                                                                                 |     |
-| `mailpoet_email_content_renderer_styles` | `string` $contentStyles, `WP_Post` $post  | `string` $contentStyles           | Applied to the inline content styles prior to use by the CSS Inliner.                                                                                               |
+1. How can I activate the new email editor?
+   - You need to active it as an experimental feature on the URL {your-website}/wp-admin/admin.php?page=mailpoet-experimental
+   - Afterward, you can see a dropdown button when you want to create a new email.
+2. Are emails from the old editor compatible?
+   - No. Unfortunately, email editors are not compatible at this moment, and there is no tool which would allow you to migrate old emails yet.
+3. Which WP versions are supported?
+   - The new email editor supports only the latest WP version.
+4. Can I use the latest Gutenberg version?
+   - You can use the latest version by installing the Gutenberg plugin, but there is a high chance that the editor will not work properly.
