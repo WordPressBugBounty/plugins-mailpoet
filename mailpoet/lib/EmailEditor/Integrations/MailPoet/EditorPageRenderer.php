@@ -11,6 +11,7 @@ use MailPoet\Config\Installer;
 use MailPoet\Config\ServicesChecker;
 use MailPoet\EmailEditor\Engine\Settings_Controller;
 use MailPoet\EmailEditor\Engine\Theme_Controller;
+use MailPoet\EmailEditor\Engine\User_Theme;
 use MailPoet\EmailEditor\Integrations\MailPoet\EmailEditor as EditorInitController;
 use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Settings\SettingsController as MailPoetSettings;
@@ -24,6 +25,8 @@ class EditorPageRenderer {
   private Settings_Controller $settingsController;
 
   private Theme_Controller $themeController;
+
+  private User_Theme $userTheme;
 
   private CdnAssetUrl $cdnAssetUrl;
 
@@ -42,6 +45,7 @@ class EditorPageRenderer {
     ServicesChecker $servicesChecker,
     SubscribersFeature $subscribersFeature,
     Theme_Controller $themeController,
+    User_Theme $userTheme,
     MailPoetSettings $mailpoetSettings,
     NewslettersRepository $newslettersRepository
   ) {
@@ -51,6 +55,7 @@ class EditorPageRenderer {
     $this->servicesChecker = $servicesChecker;
     $this->subscribersFeature = $subscribersFeature;
     $this->themeController = $themeController;
+    $this->userTheme = $userTheme;
     $this->mailpoetSettings = $mailpoetSettings;
     $this->newslettersRepository = $newslettersRepository;
   }
@@ -109,7 +114,8 @@ class EditorPageRenderer {
         'is_premium_plugin_active' => (bool)$this->servicesChecker->isPremiumPluginActive(),
         'current_wp_user_email' => esc_js($currentUserEmail),
         'editor_settings' => $this->settingsController->get_settings(),
-        'editor_theme' => $this->themeController->get_theme()->get_raw_data(),
+        'editor_theme' => $this->themeController->get_base_theme()->get_raw_data(),
+        'user_theme_post_id' => $this->userTheme->get_user_theme_post()->ID,
         'urls' => [
           'listings' => admin_url('admin.php?page=mailpoet-newsletters'),
         ],
@@ -157,7 +163,42 @@ class EditorPageRenderer {
     // Enqueue media library scripts
     $this->wp->wpEnqueueMedia();
 
+    $this->preloadRestApiData($post);
+
     require_once ABSPATH . 'wp-admin/admin-header.php';
     echo '<div id="mailpoet-email-editor" class="block-editor block-editor__container hide-if-no-js"></div>';
+  }
+
+  private function preloadRestApiData(\WP_Post $post): void {
+    $userThemePostId = $this->userTheme->get_user_theme_post()->ID;
+    $templateSlug = get_post_meta($post->ID, '_wp_page_template', true);
+    $routes = [
+      '/wp/v2/mailpoet_email/' . intval($post->ID) . '?context=edit',
+      '/wp/v2/types/mailpoet_email?context=edit',
+      '/wp/v2/global-styles/' . intval($userThemePostId) . '?context=edit', // Global email styles
+      '/wp/v2/block-patterns/patterns',
+      '/wp/v2/templates?context=edit',
+      '/wp/v2/block-patterns/categories',
+      '/wp/v2/settings',
+      '/wp/v2/types?context=view',
+      '/wp/v2/taxonomies?context=view',
+      '/wp/v2/templates/lookup?slug=' . $templateSlug,
+    ];
+
+    // Preload the data for the specified routes
+    $preloadData = array_reduce(
+      $routes,
+      'rest_preload_api_request',
+      []
+    );
+
+    // Add inline script to set up preloading middleware
+    wp_add_inline_script(
+      'wp-blocks',
+      sprintf(
+        'wp.apiFetch.use( wp.apiFetch.createPreloadingMiddleware( %s ) );',
+        wp_json_encode($preloadData)
+      )
+    );
   }
 }

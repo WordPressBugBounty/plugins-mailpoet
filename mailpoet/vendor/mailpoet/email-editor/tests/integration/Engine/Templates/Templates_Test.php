@@ -18,14 +18,6 @@ class Templates_Test extends \MailPoetTest {
  verify( $template->title )->equals( 'General Email' );
  verify( $template->description )->equals( 'A general template for emails.' );
  }
- public function testItCanFetchTemplateTheme(): void {
- $template_id = 'mailpoet/mailpoet//simple-light';
- $theme = $this->templates->get_block_template_theme( $template_id );
- verify( $theme )->arrayCount( 2 );
- verify( $theme['styles'] )->isArray();
- verify( $theme['styles']['spacing'] )->isArray();
- verify( $theme['styles']['spacing']['blockGap'] )->equals( '10px' );
- }
  public function testItCanAddBlockTemplates(): void {
  $result = $this->templates->add_block_templates( array(), array( 'post_type' => 'mailpoet_email' ), 'wp_template' );
  verify( $result )->arrayCount( 2 );

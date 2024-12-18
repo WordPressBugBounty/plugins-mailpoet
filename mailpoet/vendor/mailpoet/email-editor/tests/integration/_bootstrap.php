@@ -18,10 +18,10 @@ use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Preprocessors\Typograph
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Process_Manager;
 use MailPoet\EmailEditor\Engine\Renderer\Renderer;
 use MailPoet\EmailEditor\Engine\Settings_Controller;
-use MailPoet\EmailEditor\Engine\Templates\Template_Preview;
 use MailPoet\EmailEditor\Engine\Templates\Templates;
 use MailPoet\EmailEditor\Engine\Templates\Utils;
 use MailPoet\EmailEditor\Engine\Theme_Controller;
+use MailPoet\EmailEditor\Engine\User_Theme;
 use MailPoet\EmailEditor\Integrations\Core\Initializer;
 use MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypesController;
 use MailPoet\EmailEditor\Engine\Send_Preview_Email;
@@ -47,6 +47,10 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  public function setUp(): void {
  $this->initContainer();
  parent::setUp();
+ }
+ public function _after() {
+ parent::_after();
+ $this->tester->cleanup();
  }
  protected function checkValidHTML( string $html ): void {
  $dom = new \DOMDocument();
@@ -96,6 +100,12 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  }
  );
  $container->set(
+ User_Theme::class,
+ function () {
+ return new User_Theme();
+ }
+ );
+ $container->set(
  Settings_Controller::class,
  function ( $container ) {
  return new Settings_Controller( $container->get( Theme_Controller::class ) );
@@ -111,16 +121,6 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  Templates::class,
  function ( $container ) {
  return new Templates( $container->get( Utils::class ) );
- }
- );
- $container->set(
- Template_Preview::class,
- function ( $container ) {
- return new Template_Preview(
- $container->get( Theme_Controller::class ),
- $container->get( Settings_Controller::class ),
- $container->get( Templates::class ),
- );
  }
  );
  $container->set(
@@ -225,7 +225,6 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  return new Email_Editor(
  $container->get( Email_Api_Controller::class ),
  $container->get( Templates::class ),
- $container->get( Template_Preview::class ),
  $container->get( Patterns::class ),
  $container->get( Settings_Controller::class ),
  $container->get( Send_Preview_Email::class ),

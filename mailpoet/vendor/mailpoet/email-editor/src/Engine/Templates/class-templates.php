@@ -2,17 +2,13 @@
 declare(strict_types = 1);
 namespace MailPoet\EmailEditor\Engine\Templates;
 if (!defined('ABSPATH')) exit;
-use MailPoet\EmailEditor\Engine\Email_Styles_Schema;
 use WP_Block_Template;
 class Templates {
- const MAILPOET_EMAIL_META_THEME_TYPE = 'mailpoet_email_theme';
- const MAILPOET_TEMPLATE_EMPTY_THEME = array( 'version' => 3 ); // The version 3 is important to merge themes correctly.
  private Utils $utils;
  private string $plugin_slug = 'mailpoet/mailpoet';
  private string $post_type = 'mailpoet_email';
  private string $template_directory = __DIR__ . DIRECTORY_SEPARATOR;
  private array $templates = array();
- private array $theme_json = array();
  public function __construct(
  Utils $utils
  ) {
@@ -25,30 +21,10 @@ class Templates {
  add_filter( 'get_block_template', array( $this, 'add_block_template_details' ), 10, 1 );
  add_filter( 'rest_pre_insert_wp_template', array( $this, 'force_post_content' ), 9, 1 );
  $this->initialize_templates();
- $this->initialize_api();
  }
  public function get_block_template( $template_id ) {
  $templates = $this->get_block_templates();
  return $templates[ $template_id ] ?? null;
- }
- public function get_block_template_theme( $template_id, $template_wp_id = null ) {
- // First check if there is a user updated theme saved.
- $theme = $this->get_custom_template_theme( $template_wp_id );
- if ( $theme ) {
- return $theme;
- }
- // If there is no user edited theme, look for default template themes in files.
- ['prefix' => $template_prefix, 'slug' => $template_slug] = $this->utils->get_template_id_parts( $template_id );
- if ( $this->plugin_slug !== $template_prefix ) {
- return self::MAILPOET_TEMPLATE_EMPTY_THEME;
- }
- if ( ! isset( $this->theme_json[ $template_slug ] ) ) {
- $json_file = $this->template_directory . $template_slug . '.json';
- if ( file_exists( $json_file ) ) {
- $this->theme_json[ $template_slug ] = json_decode( (string) file_get_contents( $json_file ), true );
- }
- }
- return $this->theme_json[ $template_slug ] ?? self::MAILPOET_TEMPLATE_EMPTY_THEME;
  }
  public function get_block_file_template( $result, $template_id, $template_type ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
  ['prefix' => $template_prefix, 'slug' => $template_slug] = $this->utils->get_template_id_parts( $template_id );
@@ -120,33 +96,6 @@ class Templates {
  'description' => __( 'A basic template with header and footer.', 'mailpoet' ),
  );
  }
- private function initialize_api(): void {
- register_post_meta(
- 'wp_template',
- self::MAILPOET_EMAIL_META_THEME_TYPE,
- array(
- 'show_in_rest' => array(
- 'schema' => ( new Email_Styles_Schema() )->get_schema(),
- ),
- 'single' => true,
- 'type' => 'object',
- 'default' => self::MAILPOET_TEMPLATE_EMPTY_THEME,
- )
- );
- register_rest_field(
- 'wp_template',
- self::MAILPOET_EMAIL_META_THEME_TYPE,
- array(
- 'get_callback' => function ( $item ) {
- return $this->get_block_template_theme( $item['id'], $item['wp_id'] );
- },
- 'update_callback' => function ( $value, $template ) {
- return update_post_meta( $template->wp_id, self::MAILPOET_EMAIL_META_THEME_TYPE, $value );
- },
- 'schema' => ( new Email_Styles_Schema() )->get_schema(),
- )
- );
- }
  private function get_block_templates() {
  $block_templates = array_map(
  function ( $template_slug ) {
@@ -213,15 +162,5 @@ class Templates {
  },
  $custom_templates
  );
- }
- private function get_custom_template_theme( ?int $template_wp_id ): ?array {
- if ( ! $template_wp_id ) {
- return null;
- }
- $theme = get_post_meta( $template_wp_id, self::MAILPOET_EMAIL_META_THEME_TYPE, true );
- if ( is_array( $theme ) && isset( $theme['styles'] ) ) {
- return $theme;
- }
- return null;
  }
 }

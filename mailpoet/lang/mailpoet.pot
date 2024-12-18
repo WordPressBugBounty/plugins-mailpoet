@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.5.0\n"
+"Project-Id-Version: MailPoet 5.5.1\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-09T16:25:14+00:00\n"
+"POT-Creation-Date: 2024-12-17T13:10:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -1129,7 +1129,7 @@ msgstr ""
 
 #: views/form/front_end_form.html:74
 #: views/homepage.html:62
-#: views/layout.html:183
+#: views/layout.html:182
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
@@ -4463,7 +4463,7 @@ msgid "Congratulations, you now have [subscribersCount] subscribers! Our free ve
 msgstr ""
 
 #: views/subscribers/subscribers.html:122
-#: views/layout.html:135
+#: views/layout.html:134
 msgid "Upgrade Now"
 msgstr ""
 
@@ -5255,130 +5255,128 @@ msgctxt "Title of a link to a next page of posts"
 msgid "Previous page with posts"
 msgstr ""
 
-#: views/layout.html:114
-#: views/layout.html:181
+#: views/layout.html:113
+#: views/layout.html:180
 #: views/upgrade.html:9
 #: views/upgrade_tiers.html:9
 #: assets/dist/js/commons.js:9
 msgid "Back to section root"
 msgstr ""
 
-#: views/layout.html:115
-#: assets/dist/js/commons.js:9
+#: views/layout.html:114
 msgid "Updates"
 msgstr ""
 
-#: views/layout.html:116
-#: assets/dist/js/commons.js:9
+#: views/layout.html:115
 msgid "What’s new"
 msgstr ""
 
-#: views/layout.html:117
+#: views/layout.html:116
 msgid "[link]Update MailPoet[/link] to see the latest changes"
 msgstr ""
 
 #. translators: %d is the error code.
 #. translators: %d will be replaced by an error code
-#: views/layout.html:118
+#: views/layout.html:117
 #: lib/Services/Bridge/API.php:231
 #: lib/Services/Bridge/API.php:288
 #: lib/Services/Bridge/API.php:334
 msgid "An error has happened while performing a request, the server has responded with response code %d"
 msgstr ""
 
-#: views/layout.html:119
+#: views/layout.html:118
 msgid "An error has happened while performing a request, the server request has timed out after %d seconds"
 msgstr ""
 
-#: views/layout.html:122
+#: views/layout.html:121
 msgid "Failed to resume sending because the email address is unauthorized. Please authorize it and try again."
 msgstr ""
 
-#: views/layout.html:123
+#: views/layout.html:122
 msgid "Dismiss this notice."
 msgstr ""
 
-#: views/layout.html:124
+#: views/layout.html:123
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Sending is in progress. Do you want to pause sending and edit the newsletter?"
 msgstr ""
 
-#: views/layout.html:125
+#: views/layout.html:124
 #: assets/dist/js/commons.js:9
 #: assets/dist/js/newsletter_editor.js:2
 msgid "To edit this email, it needs to be deactivated. You can activate it again after you make the changes."
 msgstr ""
 
-#: views/layout.html:126
+#: views/layout.html:125
 msgid "Action required: Upgrade your plan for more than [subscribersLimit] subscribers!"
 msgstr ""
 
-#: views/layout.html:127
+#: views/layout.html:126
 msgid "Action required: Upgrade your plan!"
 msgstr ""
 
-#: views/layout.html:128
+#: views/layout.html:127
 msgid "Congratulations on reaching over [subscribersLimit] subscribers!"
 msgstr ""
 
-#: views/layout.html:129
+#: views/layout.html:128
 msgid "Congratulations, you now have more subscribers than your plan’s limit!"
 msgstr ""
 
-#: views/layout.html:130
+#: views/layout.html:129
 msgid "Our free version is limited to [subscribersLimit] subscribers."
 msgstr ""
 
-#: views/layout.html:131
+#: views/layout.html:130
 msgid "Your plan is limited to [subscribersLimit] subscribers."
 msgstr ""
 
-#: views/layout.html:132
+#: views/layout.html:131
 msgid "To continue using MailPoet without interruption, it’s time to upgrade your plan."
 msgstr ""
 
-#: views/layout.html:133
+#: views/layout.html:132
 msgid "Act now to ensure seamless service to your growing audience."
 msgstr ""
 
-#: views/layout.html:134
+#: views/layout.html:133
 msgid "Alternatively, [link]check how to manage your subscribers[/link] to keep your numbers below your plan’s limit."
 msgstr ""
 
-#: views/layout.html:136
+#: views/layout.html:135
 msgid "Refresh subscriber limit"
 msgstr ""
 
-#: views/layout.html:138
+#: views/layout.html:137
 msgid "Congratulations, you sent more than [emailVolumeLimit] emails this month!"
 msgstr ""
 
-#: views/layout.html:139
+#: views/layout.html:138
 msgid "Congratulations, you sent a lot of emails this month!"
 msgstr ""
 
-#: views/layout.html:140
+#: views/layout.html:139
 msgid "You have sent more emails this month than your MailPoet plan includes ([emailVolumeLimit]), and sending has been temporarily paused."
 msgstr ""
 
-#: views/layout.html:141
+#: views/layout.html:140
 msgid "You have sent more emails this month than your MailPoet plan includes, and sending has been temporarily paused."
 msgstr ""
 
-#: views/layout.html:142
+#: views/layout.html:141
 msgid "To continue sending with MailPoet Sending Service please [link]upgrade your plan[/link], or wait until sending is automatically resumed on <b>[date]</b>."
 msgstr ""
 
-#: views/layout.html:143
+#: views/layout.html:142
 msgid "Refresh monthly email limit"
 msgstr ""
 
-#: views/layout.html:145
+#: views/layout.html:144
 msgid "To help your audience and MailPoet authenticate you as the domain owner, please add the following DNS records to your domain’s DNS and click “Verify the DNS records”. Please note that it may take up to 24 hours for DNS changes to propagate after you make the change. [link]Read the guide[/link]."
 msgstr ""
 
-#: views/layout.html:147
+#: views/layout.html:146
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:132
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:147
 #: lib/Newsletter/Sending/ScheduledTaskSubscribersListingRepository.php:53
@@ -5387,137 +5385,137 @@ msgstr ""
 msgid "Sent"
 msgstr ""
 
-#: views/layout.html:148
+#: views/layout.html:147
 #: assets/dist/js/commons.js:9
 msgid "Not sent yet!"
 msgstr ""
 
-#: views/layout.html:149
+#: views/layout.html:148
 #: assets/dist/js/commons.js:9
 msgid "There was a problem with rendering!"
 msgstr ""
 
-#: views/layout.html:151
+#: views/layout.html:150
 #: lib/Config/ServicesChecker.php:45
 msgid "All sending is currently paused!"
 msgstr ""
 
-#: views/layout.html:152
+#: views/layout.html:151
 msgid "Your [link]API key[/link] to send with MailPoet is invalid."
 msgstr ""
 
-#: views/layout.html:153
+#: views/layout.html:152
 msgid "You are not allowed to use the MailPoet sending service with your current API key. Kindly upgrate to a [link]MailPoet sending plan[/link] or switch your [link]sending method[/link]."
 msgstr ""
 
-#: views/layout.html:154
+#: views/layout.html:153
 #: lib/Config/ServicesChecker.php:51
 msgid "Purchase a key"
 msgstr ""
 
-#: views/layout.html:155
+#: views/layout.html:154
 msgid "Upgrade the plan"
 msgstr ""
 
-#: views/layout.html:157
+#: views/layout.html:156
 msgid "There is an issue with the MailPoet task scheduler"
 msgstr ""
 
-#: views/layout.html:158
+#: views/layout.html:157
 msgid "Connection successful."
 msgstr ""
 
-#: views/layout.html:159
+#: views/layout.html:158
 msgid "Connection unsuccessful."
 msgstr ""
 
-#: views/layout.html:160
+#: views/layout.html:159
 msgid "Please consult our [link]knowledge base article[/link] for troubleshooting tips."
 msgstr ""
 
-#: views/layout.html:161
+#: views/layout.html:160
 msgid "For the plugin to work, it must be able to establish connection with the task scheduler."
 msgstr ""
 
-#: views/layout.html:163
+#: views/layout.html:162
 msgid "There is an issue with the connection to the MailPoet Sending Service"
 msgstr ""
 
-#: views/layout.html:164
+#: views/layout.html:163
 msgid "Currently, your installation can not reach the sending service. If you want to use our service please consult our [link]knowledge base article[/link] for troubleshooting tips."
 msgstr ""
 
-#: views/layout.html:166
+#: views/layout.html:165
 msgid "Good news! MailPoet can now send your website’s emails too"
 msgstr ""
 
-#: views/layout.html:167
+#: views/layout.html:166
 msgid "All of your WordPress and WooCommerce emails are sent with your hosting company, unless you have an SMTP plugin. Would you like such emails to be delivered with MailPoet’s active sending method for better deliverability?"
 msgstr ""
 
-#: views/layout.html:171
+#: views/layout.html:170
 #: assets/dist/js/commons.js:9
 msgid "Sending has been paused due to a technical issue with %1$s"
 msgstr ""
 
-#: views/layout.html:172
+#: views/layout.html:171
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Please check your sending method configuration, you may need to consult with your hosting company."
 msgstr ""
 
-#: views/layout.html:173
+#: views/layout.html:172
 #: assets/dist/js/newsletter_editor.js:2
 msgid "The easy alternative is to <b>send emails with MailPoet Sending Service</b> instead, like thousands of other users do."
 msgstr ""
 
-#: views/layout.html:174
+#: views/layout.html:173
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Sign up for free in minutes"
 msgstr ""
 
-#: views/layout.html:175
+#: views/layout.html:174
 #: assets/dist/js/commons.js:9
 msgid "Sending is paused because the following connection issue prevents MailPoet from delivering emails"
 msgstr ""
 
-#: views/layout.html:176
+#: views/layout.html:175
 #: assets/dist/js/commons.js:9
 msgid "Error code: %1$s"
 msgstr ""
 
-#: views/layout.html:177
+#: views/layout.html:176
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Check your [link]sending method settings[/link]."
 msgstr ""
 
-#: views/layout.html:178
+#: views/layout.html:177
 #: lib/Util/Notices/UnauthorizedEmailNotice.php:80
 #: assets/dist/js/commons.js:9
 msgid "Resume sending"
 msgstr ""
 
-#: views/layout.html:179
+#: views/layout.html:178
 #: assets/dist/js/commons.js:9
 msgid "I have upgraded my subscription, resume sending"
 msgstr ""
 
-#: views/layout.html:184
+#: views/layout.html:183
 #: assets/dist/js/commons.js:9
 msgid "Today"
 msgstr ""
 
-#: views/layout.html:120
+#: views/layout.html:119
 #: assets/dist/js/commons.js:9
 msgctxt "In the last step, before sending a newsletter. URL: ?page=mailpoet-newsletters#/send/2"
 msgid "You might not reach the inbox of your subscribers if you use this email address."
 msgstr ""
 
-#: views/layout.html:168
+#: views/layout.html:167
 msgctxt "This is a link that leads to more information about transactional emails"
 msgid "Read more."
 msgstr ""
 
-#: views/layout.html:169
+#: views/layout.html:168
 msgctxt "Button, after clicking it we will enable transactional emails"
 msgid "Enable"
 msgstr ""
@@ -5743,7 +5741,7 @@ msgid "Activate MailPoet Sending Service"
 msgstr ""
 
 #: views/settings_translations.html:2
-#: lib/Config/Hooks.php:599
+#: lib/Config/Hooks.php:616
 #: lib/Config/Menu.php:428
 #: lib/Config/Menu.php:429
 #: assets/dist/js/admin.js:2
@@ -6997,36 +6995,36 @@ msgstr ""
 msgid "Invalid API version."
 msgstr ""
 
-#: lib/API/JSON/API.php:115
+#: lib/API/JSON/API.php:118
 msgid "Sorry, but we couldn't connect to the MailPoet server. Please refresh the web page and try again."
 msgstr ""
 
-#: lib/API/JSON/API.php:143
+#: lib/API/JSON/API.php:146
 msgid "Invalid API request."
 msgstr ""
 
-#: lib/API/JSON/API.php:187
+#: lib/API/JSON/API.php:190
 msgid "Invalid API endpoint."
 msgstr ""
 
-#: lib/API/JSON/API.php:192
+#: lib/API/JSON/API.php:195
 msgid "Invalid API endpoint method."
 msgstr ""
 
-#: lib/API/JSON/API.php:196
+#: lib/API/JSON/API.php:199
 msgid "HTTP request method not allowed."
 msgstr ""
 
-#: lib/API/JSON/API.php:211
+#: lib/API/JSON/API.php:214
 #: lib/Router/Router.php:63
 msgid "You do not have the required permissions."
 msgstr ""
 
-#: lib/API/JSON/API.php:277
+#: lib/API/JSON/API.php:280
 msgid "The plugin has encountered an unexpected error. Please reload the page. If that does not help, [link]re-install the MailPoet Plugin.[/link]"
 msgstr ""
 
-#: lib/API/JSON/Endpoint.php:29
+#: lib/API/JSON/Endpoint.php:30
 #: lib/API/JSON/ErrorHandler.php:13
 #: lib/API/JSON/ErrorResponse.php:25
 #: lib/API/REST/API.php:84
@@ -7035,7 +7033,7 @@ msgstr ""
 msgid "An unknown error occurred."
 msgstr ""
 
-#: lib/API/JSON/Endpoint.php:38
+#: lib/API/JSON/Endpoint.php:39
 msgid "Invalid request parameters"
 msgstr ""
 
@@ -8913,17 +8911,61 @@ msgstr ""
 msgid "Roles"
 msgstr ""
 
-#: lib/Captcha/ReCaptchaValidator.php:33
+#: lib/Captcha/CaptchaFormRenderer.php:107
+msgid "Subscribe"
+msgstr ""
+
+#: lib/Captcha/CaptchaFormRenderer.php:152
+msgid "Type in the characters you see in the picture above:"
+msgstr ""
+
+#: lib/Captcha/CaptchaFormRenderer.php:192
+msgid "CAPTCHA"
+msgstr ""
+
+#: lib/Captcha/CaptchaFormRenderer.php:194
+msgid "Reload CAPTCHA"
+msgstr ""
+
+#: lib/Captcha/CaptchaFormRenderer.php:195
+msgid "Play CAPTCHA"
+msgstr ""
+
+#: lib/Captcha/CaptchaFormRenderer.php:222
+msgid "The characters you entered did not match the CAPTCHA image. Please try again with this new image."
+msgstr ""
+
+#: lib/Captcha/PageRenderer.php:62
+msgid "Confirm you’re not a robot"
+msgstr ""
+
+#: lib/Captcha/ReCaptchaValidator.php:32
 msgid "Please check the CAPTCHA."
 msgstr ""
 
-#: lib/Captcha/ReCaptchaValidator.php:48
-#: lib/Captcha/ReCaptchaValidator.php:54
+#: lib/Captcha/ReCaptchaValidator.php:47
+#: lib/Captcha/ReCaptchaValidator.php:53
 msgid "Error while validating the CAPTCHA."
 msgstr ""
 
-#: lib/Captcha/ReCaptchaValidator.php:56
+#: lib/Captcha/ReCaptchaValidator.php:55
 msgid "Invalid CAPTCHA. Try again."
+msgstr ""
+
+#: lib/Captcha/Validator/CaptchaValidator.php:51
+msgid "CAPTCHA verification failed."
+msgstr ""
+
+#: lib/Captcha/Validator/CaptchaValidator.php:56
+msgid "Please fill in the CAPTCHA."
+msgstr ""
+
+#: lib/Captcha/Validator/CaptchaValidator.php:66
+msgid "Please regenerate the CAPTCHA."
+msgstr ""
+
+#: lib/Captcha/Validator/CaptchaValidator.php:76
+msgid "The characters entered do not match with the previous CAPTCHA."
 msgstr ""
 
 #: lib/Config/AccessControl.php:86
@@ -8966,11 +9008,11 @@ msgstr ""
 msgid "MailPoet version update is in progress, please refresh the page in a minute."
 msgstr ""
 
-#: lib/Config/Hooks.php:583
+#: lib/Config/Hooks.php:600
 msgid "Give feedback"
 msgstr ""
 
-#: lib/Config/Hooks.php:599
+#: lib/Config/Hooks.php:616
 msgid "View MailPoet settings"
 msgstr ""
 
@@ -9097,21 +9139,21 @@ msgstr ""
 msgid "We noticed that you're using an unsupported environment. While MailPoet might work within a MultiSite environment, we don’t support it."
 msgstr ""
 
-#: lib/Config/Populator.php:300
+#: lib/Config/Populator.php:303
 msgctxt "default email opt-in message displayed on checkout page for ecommerce websites"
 msgid "Yes, I would like to be added to your mailing list"
 msgstr ""
 
-#: lib/Config/Populator.php:301
+#: lib/Config/Populator.php:304
 msgctxt "default email opt-in message displayed on checkout page for ecommerce websites"
 msgid "I would like to receive exclusive emails with discounts and product information"
 msgstr ""
 
-#: lib/Config/Populator.php:369
+#: lib/Config/Populator.php:364
 msgid "Newsletter mailing list"
 msgstr ""
 
-#: lib/Config/Populator.php:371
+#: lib/Config/Populator.php:366
 msgid "This list is automatically created when you install MailPoet."
 msgstr ""
 
@@ -9245,8 +9287,8 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/WordPressTheme.php:1266
 #: lib/Config/PopulatorData/Templates/WorldCup.php:725
 #: lib/Config/PopulatorData/Templates/YogaStudio.php:699
-#: lib/Subscription/Pages.php:401
-#: lib/Subscription/Pages.php:498
+#: lib/Subscription/Pages.php:381
+#: lib/Subscription/Pages.php:478
 msgid "Manage your subscription"
 msgstr ""
 
@@ -11291,10 +11333,10 @@ msgctxt "Subject of an email confirming that MailPoet Sending Service works"
 msgid "Sending with MailPoet works!"
 msgstr ""
 
-#: lib/Settings/Pages.php:15
-#: lib/Settings/Pages.php:16
-#: lib/Settings/Pages.php:40
-#: lib/Subscription/Pages.php:286
+#: lib/Settings/Pages.php:18
+#: lib/Settings/Pages.php:19
+#: lib/Settings/Pages.php:43
+#: lib/Subscription/Pages.php:280
 msgid "MailPoet Page"
 msgstr ""
 
@@ -11551,50 +11593,6 @@ msgstr ""
 msgid "Please specify a valid form ID."
 msgstr ""
 
-#: lib/Subscription/Captcha/Validator/BuiltInCaptchaValidator.php:51
-msgid "CAPTCHA verification failed."
-msgstr ""
-
-#: lib/Subscription/Captcha/Validator/BuiltInCaptchaValidator.php:56
-msgid "Please fill in the CAPTCHA."
-msgstr ""
-
-#: lib/Subscription/Captcha/Validator/BuiltInCaptchaValidator.php:66
-msgid "Please regenerate the CAPTCHA."
-msgstr ""
-
-#: lib/Subscription/Captcha/Validator/BuiltInCaptchaValidator.php:76
-msgid "The characters entered do not match with the previous CAPTCHA."
-msgstr ""
-
-#: lib/Subscription/CaptchaFormRenderer.php:55
-msgid "Confirm you’re not a robot"
-msgstr ""
-
-#: lib/Subscription/CaptchaFormRenderer.php:82
-msgid "Type in the characters you see in the picture above:"
-msgstr ""
-
-#: lib/Subscription/CaptchaFormRenderer.php:90
-msgid "Subscribe"
-msgstr ""
-
-#: lib/Subscription/CaptchaFormRenderer.php:131
-msgid "CAPTCHA"
-msgstr ""
-
-#: lib/Subscription/CaptchaFormRenderer.php:133
-msgid "Reload CAPTCHA"
-msgstr ""
-
-#: lib/Subscription/CaptchaFormRenderer.php:134
-msgid "Play CAPTCHA"
-msgstr ""
-
-#: lib/Subscription/CaptchaFormRenderer.php:159
-msgid "The characters you entered did not match the CAPTCHA image. Please try again with this new image."
-msgstr ""
-
 #: lib/Subscription/Comment.php:47
 #: lib/Subscription/Registration.php:39
 msgid "Yes, please add me to your mailing list."
@@ -11616,52 +11614,52 @@ msgstr ""
 msgid "Your lists"
 msgstr ""
 
-#: lib/Subscription/Pages.php:293
+#: lib/Subscription/Pages.php:287
 msgid "Hmmm... we don't have a record of you."
 msgstr ""
 
-#: lib/Subscription/Pages.php:321
+#: lib/Subscription/Pages.php:311
 msgid "Your email address doesn't appear in our lists anymore. Sign up again or contact us if this appears to be a mistake."
 msgstr ""
 
-#: lib/Subscription/Pages.php:387
+#: lib/Subscription/Pages.php:367
 msgid "You are now subscribed!"
 msgstr ""
 
 #. translators: %s is the website title or website name.
-#: lib/Subscription/Pages.php:391
+#: lib/Subscription/Pages.php:371
 msgid "You have subscribed to %s"
 msgstr ""
 
-#: lib/Subscription/Pages.php:407
+#: lib/Subscription/Pages.php:387
 msgid "You are now unsubscribed."
 msgstr ""
 
-#: lib/Subscription/Pages.php:413
+#: lib/Subscription/Pages.php:393
 msgid "Thank you for letting us know!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:419
+#: lib/Subscription/Pages.php:399
 msgid "Confirm you want to unsubscribe"
 msgstr ""
 
-#: lib/Subscription/Pages.php:425
+#: lib/Subscription/Pages.php:405
 msgid "Yup, we've added you to our email list. You'll hear from us shortly."
 msgstr ""
 
-#: lib/Subscription/Pages.php:441
+#: lib/Subscription/Pages.php:421
 msgid "Subscription management form is only available to mailing lists subscribers."
 msgstr ""
 
-#: lib/Subscription/Pages.php:457
+#: lib/Subscription/Pages.php:437
 msgid "Accidentally unsubscribed?"
 msgstr ""
 
-#: lib/Subscription/Pages.php:467
+#: lib/Subscription/Pages.php:447
 msgid "We appreciate your continued interest in our updates. Expect to hear from us again soon!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:493
+#: lib/Subscription/Pages.php:473
 msgid "Link to subscription management page is only available to mailing lists subscribers."
 msgstr ""
 
@@ -16042,7 +16040,7 @@ msgid "Templates created on the legacy editor will not appear here."
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
-msgid "Select a template"
+msgid "Start with an email preset"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -16235,7 +16233,7 @@ msgid "Fix errors to continue:"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
-msgid "Template updated."
+msgid "Email design updated."
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13

@@ -21,9 +21,16 @@ class IntegrationTester extends \Codeception\Actor {
  public function cleanup(): void {
  $this->delete_posts();
  }
+ public function cleanup_user_theme_post(): void {
+ $post = get_page_by_path( 'wp-global-styles-mailpoet-email', OBJECT, 'wp_global_styles' );
+ if ( $post ) {
+ wp_delete_post( $post->ID, true );
+ }
+ }
  private function delete_posts(): void {
  foreach ( $this->posts as $post ) {
  wp_delete_post( $post->ID, true );
  }
+ $this->cleanup_user_theme_post();
  }
 }

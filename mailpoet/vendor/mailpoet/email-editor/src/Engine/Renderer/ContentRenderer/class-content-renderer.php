@@ -12,8 +12,6 @@ class Content_Renderer {
  private Process_Manager $process_manager;
  private Settings_Controller $settings_controller;
  private Theme_Controller $theme_controller;
- private $post = null;
- private $template = null;
  const CONTENT_STYLES_FILE = 'content.css';
  public function __construct(
  Process_Manager $preprocess_manager,
@@ -33,8 +31,6 @@ class Content_Renderer {
  do_action( 'mailpoet_blocks_renderer_initialized', $this->blocks_registry );
  }
  public function render( WP_Post $post, WP_Block_Template $template ): string {
- $this->post = $post;
- $this->template = $template;
  $this->set_template_globals( $post, $template );
  $this->initialize();
  $rendered_html = get_the_block_template_html();
@@ -45,7 +41,7 @@ class Content_Renderer {
  return 'MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Blocks_Parser';
  }
  public function preprocess_parsed_blocks( array $parsed_blocks ): array {
- return $this->process_manager->preprocess( $parsed_blocks, $this->theme_controller->get_layout_settings(), $this->theme_controller->get_styles( $this->post, $this->template ) );
+ return $this->process_manager->preprocess( $parsed_blocks, $this->theme_controller->get_layout_settings(), $this->theme_controller->get_styles() );
  }
  public function render_block( string $block_content, array $parsed_block ): string {
  $renderer = $this->blocks_registry->get_block_renderer( $parsed_block['blockName'] );

@@ -3,7 +3,7 @@ Contributors: mailpoet, woocommerce, automattic
 Tags: email marketing, post notification, woocommerce emails, email automation, newsletter
 Requires at least: 6.6
 Tested up to: 6.7
-Stable tag: 5.5.0
+Stable tag: 5.5.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -164,8 +164,6 @@ To improve user experience, MailPoet may use the following 3rd party libraries i
 
 * [Satismeter](https://www.satismeter.com/) - used to ask for feedback. [TOS](https://www.satismeter.com/terms/) and [Privacy Policy](https://www.satismeter.com/privacy-policy/)
 
-* [Beamer](https://www.getbeamer.com/) - used to load our latest blogposts and announcements. [TOS](https://www.getbeamer.com/terms) and [Privacy Policy](https://www.getbeamer.com/privacy)
-
 * [Crowdsignal](https://crowdsignal.com/) - used to load our deactivation poll to improve our plugin. [TOS](https://crowdsignal.com/terms/) and [Privacy Policy](https://automattic.com/privacy/)
 
 
@@ -230,8 +228,9 @@ Check our [Knowledge Base](https://kb.mailpoet.com) or contact us through our [s
 
 == Changelog ==
 
-= 5.5.0 - 2024-12-09 =
-* Added the Polish translation as an officially maintained translation;
-* Added: classes now allowed in links of HTML forms.
+= 5.5.1 - 2024-12-17 =
+* Improved: added option to protect WordPress and WooCommerce registration forms with a captcha.
+* Changed: removed 3rd party Beamer integration;
+* Fixed: error when trying to use mailpoet_settings database table before it is available.
 
 [See the changelog for all versions.](https://github.com/mailpoet/mailpoet/blob/trunk/mailpoet/CHANGELOG.md)
