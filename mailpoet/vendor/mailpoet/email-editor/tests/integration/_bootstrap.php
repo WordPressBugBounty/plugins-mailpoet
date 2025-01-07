@@ -19,7 +19,6 @@ use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Process_Manager;
 use MailPoet\EmailEditor\Engine\Renderer\Renderer;
 use MailPoet\EmailEditor\Engine\Settings_Controller;
 use MailPoet\EmailEditor\Engine\Templates\Templates;
-use MailPoet\EmailEditor\Engine\Templates\Utils;
 use MailPoet\EmailEditor\Engine\Theme_Controller;
 use MailPoet\EmailEditor\Engine\User_Theme;
 use MailPoet\EmailEditor\Integrations\Core\Initializer;
@@ -75,24 +74,12 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  }
  );
  $container->set(
- Email_Api_Controller::class,
- function () {
- return new Email_Api_Controller();
- }
- );
- $container->set(
  BlockTypesController::class,
  function () {
  return $this->createMock( BlockTypesController::class );
  }
  );
  // End: MailPoet plugin dependencies.
- $container->set(
- Utils::class,
- function () {
- return new Utils();
- }
- );
  $container->set(
  Theme_Controller::class,
  function () {
@@ -119,8 +106,8 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  );
  $container->set(
  Templates::class,
- function ( $container ) {
- return new Templates( $container->get( Utils::class ) );
+ function () {
+ return new Templates();
  }
  );
  $container->set(
@@ -217,6 +204,14 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  Personalization_Tags_Registry::class,
  function () {
  return new Personalization_Tags_Registry();
+ }
+ );
+ $container->set(
+ Email_Api_Controller::class,
+ function ( $container ) {
+ return new Email_Api_Controller(
+ $container->get( Personalization_Tags_Registry::class ),
+ );
  }
  );
  $container->set(

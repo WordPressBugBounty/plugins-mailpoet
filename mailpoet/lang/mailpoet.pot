@@ -1,15 +1,15 @@
-# Copyright (C) 2024 MailPoet
+# Copyright (C) 2025 MailPoet
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.5.2\n"
+"Project-Id-Version: MailPoet 5.6.0\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-23T14:16:38+00:00\n"
+"POT-Creation-Date: 2025-01-07T09:45:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -647,8 +647,8 @@ msgstr ""
 #: views/help.html:70
 #: lib/API/MP/v1/CustomFields.php:27
 #: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:63
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:69
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:35
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:75
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:52
 #: lib/Form/Templates/Templates/InitialForm.php:22
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:60
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:71
@@ -1510,6 +1510,10 @@ msgstr ""
 #: views/newsletter/editor.html:1062
 #: views/newsletter/editor.html:1067
 #: views/newsletter/editor.html:1072
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:76
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:82
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:88
+#: assets/dist/js/email-editor/email_editor.js:1
 msgid "Link"
 msgstr ""
 
@@ -1601,6 +1605,7 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor/email_editor.js:1
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Cancel"
 msgstr ""
@@ -2464,7 +2469,7 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/WordPressTheme.php:1266
 #: lib/Config/PopulatorData/Templates/WorldCup.php:725
 #: lib/Config/PopulatorData/Templates/YogaStudio.php:699
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:34
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:78
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:94
 #: assets/dist/js/commons.js:9
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -2473,7 +2478,7 @@ msgstr ""
 
 #: views/newsletter/editor.html:1263
 #: lib/Config/PopulatorData/Templates/ConfirmInterestBeforeDeactivation.php:163
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:34
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:79
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:102
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Manage subscription"
@@ -2873,6 +2878,7 @@ msgstr ""
 
 #: views/segments/translations.html:29
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor/email_editor.js:1
 msgid "Update"
 msgstr ""
 
@@ -3107,9 +3113,9 @@ msgstr ""
 #: views/segments/translations.html:79
 #: views/subscribers/subscribers.html:71
 #: views/help.html:71
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:23
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:30
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:37
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:40
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:47
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:54
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:20
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:135
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:136
@@ -5727,6 +5733,7 @@ msgstr ""
 #: lib/Util/Notices/SenderDomainAuthenticationNotices.php:169
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor/email_editor.js:1
 msgid "Learn more"
 msgstr ""
 
@@ -7192,7 +7199,7 @@ msgstr ""
 #. translators: %s is the error message.
 #. translators: %s contains the actual error message.
 #: lib/API/JSON/v1/Mailer.php:71
-#: lib/Newsletter/Preview/SendPreviewController.php:82
+#: lib/Newsletter/Preview/SendPreviewController.php:100
 msgid "The email could not be sent: %s"
 msgstr ""
 
@@ -7328,7 +7335,8 @@ msgstr ""
 msgid "Failed sending task not found!"
 msgstr ""
 
-#: lib/API/JSON/v1/SendingTaskSubscribers.php:131
+#. translators: This error occurs when resending a failed email message to a recipient and the associated email definition (e.g., a welcome email, an automation email) is inactive.
+#: lib/API/JSON/v1/SendingTaskSubscribers.php:132
 msgid "Failed to resend! The email is not active. Please activate it first."
 msgstr ""
 
@@ -9033,7 +9041,7 @@ msgstr ""
 
 #: lib/Config/Menu.php:229
 #: lib/Config/Menu.php:230
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:68
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:74
 #: assets/dist/js/automation_analytics.js:9
 msgid "Emails"
 msgstr ""
@@ -9044,6 +9052,8 @@ msgid "Number of newsletters per page"
 msgstr ""
 
 #: lib/Config/Menu.php:254
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:21
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:25
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:42
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
@@ -10062,7 +10072,7 @@ msgstr ""
 msgid "No subject"
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:323
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:327
 msgid "There was an error processing your newsletter during sending. If possible, please contact us and report this issue."
 msgstr ""
 
@@ -10147,43 +10157,112 @@ msgstr ""
 msgid "Missing required data"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContent.php:19
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:22
-msgid "One column layout"
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/OneColumn.php:17
+msgid "1 column layout"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContent.php:25
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:28
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/OneColumn.php:21
 msgid "A one-column layout is great for simplified and concise content, like announcements or newsletters with brief updates. Drag blocks to add content and customize your styles from the styles panel on the top right."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContent.php:35
-msgid "Default Email Content"
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/OneColumn.php:30
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ThreeColumn.php:47
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:32
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:46
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:58
+msgid "Add button text"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:31
-msgid "You received this email because you are subscribed to the [site:title]"
+#. translators: Name of a content pattern used as starting content of an email
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/OneColumn.php:39
+msgid "1 Column"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/DefaultContentFull.php:44
-msgid "Default Email Content with Header and Footer"
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ThreeColumn.php:16
+msgid "3 column layout"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:21
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ThreeColumn.php:42
+msgid "A three-column layout organizes information into sections, making it easier for users to navigate content. Try other layouts by adding or removing columns, drag blocks into them to add content, and customize your email styles from the styles panel."
+msgstr ""
+
+#. translators: Name of a content pattern used as starting content of an email
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ThreeColumn.php:56
+msgid "3 Column"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:16
+msgid "2 column layout"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:20
+msgid "A two-column layout organizes information into sections, making it easier for users to navigate content. Try other layouts by adding or removing columns, drag blocks into them to add content and customize your email styles from the styles panel."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:37
+msgid "Heading"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:41
+msgid "You can also add text blocks into a column next to an image block to create unique layouts."
+msgstr ""
+
+#. translators: Name of a content pattern used as starting content of an email
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TwoColumn.php:72
+msgid "2 Column"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:38
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:22
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:63
 msgid "First Name"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:25
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:32
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:42
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:49
 msgid "subscriber"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:28
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:45
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:26
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:67
 msgid "Last Name"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:60
+msgid "Site Title"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:62
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:68
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:114
+msgid "Site"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:66
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:128
+msgid "Homepage URL"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:74
+msgid "Unsubscribe URL"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:80
+msgid "Manage subscription URL"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:86
+msgid "View in browser URL"
+msgstr ""
+
+#. translators: This is a text used in a footer on an email <!--[mailpoet/site-title]--> will be replaced with the site title.
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:30
+msgid "You received this email because you are subscribed to the <!--[mailpoet/site-title]-->"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:47
+msgid "Your Logo"
 msgstr ""
 
 #: lib/Form/Block/BlockRendererHelper.php:44
@@ -11216,20 +11295,12 @@ msgstr ""
 msgid "View in your browser"
 msgstr ""
 
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:114
-msgid "Site"
-msgstr ""
-
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:116
 msgid "Site title"
 msgstr ""
 
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:120
 msgid "Homepage link"
-msgstr ""
-
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:128
-msgid "Homepage URL"
 msgstr ""
 
 #: lib/PostEditorBlocks/SubscriptionFormBlock.php:58
@@ -11860,7 +11931,7 @@ msgstr ""
 #. translators: %s is the PHP version
 #. translators: %s is the number of minimum WooCommerce version that MailPoet requires
 #: lib/Util/Notices/WooCommerceVersionWarning.php:40
-#: mailpoet.php:103
+#: mailpoet.php:67
 msgid "MailPoet plugin requires WooCommerce version %s or newer. Please update your WooCommerce plugin version, or read our [link]instructions[/link] for additional options on how to resolve this issue."
 msgstr ""
 
@@ -11943,28 +12014,25 @@ msgid "MailPoet Error:"
 msgstr ""
 
 #. translators: %s is the number of minimum WordPress version that MailPoet requires
-#: mailpoet.php:77
+#: mailpoet.php:41
 msgid "MailPoet plugin requires WordPress version %s or newer. Please read our [link]instructions[/link] on how to resolve this issue."
 msgstr ""
 
-#: mailpoet.php:124
-msgid "MailPoet requires PHP version 7.4 or newer (8.1 recommended). You are running version [version]."
-msgstr ""
-
-#: mailpoet.php:127
-msgid "Please read our [link]instructions[/link] on how to upgrade your site."
-msgstr ""
-
-#: mailpoet.php:135
-msgid "If you can’t upgrade the PHP version, [link]install this version[/link] of MailPoet. Remember to not update MailPoet ever again!"
-msgstr ""
-
-#: mailpoet.php:172
+#: mailpoet.php:88
 msgid "MailPoet plugin cannot run under Microsoft's Internet Information Services (IIS) web server. We recommend that you use a web server powered by Apache or NGINX."
 msgstr ""
 
-#: mailpoet.php:186
+#: mailpoet.php:94
 msgid "MailPoet cannot start because it is missing core files. Please reinstall the plugin."
+msgstr ""
+
+#. translators: %1$s is the plugin name (MailPoet or MailPoet Premium), %2$s, %3$s, and %4$s are PHP version (e.g. "8.1.30")
+#: mailpoet.php:102
+msgid "%1$s requires PHP version %2$s or newer (%3$s recommended). You are running version %4$s."
+msgstr ""
+
+#: mailpoet.php:109
+msgid "Please read our [link]instructions[/link] on how to upgrade your site."
 msgstr ""
 
 #: assets/dist/js/admin.js:2
@@ -15992,6 +16060,36 @@ msgid "It will display all the blocks in the email content, which might be only 
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:1
+msgid "Insert Link"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:1
+msgid "Link Text"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:1
+#: assets/dist/js/email-editor/email_editor.js:13
+#: assets/dist/js/email-editor/email_editor.js:17
+msgid "Personalization Tags"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:1
+msgid "Insert shortcodes to dynamically fill in information and personalize your emails."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:1
+msgid "Personalization Tag"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:1
+msgid "Link tag"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:1
+msgid "Update link"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:1
 msgid "Justify items left"
 msgstr ""
 
@@ -16012,6 +16110,10 @@ msgid "Use shortcodes to personalize your email, or learn more about <bestPracti
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
+msgid "<link>This text</link> will appear in the inbox, underneath the subject line."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Shortcode guide"
 msgstr ""
 
@@ -16021,10 +16123,6 @@ msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Add a preview text to capture subscribers' attention and increase open rates."
-msgstr ""
-
-#: assets/dist/js/email-editor/email_editor.js:13
-msgid "<link>This text</link> will appear in the inbox, underneath the subject line."
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -16380,6 +16478,10 @@ msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:17
 msgid "An error occurred while reverting the template."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:17
+msgid "Personalization Tags Link"
 msgstr ""
 
 #: assets/dist/js/marketing-optin-block/marketing-optin-block.js:1

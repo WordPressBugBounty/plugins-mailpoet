@@ -1600,7 +1600,6 @@ class ComposerStaticInit9957467448f215809ac9dc8fbcab2b00
  'MailPoet\\EmailEditor\\Engine\\Send_Preview_Email' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-send-preview-email.php',
  'MailPoet\\EmailEditor\\Engine\\Settings_Controller' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-settings-controller.php',
  'MailPoet\\EmailEditor\\Engine\\Templates\\Templates' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Templates/class-templates.php',
- 'MailPoet\\EmailEditor\\Engine\\Templates\\Utils' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Templates/class-utils.php',
  'MailPoet\\EmailEditor\\Engine\\Theme_Controller' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-theme-controller.php',
  'MailPoet\\EmailEditor\\Engine\\User_Theme' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-user-theme.php',
  'MailPoet\\EmailEditor\\Exception' => __DIR__ . '/..' . '/mailpoet/email-editor/src/exceptions.php',

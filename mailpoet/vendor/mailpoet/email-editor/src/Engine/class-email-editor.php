@@ -33,9 +33,9 @@ class Email_Editor {
  public function initialize(): void {
  do_action( 'mailpoet_email_editor_initialized' );
  add_filter( 'mailpoet_email_editor_rendering_theme_styles', array( $this, 'extend_email_theme_styles' ), 10, 2 );
- $this->register_block_templates();
  $this->register_block_patterns();
- $this->register_wmail_post_types();
+ $this->register_email_post_types();
+ $this->register_block_templates();
  $this->register_email_post_send_status();
  $this->register_personalization_tags();
  $is_editor_page = apply_filters( 'mailpoet_is_email_editor_page', false );
@@ -49,13 +49,14 @@ class Email_Editor {
  private function register_block_templates(): void {
  // Since we cannot currently disable blocks in the editor for specific templates, disable templates when viewing site editor. @see https://github.com/WordPress/gutenberg/issues/41062.
  if ( strstr( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ) ), 'site-editor.php' ) === false ) {
- $this->templates->initialize();
+ $post_types = array_column( $this->get_post_types(), 'name' );
+ $this->templates->initialize( $post_types );
  }
  }
  private function register_block_patterns(): void {
  $this->patterns->initialize();
  }
- private function register_wmail_post_types(): void {
+ private function register_email_post_types(): void {
  foreach ( $this->get_post_types() as $post_type ) {
  register_post_type(
  $post_type['name'],
@@ -119,9 +120,17 @@ class Email_Editor {
  },
  )
  );
- }
- public function get_email_theme_data_schema(): array {
- return ( new Email_Styles_Schema() )->get_schema();
+ register_rest_route(
+ 'mailpoet-email-editor/v1',
+ '/get_personalization_tags',
+ array(
+ 'methods' => 'GET',
+ 'callback' => array( $this->email_api_controller, 'get_personalization_tags' ),
+ 'permission_callback' => function () {
+ return current_user_can( 'edit_posts' );
+ },
+ )
+ );
  }
  public function extend_email_theme_styles( WP_Theme_JSON $theme, WP_Post $post ): WP_Theme_JSON {
  $email_theme = get_post_meta( $post->ID, self::MAILPOET_EMAIL_META_THEME_TYPE, true );

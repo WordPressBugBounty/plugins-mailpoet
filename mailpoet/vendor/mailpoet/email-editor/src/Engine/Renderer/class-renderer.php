@@ -25,9 +25,9 @@ class Renderer {
  $this->theme_controller = $theme_controller;
  }
  public function render( \WP_Post $post, string $subject, string $pre_header, string $language, $meta_robots = '' ): array { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
- $template_id = 'mailpoet/mailpoet//' . ( get_page_template_slug( $post ) ? get_page_template_slug( $post ) : 'email-general' );
+ $template_slug = get_page_template_slug( $post ) ? get_page_template_slug( $post ) : 'email-general';
  // phpcs:ignore Generic.Commenting.DocComment.MissingShort -- used for phpstan
- $template = $this->templates->get_block_template( $template_id );
+ $template = $this->templates->get_block_template( $template_slug );
  $email_styles = $this->theme_controller->get_styles();
  $template_html = $this->content_renderer->render( $post, $template );
  $layout = $this->theme_controller->get_layout_settings();

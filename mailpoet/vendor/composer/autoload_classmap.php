@@ -1550,7 +1550,6 @@ return array(
  'MailPoet\\EmailEditor\\Engine\\Send_Preview_Email' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-send-preview-email.php',
  'MailPoet\\EmailEditor\\Engine\\Settings_Controller' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-settings-controller.php',
  'MailPoet\\EmailEditor\\Engine\\Templates\\Templates' => $vendorDir . '/mailpoet/email-editor/src/Engine/Templates/class-templates.php',
- 'MailPoet\\EmailEditor\\Engine\\Templates\\Utils' => $vendorDir . '/mailpoet/email-editor/src/Engine/Templates/class-utils.php',
  'MailPoet\\EmailEditor\\Engine\\Theme_Controller' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-theme-controller.php',
  'MailPoet\\EmailEditor\\Engine\\User_Theme' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-user-theme.php',
  'MailPoet\\EmailEditor\\Exception' => $vendorDir . '/mailpoet/email-editor/src/exceptions.php',

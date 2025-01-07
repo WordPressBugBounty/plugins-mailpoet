@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) exit;
 
 
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\PatternsController;
+use MailPoet\EmailEditor\Integrations\MailPoet\Templates\TemplatesController;
 use MailPoet\Features\FeaturesController;
 use MailPoet\WP\Functions as WPFunctions;
 
@@ -28,6 +29,8 @@ class EmailEditor {
 
   private PersonalizationTagManager $personalizationTagManager;
 
+  private TemplatesController $templatesController;
+
   public function __construct(
     WPFunctions $wp,
     FeaturesController $featuresController,
@@ -35,6 +38,7 @@ class EmailEditor {
     EditorPageRenderer $editorPageRenderer,
     EmailEditorPreviewEmail $emailEditorPreviewEmail,
     PatternsController $patternsController,
+    TemplatesController $templatesController,
     Cli $cli,
     PersonalizationTagManager $personalizationTagManager
   ) {
@@ -43,6 +47,7 @@ class EmailEditor {
     $this->emailApiController = $emailApiController;
     $this->editorPageRenderer = $editorPageRenderer;
     $this->patternsController = $patternsController;
+    $this->templatesController = $templatesController;
     $this->cli = $cli;
     $this->emailEditorPreviewEmail = $emailEditorPreviewEmail;
     $this->personalizationTagManager = $personalizationTagManager;
@@ -59,6 +64,7 @@ class EmailEditor {
     $this->wp->addFilter('replace_editor', [$this, 'replaceEditor'], 10, 2);
     $this->wp->addFilter('mailpoet_email_editor_send_preview_email', [$this->emailEditorPreviewEmail, 'sendPreviewEmail'], 10, 1);
     $this->patternsController->registerPatterns();
+    $this->templatesController->initialize();
     $this->extendEmailPostApi();
     $this->personalizationTagManager->initialize();
   }
