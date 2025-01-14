@@ -31,8 +31,11 @@ class Templates {
  'slug' => 'email-general',
  );
  $template_filename = $general_email['slug'] . '.html';
+ $template_name = $this->template_prefix . '//' . $general_email['slug'];
+ if ( ! \WP_Block_Templates_Registry::get_instance()->is_registered( $template_name ) ) {
+ // skip registration if the template was already registered.
  register_block_template(
- $this->template_prefix . '//' . $general_email['slug'],
+ $template_name,
  array(
  'title' => $general_email['title'],
  'description' => $general_email['description'],
@@ -40,6 +43,7 @@ class Templates {
  'post_types' => $this->post_types,
  )
  );
+ }
  do_action( 'mailpoet_email_editor_register_templates' );
  }
  public function register_post_types_to_api(): void {

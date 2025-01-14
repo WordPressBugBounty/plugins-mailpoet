@@ -1,7 +1,5 @@
 {
   "form_preview.js": "form_preview.js",
-  "powered-by-mailpoet-block.js": "auto/powered-by-mailpoet-block.js",
-  "powered-by-mailpoet-block.php": "auto/powered-by-mailpoet-block.asset.php",
   "post_editor_block.js": "post_editor_block.js",
   "rich-text.js": "auto/rich-text.js",
   "rich-text.php": "auto/rich-text.asset.php",

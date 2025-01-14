@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.6.0\n"
+"Project-Id-Version: MailPoet 5.6.1\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-07T09:45:48+00:00\n"
+"POT-Creation-Date: 2025-01-14T09:00:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -647,7 +647,7 @@ msgstr ""
 #: views/help.html:70
 #: lib/API/MP/v1/CustomFields.php:27
 #: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:63
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:75
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:67
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:52
 #: lib/Form/Templates/Templates/InitialForm.php:22
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:60
@@ -1605,6 +1605,7 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 #: assets/dist/js/email-editor/email_editor.js:1
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Cancel"
@@ -2192,6 +2193,7 @@ msgid "Send preview"
 msgstr ""
 
 #: views/newsletter/templates/components/newsletterPreview.hbs:48
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "A MailPoet logo will appear in the footer of all emails sent with the free version of MailPoet."
 msgstr ""
 
@@ -2469,7 +2471,7 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/WordPressTheme.php:1266
 #: lib/Config/PopulatorData/Templates/WorldCup.php:725
 #: lib/Config/PopulatorData/Templates/YogaStudio.php:699
-#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:78
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:76
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:94
 #: assets/dist/js/commons.js:9
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -2478,7 +2480,7 @@ msgstr ""
 
 #: views/newsletter/editor.html:1263
 #: lib/Config/PopulatorData/Templates/ConfirmInterestBeforeDeactivation.php:163
-#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:79
+#: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:76
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:102
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Manage subscription"
@@ -3564,6 +3566,7 @@ msgstr ""
 #: lib/Config/Menu.php:456
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Upgrade"
 msgstr ""
 
@@ -6254,6 +6257,7 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Activate"
 msgstr ""
 
@@ -6975,7 +6979,7 @@ msgid "Create and send newsletters, post notifications and welcome emails from y
 msgstr ""
 
 #: lib/AdminPages/Pages/Automation.php:96
-#: lib/AdminPages/Pages/Newsletters.php:105
+#: lib/AdminPages/Pages/Newsletters.php:115
 msgid "In any WordPress role"
 msgstr ""
 
@@ -9041,7 +9045,7 @@ msgstr ""
 
 #: lib/Config/Menu.php:229
 #: lib/Config/Menu.php:230
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:74
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:66
 #: assets/dist/js/automation_analytics.js:9
 msgid "Emails"
 msgstr ""
@@ -10153,6 +10157,11 @@ msgstr ""
 msgid "Value cannot be empty"
 msgstr ""
 
+#. translators: %1$s: WordPress version e.g. 6.7
+#: lib/EmailEditor/Integrations/MailPoet/DependencyNotice.php:48
+msgid "This email was created using the new editor, which requires WordPress version %1$s or higher. Please update your setup to continue editing or previewing this email."
+msgstr ""
+
 #: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:39
 msgid "Missing required data"
 msgstr ""
@@ -11172,35 +11181,35 @@ msgstr ""
 msgid "New Email"
 msgstr ""
 
-#: lib/Newsletter/NewsletterValidator.php:61
+#: lib/Newsletter/NewsletterValidator.php:54
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/newsletter_editor.js:2
 msgid "All emails must include an \"Unsubscribe\" link. Add a footer widget to your email to continue."
 msgstr ""
 
-#: lib/Newsletter/NewsletterValidator.php:73
+#: lib/Newsletter/NewsletterValidator.php:66
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 msgid "You need to select a list to send to."
 msgstr ""
 
-#: lib/Newsletter/NewsletterValidator.php:82
+#: lib/Newsletter/NewsletterValidator.php:75
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Poet, please add prose to your masterpiece before you send it to your followers."
 msgstr ""
 
-#: lib/Newsletter/NewsletterValidator.php:101
+#: lib/Newsletter/NewsletterValidator.php:94
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/newsletter_editor.js:2
 msgid "A re-engagement email must include a link with [link:subscription_re_engage_url] shortcode."
 msgstr ""
 
-#: lib/Newsletter/NewsletterValidator.php:105
+#: lib/Newsletter/NewsletterValidator.php:98
 msgid "Re-engagement emails are disabled because open and click tracking is disabled in MailPoet → Settings → Advanced."
 msgstr ""
 
-#: lib/Newsletter/NewsletterValidator.php:118
+#: lib/Newsletter/NewsletterValidator.php:111
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/newsletter_editor.js:2
 msgctxt "(Please reuse the current translation used for the string “Automatic Latest Content”) This Error message is displayed when a user tries to send a “Post Notification” email without any “Automatic Latest Content” widget inside"
@@ -14274,6 +14283,7 @@ msgstr ""
 
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Activating…"
 msgstr ""
 
@@ -15681,6 +15691,16 @@ msgid "Please specify a license key before validating it."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+msgctxt "verb"
+msgid "Hide"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgctxt "verb"
+msgid "Show"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
 msgid "Your key is valid"
 msgstr ""
 
@@ -15693,6 +15713,7 @@ msgid "MailPoet Sending Service is active"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "MailPoet Premium is active"
 msgstr ""
 
@@ -15721,90 +15742,112 @@ msgid "You have sent more emails this month than your MailPoet plan includes, an
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Please try again."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Purchase a MailPoet plan"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Please purchase a MailPoet plan."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Purchase"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Upgrade your MailPoet plan"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Please upgrade your MailPoet plan."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Subscribers limit reached"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Please upgrade your MailPoet plan to continue using MailPoet."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Download the MailPoet Premium plugin"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Please download the MailPoet Premium plugin."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Download"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Downloading…"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Plugin installation failed."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Activate the MailPoet Premium plugin"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Please activate the MailPoet Premium plugin."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Reload the page"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Plugin activation failed."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Upgrade your MailPoet plan to gain detailed insights into how your subscribers engage with your automations and their purchasing behaviors."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Automation journeys are not available in your current plan. Upgrade your MailPoet plan to design personalized journeys with multiple steps and conditional branching logic."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Advanced contact segmentation is not available in your current plan. Upgrade your MailPoet plan to create highly targeted subscriber segments using multiple subscriber properties and AND/OR logic, ensuring you send the right message to the right people."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "Please upgrade your MailPoet plan to gain access to this feature."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
 msgid "The MailPoet Premium plugin was activated. Please reload the page."
 msgstr ""
 
@@ -16074,7 +16117,7 @@ msgid "Personalization Tags"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:1
-msgid "Insert shortcodes to dynamically fill in information and personalize your emails."
+msgid "Insert personalization tags to dynamically fill in information and personalize your emails."
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:1
@@ -16106,7 +16149,7 @@ msgid "Justification"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
-msgid "Use shortcodes to personalize your email, or learn more about <bestPracticeLink>best practices</bestPracticeLink> and using <emojiLink>emoji in subject lines</emojiLink>."
+msgid "Use personalization tags to personalize your email, or learn more about <bestPracticeLink>best practices</bestPracticeLink> and using <emojiLink>emoji in subject lines</emojiLink>."
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -16114,7 +16157,7 @@ msgid "<link>This text</link> will appear in the inbox, underneath the subject l
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
-msgid "Shortcode guide"
+msgid "Guide"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -16175,6 +16218,10 @@ msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Edit this template to be used across multiple emails."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Close sidebar"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -16291,19 +16338,19 @@ msgid "Name your email campaign to indicate its purpose. This would only be visi
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
-msgid "All emails must include an \"Unsubscribe\" link."
-msgstr ""
-
-#: assets/dist/js/email-editor/email_editor.js:13
-msgid "Insert link"
-msgstr ""
-
-#: assets/dist/js/email-editor/email_editor.js:13
 msgid "Templates"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "This change will affect emails that use this template."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "All emails must include an \"Unsubscribe\" link."
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Insert link"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
@@ -16443,6 +16490,16 @@ msgid "H4"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:16
+msgctxt "Heading Level"
+msgid "H5"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:16
+msgctxt "Heading Level"
+msgid "H6"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:16
 msgid "Manage palettes and the default color of different global elements."
 msgstr ""
 
@@ -16456,6 +16513,10 @@ msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:16
 msgid "Block spacing"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:16
+msgid "Close styles sidebar"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:16
@@ -16482,6 +16543,10 @@ msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:17
 msgid "Personalization Tags Link"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:1
+msgid "Share feedback"
 msgstr ""
 
 #: assets/dist/js/marketing-optin-block/marketing-optin-block.js:1
@@ -16880,6 +16945,21 @@ msgstr ""
 
 #: assets/dist/js/settings.js:1
 msgid "Update service settings"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet/block.json
+msgctxt "block title"
+msgid "Powered By MailPoet"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet/block.json
+msgctxt "block description"
+msgid "A MailPoet logo will appear in the footer of all emails sent with the free version of MailPoet."
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/powered-by-mailpoet/block.json
+msgctxt "block keyword"
+msgid "MailPoet"
 msgstr ""
 
 #: assets/dist/js/marketing-optin-block/block.json

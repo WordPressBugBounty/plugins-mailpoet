@@ -340,6 +340,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\CustomFields\CustomFieldsRepository::class)->setPublic(true);
     // Email Editor
     $container->autowire(\MailPoet\EmailEditor\Engine\Email_Editor::class)->setPublic(true);
+    $container->autowire(\MailPoet\EmailEditor\Engine\Dependency_Check::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Engine\Email_Api_Controller::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Engine\Settings_Controller::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Engine\Theme_Controller::class)->setPublic(true);
@@ -363,6 +364,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\EditorPageRenderer::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\EmailApiController::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\EmailEditorPreviewEmail::class)->setPublic(true);
+    $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\DependencyNotice::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypesController::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes\PoweredByMailpoet::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Patterns\PatternsController::class)->setPublic(true);

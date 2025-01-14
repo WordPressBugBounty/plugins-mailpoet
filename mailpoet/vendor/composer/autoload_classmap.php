@@ -1523,6 +1523,7 @@ return array(
  'MailPoet\\EmailEditor\\AccessDeniedException' => $vendorDir . '/mailpoet/email-editor/src/exceptions.php',
  'MailPoet\\EmailEditor\\ConflictException' => $vendorDir . '/mailpoet/email-editor/src/exceptions.php',
  'MailPoet\\EmailEditor\\Container' => $vendorDir . '/mailpoet/email-editor/src/class-container.php',
+ 'MailPoet\\EmailEditor\\Engine\\Dependency_Check' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-dependency-check.php',
  'MailPoet\\EmailEditor\\Engine\\Email_Api_Controller' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-email-api-controller.php',
  'MailPoet\\EmailEditor\\Engine\\Email_Editor' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-email-editor.php',
  'MailPoet\\EmailEditor\\Engine\\Email_Styles_Schema' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-email-styles-schema.php',

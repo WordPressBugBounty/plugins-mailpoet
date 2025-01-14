@@ -1573,6 +1573,7 @@ class ComposerStaticInit9957467448f215809ac9dc8fbcab2b00
  'MailPoet\\EmailEditor\\AccessDeniedException' => __DIR__ . '/..' . '/mailpoet/email-editor/src/exceptions.php',
  'MailPoet\\EmailEditor\\ConflictException' => __DIR__ . '/..' . '/mailpoet/email-editor/src/exceptions.php',
  'MailPoet\\EmailEditor\\Container' => __DIR__ . '/..' . '/mailpoet/email-editor/src/class-container.php',
+ 'MailPoet\\EmailEditor\\Engine\\Dependency_Check' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-dependency-check.php',
  'MailPoet\\EmailEditor\\Engine\\Email_Api_Controller' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-email-api-controller.php',
  'MailPoet\\EmailEditor\\Engine\\Email_Editor' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-email-editor.php',
  'MailPoet\\EmailEditor\\Engine\\Email_Styles_Schema' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-email-styles-schema.php',
