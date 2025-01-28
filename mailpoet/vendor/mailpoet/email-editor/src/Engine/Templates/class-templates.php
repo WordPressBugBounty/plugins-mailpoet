@@ -64,10 +64,10 @@ class Templates {
  );
  }
  public function get_post_types( $response_object ): array {
- if ( isset( $response_object['plugin'] ) && $response_object['plugin'] !== $this->template_prefix ) {
- return array();
- }
+ if ( isset( $response_object['plugin'] ) && $response_object['plugin'] === $this->template_prefix ) {
  return $this->post_types;
+ }
+ return $response_object['post_types'] ?? array();
  }
  public function add_theme_templates( $templates, $theme, $post, $post_type ) {
  if ( $post_type && ! in_array( $post_type, $this->post_types, true ) ) {

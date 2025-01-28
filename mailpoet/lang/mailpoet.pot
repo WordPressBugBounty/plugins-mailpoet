@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.6.2\n"
+"Project-Id-Version: MailPoet 5.6.3\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-21T15:18:52+00:00\n"
+"POT-Creation-Date: 2025-01-27T15:28:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -4496,6 +4496,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:146
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:210
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:242
+#: assets/dist/js/commons.js:9
 msgid "Tags"
 msgstr ""
 
@@ -8251,77 +8252,77 @@ msgid "matches regex"
 msgstr ""
 
 #. translators: automation action title
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:125
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:138
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:128
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:141
 #: assets/dist/js/commons.js:9
 msgid "Send email"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:139
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:142
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Subject"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:166
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:169
 msgid "Cannot send the email because it was not found. Please, go to the automation editor and update the email contents."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:170
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:173
 msgid "Automation email not found."
 msgstr ""
 
 #. translators: %s is the ID of email.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:175
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:504
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:178
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:507
 msgid "Automation email with ID '%s' not found."
 msgstr ""
 
 #. translators: %s is the subscriber's status.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:191
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:263
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:194
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:266
 msgid "Cannot send the email because the subscriber's status is '%s'."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:240
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:243
 msgid "Could not create sending task."
 msgstr ""
 
 #. translators: %s is the type of $data.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:282
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:285
 msgid "Invalid automation step data. Array expected, got: %s"
 msgstr ""
 
 #. translators: %s is the type of $runId.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:290
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:293
 msgid "Invalid automation step data. Expected 'run_id' to be an integer, got: %s"
 msgstr ""
 
 #. translators: %s is the type of $runId.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:298
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:301
 msgid "Invalid automation step data. Expected 'step_id' to be a string, got: %s"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:308
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:311
 msgid "Email failed to schedule."
 msgstr ""
 
 #. translators: %s is the error message.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:315
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:318
 msgid "Email failed to send. Error: %s"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:324
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:327
 msgid "Email sending process timed out."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:378
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:381
 msgid "Cannot send the email because the list was not found."
 msgstr ""
 
 #. translators: %s is the name of the list.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:381
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:384
 msgid "Cannot send the email because the subscriber is not subscribed to the '%s' list."
 msgstr ""
 
@@ -8552,24 +8553,28 @@ msgid "Purchased a product"
 msgstr ""
 
 #: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:298
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:320
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:342
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:331
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:364
 msgid "Share care instructions or simply thank the customer for making an order."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:319
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:326
-msgid "Purchased a product with a tag"
-msgstr ""
-
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:341
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:348
-msgid "Purchased in a category"
-msgstr ""
-
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:312
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:313
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:345
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:346
 #: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:378
 #: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:379
 msgid "Important information about your order"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:330
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:337
+msgid "Purchased a product with a tag"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:363
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:370
+msgid "Purchased in a category"
 msgstr ""
 
 #. translators: automation trigger title
@@ -8763,6 +8768,12 @@ msgstr ""
 #: lib/Automation/Integrations/WooCommerce/Triggers/BuysFromACategoryTrigger.php:31
 #: assets/dist/js/commons.js:9
 msgid "Customer buys from a category"
+msgstr ""
+
+#. translators: automation trigger title
+#: lib/Automation/Integrations/WooCommerce/Triggers/BuysFromATagTrigger.php:24
+#: assets/dist/js/commons.js:9
+msgid "Customer buys from a tag"
 msgstr ""
 
 #. translators: automation trigger title
@@ -15280,6 +15291,18 @@ msgid "purchase"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+msgid "Search results"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Search for a tag"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Start the automation when a customer buys a product from a tag."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
 msgid "Customer makes a review"
 msgstr ""
 
@@ -16215,6 +16238,10 @@ msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
 msgid "Start with an email preset"
+msgstr ""
+
+#: assets/dist/js/email-editor/email_editor.js:13
+msgid "Select a template"
 msgstr ""
 
 #: assets/dist/js/email-editor/email_editor.js:13
