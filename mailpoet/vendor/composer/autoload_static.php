@@ -1597,6 +1597,7 @@ class ComposerStaticInit9957467448f215809ac9dc8fbcab2b00
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Preprocessors\\Spacing_Preprocessor' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/Preprocessors/class-spacing-preprocessor.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Preprocessors\\Typography_Preprocessor' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/Preprocessors/class-typography-preprocessor.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Process_Manager' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/class-process-manager.php',
+ 'MailPoet\\EmailEditor\\Engine\\Renderer\\Css_Inliner' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/interface-css-inliner.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\Renderer' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/Renderer/class-renderer.php',
  'MailPoet\\EmailEditor\\Engine\\Send_Preview_Email' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-send-preview-email.php',
  'MailPoet\\EmailEditor\\Engine\\Settings_Controller' => __DIR__ . '/..' . '/mailpoet/email-editor/src/Engine/class-settings-controller.php',

@@ -1547,6 +1547,7 @@ return array(
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Preprocessors\\Spacing_Preprocessor' => $vendorDir . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/Preprocessors/class-spacing-preprocessor.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Preprocessors\\Typography_Preprocessor' => $vendorDir . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/Preprocessors/class-typography-preprocessor.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Process_Manager' => $vendorDir . '/mailpoet/email-editor/src/Engine/Renderer/ContentRenderer/class-process-manager.php',
+ 'MailPoet\\EmailEditor\\Engine\\Renderer\\Css_Inliner' => $vendorDir . '/mailpoet/email-editor/src/Engine/Renderer/interface-css-inliner.php',
  'MailPoet\\EmailEditor\\Engine\\Renderer\\Renderer' => $vendorDir . '/mailpoet/email-editor/src/Engine/Renderer/class-renderer.php',
  'MailPoet\\EmailEditor\\Engine\\Send_Preview_Email' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-send-preview-email.php',
  'MailPoet\\EmailEditor\\Engine\\Settings_Controller' => $vendorDir . '/mailpoet/email-editor/src/Engine/class-settings-controller.php',

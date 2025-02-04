@@ -8,6 +8,7 @@ use MailPoet\EmailEditor\Engine\Email_Api_Controller;
 use MailPoet\EmailEditor\Engine\Email_Editor;
 use MailPoet\EmailEditor\Engine\Patterns\Patterns;
 use MailPoet\EmailEditor\Engine\PersonalizationTags\Personalization_Tags_Registry;
+use MailPoet\EmailEditor\Engine\Personalizer;
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Blocks_Registry;
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Content_Renderer;
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Postprocessors\Highlighting_Postprocessor;
@@ -18,13 +19,13 @@ use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Preprocessors\Spacing_P
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Preprocessors\Typography_Preprocessor;
 use MailPoet\EmailEditor\Engine\Renderer\ContentRenderer\Process_Manager;
 use MailPoet\EmailEditor\Engine\Renderer\Renderer;
+use MailPoet\EmailEditor\Engine\Send_Preview_Email;
 use MailPoet\EmailEditor\Engine\Settings_Controller;
 use MailPoet\EmailEditor\Engine\Templates\Templates;
 use MailPoet\EmailEditor\Engine\Theme_Controller;
 use MailPoet\EmailEditor\Engine\User_Theme;
 use MailPoet\EmailEditor\Integrations\Core\Initializer;
 use MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypesController;
-use MailPoet\EmailEditor\Engine\Send_Preview_Email;
 if ( (bool) getenv( 'MULTISITE' ) === true ) {
  // REQUEST_URI needs to be set for WP to load the proper subsite where MailPoet is activated.
  $_SERVER['REQUEST_URI'] = '/' . getenv( 'WP_TEST_MULTISITE_SLUG' );
@@ -35,6 +36,7 @@ if ( (bool) getenv( 'MULTISITE' ) === true ) {
 $console = new \Codeception\Lib\Console\Output( array() );
 $console->writeln( 'Loading WP core... (' . $wp_load_file . ')' );
 require_once $wp_load_file;
+require_once __DIR__ . '/../../../../../mailpoet/lib/EmailEditor/Integrations/MailPoet/MailPoetCssInliner.php';
 abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  public Container $di_container;
  public $tester;
@@ -179,6 +181,7 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  $container->get( Process_Manager::class ),
  $container->get( Blocks_Registry::class ),
  $container->get( Settings_Controller::class ),
+ new \MailPoet\EmailEditor\Integrations\MailPoet\MailPoetCssInliner(),
  $container->get( Theme_Controller::class ),
  );
  }
@@ -189,7 +192,22 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  return new Renderer(
  $container->get( Content_Renderer::class ),
  $container->get( Templates::class ),
+ new \MailPoet\EmailEditor\Integrations\MailPoet\MailPoetCssInliner(),
  $container->get( Theme_Controller::class ),
+ );
+ }
+ );
+ $container->set(
+ Personalization_Tags_Registry::class,
+ function () {
+ return new Personalization_Tags_Registry();
+ }
+ );
+ $container->set(
+ Personalizer::class,
+ function ( $container ) {
+ return new Personalizer(
+ $container->get( Personalization_Tags_Registry::class ),
  );
  }
  );
@@ -198,13 +216,8 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  function ( $container ) {
  return new Send_Preview_Email(
  $container->get( Renderer::class ),
+ $container->get( Personalizer::class ),
  );
- }
- );
- $container->set(
- Personalization_Tags_Registry::class,
- function () {
- return new Personalization_Tags_Registry();
  }
  );
  $container->set(
@@ -228,7 +241,6 @@ abstract class MailPoetTest extends \Codeception\TestCase\Test { // phpcs:ignore
  $container->get( Email_Api_Controller::class ),
  $container->get( Templates::class ),
  $container->get( Patterns::class ),
- $container->get( Settings_Controller::class ),
  $container->get( Send_Preview_Email::class ),
  $container->get( Personalization_Tags_Registry::class ),
  );

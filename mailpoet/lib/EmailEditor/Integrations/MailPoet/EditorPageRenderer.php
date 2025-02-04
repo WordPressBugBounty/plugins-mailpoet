@@ -6,7 +6,6 @@ if (!defined('ABSPATH')) exit;
 
 
 use MailPoet\Analytics\Analytics;
-use MailPoet\API\JSON\API;
 use MailPoet\Config\Env;
 use MailPoet\Config\Installer;
 use MailPoet\Config\ServicesChecker;
@@ -78,7 +77,9 @@ class EditorPageRenderer {
   public function render() {
     $postId = isset($_GET['post']) ? intval($_GET['post']) : 0;
     $post = $this->wp->getPost($postId);
-    if (!$post instanceof \WP_Post || $post->post_type !== EditorInitController::MAILPOET_EMAIL_POST_TYPE) { // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
+    $currentPostType = $post->post_type; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
+
+    if (!$post instanceof \WP_Post || $currentPostType !== EditorInitController::MAILPOET_EMAIL_POST_TYPE) {
       return;
     }
     $newsletter = $this->newslettersRepository->findOneBy(['wpPost' => $postId]);
@@ -137,19 +138,13 @@ class EditorPageRenderer {
       $assetsParams['version']
     );
 
-    $jsonAPIRoot = rtrim($this->wp->escUrlRaw(admin_url('admin-ajax.php')), '/');
-    $token = $this->wp->wpCreateNonce('mailpoet_token');
-    $apiVersion = API::CURRENT_VERSION;
     $currentUserEmail = $this->wp->wpGetCurrentUser()->user_email;
     $this->wp->wpLocalizeScript(
       'mailpoet_email_editor',
       'MailPoetEmailEditor',
       [
-        'json_api_root' => esc_js($jsonAPIRoot),
-        'api_token' => esc_js($token),
-        'api_version' => esc_js($apiVersion),
-        'cdn_url' => esc_js($this->cdnAssetUrl->generateCdnUrl("")),
-        'is_premium_plugin_active' => (bool)$this->servicesChecker->isPremiumPluginActive(),
+        'current_post_type' => esc_js($currentPostType),
+        'current_post_id' => $post->ID,
         'current_wp_user_email' => esc_js($currentUserEmail),
         'editor_settings' => $this->settingsController->get_settings(),
         'editor_theme' => $this->themeController->get_base_theme()->get_raw_data(),
