@@ -310,6 +310,7 @@ class FreeCachedContainer extends Container
             'MailPoet\\EmailEditor\\Engine\\Send_Preview_Email' => 'getSendPreviewEmailService',
             'MailPoet\\EmailEditor\\Engine\\Settings_Controller' => 'getSettingsControllerService',
             'MailPoet\\EmailEditor\\Engine\\Templates\\Templates' => 'getTemplatesService',
+            'MailPoet\\EmailEditor\\Engine\\Templates\\Templates_Registry' => 'getTemplatesRegistryService',
             'MailPoet\\EmailEditor\\Engine\\Theme_Controller' => 'getThemeControllerService',
             'MailPoet\\EmailEditor\\Engine\\User_Theme' => 'getUserThemeService',
             'MailPoet\\EmailEditor\\Integrations\\Core\\Initializer' => 'getInitializer2Service',
@@ -3454,7 +3455,7 @@ class FreeCachedContainer extends Container
      */
     protected function getEmailEditorService()
     {
-        return $this->services['MailPoet\\EmailEditor\\Engine\\Email_Editor'] = new \MailPoet\EmailEditor\Engine\Email_Editor(($this->services['MailPoet\\EmailEditor\\Engine\\Email_Api_Controller'] ?? $this->getEmailApiControllerService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] = new \MailPoet\EmailEditor\Engine\Templates\Templates())), ($this->services['MailPoet\\EmailEditor\\Engine\\Patterns\\Patterns'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\Patterns\\Patterns'] = new \MailPoet\EmailEditor\Engine\Patterns\Patterns())), ($this->services['MailPoet\\EmailEditor\\Engine\\Send_Preview_Email'] ?? $this->getSendPreviewEmailService()), ($this->services['MailPoet\\EmailEditor\\Engine\\PersonalizationTags\\Personalization_Tags_Registry'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\PersonalizationTags\\Personalization_Tags_Registry'] = new \MailPoet\EmailEditor\Engine\PersonalizationTags\Personalization_Tags_Registry())));
+        return $this->services['MailPoet\\EmailEditor\\Engine\\Email_Editor'] = new \MailPoet\EmailEditor\Engine\Email_Editor(($this->services['MailPoet\\EmailEditor\\Engine\\Email_Api_Controller'] ?? $this->getEmailApiControllerService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] ?? $this->getTemplatesService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Patterns\\Patterns'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\Patterns\\Patterns'] = new \MailPoet\EmailEditor\Engine\Patterns\Patterns())), ($this->services['MailPoet\\EmailEditor\\Engine\\Send_Preview_Email'] ?? $this->getSendPreviewEmailService()), ($this->services['MailPoet\\EmailEditor\\Engine\\PersonalizationTags\\Personalization_Tags_Registry'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\PersonalizationTags\\Personalization_Tags_Registry'] = new \MailPoet\EmailEditor\Engine\PersonalizationTags\Personalization_Tags_Registry())));
     }
 
     /**
@@ -3594,7 +3595,7 @@ class FreeCachedContainer extends Container
      */
     protected function getRenderer2Service()
     {
-        return $this->services['MailPoet\\EmailEditor\\Engine\\Renderer\\Renderer'] = new \MailPoet\EmailEditor\Engine\Renderer\Renderer(($this->services['MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Content_Renderer'] ?? $this->getContentRendererService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] = new \MailPoet\EmailEditor\Engine\Templates\Templates())), ($this->services['MailPoet\\EmailEditor\\Engine\\Renderer\\Css_Inliner'] ?? $this->getCssInlinerService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Theme_Controller'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\Theme_Controller'] = new \MailPoet\EmailEditor\Engine\Theme_Controller())));
+        return $this->services['MailPoet\\EmailEditor\\Engine\\Renderer\\Renderer'] = new \MailPoet\EmailEditor\Engine\Renderer\Renderer(($this->services['MailPoet\\EmailEditor\\Engine\\Renderer\\ContentRenderer\\Content_Renderer'] ?? $this->getContentRendererService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] ?? $this->getTemplatesService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Renderer\\Css_Inliner'] ?? $this->getCssInlinerService()), ($this->services['MailPoet\\EmailEditor\\Engine\\Theme_Controller'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\Theme_Controller'] = new \MailPoet\EmailEditor\Engine\Theme_Controller())));
     }
 
     /**
@@ -3624,7 +3625,17 @@ class FreeCachedContainer extends Container
      */
     protected function getTemplatesService()
     {
-        return $this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] = new \MailPoet\EmailEditor\Engine\Templates\Templates();
+        return $this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates'] = new \MailPoet\EmailEditor\Engine\Templates\Templates(($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates_Registry'] ?? ($this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates_Registry'] = new \MailPoet\EmailEditor\Engine\Templates\Templates_Registry())));
+    }
+
+    /**
+     * Gets the public 'MailPoet\EmailEditor\Engine\Templates\Templates_Registry' shared autowired service.
+     *
+     * @return \MailPoet\EmailEditor\Engine\Templates\Templates_Registry
+     */
+    protected function getTemplatesRegistryService()
+    {
+        return $this->services['MailPoet\\EmailEditor\\Engine\\Templates\\Templates_Registry'] = new \MailPoet\EmailEditor\Engine\Templates\Templates_Registry();
     }
 
     /**
