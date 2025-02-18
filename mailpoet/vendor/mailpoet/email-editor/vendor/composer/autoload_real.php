@@ -22,16 +22,6 @@ class ComposerAutoloaderInit371847deda16bb5e4bcb84b00459bce6
  require __DIR__ . '/autoload_static.php';
  call_user_func(\Composer\Autoload\ComposerStaticInit371847deda16bb5e4bcb84b00459bce6::getInitializer($loader));
  $loader->register(true);
- $filesToLoad = \Composer\Autoload\ComposerStaticInit371847deda16bb5e4bcb84b00459bce6::$files;
- $requireFile = \Closure::bind(static function ($fileIdentifier, $file) {
- if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
- $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
- require $file;
- }
- }, null, null);
- foreach ($filesToLoad as $fileIdentifier => $file) {
- $requireFile($fileIdentifier, $file);
- }
  return $loader;
  }
 }

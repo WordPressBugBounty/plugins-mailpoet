@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) exit;
  'name' => '__root__',
  'pretty_version' => 'dev-trunk',
  'version' => 'dev-trunk',
- 'reference' => '817bea9057c2675460f539bd00ec952b69ed4ea7',
+ 'reference' => 'd095480c90ce317c5f8c2d572a8a519a8e57fac3',
  'type' => 'library',
  'install_path' => __DIR__ . '/../../',
  'aliases' => array(),
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) exit;
  '__root__' => array(
  'pretty_version' => 'dev-trunk',
  'version' => 'dev-trunk',
- 'reference' => '817bea9057c2675460f539bd00ec952b69ed4ea7',
+ 'reference' => 'd095480c90ce317c5f8c2d572a8a519a8e57fac3',
  'type' => 'library',
  'install_path' => __DIR__ . '/../../',
  'aliases' => array(),
@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) exit;
  'mailpoet/email-editor' => array(
  'pretty_version' => 'dev-trunk',
  'version' => 'dev-trunk',
- 'reference' => '311798cfd57b26bb5df1fc7f97b5732e45603419',
+ 'reference' => '53577c5aa3a97e82c58284d48c3aa339cb2a15d4',
  'type' => 'library',
  'install_path' => __DIR__ . '/../mailpoet/email-editor',
  'aliases' => array(),
@@ -54,6 +54,12 @@ if (!defined('ABSPATH')) exit;
  0 => '^1.0',
  ),
  ),
+ 'soundasleep/html2text' => array(
+ 'dev_requirement' => false,
+ 'replaced' => array(
+ 0 => '*',
+ ),
+ ),
  'webmozart/assert' => array(
  'pretty_version' => '1.11.0',
  'version' => '1.11.0.0',
@@ -64,9 +70,9 @@ if (!defined('ABSPATH')) exit;
  'dev_requirement' => false,
  ),
  'woocommerce/action-scheduler' => array(
- 'pretty_version' => '3.8.0',
- 'version' => '3.8.0.0',
- 'reference' => '99cd7981f51c98883082534d4852491858d72834',
+ 'pretty_version' => '3.9.2',
+ 'version' => '3.9.2.0',
+ 'reference' => 'efbb7953f72a433086335b249292f280dd43ddfe',
  'type' => 'wordpress-plugin',
  'install_path' => __DIR__ . '/../woocommerce/action-scheduler',
  'aliases' => array(),

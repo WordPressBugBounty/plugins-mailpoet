@@ -4,9 +4,6 @@ namespace Composer\Autoload;
 if (!defined('ABSPATH')) exit;
 class ComposerStaticInit371847deda16bb5e4bcb84b00459bce6
 {
- public static $files = array (
- 'ba6018d54244eae1ca1c3c65edf949d6' => __DIR__ . '/../..' . '/src/exceptions.php',
- );
  public static $prefixLengthsPsr4 = array (
  'S' => 
  array (
