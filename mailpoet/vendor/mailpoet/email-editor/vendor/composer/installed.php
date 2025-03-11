@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) exit;
  'name' => 'mailpoet/email-editor',
  'pretty_version' => 'dev-trunk',
  'version' => 'dev-trunk',
- 'reference' => '6a4919fbc1eef45babd24c048e3f794c716c8182',
+ 'reference' => '05e9959beb252ddcbd587e5985bc1fbe4f268f9f',
  'type' => 'library',
  'install_path' => __DIR__ . '/../../',
  'aliases' => array(),
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) exit;
  'mailpoet/email-editor' => array(
  'pretty_version' => 'dev-trunk',
  'version' => 'dev-trunk',
- 'reference' => '6a4919fbc1eef45babd24c048e3f794c716c8182',
+ 'reference' => '05e9959beb252ddcbd587e5985bc1fbe4f268f9f',
  'type' => 'library',
  'install_path' => __DIR__ . '/../../',
  'aliases' => array(),
