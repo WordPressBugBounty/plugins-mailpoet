@@ -3,7 +3,7 @@ Contributors: mailpoet, woocommerce, automattic
 Tags: email marketing, post notification, woocommerce emails, email automation, newsletter
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 5.11.0
+Stable tag: 5.12.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -222,9 +222,11 @@ Check our [Knowledge Base](https://kb.mailpoet.com) or contact us through our [s
 
 == Changelog ==
 
-= 5.11.0 - 2025-04-22 =
-* Added: Dynamic Products block in email editor. Useful in automations to render order products, cross-sells, abandoned cart content, or selected categories or tags;
-* Updated: minimum required WordPress version to 6.7 and tested up to version to 6.8;
-* Updated: minimum required WooCommerce version to 9.7.1 and tested up to version to 9.8.1.
+= 5.12.0 - 2025-04-29 =
+* Improved: more consistent look and feel of MailPoet pages with WordPress;
+* Improved: optimized email template images to decrease their file size;
+* Improved: better handling of unsubscribes via the link provided in the List-Unsubscribe header;
+* Fixed: unreadable customer name in automation analytics when Gravatar fails to load;
+* Fixed: "Custom HTML" block in form editor doesn't preserve "Automatically add paragraphs" setting.
 
 [See the changelog for all versions.](https://github.com/mailpoet/mailpoet/blob/trunk/mailpoet/changelog.txt)
