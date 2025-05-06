@@ -3,7 +3,7 @@ Contributors: mailpoet, woocommerce, automattic
 Tags: email marketing, post notification, woocommerce emails, email automation, newsletter
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 5.12.0
+Stable tag: 5.12.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -222,11 +222,8 @@ Check our [Knowledge Base](https://kb.mailpoet.com) or contact us through our [s
 
 == Changelog ==
 
-= 5.12.0 - 2025-04-29 =
-* Improved: more consistent look and feel of MailPoet pages with WordPress;
-* Improved: optimized email template images to decrease their file size;
-* Improved: better handling of unsubscribes via the link provided in the List-Unsubscribe header;
-* Fixed: unreadable customer name in automation analytics when Gravatar fails to load;
-* Fixed: "Custom HTML" block in form editor doesn't preserve "Automatically add paragraphs" setting.
+= 5.12.1 - 2025-05-06 =
+* Fixed: listing action items overlaying with row border when on two lines on smaller screens;
+* Fixed: Handling of Japanese characters in custom field blocks in the form editor.
 
 [See the changelog for all versions.](https://github.com/mailpoet/mailpoet/blob/trunk/mailpoet/changelog.txt)
