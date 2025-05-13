@@ -61,7 +61,7 @@ class __TwigTemplate_8a6f0398fffc82506ba46e70538b728a453c02bea83ac685560c22b44c4
         $context["allowedHtml"] = ["a" => ["href" => [], "target" => [], "id" => []], "strong" => []];
         // line 9
         yield "      ";
-        yield $this->extensions['MailPoet\Twig\Filters']->wpKses(MailPoet\Util\Helpers::replaceLinkTags($this->extensions['MailPoet\Twig\I18n']->translate("<strong>Tip:</strong> check out [link]this list[/link] of form plugins that integrate with MailPoet."), "https://kb.mailpoet.com/article/198-list-of-forms-plugins-that-work-with-mailpoet?utm_source=plugin&utm_medium=settings&utm_campaign=helpdocs", ["target" => "_blank", "id" => "mailpoet_helper_link"]),         // line 11
+        yield $this->extensions['MailPoet\Twig\Filters']->wpKses(MailPoet\Util\Helpers::replaceLinkTags($this->extensions['MailPoet\Twig\I18n']->translate("<strong>Tip:</strong> check out [link]this list[/link] of form plugins that integrate with MailPoet."), "https://kb.mailpoet.com/article/198-forms-themes-plugins-that-work-with-mailpoet", ["target" => "_blank", "id" => "mailpoet_helper_link"]),         // line 11
 ($context["allowedHtml"] ?? null));
         // line 12
         yield "
