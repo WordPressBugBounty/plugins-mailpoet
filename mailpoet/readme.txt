@@ -3,7 +3,7 @@ Contributors: mailpoet, woocommerce, automattic
 Tags: email marketing, post notification, woocommerce emails, email automation, newsletter
 Requires at least: 6.7
 Tested up to: 6.8
-Stable tag: 5.12.8
+Stable tag: 5.12.9
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -157,7 +157,7 @@ To improve user experience, MailPoet may use the following 3rd party libraries i
 
 * [Google Fonts](https://fonts.google.com/) - used in Form Editor which you can use to customize your forms, and in the Email Editor to style emails. This can be individually [disabled by a filter](https://kb.mailpoet.com/article/332-how-to-disable-google-fonts). [TOS](https://policies.google.com/terms?hl=en) and [Privacy Policy](https://policies.google.com/privacy?hl=en)
 
-* [DocsBot](https://docsbot.ai) - used for searching in Knowledge Base with the help of AI. This functionality may load scripts from [https://widget.docsbot.ai/chat.js](https://widget.docsbot.ai/chat.js). [TOS and Privacy Policy](https://docsbot.ai/legal)
+* [WordPress.com](https://public-api.wordpress.com/) - used for searching in Knowledge Base with the help of AI.
 
 * [Mixpanel](https://mixpanel.com/) - used to send data about the usage of the MailPoet plugin when you [agree with sharing usage data with us](https://kb.mailpoet.com/article/130-sharing-your-data-with-us). [TOS](https://mixpanel.com/legal/terms-of-use/) and [Privacy Policy](https://mixpanel.com/legal/privacy-policy/)
 
@@ -227,9 +227,13 @@ Check our [Knowledge Base](https://kb.mailpoet.com) or contact us through our [s
 
 == Changelog ==
 
-= 5.12.8 - 2025-06-24 =
-* Updated: support custom order statuses in WooCommerce segments;
-* Improved: adds `polylang` to the list of permitted scripts;
-* Fixed: warning `Undefined array key "blocks"`.
+= 5.12.9 - 2025-06-30 =
+* Improved: handling of MailPoet Page title when switching website languages;
+* Improved: add default re-engagement emails trigger value when "Inactive subscribers" feature is turned off;
+* Improved: when choosing an email type, show loading animation only on the selected one;
+* Changed: replaced DocsBot with WordPress.com chatbot when searching MailPoet Knowledge Base;
+* Fixed: rendering submit button when font size is changed;
+* Fixed: fatal error in ACF and SCF when working with post templates in location rules;
+* Fixed: apply the latest changes in the form editor in the preview.
 
 [See the changelog for all versions.](https://github.com/mailpoet/mailpoet/blob/trunk/mailpoet/changelog.txt)
