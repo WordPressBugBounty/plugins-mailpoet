@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.12.13\n"
+"Project-Id-Version: MailPoet 5.13.0\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-04T14:07:40+00:00\n"
+"POT-Creation-Date: 2025-08-12T10:17:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -5649,7 +5649,6 @@ msgstr ""
 
 #: views/settings_translations.html:6
 #: lib/AutomaticEmails/WooCommerce/WooCommerce.php:65
-#: lib/Automation/Engine/Registry.php:65
 #: assets/dist/js/commons.js:9
 msgid "WooCommerce"
 msgstr ""
@@ -7534,7 +7533,7 @@ msgstr ""
 #. translators: %s is the subject of the mail which has been copied.
 #. translators: %s is the campaign name of the mail which has been copied.
 #. translators: %s is the name of the segment
-#: lib/Automation/Engine/Builder/DuplicateAutomationController.php:52
+#: lib/Automation/Engine/Builder/DuplicateAutomationController.php:69
 #: lib/Form/FormSaveController.php:22
 #: lib/Newsletter/NewsletterSaveController.php:180
 #: lib/Newsletter/NewsletterSaveController.php:206
@@ -7721,17 +7720,33 @@ msgid "Unknown error."
 msgstr ""
 
 #: lib/Automation/Engine/Registry.php:62
-#: assets/dist/js/automation.js:1
+msgctxt "automation template category title"
 msgid "Welcome"
 msgstr ""
 
 #: lib/Automation/Engine/Registry.php:63
+msgctxt "automation template category title"
 msgid "Abandoned Cart"
 msgstr ""
 
 #: lib/Automation/Engine/Registry.php:64
-#: assets/dist/js/commons.js:9
+msgctxt "automation template category title"
 msgid "Re-engagement"
+msgstr ""
+
+#: lib/Automation/Engine/Registry.php:65
+msgctxt "automation template category title"
+msgid "Post-purchase"
+msgstr ""
+
+#: lib/Automation/Engine/Registry.php:66
+msgctxt "automation template category title"
+msgid "Review"
+msgstr ""
+
+#: lib/Automation/Engine/Registry.php:67
+msgctxt "automation template category title"
+msgid "Subscriptions"
 msgstr ""
 
 #: lib/Automation/Engine/Validation/AutomationGraph/AutomationWalker.php:18
@@ -7868,15 +7883,15 @@ msgid "A delay can't be longer than two years"
 msgstr ""
 
 #. translators: automation action title
-#: lib/Automation/Integrations/Core/Actions/IfElseAction.php:33
+#: lib/Automation/Integrations/Core/Actions/IfElseAction.php:34
 msgid "If/Else"
 msgstr ""
 
-#: lib/Automation/Integrations/Core/Actions/IfElseAction.php:52
+#: lib/Automation/Integrations/Core/Actions/IfElseAction.php:53
 msgid "If/Else action must have exactly two next steps."
 msgstr ""
 
-#: lib/Automation/Integrations/Core/Actions/IfElseAction.php:65
+#: lib/Automation/Integrations/Core/Actions/IfElseAction.php:66
 msgid "If/Else action must have at least one condition set."
 msgstr ""
 
@@ -7967,77 +7982,77 @@ msgid "matches regex"
 msgstr ""
 
 #. translators: automation action title
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:136
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:149
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:141
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:154
 #: assets/dist/js/commons.js:9
 msgid "Send email"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:150
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:155
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:1
 msgid "Subject"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:177
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:182
 msgid "Cannot send the email because it was not found. Please, go to the automation editor and update the email contents."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:181
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:186
 msgid "Automation email not found."
 msgstr ""
 
 #. translators: %s is the ID of email.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:186
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:535
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:191
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:540
 msgid "Automation email with ID '%s' not found."
 msgstr ""
 
 #. translators: %s is the subscriber's status.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:202
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:274
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:207
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:279
 msgid "Cannot send the email because the subscriber's status is '%s'."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:251
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:256
 msgid "Could not create sending task."
 msgstr ""
 
 #. translators: %s is the type of $data.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:293
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:298
 msgid "Invalid automation step data. Array expected, got: %s"
 msgstr ""
 
 #. translators: %s is the type of $runId.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:301
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:306
 msgid "Invalid automation step data. Expected 'run_id' to be an integer, got: %s"
 msgstr ""
 
 #. translators: %s is the type of $runId.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:309
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:314
 msgid "Invalid automation step data. Expected 'step_id' to be a string, got: %s"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:319
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:324
 msgid "Email failed to schedule."
 msgstr ""
 
 #. translators: %s is the error message.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:326
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:331
 msgid "Email failed to send. Error: %s"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:335
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:340
 msgid "Email sending process timed out."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:409
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:414
 msgid "Cannot send the email because the list was not found."
 msgstr ""
 
 #. translators: %s is the name of the list.
-#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:412
+#: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:417
 msgid "Cannot send the email because the subscriber is not subscribed to the '%s' list."
 msgstr ""
 
@@ -8165,131 +8180,212 @@ msgstr ""
 msgid "Subscriber with ID '%d' not found."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:57
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:64
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:74
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:81
 msgid "Welcome new subscribers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:58
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:75
 msgid "Send a welcome email when someone subscribes to your list. Optionally, you can choose to send this email after a specified period."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:86
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:93
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:103
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:110
 msgid "Welcome new WordPress users"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:87
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:104
 msgid "Send a welcome email when a new WordPress user registers to your website. Optionally, you can choose to send this email after a specified period."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:115
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:122
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:132
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:139
 msgid "Welcome series for new subscribers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:116
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:133
 msgid "Welcome new subscribers and start building a relationship with them. Send an email immediately after someone subscribes to your list to introduce your brand and a follow-up two days later to keep the conversation going."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:137
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:144
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:154
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:161
 msgid "Welcome series for new WordPress users"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:138
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:155
 msgid "Welcome new WordPress users to your site. Send an email immediately after a WordPress user registers. Send a follow-up email two days later with more in-depth information."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:159
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:166
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:176
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:183
 msgid "Celebrate first-time buyers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:160
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:177
 msgid "Welcome your first-time customers by sending an email with a special offer for their next purchase. Make them feel appreciated within your brand."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:185
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:202
 msgid "Thank you"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:186
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:203
 msgid "Thank You for Choosing Us!"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:206
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:213
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:223
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:230
 msgid "Thank loyal customers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:207
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:224
 msgid "These are your most important customers. Make them feel special by sending a thank you note for supporting your brand."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:228
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:235
-msgid "Win-back customers"
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:245
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:252
+msgid "Win back customers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:229
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:246
 msgid "Rekindle the relationship with past customers by reminding them of their favorite products and showcasing what’s new, encouraging a return to your brand."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:250
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:257
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:267
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:274
 msgid "Abandoned cart reminder"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:251
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:268
 msgid "Nudge your shoppers to complete the purchase after they have added a product to the cart but haven’t completed the order."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:263
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:280
 msgid "Abandoned cart"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:264
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:281
 msgid "Looks like you forgot something"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:281
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:288
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:298
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:305
 msgid "Abandoned cart campaign"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:282
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:299
 msgid "Encourage your potential customers to finalize their purchase when they have added items to their cart but haven’t finished the order yet. Offer a coupon code as a last resort to convert them to customers."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:303
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:310
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:320
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:327
 msgid "Purchased a product"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:304
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:337
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:370
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:321
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:354
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:387
 msgid "Share care instructions or simply thank the customer for making an order."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:318
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:319
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:351
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:352
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:384
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:385
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:335
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:336
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:368
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:369
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:401
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:402
 msgid "Important information about your order"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:336
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:343
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:353
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:360
 msgid "Purchased a product with a tag"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:369
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:376
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:386
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:393
 msgid "Purchased in a category"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:419
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:426
+msgid "Ask to leave a review post-purchase"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:420
+msgid "Encourage your customers to leave a review a few days after their purchase. Show them their opinion matters."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:441
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:448
+msgid "Follow up on a positive review (4-5 stars)"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:442
+msgid "Thank your happy customers for their feedback and let them know you appreciate their support."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:463
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:470
+msgid "Follow up on a negative review (1-2 stars)"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:464
+msgid "Reach out to unhappy customers and show you care. Offer help or gather more feedback to improve."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:485
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:492
+msgid "Follow up after a subscription purchase"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:486
+msgid "Thank new subscribers and let them know what to expect. A warm welcome goes a long way."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:507
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:514
+msgid "Follow up after a subscription renewal"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:508
+msgid "Reinforce the value of your subscription by reminding customers what they’re getting after every renewal."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:529
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:536
+msgid "Follow up after failed renewal"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:530
+msgid "Help customers fix failed payments and continue their subscription without disruption."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:551
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:558
+msgid "Follow up on churned subscription"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:552
+msgid "Reach out to subscribers who canceled and ask for their feedback to help improve your service."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:573
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:580
+msgid "Follow up when trial ends"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:574
+msgid "Check in with customers after their trial ends. Encourage them to keep enjoying the benefits of their subscription."
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:595
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:602
+msgid "Win back churned subscribers"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:596
+msgid "Re-engage former subscribers by showing what’s new and why it’s worth coming back."
 msgstr ""
 
 #. translators: automation trigger title
@@ -8304,62 +8400,62 @@ msgstr ""
 msgid "WordPress user registers"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:30
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:35
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:48
 msgid "Billing company"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:38
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:43
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:56
 msgid "Billing phone"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:46
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:51
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:64
 msgid "Billing city"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:54
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:59
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:72
 msgid "Billing postcode"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:62
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:67
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:80
 msgid "Billing state/county"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:70
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:75
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:88
 msgid "Billing country"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:81
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:86
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:99
 msgid "Shipping company"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:89
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:94
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:107
 msgid "Shipping phone"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:97
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:102
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:115
 msgid "Shipping city"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:105
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:110
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:123
 msgid "Shipping postcode"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:113
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:118
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:131
 msgid "Shipping state/county"
 msgstr ""
 
-#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:121
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerFieldsFactory.php:126
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:139
 msgid "Shipping country"
 msgstr ""
@@ -8398,6 +8494,10 @@ msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/CustomerReviewFieldsFactory.php:43
 msgid "Last review date"
+msgstr ""
+
+#: lib/Automation/Integrations/WooCommerce/Fields/CustomerSubscriptionFieldsFactory.php:25
+msgid "Active subscriptions count"
 msgstr ""
 
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:150
@@ -13948,6 +14048,10 @@ msgid "Start with a template"
 msgstr ""
 
 #: assets/dist/js/automation.js:1
+msgid "Welcome"
+msgstr ""
+
+#: assets/dist/js/automation.js:1
 msgid "Explore essentials"
 msgstr ""
 
@@ -14341,6 +14445,14 @@ msgid "Add trigger"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+msgid "Duplicate step"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Duplicating automation steps is available in premium plans. Upgrade to unlock this feature."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
 msgid "Delete step"
 msgstr ""
 
@@ -14695,6 +14807,10 @@ msgstr ""
 
 #: assets/dist/js/commons.js:9
 msgid "You can use MailPoet shortcodes."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Email duplication failed. Please try again."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
@@ -16026,6 +16142,10 @@ msgstr ""
 
 #: assets/dist/js/commons.js:9
 msgid "Post Notification"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Re-engagement"
 msgstr ""
 
 #. translators: accessibility text for the footer landmark region.
