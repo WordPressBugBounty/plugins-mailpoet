@@ -5,24 +5,24 @@ namespace MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes;
 if (!defined('ABSPATH')) exit;
 
 
+use MailPoet\Config\ServicesChecker;
 use MailPoet\Util\CdnAssetUrl;
-use MailPoet\Util\License\Features\Subscribers as SubscribersFeature;
 
 class PoweredByMailpoet extends AbstractBlock {
-  private SubscribersFeature $subscribersFeature;
+  private ServicesChecker $servicesChecker;
   private CdnAssetUrl $cdnAssetUrl;
   protected $blockName = 'powered-by-mailpoet';
 
   public function __construct(
-    SubscribersFeature $subscribersFeature,
+    ServicesChecker $servicesChecker,
     CdnAssetUrl $cdnAssetUrl
   ) {
     $this->cdnAssetUrl = $cdnAssetUrl;
-    $this->subscribersFeature = $subscribersFeature;
+    $this->servicesChecker = $servicesChecker;
   }
 
   public function render($attributes, $content, $block) {
-    if ($this->subscribersFeature->hasValidPremiumKey()) {
+    if ($this->servicesChecker->isPremiumPluginActive()) {
       return '';
     }
 

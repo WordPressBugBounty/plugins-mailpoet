@@ -39,7 +39,6 @@ class LoggerFactory {
   const TOPIC_COUPONS = 'coupons';
   const TOPIC_PROVISIONING = 'provisioning';
   const TOPIC_SEGMENTS = 'segments';
-  const TOPIC_EMAIL_EDITOR = 'email-editor';
 
   /** @var LoggerFactory */
   private static $instance;

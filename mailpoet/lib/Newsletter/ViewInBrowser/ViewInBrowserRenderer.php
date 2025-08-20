@@ -5,8 +5,7 @@ namespace MailPoet\Newsletter\ViewInBrowser;
 if (!defined('ABSPATH')) exit;
 
 
-use Automattic\WooCommerce\EmailEditor\Email_Editor_Container;
-use Automattic\WooCommerce\EmailEditor\Engine\Personalizer;
+use MailPoet\EmailEditor\Engine\Personalizer;
 use MailPoet\Entities\NewsletterEntity;
 use MailPoet\Entities\SendingQueueEntity;
 use MailPoet\Entities\SubscriberEntity;
@@ -39,14 +38,15 @@ class ViewInBrowserRenderer {
     TrackingConfig $trackingConfig,
     Shortcodes $shortcodes,
     Renderer $renderer,
-    Links $links
+    Links $links,
+    Personalizer $personalizer
   ) {
     $this->emoji = $emoji;
     $this->trackingConfig = $trackingConfig;
     $this->renderer = $renderer;
     $this->shortcodes = $shortcodes;
     $this->links = $links;
-    $this->personalizer = Email_Editor_Container::container()->get(Personalizer::class);
+    $this->personalizer = $personalizer;
   }
 
   public function render(

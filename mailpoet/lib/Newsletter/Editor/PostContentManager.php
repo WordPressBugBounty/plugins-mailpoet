@@ -21,10 +21,9 @@ class PostContentManager {
   private $wp;
 
   public function __construct(
-    ?WooCommerceHelper $woocommerceHelper = null,
-    ?WPFunctions $wp = null
+    ?WooCommerceHelper $woocommerceHelper = null
   ) {
-    $this->wp = $wp ?: new WPFunctions;
+    $this->wp = new WPFunctions;
     $this->maxExcerptLength = $this->wp->applyFilters('mailpoet_newsletter_post_excerpt_length', $this->maxExcerptLength);
     $this->woocommerceHelper = $woocommerceHelper ?: new WooCommerceHelper($this->wp);
   }
@@ -50,20 +49,17 @@ class PostContentManager {
 
     if ($displayType === 'excerpt') {
       if ($this->wp->hasExcerpt($post)) {
-        $content = self::stripShortCodes($this->wp->getTheExcerpt($post));
-        return $this->fixAnchorLinks($content, $post);
+        return self::stripShortCodes($this->wp->getTheExcerpt($post));
       }
-      $content = self::stripShortCodes(
+      return self::stripShortCodes(
         $this->wp->applyFilters(
           'get_the_excerpt',
           $this->generateExcerpt($post->post_content), // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
           $post
         )
       );
-      return $this->fixAnchorLinks($content, $post);
     }
-    $content = self::stripShortCodes($post->post_content); // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
-    return $this->fixAnchorLinks($content, $post);
+    return self::stripShortCodes($post->post_content); // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
   }
 
   public function filterContent($content, $displayType, $withPostClass = true) {
@@ -179,28 +175,5 @@ class PostContentManager {
 
   private function isWcProduct($post) {
     return class_exists('\WC_Product') && $post instanceof \WC_Product;
-  }
-
-  private function fixAnchorLinks($content, $post) {
-    if (empty($content) || !$post) {
-      return $content;
-    }
-
-    // Get the post's permalink to use as base URL
-    $postUrl = $this->wp->getPermalink($post);
-    if (!$postUrl) {
-      return $content;
-    }
-
-    // Find and replace anchor-only links (href="#...") with full URLs
-    $content = preg_replace_callback(
-      '/(<a[^>]+href=["\'])#([^"\']*)(["\'])/i',
-      function($matches) use ($postUrl) {
-        return $matches[1] . $postUrl . '#' . $matches[2] . $matches[3];
-      },
-      $content
-    );
-
-    return $content;
   }
 }

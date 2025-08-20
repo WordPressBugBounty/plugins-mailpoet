@@ -12,8 +12,7 @@
     "multiple": false,
     "reusable": false,
     "inserter": false,
-    "lock": false,
-    "email": true
+    "lock": false
   },
   "apiVersion": 3,
   "$schema": "https://schemas.wp.org/trunk/block.json",

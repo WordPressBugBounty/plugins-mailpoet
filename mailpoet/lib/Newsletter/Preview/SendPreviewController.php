@@ -5,8 +5,7 @@ namespace MailPoet\Newsletter\Preview;
 if (!defined('ABSPATH')) exit;
 
 
-use Automattic\WooCommerce\EmailEditor\Email_Editor_Container;
-use Automattic\WooCommerce\EmailEditor\Engine\Personalizer;
+use MailPoet\EmailEditor\Engine\Personalizer;
 use MailPoet\Entities\NewsletterEntity;
 use MailPoet\Entities\SubscriberEntity;
 use MailPoet\Mailer\MailerFactory;
@@ -44,7 +43,8 @@ class SendPreviewController {
     Renderer $renderer,
     WPFunctions $wp,
     SubscribersRepository $subscribersRepository,
-    Shortcodes $shortcodes
+    Shortcodes $shortcodes,
+    Personalizer $personalizer
   ) {
     $this->mailerFactory = $mailerFactory;
     $this->mailerMetaInfo = $mailerMetaInfo;
@@ -52,7 +52,7 @@ class SendPreviewController {
     $this->renderer = $renderer;
     $this->shortcodes = $shortcodes;
     $this->subscribersRepository = $subscribersRepository;
-    $this->personalizer = Email_Editor_Container::container()->get(Personalizer::class);
+    $this->personalizer = $personalizer;
   }
 
   public function sendPreview(NewsletterEntity $newsletter, string $emailAddress) {
