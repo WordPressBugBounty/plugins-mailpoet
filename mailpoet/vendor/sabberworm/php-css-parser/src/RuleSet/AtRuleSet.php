@@ -1,38 +1,40 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\RuleSet;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\OutputFormat;
 use Sabberworm\CSS\Property\AtRule;
 class AtRuleSet extends RuleSet implements AtRule
 {
- private $type;
- private $arguments;
- public function __construct(string $type, string $arguments = '', ?int $lineNumber = null)
+ private $sType;
+ private $sArgs;
+ public function __construct($sType, $sArgs = '', $iLineNo = 0)
  {
- parent::__construct($lineNumber);
- $this->type = $type;
- $this->arguments = $arguments;
+ parent::__construct($iLineNo);
+ $this->sType = $sType;
+ $this->sArgs = $sArgs;
  }
- public function atRuleName(): string
+ public function atRuleName()
  {
- return $this->type;
+ return $this->sType;
  }
- public function atRuleArgs(): string
+ public function atRuleArgs()
  {
- return $this->arguments;
+ return $this->sArgs;
  }
- public function render(OutputFormat $outputFormat): string
+ public function __toString()
  {
- $formatter = $outputFormat->getFormatter();
- $result = $formatter->comments($this);
- $arguments = $this->arguments;
- if ($arguments !== '') {
- $arguments = ' ' . $arguments;
+ return $this->render(new OutputFormat());
  }
- $result .= "@{$this->type}$arguments{$formatter->spaceBeforeOpeningBrace()}{";
- $result .= $this->renderRules($outputFormat);
- $result .= '}';
- return $result;
+ public function render($oOutputFormat)
+ {
+ $sResult = $oOutputFormat->comments($this);
+ $sArgs = $this->sArgs;
+ if ($sArgs) {
+ $sArgs = ' ' . $sArgs;
+ }
+ $sResult .= "@{$this->sType}$sArgs{$oOutputFormat->spaceBeforeOpeningBrace()}{";
+ $sResult .= $this->renderRules($oOutputFormat);
+ $sResult .= '}';
+ return $sResult;
  }
 }

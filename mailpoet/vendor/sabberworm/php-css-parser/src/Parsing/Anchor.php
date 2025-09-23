@@ -1,18 +1,17 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Parsing;
 if (!defined('ABSPATH')) exit;
 class Anchor
 {
- private $position;
- private $parserState;
- public function __construct(int $position, ParserState $parserState)
+ private $iPosition;
+ private $oParserState;
+ public function __construct($iPosition, ParserState $oParserState)
  {
- $this->position = $position;
- $this->parserState = $parserState;
+ $this->iPosition = $iPosition;
+ $this->oParserState = $oParserState;
  }
- public function backtrack(): void
+ public function backtrack()
  {
- $this->parserState->setPosition($this->position);
+ $this->oParserState->setPosition($this->iPosition);
  }
 }

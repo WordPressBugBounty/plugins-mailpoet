@@ -1,10 +1,12 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Property;
 if (!defined('ABSPATH')) exit;
-use Sabberworm\CSS\CSSList\CSSListItem;
-interface AtRule extends CSSListItem
+use Sabberworm\CSS\Comment\Commentable;
+use Sabberworm\CSS\Renderable;
+interface AtRule extends Renderable, Commentable
 {
- public const BLOCK_RULES = 'media/document/supports/region-style/font-feature-values';
- public function atRuleName(): string;
+ const BLOCK_RULES = 'media/document/supports/region-style/font-feature-values';
+ const SET_RULES = 'font-face/counter-style/page/swash/styleset/annotation';
+ public function atRuleName();
+ public function atRuleArgs();
 }

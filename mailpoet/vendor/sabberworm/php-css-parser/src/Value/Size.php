@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Value;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\OutputFormat;
@@ -8,7 +7,7 @@ use Sabberworm\CSS\Parsing\UnexpectedEOFException;
 use Sabberworm\CSS\Parsing\UnexpectedTokenException;
 class Size extends PrimitiveValue
 {
- private const ABSOLUTE_SIZE_UNITS = [
+ const ABSOLUTE_SIZE_UNITS = [
  'px',
  'pt',
  'pc',
@@ -25,111 +24,115 @@ class Size extends PrimitiveValue
  'vmax',
  'rem',
  ];
- private const RELATIVE_SIZE_UNITS = ['%', 'em', 'ex', 'ch', 'fr'];
- private const NON_SIZE_UNITS = ['deg', 'grad', 'rad', 's', 'ms', 'turn', 'Hz', 'kHz'];
+ const RELATIVE_SIZE_UNITS = ['%', 'em', 'ex', 'ch', 'fr'];
+ const NON_SIZE_UNITS = ['deg', 'grad', 'rad', 's', 'ms', 'turn', 'Hz', 'kHz'];
  private static $SIZE_UNITS = null;
- private $size;
- private $unit;
- private $isColorComponent;
- public function __construct($size, ?string $unit = null, bool $isColorComponent = false, ?int $lineNumber = null)
+ private $fSize;
+ private $sUnit;
+ private $bIsColorComponent;
+ public function __construct($fSize, $sUnit = null, $bIsColorComponent = false, $iLineNo = 0)
  {
- parent::__construct($lineNumber);
- $this->size = (float) $size;
- $this->unit = $unit;
- $this->isColorComponent = $isColorComponent;
+ parent::__construct($iLineNo);
+ $this->fSize = (float)$fSize;
+ $this->sUnit = $sUnit;
+ $this->bIsColorComponent = $bIsColorComponent;
  }
- public static function parse(ParserState $parserState, bool $isColorComponent = false): Size
+ public static function parse(ParserState $oParserState, $bIsColorComponent = false)
  {
- $size = '';
- if ($parserState->comes('-')) {
- $size .= $parserState->consume('-');
+ $sSize = '';
+ if ($oParserState->comes('-')) {
+ $sSize .= $oParserState->consume('-');
  }
- while (\is_numeric($parserState->peek()) || $parserState->comes('.') || $parserState->comes('e', true)) {
- if ($parserState->comes('.')) {
- $size .= $parserState->consume('.');
- } elseif ($parserState->comes('e', true)) {
- $lookahead = $parserState->peek(1, 1);
- if (\is_numeric($lookahead) || $lookahead === '+' || $lookahead === '-') {
- $size .= $parserState->consume(2);
+ while (is_numeric($oParserState->peek()) || $oParserState->comes('.') || $oParserState->comes('e', true)) {
+ if ($oParserState->comes('.')) {
+ $sSize .= $oParserState->consume('.');
+ } elseif ($oParserState->comes('e', true)) {
+ $sLookahead = $oParserState->peek(1, 1);
+ if (is_numeric($sLookahead) || $sLookahead === '+' || $sLookahead === '-') {
+ $sSize .= $oParserState->consume(2);
  } else {
  break; // Reached the unit part of the number like "em" or "ex"
  }
  } else {
- $size .= $parserState->consume(1);
+ $sSize .= $oParserState->consume(1);
  }
  }
- $unit = null;
- $sizeUnits = self::getSizeUnits();
- foreach ($sizeUnits as $length => &$values) {
- $key = \strtolower($parserState->peek($length));
- if (\array_key_exists($key, $values)) {
- if (($unit = $values[$key]) !== null) {
- $parserState->consume($length);
+ $sUnit = null;
+ $aSizeUnits = self::getSizeUnits();
+ foreach ($aSizeUnits as $iLength => &$aValues) {
+ $sKey = strtolower($oParserState->peek($iLength));
+ if (array_key_exists($sKey, $aValues)) {
+ if (($sUnit = $aValues[$sKey]) !== null) {
+ $oParserState->consume($iLength);
  break;
  }
  }
  }
- return new Size((float) $size, $unit, $isColorComponent, $parserState->currentLine());
+ return new Size((float)$sSize, $sUnit, $bIsColorComponent, $oParserState->currentLine());
  }
- private static function getSizeUnits(): array
+ private static function getSizeUnits()
  {
- if (!\is_array(self::$SIZE_UNITS)) {
+ if (!is_array(self::$SIZE_UNITS)) {
  self::$SIZE_UNITS = [];
- $sizeUnits = \array_merge(self::ABSOLUTE_SIZE_UNITS, self::RELATIVE_SIZE_UNITS, self::NON_SIZE_UNITS);
- foreach ($sizeUnits as $sizeUnit) {
- $tokenLength = \strlen($sizeUnit);
- if (!isset(self::$SIZE_UNITS[$tokenLength])) {
- self::$SIZE_UNITS[$tokenLength] = [];
+ foreach (array_merge(self::ABSOLUTE_SIZE_UNITS, self::RELATIVE_SIZE_UNITS, self::NON_SIZE_UNITS) as $val) {
+ $iSize = strlen($val);
+ if (!isset(self::$SIZE_UNITS[$iSize])) {
+ self::$SIZE_UNITS[$iSize] = [];
  }
- self::$SIZE_UNITS[$tokenLength][\strtolower($sizeUnit)] = $sizeUnit;
+ self::$SIZE_UNITS[$iSize][strtolower($val)] = $val;
  }
- \krsort(self::$SIZE_UNITS, SORT_NUMERIC);
+ krsort(self::$SIZE_UNITS, SORT_NUMERIC);
  }
  return self::$SIZE_UNITS;
  }
- public function setUnit(string $unit): void
+ public function setUnit($sUnit)
  {
- $this->unit = $unit;
+ $this->sUnit = $sUnit;
  }
- public function getUnit(): ?string
+ public function getUnit()
  {
- return $this->unit;
+ return $this->sUnit;
  }
- public function setSize($size): void
+ public function setSize($fSize)
  {
- $this->size = (float) $size;
+ $this->fSize = (float)$fSize;
  }
- public function getSize(): float
+ public function getSize()
  {
- return $this->size;
+ return $this->fSize;
  }
- public function isColorComponent(): bool
+ public function isColorComponent()
  {
- return $this->isColorComponent;
+ return $this->bIsColorComponent;
  }
- public function isSize(): bool
+ public function isSize()
  {
- if (\in_array($this->unit, self::NON_SIZE_UNITS, true)) {
+ if (in_array($this->sUnit, self::NON_SIZE_UNITS, true)) {
  return false;
  }
  return !$this->isColorComponent();
  }
- public function isRelative(): bool
+ public function isRelative()
  {
- if (\in_array($this->unit, self::RELATIVE_SIZE_UNITS, true)) {
+ if (in_array($this->sUnit, self::RELATIVE_SIZE_UNITS, true)) {
  return true;
  }
- if ($this->unit === null && $this->size !== 0.0) {
+ if ($this->sUnit === null && $this->fSize != 0) {
  return true;
  }
  return false;
  }
- public function render(OutputFormat $outputFormat): string
+ public function __toString()
  {
- $locale = \localeconv();
- $decimalPoint = \preg_quote($locale['decimal_point'], '/');
- $size = \preg_match('/[\\d\\.]+e[+-]?\\d+/i', (string) $this->size)
- ? \preg_replace("/$decimalPoint?0+$/", '', \sprintf('%f', $this->size)) : (string) $this->size;
- return \preg_replace(["/$decimalPoint/", '/^(-?)0\\./'], ['.', '$1.'], $size) . ($this->unit ?? '');
+ return $this->render(new OutputFormat());
+ }
+ public function render($oOutputFormat)
+ {
+ $l = localeconv();
+ $sPoint = preg_quote($l['decimal_point'], '/');
+ $sSize = preg_match("/[\d\.]+e[+-]?\d+/i", (string)$this->fSize)
+ ? preg_replace("/$sPoint?0+$/", "", sprintf("%f", $this->fSize)) : (string)$this->fSize;
+ return preg_replace(["/$sPoint/", "/^(-?)0\./"], ['.', '$1.'], $sSize)
+ . ($this->sUnit === null ? '' : $this->sUnit);
  }
 }

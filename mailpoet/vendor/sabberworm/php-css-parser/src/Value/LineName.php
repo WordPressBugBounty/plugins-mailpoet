@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Value;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\OutputFormat;
@@ -8,33 +7,37 @@ use Sabberworm\CSS\Parsing\UnexpectedEOFException;
 use Sabberworm\CSS\Parsing\UnexpectedTokenException;
 class LineName extends ValueList
 {
- public function __construct(array $components = [], ?int $lineNumber = null)
+ public function __construct(array $aComponents = [], $iLineNo = 0)
  {
- parent::__construct($components, ' ', $lineNumber);
+ parent::__construct($aComponents, ' ', $iLineNo);
  }
- public static function parse(ParserState $parserState): LineName
+ public static function parse(ParserState $oParserState)
  {
- $parserState->consume('[');
- $parserState->consumeWhiteSpace();
- $names = [];
+ $oParserState->consume('[');
+ $oParserState->consumeWhiteSpace();
+ $aNames = [];
  do {
- if ($parserState->getSettings()->usesLenientParsing()) {
+ if ($oParserState->getSettings()->bLenientParsing) {
  try {
- $names[] = $parserState->parseIdentifier();
+ $aNames[] = $oParserState->parseIdentifier();
  } catch (UnexpectedTokenException $e) {
- if (!$parserState->comes(']')) {
+ if (!$oParserState->comes(']')) {
  throw $e;
  }
  }
  } else {
- $names[] = $parserState->parseIdentifier();
+ $aNames[] = $oParserState->parseIdentifier();
  }
- $parserState->consumeWhiteSpace();
- } while (!$parserState->comes(']'));
- $parserState->consume(']');
- return new LineName($names, $parserState->currentLine());
+ $oParserState->consumeWhiteSpace();
+ } while (!$oParserState->comes(']'));
+ $oParserState->consume(']');
+ return new LineName($aNames, $oParserState->currentLine());
  }
- public function render(OutputFormat $outputFormat): string
+ public function __toString()
+ {
+ return $this->render(new OutputFormat());
+ }
+ public function render($oOutputFormat)
  {
  return '[' . parent::render(OutputFormat::createCompact()) . ']';
  }

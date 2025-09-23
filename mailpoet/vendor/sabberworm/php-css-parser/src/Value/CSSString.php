@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Value;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\OutputFormat;
@@ -9,58 +8,62 @@ use Sabberworm\CSS\Parsing\UnexpectedEOFException;
 use Sabberworm\CSS\Parsing\UnexpectedTokenException;
 class CSSString extends PrimitiveValue
 {
- private $string;
- public function __construct(string $string, ?int $lineNumber = null)
+ private $sString;
+ public function __construct($sString, $iLineNo = 0)
  {
- $this->string = $string;
- parent::__construct($lineNumber);
+ $this->sString = $sString;
+ parent::__construct($iLineNo);
  }
- public static function parse(ParserState $parserState): CSSString
+ public static function parse(ParserState $oParserState)
  {
- $begin = $parserState->peek();
- $quote = null;
- if ($begin === "'") {
- $quote = "'";
- } elseif ($begin === '"') {
- $quote = '"';
+ $sBegin = $oParserState->peek();
+ $sQuote = null;
+ if ($sBegin === "'") {
+ $sQuote = "'";
+ } elseif ($sBegin === '"') {
+ $sQuote = '"';
  }
- if ($quote !== null) {
- $parserState->consume($quote);
+ if ($sQuote !== null) {
+ $oParserState->consume($sQuote);
  }
- $result = '';
- $content = null;
- if ($quote === null) {
+ $sResult = "";
+ $sContent = null;
+ if ($sQuote === null) {
  // Unquoted strings end in whitespace or with braces, brackets, parentheses
- while (\preg_match('/[\\s{}()<>\\[\\]]/isu', $parserState->peek()) !== 1) {
- $result .= $parserState->parseCharacter(false);
+ while (!preg_match('/[\\s{}()<>\\[\\]]/isu', $oParserState->peek())) {
+ $sResult .= $oParserState->parseCharacter(false);
  }
  } else {
- while (!$parserState->comes($quote)) {
- $content = $parserState->parseCharacter(false);
- if ($content === null) {
+ while (!$oParserState->comes($sQuote)) {
+ $sContent = $oParserState->parseCharacter(false);
+ if ($sContent === null) {
  throw new SourceException(
- "Non-well-formed quoted string {$parserState->peek(3)}",
- $parserState->currentLine()
+ "Non-well-formed quoted string {$oParserState->peek(3)}",
+ $oParserState->currentLine()
  );
  }
- $result .= $content;
+ $sResult .= $sContent;
  }
- $parserState->consume($quote);
+ $oParserState->consume($sQuote);
  }
- return new CSSString($result, $parserState->currentLine());
+ return new CSSString($sResult, $oParserState->currentLine());
  }
- public function setString(string $string): void
+ public function setString($sString)
  {
- $this->string = $string;
+ $this->sString = $sString;
  }
- public function getString(): string
+ public function getString()
  {
- return $this->string;
+ return $this->sString;
  }
- public function render(OutputFormat $outputFormat): string
+ public function __toString()
  {
- $string = \addslashes($this->string);
- $string = \str_replace("\n", '\\A', $string);
- return $outputFormat->getStringQuotingType() . $string . $outputFormat->getStringQuotingType();
+ return $this->render(new OutputFormat());
+ }
+ public function render($oOutputFormat)
+ {
+ $sString = addslashes($this->sString);
+ $sString = str_replace("\n", '\A', $sString);
+ return $oOutputFormat->getStringQuotingType() . $sString . $oOutputFormat->getStringQuotingType();
  }
 }

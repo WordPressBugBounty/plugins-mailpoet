@@ -1,41 +1,58 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Property;
 if (!defined('ABSPATH')) exit;
-use Sabberworm\CSS\Comment\CommentContainer;
+use Sabberworm\CSS\Comment\Comment;
 use Sabberworm\CSS\OutputFormat;
 use Sabberworm\CSS\Position\Position;
 use Sabberworm\CSS\Position\Positionable;
 use Sabberworm\CSS\Value\CSSString;
 class Charset implements AtRule, Positionable
 {
- use CommentContainer;
  use Position;
- private $charset;
- public function __construct(CSSString $charset, ?int $lineNumber = null)
+ private $oCharset;
+ protected $iLineNo;
+ protected $aComments;
+ public function __construct(CSSString $oCharset, $iLineNo = 0)
  {
- $this->charset = $charset;
- $this->setPosition($lineNumber);
+ $this->oCharset = $oCharset;
+ $this->setPosition($iLineNo);
+ $this->aComments = [];
  }
- public function setCharset($charset): void
+ public function setCharset($sCharset)
  {
- $charset = $charset instanceof CSSString ? $charset : new CSSString($charset);
- $this->charset = $charset;
+ $sCharset = $sCharset instanceof CSSString ? $sCharset : new CSSString($sCharset);
+ $this->oCharset = $sCharset;
  }
- public function getCharset(): string
+ public function getCharset()
  {
- return $this->charset->getString();
+ return $this->oCharset->getString();
  }
- public function render(OutputFormat $outputFormat): string
+ public function __toString()
  {
- return "{$outputFormat->getFormatter()->comments($this)}@charset {$this->charset->render($outputFormat)};";
+ return $this->render(new OutputFormat());
  }
- public function atRuleName(): string
+ public function render($oOutputFormat)
+ {
+ return "{$oOutputFormat->comments($this)}@charset {$this->oCharset->render($oOutputFormat)};";
+ }
+ public function atRuleName()
  {
  return 'charset';
  }
- public function atRuleArgs(): CSSString
+ public function atRuleArgs()
  {
- return $this->charset;
+ return $this->oCharset;
+ }
+ public function addComments(array $aComments)
+ {
+ $this->aComments = array_merge($this->aComments, $aComments);
+ }
+ public function getComments()
+ {
+ return $this->aComments;
+ }
+ public function setComments(array $aComments)
+ {
+ $this->aComments = $aComments;
  }
 }

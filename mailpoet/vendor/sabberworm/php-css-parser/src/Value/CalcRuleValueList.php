@@ -1,16 +1,15 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Value;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\OutputFormat;
 class CalcRuleValueList extends RuleValueList
 {
- public function __construct(?int $lineNumber = null)
+ public function __construct($iLineNo = 0)
  {
- parent::__construct(',', $lineNumber);
+ parent::__construct(',', $iLineNo);
  }
- public function render(OutputFormat $outputFormat): string
+ public function render($oOutputFormat)
  {
- return $outputFormat->getFormatter()->implode(' ', $this->components);
+ return $oOutputFormat->implode(' ', $this->aComponents);
  }
 }

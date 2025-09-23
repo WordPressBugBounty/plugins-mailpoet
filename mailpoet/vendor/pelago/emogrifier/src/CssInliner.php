@@ -178,7 +178,7 @@ final class CssInliner extends AbstractHtmlProcessor
  );
  // In order to not overwrite existing style attributes in the HTML, we have to save the original HTML styles.
  $nodePath = $node->getNodePath();
- if (\is_string($nodePath) && ($nodePath !== '') && !isset($this->styleAttributesForNodes[$nodePath])) {
+ if (\is_string($nodePath) && !isset($this->styleAttributesForNodes[$nodePath])) {
  $this->styleAttributesForNodes[$nodePath] = $declarationBlockParser->parse($normalizedOriginalStyle);
  $this->visitedNodes[$nodePath] = $node;
  }
@@ -225,8 +225,7 @@ final class CssInliner extends AbstractHtmlProcessor
  if ($this->debug || $alwaysThrowParseException) {
  throw $exception;
  }
- $list = new \DOMNodeList();
- return $list;
+ return new \DOMNodeList();
  } catch (\RuntimeException $exception) {
  if (
  $this->debug
@@ -235,13 +234,12 @@ final class CssInliner extends AbstractHtmlProcessor
  }
  // `RuntimeException` indicates a bug in CssSelector so pass the message to the error handler.
  \trigger_error($exception->getMessage());
- $list = new \DOMNodeList();
- return $list;
+ return new \DOMNodeList();
  }
  }
  private function ensureNodeIsElement(\DOMNode $node): \DOMElement
  {
- if (!($node instanceof \DOMElement)) {
+ if (!$node instanceof \DOMElement) {
  $path = $node->getNodePath() ?? '$node';
  throw new \UnexpectedValueException($path . ' is not a DOMElement.', 1617975914);
  }
@@ -353,7 +351,6 @@ final class CssInliner extends AbstractHtmlProcessor
  $count = 0;
  $selector = $preg->replace('/' . $matcher . '\\w+/', '', $selector, -1, $count);
  $precedence += ($value * $count);
- \assert($precedence >= 0);
  }
  $this->caches[self::CACHE_KEY_SELECTOR][$selectorKey] = $precedence;
  return $precedence;
@@ -381,7 +378,6 @@ final class CssInliner extends AbstractHtmlProcessor
  private function generateStyleStringFromDeclarationsArrays(array $oldStyles, array $newStyles): string
  {
  $cacheKey = \serialize([$oldStyles, $newStyles]);
- \assert($cacheKey !== '');
  if (isset($this->caches[self::CACHE_KEY_COMBINED_STYLES][$cacheKey])) {
  return $this->caches[self::CACHE_KEY_COMBINED_STYLES][$cacheKey];
  }

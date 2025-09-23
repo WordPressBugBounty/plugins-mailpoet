@@ -1,5 +1,10 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\Parsing;
 if (!defined('ABSPATH')) exit;
-final class OutputException extends SourceException {}
+class OutputException extends SourceException
+{
+ public function __construct($sMessage, $iLineNo = 0)
+ {
+ parent::__construct($sMessage, $iLineNo);
+ }
+}

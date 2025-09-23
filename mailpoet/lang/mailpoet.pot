@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.14.3\n"
+"Project-Id-Version: MailPoet 5.15.0\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-15T12:15:34+00:00\n"
+"POT-Creation-Date: 2025-09-22T13:18:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -1094,7 +1094,7 @@ msgstr ""
 
 #: views/form/front_end_form.html:74
 #: views/homepage.html:62
-#: views/layout.html:162
+#: views/layout.html:163
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:9
@@ -3522,7 +3522,7 @@ msgstr ""
 #: views/segments/translations.html:168
 #: views/subscribers/subscribers.html:105
 #: views/homepage.html:74
-#: lib/Twig/Functions.php:340
+#: lib/Twig/Functions.php:350
 #: assets/dist/js/automation_analytics.js:9
 #: assets/dist/js/commons.js:9
 msgid "Excellent"
@@ -3536,7 +3536,7 @@ msgstr ""
 #: views/segments/translations.html:171
 #: views/subscribers/subscribers.html:108
 #: views/homepage.html:77
-#: lib/Twig/Functions.php:342
+#: lib/Twig/Functions.php:352
 #: assets/dist/js/automation_analytics.js:9
 #: assets/dist/js/commons.js:9
 msgid "Good"
@@ -4455,7 +4455,7 @@ msgid "Congratulations, you now have [subscribersCount] subscribers! Our free ve
 msgstr ""
 
 #: views/subscribers/subscribers.html:93
-#: views/layout.html:131
+#: views/layout.html:132
 msgid "Upgrade Now"
 msgstr ""
 
@@ -5185,122 +5185,122 @@ msgctxt "Title of a link to a next page of posts"
 msgid "Previous page with posts"
 msgstr ""
 
-#: views/layout.html:113
+#: views/layout.html:114
 #: views/upgrade_tiers.html:9
 #: assets/dist/js/commons.js:9
 msgid "Back to section root"
 msgstr ""
 
-#: views/layout.html:114
+#: views/layout.html:115
 msgid "Updates"
 msgstr ""
 
-#: views/layout.html:115
+#: views/layout.html:116
 msgid "What’s new"
 msgstr ""
 
-#: views/layout.html:116
+#: views/layout.html:117
 msgid "[link]Update MailPoet[/link] to see the latest changes"
 msgstr ""
 
 #. translators: %d is the error code.
 #. translators: %d will be replaced by an error code
-#: views/layout.html:117
+#: views/layout.html:118
 #: lib/Services/Bridge/API.php:231
 #: lib/Services/Bridge/API.php:288
 #: lib/Services/Bridge/API.php:334
 msgid "An error has happened while performing a request, the server has responded with response code %d"
 msgstr ""
 
-#: views/layout.html:118
+#: views/layout.html:119
 msgid "An error has happened while performing a request, the server request has timed out after %d seconds"
 msgstr ""
 
-#: views/layout.html:119
+#: views/layout.html:120
 msgid "Dismiss this notice."
 msgstr ""
 
-#: views/layout.html:120
+#: views/layout.html:121
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Sending is in progress. Do you want to pause sending and edit the newsletter?"
 msgstr ""
 
-#: views/layout.html:121
+#: views/layout.html:122
 #: assets/dist/js/commons.js:9
 #: assets/dist/js/newsletter_editor.js:2
 msgid "To edit this email, it needs to be deactivated. You can activate it again after you make the changes."
 msgstr ""
 
-#: views/layout.html:122
+#: views/layout.html:123
 msgid "Action required: Upgrade your plan for more than [subscribersLimit] subscribers!"
 msgstr ""
 
-#: views/layout.html:123
+#: views/layout.html:124
 msgid "Action required: Upgrade your plan!"
 msgstr ""
 
-#: views/layout.html:124
+#: views/layout.html:125
 msgid "Congratulations on reaching over [subscribersLimit] subscribers!"
 msgstr ""
 
-#: views/layout.html:125
+#: views/layout.html:126
 msgid "Congratulations, you now have more subscribers than your plan’s limit!"
 msgstr ""
 
-#: views/layout.html:126
+#: views/layout.html:127
 msgid "Our free version is limited to [subscribersLimit] subscribers."
 msgstr ""
 
-#: views/layout.html:127
+#: views/layout.html:128
 msgid "Your plan is limited to [subscribersLimit] subscribers."
 msgstr ""
 
-#: views/layout.html:128
+#: views/layout.html:129
 msgid "To continue using MailPoet without interruption, it’s time to upgrade your plan."
 msgstr ""
 
-#: views/layout.html:129
+#: views/layout.html:130
 msgid "Act now to ensure seamless service to your growing audience."
 msgstr ""
 
-#: views/layout.html:130
+#: views/layout.html:131
 msgid "Alternatively, [link]check how to manage your subscribers[/link] to keep your numbers below your plan’s limit."
 msgstr ""
 
-#: views/layout.html:132
+#: views/layout.html:133
 msgid "Refresh subscriber limit"
 msgstr ""
 
-#: views/layout.html:134
+#: views/layout.html:135
 msgid "Congratulations, you sent more than [emailVolumeLimit] emails this month!"
 msgstr ""
 
-#: views/layout.html:135
+#: views/layout.html:136
 msgid "Congratulations, you sent a lot of emails this month!"
 msgstr ""
 
-#: views/layout.html:136
+#: views/layout.html:137
 msgid "You have sent more emails this month than your MailPoet plan includes ([emailVolumeLimit]), and sending has been temporarily paused."
 msgstr ""
 
-#: views/layout.html:137
+#: views/layout.html:138
 msgid "You have sent more emails this month than your MailPoet plan includes, and sending has been temporarily paused."
 msgstr ""
 
-#: views/layout.html:138
+#: views/layout.html:139
 msgid "To continue sending with MailPoet Sending Service please [link]upgrade your plan[/link], or wait until sending is automatically resumed on <b>[date]</b>."
 msgstr ""
 
-#: views/layout.html:139
+#: views/layout.html:140
 msgid "Refresh monthly email limit"
 msgstr ""
 
-#: views/layout.html:141
+#: views/layout.html:142
 msgid "To help your audience and MailPoet authenticate you as the domain owner, please add the following DNS records to your domain’s DNS and click “Verify the DNS records”. Please note that it may take up to 24 hours for DNS changes to propagate after you make the change. [link]Read the guide[/link]."
 msgstr ""
 
-#: views/layout.html:143
+#: views/layout.html:144
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:132
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:147
 #: lib/Newsletter/Sending/ScheduledTaskSubscribersListingRepository.php:53
@@ -5309,84 +5309,84 @@ msgstr ""
 msgid "Sent"
 msgstr ""
 
-#: views/layout.html:144
+#: views/layout.html:145
 #: assets/dist/js/commons.js:9
 msgid "Not sent yet!"
 msgstr ""
 
-#: views/layout.html:145
+#: views/layout.html:146
 #: assets/dist/js/commons.js:9
 msgid "There was a problem with rendering!"
 msgstr ""
 
-#: views/layout.html:147
+#: views/layout.html:148
 #: lib/Config/ServicesChecker.php:45
 msgid "All sending is currently paused!"
 msgstr ""
 
-#: views/layout.html:148
+#: views/layout.html:149
 msgid "Your [link]API key[/link] to send with MailPoet is invalid."
 msgstr ""
 
-#: views/layout.html:149
+#: views/layout.html:150
 msgid "You are not allowed to use the MailPoet sending service with your current API key. Kindly upgrate to a [link]MailPoet sending plan[/link] or switch your [link]sending method[/link]."
 msgstr ""
 
-#: views/layout.html:150
+#: views/layout.html:151
 #: lib/Config/ServicesChecker.php:51
 msgid "Purchase a key"
 msgstr ""
 
-#: views/layout.html:151
+#: views/layout.html:152
 msgid "Upgrade the plan"
 msgstr ""
 
-#: views/layout.html:153
+#: views/layout.html:154
 msgid "There is an issue with the MailPoet task scheduler"
 msgstr ""
 
-#: views/layout.html:154
+#: views/layout.html:155
 msgid "Connection successful."
 msgstr ""
 
-#: views/layout.html:155
+#: views/layout.html:156
 msgid "Connection unsuccessful."
 msgstr ""
 
-#: views/layout.html:156
+#: views/layout.html:157
 msgid "Please consult our [link]knowledge base article[/link] for troubleshooting tips."
 msgstr ""
 
-#: views/layout.html:157
+#: views/layout.html:158
 msgid "For the plugin to work, it must be able to establish connection with the task scheduler."
 msgstr ""
 
-#: views/layout.html:159
+#: views/layout.html:160
 msgid "There is an issue with the connection to the MailPoet Sending Service"
 msgstr ""
 
-#: views/layout.html:160
+#: views/layout.html:161
 msgid "Currently, your installation can not reach the sending service. If you want to use our service please consult our [link]knowledge base article[/link] for troubleshooting tips."
 msgstr ""
 
-#: views/layout.html:163
+#: views/layout.html:164
 #: assets/dist/js/commons.js:9
 msgid "Today"
 msgstr ""
 
-#: views/layout.html:178
+#: views/layout.html:179
 msgid "MailPoet support"
 msgstr ""
 
-#: views/layout.html:179
+#: views/layout.html:180
 msgid "Chat with our AI assistant"
 msgstr ""
 
-#: views/layout.html:180
+#: views/layout.html:181
 msgid "How can I help you today?"
 msgstr ""
 
-#: views/layout.html:189
+#: views/layout.html:190
 msgid "Contact support"
 msgstr ""
 
@@ -6244,24 +6244,24 @@ msgid "%1$s emails"
 msgstr ""
 
 #: views/settings_translations.html:198
-#: lib/Twig/Functions.php:235
+#: lib/Twig/Functions.php:245
 msgid "every minute"
 msgstr ""
 
 #. translators: %1$d is the amount of minutes.
 #: views/settings_translations.html:199
-#: lib/Twig/Functions.php:237
+#: lib/Twig/Functions.php:247
 msgid "every %1$d minutes"
 msgstr ""
 
 #: views/settings_translations.html:200
-#: lib/Twig/Functions.php:238
+#: lib/Twig/Functions.php:248
 msgid "every hour"
 msgstr ""
 
 #. translators: %1$d is the amount of hours.
 #: views/settings_translations.html:201
-#: lib/Twig/Functions.php:240
+#: lib/Twig/Functions.php:250
 msgid "every %1$d hours"
 msgstr ""
 
@@ -11646,7 +11646,7 @@ msgstr ""
 msgid "%d seconds"
 msgstr ""
 
-#: lib/Twig/Functions.php:344
+#: lib/Twig/Functions.php:354
 #: assets/dist/js/automation_analytics.js:9
 msgid "Average"
 msgstr ""
@@ -14910,10 +14910,6 @@ msgid "Starts the automation when a new user registered in WordPress."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgid "wordpress"
-msgstr ""
-
-#: assets/dist/js/commons.js:9
 msgid "user"
 msgstr ""
 
@@ -15386,6 +15382,26 @@ msgid "Starting an automation by creating a review is a premium feature."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+msgid "Woo Booking status changed"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Start the automation when booking changed to a specific status."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "bookings"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "changed"
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Starting an automation by changing the status of a booking is a premium feature."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
 msgid "Woo Subscription status changed"
 msgstr ""
 
@@ -15395,10 +15411,6 @@ msgstr ""
 
 #: assets/dist/js/commons.js:9
 msgid "subscriptions"
-msgstr ""
-
-#: assets/dist/js/commons.js:9
-msgid "changed"
 msgstr ""
 
 #: assets/dist/js/commons.js:9

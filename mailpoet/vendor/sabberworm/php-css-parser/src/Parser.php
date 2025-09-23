@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\CSSList\Document;
@@ -7,16 +6,25 @@ use Sabberworm\CSS\Parsing\ParserState;
 use Sabberworm\CSS\Parsing\SourceException;
 class Parser
 {
- private $parserState;
- public function __construct(string $text, ?Settings $parserSettings = null, int $lineNumber = 1)
+ private $oParserState;
+ public function __construct($sText, $oParserSettings = null, $iLineNo = 1)
  {
- if ($parserSettings === null) {
- $parserSettings = Settings::create();
+ if ($oParserSettings === null) {
+ $oParserSettings = Settings::create();
  }
- $this->parserState = new ParserState($text, $parserSettings, $lineNumber);
+ $this->oParserState = new ParserState($sText, $oParserSettings, $iLineNo);
  }
- public function parse(): Document
+ public function setCharset($sCharset)
  {
- return Document::parse($this->parserState);
+ $this->oParserState->setCharset($sCharset);
+ }
+ public function getCharset()
+ {
+ // Note: The `return` statement is missing here. This is a bug that needs to be fixed.
+ $this->oParserState->getCharset();
+ }
+ public function parse()
+ {
+ return Document::parse($this->oParserState);
  }
 }

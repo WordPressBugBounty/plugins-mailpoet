@@ -1,49 +1,36 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS;
 if (!defined('ABSPATH')) exit;
 class Settings
 {
- private $multibyteSupport;
- private $defaultCharset = 'utf-8';
- private $lenientParsing = true;
+ public $bMultibyteSupport;
+ public $sDefaultCharset = 'utf-8';
+ public $bLenientParsing = true;
  private function __construct()
  {
- $this->multibyteSupport = \extension_loaded('mbstring');
+ $this->bMultibyteSupport = extension_loaded('mbstring');
  }
- public static function create(): self
+ public static function create()
  {
  return new Settings();
  }
- public function withMultibyteSupport(bool $multibyteSupport = true): self
+ public function withMultibyteSupport($bMultibyteSupport = true)
  {
- $this->multibyteSupport = $multibyteSupport;
+ $this->bMultibyteSupport = $bMultibyteSupport;
  return $this;
  }
- public function withDefaultCharset(string $defaultCharset): self
+ public function withDefaultCharset($sDefaultCharset)
  {
- $this->defaultCharset = $defaultCharset;
+ $this->sDefaultCharset = $sDefaultCharset;
  return $this;
  }
- public function withLenientParsing(bool $usesLenientParsing = true): self
+ public function withLenientParsing($bLenientParsing = true)
  {
- $this->lenientParsing = $usesLenientParsing;
+ $this->bLenientParsing = $bLenientParsing;
  return $this;
  }
- public function beStrict(): self
+ public function beStrict()
  {
  return $this->withLenientParsing(false);
- }
- public function hasMultibyteSupport(): bool
- {
- return $this->multibyteSupport;
- }
- public function getDefaultCharset(): string
- {
- return $this->defaultCharset;
- }
- public function usesLenientParsing(): bool
- {
- return $this->lenientParsing;
  }
 }

@@ -1,47 +1,55 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\CSSList;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\OutputFormat;
 use Sabberworm\CSS\Property\AtRule;
 class KeyFrame extends CSSList implements AtRule
 {
- private $vendorKeyFrame = 'keyframes';
- private $animationName = 'none';
- public function setVendorKeyFrame(string $vendorKeyFrame): void
+ private $vendorKeyFrame;
+ private $animationName;
+ public function __construct($iLineNo = 0)
+ {
+ parent::__construct($iLineNo);
+ $this->vendorKeyFrame = null;
+ $this->animationName = null;
+ }
+ public function setVendorKeyFrame($vendorKeyFrame)
  {
  $this->vendorKeyFrame = $vendorKeyFrame;
  }
- public function getVendorKeyFrame(): string
+ public function getVendorKeyFrame()
  {
  return $this->vendorKeyFrame;
  }
- public function setAnimationName(string $animationName): void
+ public function setAnimationName($animationName)
  {
  $this->animationName = $animationName;
  }
- public function getAnimationName(): string
+ public function getAnimationName()
  {
  return $this->animationName;
  }
- public function render(OutputFormat $outputFormat): string
+ public function __toString()
  {
- $formatter = $outputFormat->getFormatter();
- $result = $formatter->comments($this);
- $result .= "@{$this->vendorKeyFrame} {$this->animationName}{$formatter->spaceBeforeOpeningBrace()}{";
- $result .= $this->renderListContents($outputFormat);
- $result .= '}';
- return $result;
+ return $this->render(new OutputFormat());
  }
- public function isRootList(): bool
+ public function render($oOutputFormat)
+ {
+ $sResult = $oOutputFormat->comments($this);
+ $sResult .= "@{$this->vendorKeyFrame} {$this->animationName}{$oOutputFormat->spaceBeforeOpeningBrace()}{";
+ $sResult .= $this->renderListContents($oOutputFormat);
+ $sResult .= '}';
+ return $sResult;
+ }
+ public function isRootList()
  {
  return false;
  }
- public function atRuleName(): string
+ public function atRuleName()
  {
  return $this->vendorKeyFrame;
  }
- public function atRuleArgs(): string
+ public function atRuleArgs()
  {
  return $this->animationName;
  }

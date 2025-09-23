@@ -1,31 +1,66 @@
 <?php
-declare(strict_types=1);
 namespace Sabberworm\CSS\CSSList;
 if (!defined('ABSPATH')) exit;
 use Sabberworm\CSS\OutputFormat;
 use Sabberworm\CSS\Parsing\ParserState;
 use Sabberworm\CSS\Parsing\SourceException;
 use Sabberworm\CSS\Property\Selector;
+use Sabberworm\CSS\RuleSet\DeclarationBlock;
+use Sabberworm\CSS\RuleSet\RuleSet;
 class Document extends CSSBlockList
 {
- public static function parse(ParserState $parserState): Document
+ public function __construct($iLineNo = 0)
  {
- $document = new Document($parserState->currentLine());
- CSSList::parseList($parserState, $document);
- return $document;
+ parent::__construct($iLineNo);
  }
- public function getSelectorsBySpecificity(?string $specificitySearch = null): array
+ public static function parse(ParserState $oParserState)
  {
- return $this->getAllSelectors($specificitySearch);
+ $oDocument = new Document($oParserState->currentLine());
+ CSSList::parseList($oParserState, $oDocument);
+ return $oDocument;
  }
- public function render(?OutputFormat $outputFormat = null): string
+ public function getAllDeclarationBlocks()
  {
- if ($outputFormat === null) {
- $outputFormat = new OutputFormat();
+ $aResult = [];
+ $this->allDeclarationBlocks($aResult);
+ return $aResult;
  }
- return $outputFormat->getFormatter()->comments($this) . $this->renderListContents($outputFormat);
+ public function getAllSelectors()
+ {
+ return $this->getAllDeclarationBlocks();
  }
- public function isRootList(): bool
+ public function getAllRuleSets()
+ {
+ $aResult = [];
+ $this->allRuleSets($aResult);
+ return $aResult;
+ }
+ public function getSelectorsBySpecificity($sSpecificitySearch = null)
+ {
+ $aResult = [];
+ $this->allSelectors($aResult, $sSpecificitySearch);
+ return $aResult;
+ }
+ public function expandShorthands()
+ {
+ foreach ($this->getAllDeclarationBlocks() as $oDeclaration) {
+ $oDeclaration->expandShorthands();
+ }
+ }
+ public function createShorthands()
+ {
+ foreach ($this->getAllDeclarationBlocks() as $oDeclaration) {
+ $oDeclaration->createShorthands();
+ }
+ }
+ public function render($oOutputFormat = null)
+ {
+ if ($oOutputFormat === null) {
+ $oOutputFormat = new OutputFormat();
+ }
+ return $oOutputFormat->comments($this) . $this->renderListContents($oOutputFormat);
+ }
+ public function isRootList()
  {
  return true;
  }

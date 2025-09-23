@@ -36,9 +36,7 @@ final class CssToAttributeConverter extends AbstractHtmlProcessor
  }
  private function getAllNodesWithStyleAttribute(): \DOMNodeList
  {
- $result = $this->getXPath()->query('//*[@style]');
- \assert($result instanceof \DOMNodeList);
- return $result;
+ return $this->getXPath()->query('//*[@style]');
  }
  private function mapCssToHtmlAttributes(array $styles, \DOMElement $node): void
  {
