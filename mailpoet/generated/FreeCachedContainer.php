@@ -285,6 +285,7 @@ class FreeCachedContainer extends Container
             'MailPoet\\Cron\\Workers\\SubscribersEngagementScore' => 'getSubscribersEngagementScoreService',
             'MailPoet\\Cron\\Workers\\SubscribersLastEngagement' => 'getSubscribersLastEngagementService',
             'MailPoet\\Cron\\Workers\\SubscribersStatsReport' => 'getSubscribersStatsReportService',
+            'MailPoet\\Cron\\Workers\\Tracks' => 'getTracksService',
             'MailPoet\\Cron\\Workers\\UnsubscribeTokens' => 'getUnsubscribeTokensService',
             'MailPoet\\Cron\\Workers\\WooCommercePastOrders' => 'getWooCommercePastOrdersService',
             'MailPoet\\Cron\\Workers\\WooCommerceSync' => 'getWooCommerceSyncService',
@@ -3370,6 +3371,16 @@ class FreeCachedContainer extends Container
     protected function getSubscribersStatsReportService()
     {
         return $this->services['MailPoet\\Cron\\Workers\\SubscribersStatsReport'] = new \MailPoet\Cron\Workers\SubscribersStatsReport(($this->services['MailPoet\\Services\\SubscribersCountReporter'] ?? $this->getSubscribersCountReporterService()), ($this->services['MailPoet\\Config\\ServicesChecker'] ?? ($this->services['MailPoet\\Config\\ServicesChecker'] = new \MailPoet\Config\ServicesChecker())), ($this->services['MailPoet\\Cron\\CronWorkerScheduler'] ?? $this->getCronWorkerSchedulerService()));
+    }
+
+    /**
+     * Gets the public 'MailPoet\Cron\Workers\Tracks' shared autowired service.
+     *
+     * @return \MailPoet\Cron\Workers\Tracks
+     */
+    protected function getTracksService()
+    {
+        return $this->services['MailPoet\\Cron\\Workers\\Tracks'] = new \MailPoet\Cron\Workers\Tracks(($this->services['MailPoet\\Analytics\\Analytics'] ?? $this->getAnalytics2Service()));
     }
 
     /**
