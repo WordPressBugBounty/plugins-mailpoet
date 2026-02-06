@@ -10,6 +10,7 @@ use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Button;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Buttons;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Column;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Columns;
+use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Cover;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Embed;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Fallback;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Gallery;
@@ -18,8 +19,9 @@ use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Image;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\List_Block;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\List_Item;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Media_Text;
-use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Cover;
+use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Post_Content;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Quote;
+use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Video;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Social_Link;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Social_Links;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Table;
@@ -50,6 +52,8 @@ class Initializer {
  'core/audio',
  'core/embed',
  'core/cover',
+ 'core/video',
+ 'core/post-title',
  );
  private array $renderers = array();
  public function initialize(): void {
@@ -100,6 +104,7 @@ class Initializer {
  case 'core/heading':
  case 'core/paragraph':
  case 'core/site-title':
+ case 'core/post-title':
  $renderer = new Text();
  break;
  case 'core/column':
@@ -152,6 +157,9 @@ class Initializer {
  break;
  case 'core/cover':
  $renderer = new Cover();
+ break;
+ case 'core/video':
+ $renderer = new Video();
  break;
  default:
  $renderer = new Fallback();

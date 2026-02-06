@@ -86,7 +86,38 @@ class Renderer {
     $wpPostEntity = $newsletter->getWpPost();
     $wpPost = $wpPostEntity ? $wpPostEntity->getWpPostInstance() : null;
     if ($wpPost instanceof \WP_Post) {
+      // Only add the email context filter for automation emails.
+      // For bulk emails like newsletters, the first subscriber in the task isn't the unique recipient.
+      $automationTypes = [
+        NewsletterEntity::TYPE_AUTOMATION,
+        NewsletterEntity::TYPE_AUTOMATION_NOTIFICATION,
+        NewsletterEntity::TYPE_AUTOMATION_TRANSACTIONAL,
+      ];
+      $isAutomationType = in_array($newsletter->getType(), $automationTypes, true);
+
+      $filterCallback = null;
+      if ($isAutomationType && $sendingQueue) {
+        $task = $sendingQueue->getTask();
+        $subscribers = $task ? $task->getSubscribers() : null;
+        $firstSubscriber = $subscribers ? $subscribers->first() : null;
+        $subscriber = $firstSubscriber ? $firstSubscriber->getSubscriber() : null;
+        $recipientEmail = $subscriber ? $subscriber->getEmail() : null;
+
+        $filterCallback = function (array $context) use ($newsletter, $recipientEmail): array {
+          if ($recipientEmail) {
+            $context['recipient_email'] = $recipientEmail;
+          }
+          $context['email_type'] = $newsletter->getType();
+          return $context;
+        };
+        $this->wp->addFilter('woocommerce_email_editor_rendering_email_context', $filterCallback);
+      }
+
       $renderedNewsletter = $this->guntenbergRenderer->render($wpPost, $subject, $newsletter->getPreheader(), $language, $metaRobots);
+
+      if ($filterCallback) {
+        $this->wp->removeFilter('woocommerce_email_editor_rendering_email_context', $filterCallback);
+      }
     } else {
       $body = (is_array($newsletter->getBody()))
         ? $newsletter->getBody()
@@ -206,7 +237,10 @@ class Renderer {
    * @return string
    */
   private function renderTextVersion($template) {
-    $template = (mb_detect_encoding($template, 'UTF-8', true)) ? $template : mb_convert_encoding($template, 'UTF-8', mb_list_encodings());
+    if (!mb_detect_encoding($template, 'UTF-8', true)) {
+      $converted = mb_convert_encoding($template, 'UTF-8', mb_list_encodings());
+      $template = $converted !== false ? $converted : $template;
+    }
     return @Html2Text::convert($template);
   }
 
