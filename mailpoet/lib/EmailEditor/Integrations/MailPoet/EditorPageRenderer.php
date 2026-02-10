@@ -250,6 +250,14 @@ class EditorPageRenderer {
       $routes[] = '/wp/v2/mailpoet_email?context=edit&per_page=30&status=publish,sent';
     }
 
+    // Preload personalization tags for automation emails
+    // Note: The registry is already extended in render() before preloading.
+    // We include post_id to match the WooCommerce Email Editor's request URL.
+    $newsletter = $this->newslettersRepository->findOneBy(['wpPost' => $post->ID]);
+    if ($newsletter && ($newsletter->isAutomation() || $newsletter->isAutomationTransactional())) {
+      $routes[] = '/woocommerce-email-editor/v1/personalization_tags?context=view&per_page=-1&post_id=' . intval($post->ID);
+    }
+
     // Preload the data for the specified routes
     $preloadData = array_reduce(
       $routes,
