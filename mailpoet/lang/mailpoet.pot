@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.21.2\n"
+"Project-Id-Version: MailPoet 5.21.3\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-16T13:15:54+00:00\n"
+"POT-Creation-Date: 2026-02-24T08:26:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -647,7 +647,7 @@ msgstr ""
 #: views/subscription/manage_subscription.html:9
 #: views/help.html:70
 #: lib/API/MP/v1/CustomFields.php:27
-#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:63
+#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:73
 #: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:82
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:108
 #: lib/Form/Templates/Templates/InitialForm.php:22
@@ -3130,7 +3130,9 @@ msgstr ""
 msgid "Segments"
 msgstr ""
 
+#. translators: automation subject (entity entering automation) title
 #: views/segments/translations.html:48
+#: lib/Automation/Integrations/MailPoet/Subjects/SegmentSubject.php:43
 #: assets/dist/js/admin.js:2
 msgid "Segment"
 msgstr ""
@@ -3149,9 +3151,11 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
+#. translators: automation subject (entity entering automation) title
 #: views/segments/translations.html:53
 #: views/subscribers/subscribers.html:45
 #: views/help.html:71
+#: lib/Automation/Integrations/MailPoet/Subjects/SubscriberSubject.php:49
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:92
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:101
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:110
@@ -5601,8 +5605,8 @@ msgid "This value should be the same."
 msgstr ""
 
 #: views/premium_key_validation_strings.html:2
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:164
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:169
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:165
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:170
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
 msgid "Learn more"
@@ -6726,7 +6730,7 @@ msgstr ""
 msgid "MailPoet Newsletter"
 msgstr ""
 
-#: lib/AdminPages/Pages/Settings.php:121
+#: lib/AdminPages/Pages/Settings.php:122
 msgctxt "Notice in Settings when WooCommerce is not enabled"
 msgid "You need to have WooCommerce active to access the MailPoet email customizer for WooCommerce."
 msgstr ""
@@ -8143,7 +8147,7 @@ msgstr ""
 
 #. translators: automation subject (entity entering automation) title
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:164
-#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:33
+#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:43
 msgid "WordPress user"
 msgstr ""
 
@@ -8185,22 +8189,22 @@ msgid "Email link"
 msgstr ""
 
 #. translators: automation subject (entity entering automation) title
-#: lib/Automation/Integrations/MailPoet/Subjects/SegmentSubject.php:36
+#: lib/Automation/Integrations/MailPoet/Subjects/SegmentSubject.php:46
 msgid "MailPoet segment"
 msgstr ""
 
 #. translators: %d is the ID.
-#: lib/Automation/Integrations/MailPoet/Subjects/SegmentSubject.php:50
+#: lib/Automation/Integrations/MailPoet/Subjects/SegmentSubject.php:60
 msgid "Segment with ID '%d' not found."
 msgstr ""
 
 #. translators: automation subject (entity entering automation) title
-#: lib/Automation/Integrations/MailPoet/Subjects/SubscriberSubject.php:42
+#: lib/Automation/Integrations/MailPoet/Subjects/SubscriberSubject.php:52
 msgid "MailPoet subscriber"
 msgstr ""
 
 #. translators: %d is the ID.
-#: lib/Automation/Integrations/MailPoet/Subjects/SubscriberSubject.php:56
+#: lib/Automation/Integrations/MailPoet/Subjects/SubscriberSubject.php:66
 msgid "Subscriber with ID '%d' not found."
 msgstr ""
 
@@ -8603,12 +8607,18 @@ msgid "Cart total"
 msgstr ""
 
 #. translators: automation subject (entity entering automation) title
-#: lib/Automation/Integrations/WooCommerce/Subjects/CustomerSubject.php:34
+#: lib/Automation/Integrations/WooCommerce/Subjects/CustomerSubject.php:41
+#: assets/dist/js/automation_analytics.js:2
+msgid "Customer"
+msgstr ""
+
+#. translators: automation subject (entity entering automation) title
+#: lib/Automation/Integrations/WooCommerce/Subjects/CustomerSubject.php:44
 msgid "WooCommerce customer"
 msgstr ""
 
 #. translators: %d is the ID of the customer.
-#: lib/Automation/Integrations/WooCommerce/Subjects/CustomerSubject.php:62
+#: lib/Automation/Integrations/WooCommerce/Subjects/CustomerSubject.php:72
 msgid "Customer with ID '%d' not found."
 msgstr ""
 
@@ -8810,15 +8820,20 @@ msgstr ""
 msgid "WordPress post"
 msgstr ""
 
-#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:71
+#. translators: automation subject (entity entering automation) title
+#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:40
+msgid "User"
+msgstr ""
+
+#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:81
 msgid "Is guest"
 msgstr ""
 
-#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:79
+#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:89
 msgid "Registered date"
 msgstr ""
 
-#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:88
+#: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:98
 msgid "Roles"
 msgstr ""
 
@@ -10176,14 +10191,14 @@ msgstr ""
 msgid "Abandoned Cart with Discount"
 msgstr ""
 
-#. translators: [Product Name] is the product name placeholder to translate
+#. translators: PRODUCT NAME is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:30
-msgid "How to Get the Most from [Product Name]"
+msgid "How to Get the Most from PRODUCT NAME"
 msgstr ""
 
-#. translators: [product] is the product name placeholder to translate
+#. translators: PRODUCT NAME is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:36
-msgid "Our latest guide walks you through expert tips to make the most out of your [product]."
+msgid "Our latest guide walks you through expert tips to make the most out of your PRODUCT NAME."
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:40
@@ -10194,11 +10209,11 @@ msgstr ""
 msgid "Step 1"
 msgstr ""
 
-#. translators: [Brief description] is the step description placeholder to translate
+#. translators: Placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:62
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:84
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:121
-msgid "[Brief description]"
+msgid "BRIEF DESCRIPTION"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:78
@@ -10219,30 +10234,32 @@ msgstr ""
 msgid "Educational Campaign"
 msgstr ""
 
-#. translators: [Event Name] is the event name placeholder to translate
+#. translators: EVENT NAME is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:29
-msgid "Join us for [Event Name]"
+msgid "Join us for EVENT NAME"
 msgstr ""
 
-#. translators: [brief description] is the event description placeholder to translate
+#. translators: A BRIEF DESCRIPTION OF THE EVENT is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:35
-msgid "You're invited 🎉 Join us for [brief description] and be part of our exclusive event series."
+msgid "You're invited 🎉 Join us for A BRIEF DESCRIPTION OF THE EVENT and be part of our exclusive event series."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:43
-msgid "October 31, at 6PM"
+#. translators: Placeholder text that merchants replace with their own content.
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:45
+msgid "MONTH DAY, at TIME"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:47
-msgid "123 Event Address, City"
+#. translators: Placeholder text that merchants replace with their own content.
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:51
+msgid "BUILDING STREET, CITY"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:53
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:57
 msgid "RSVP now"
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:64
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:68
 msgid "Event Invitation"
 msgstr ""
 
@@ -10288,9 +10305,9 @@ msgstr ""
 msgid "New arrivals are here"
 msgstr ""
 
-#. translators: [product category] is the product category placeholder to translate
+#. translators: PRODUCT CATEGORY is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:34
-msgid "Explore our latest collection featuring [product category]. It's designed to inspire and elevate."
+msgid "Explore our latest collection featuring PRODUCT CATEGORY. It's designed to inspire and elevate."
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:42
@@ -10324,9 +10341,9 @@ msgstr ""
 msgid "New Arrivals Announcement"
 msgstr ""
 
-#. translators: [Product Name] is the product name placeholder to translate
+#. translators: PRODUCT NAME is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewProductsAnnouncementPattern.php:29
-msgid "Introducing [Product Name]"
+msgid "Introducing PRODUCT NAME"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewProductsAnnouncementPattern.php:33
@@ -10384,9 +10401,9 @@ msgstr ""
 msgid "Post Purchase Thank You"
 msgstr ""
 
-#. translators: [Product] is the product category placeholder to translate
+#. translators: PRODUCT NAME is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:30
-msgid "Loving your [Product]? Make it even better"
+msgid "Loving your PRODUCT NAME? Make it even better"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:35
@@ -10398,9 +10415,9 @@ msgstr ""
 msgid "Product Purchase Follow-Up"
 msgstr ""
 
-#. translators: [Product Name] is the product name placeholder to translate
+#. translators: PRODUCT NAME is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductRestockNotificationPattern.php:29
-msgid "[Product Name] Is back in stock!"
+msgid "PRODUCT NAME is back in stock!"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductRestockNotificationPattern.php:33
@@ -10412,18 +10429,18 @@ msgstr ""
 msgid "Product Restock Notification"
 msgstr ""
 
-#. translators: [X]% is the discount percentage placeholder to translate
+#. translators: XX% is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:29
-msgid "[X]% off sitewide!"
+msgid "XX% off sitewide!"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:33
 msgid "Big news! Our sitewide sale is officially ON!"
 msgstr ""
 
-#. translators: [X]% is the discount percentage placeholder to translate
+#. translators: XX% OFF EVERYTHING is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:43
-msgid "Get [X]% OFF EVERYTHING in the store for a limited time."
+msgid "Get XX% OFF EVERYTHING in the store for a limited time."
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:47
@@ -10434,9 +10451,9 @@ msgstr ""
 msgid "No complicated rules, just great savings across the board."
 msgstr ""
 
-#. translators: [End Date] is the sale end date placeholder to translate
+#. translators: MONTH DAY is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:61
-msgid "Don't wait too long – this offer ends on [End Date]."
+msgid "Don't wait too long – this offer ends on MONTH DAY."
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
@@ -12194,73 +12211,73 @@ msgstr ""
 msgid "Your website is running an outdated version of PHP (%1$s), on which MailPoet might stop working in the future. We recommend upgrading to %2$s or greater. Read our [link]simple PHP upgrade guide.[/link]"
 msgstr ""
 
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:103
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:104
 msgid ""
 "<strong>Update your sender email address to a branded domain to continue sending your campaigns.</strong>\n"
 "<span>MailPoet can no longer send from email addresses on shared 3rd party domains like <strong>%1$s</strong>. Please change your campaigns to send from an email address on your site's branded domain. Your existing scheduled and active emails will temporarily be sent from <strong>%2$s</strong>.</span> <p>%3$s &nbsp; %4$s</p>"
 msgstr ""
 
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:114
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:115
 msgid ""
 "<strong>Your newsletters and post notifications have been paused. Update your sender email address to a branded domain to continue sending your campaigns.</strong>\n"
 "<span>MailPoet can no longer send from email addresses on shared 3rd party domains like <strong>%1$s</strong>. Please change your campaigns to send from an email address on your site's branded domain. Your marketing automations and transactional emails will temporarily be sent from <strong>%2$s</strong>.</span> <p>%3$s &nbsp; %4$s</p>"
 msgstr ""
 
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:127
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:128
 msgid ""
 "<strong>Authenticate your sender domain to improve email delivery rates.</strong>\n"
 "<span>Major mailbox providers require you to authenticate your sender domain to confirm you sent the emails, and may place unauthenticated emails in the “Spam” folder. Please authenticate your sender domain to ensure your marketing campaigns are compliant and will reach your contacts.</span><p>%1$s &nbsp; %2$s</p>"
 msgstr ""
 
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:137
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:138
 msgid ""
 "<strong>Authenticate your sender domain to send new emails.</strong>\n"
 "      <span>Major mailbox providers require you to authenticate your sender domain to confirm you sent the emails, and may place unauthenticated emails in the “Spam” folder. Please authenticate your sender domain to ensure your marketing campaigns are compliant and will reach your contacts. Your existing scheduled and active emails will temporarily be sent from <strong>%1$s</strong>.</span> <p>%2$s &nbsp; %3$s</p>"
 msgstr ""
 
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:147
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:148
 msgid ""
 "<strong>Your newsletters and post notifications have been paused. Authenticate your sender domain to continue sending.</strong>\n"
 "<span>Major mailbox providers require you to authenticate your sender domain to confirm you sent the emails, and may place unauthenticated emails in the “Spam” folder. Please authenticate your sender domain to ensure your marketing campaigns are compliant and will reach your contacts. Your marketing automations and transactional emails will temporarily be sent from <strong>%1$s</strong>.</span> <p>%2$s &nbsp; %3$s</p>"
 msgstr ""
 
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:159
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:160
 msgid "Update sender email"
 msgstr ""
 
-#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:181
+#: lib/Util/Notices/SenderDomainAuthenticationNotices.php:182
 msgid "Authenticate domain"
 msgstr ""
 
-#: lib/Util/Notices/UnauthorizedEmailInNewslettersNotice.php:49
+#: lib/Util/Notices/UnauthorizedEmailInNewslettersNotice.php:58
 msgid "<b>Your automatic emails have been paused</b> because some email addresses haven’t been authorized yet."
 msgstr ""
 
 #. translators: %s is the newsletter subject.
-#: lib/Util/Notices/UnauthorizedEmailInNewslettersNotice.php:57
+#: lib/Util/Notices/UnauthorizedEmailInNewslettersNotice.php:66
 msgctxt "%s will be replaced by a newsletter subject"
 msgid "Update the from address of %s"
 msgstr ""
 
-#: lib/Util/Notices/UnauthorizedEmailInNewslettersNotice.php:67
+#: lib/Util/Notices/UnauthorizedEmailInNewslettersNotice.php:76
 msgid "Fix this!"
 msgstr ""
 
 #. translators: %s is the email address.
-#: lib/Util/Notices/UnauthorizedEmailNotice.php:58
+#: lib/Util/Notices/UnauthorizedEmailNotice.php:67
 msgctxt "Email addresses have to be authorized to be used to send emails. %s will be replaced by an email address."
 msgid "<b>Sending all of your emails has been paused</b> because your email address <b>%s</b> hasn’t been authorized yet."
 msgstr ""
 
-#: lib/Util/Notices/UnauthorizedEmailNotice.php:69
+#: lib/Util/Notices/UnauthorizedEmailNotice.php:78
 msgid "Authorize this email address"
 msgstr ""
 
-#: lib/Util/Notices/UnauthorizedEmailNotice.php:74
+#: lib/Util/Notices/UnauthorizedEmailNotice.php:83
 msgid "Use a different email address"
 msgstr ""
 
-#: lib/Util/Notices/UnauthorizedEmailNotice.php:80
+#: lib/Util/Notices/UnauthorizedEmailNotice.php:89
 #: assets/dist/js/commons.js:2
 msgid "Resume sending"
 msgstr ""
@@ -14642,6 +14659,10 @@ msgid "Create customized email sequences with our new automation editor."
 msgstr ""
 
 #: assets/dist/js/automation.js:1
+msgid "Your existing automations are now listed here. You can also create new, more powerful automations with our new Automations editor."
+msgstr ""
+
+#: assets/dist/js/automation.js:1
 msgid "Your existing automations are now listed here. You can also create new, more powerful automations with our new Automations editor. <link>Learn more</link>"
 msgstr ""
 
@@ -14723,10 +14744,6 @@ msgstr ""
 
 #: assets/dist/js/automation_analytics.js:2
 msgid "Order #"
-msgstr ""
-
-#: assets/dist/js/automation_analytics.js:2
-msgid "Customer"
 msgstr ""
 
 #: assets/dist/js/automation_analytics.js:2
@@ -15117,6 +15134,10 @@ msgid "if/else"
 msgstr ""
 
 #: assets/dist/js/commons.js:2
+msgid "You can use shortcodes."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
 msgid "You can use MailPoet shortcodes."
 msgstr ""
 
@@ -15189,7 +15210,15 @@ msgid "Send an email to the subscriber."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
+msgid "This is a transactional email. This type of email doesn't require marketing consent."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
 msgid "This is a transactional email. This type of email doesn't require marketing consent. Read more about [link]transactional emails[/link]."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "This is a marketing email. This type of email does require marketing consent."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
@@ -15467,7 +15496,11 @@ msgid "Email statistics"
 msgstr ""
 
 #: assets/dist/js/commons.js:2
-msgid "Run this automation only once per subscriber."
+msgid "Run automation once per subscriber"
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "Use this for automations that should only run once, like a welcome email. Turn it off for automations that should run every time, like abandoned cart reminders."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
@@ -16600,6 +16633,10 @@ msgid "Error authenticating your sender domain."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
+msgid "We detected different records from your domain. Please fix them by following the error messages below and reauthenticate your domain."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
 msgid "We detected different records from your domain. Please fix them by following the error messages below and reauthenticate your domain. For more help, <link>read our guide</link>."
 msgstr ""
 
@@ -16617,6 +16654,10 @@ msgstr ""
 
 #: assets/dist/js/commons.js:2
 msgid "Once added, click the button below to authenticate your sender domain."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "Your DNS records will be verified to ensure they match. Do note that it may take up to 24 hours for DNS changes to propagate after you make the change."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
@@ -16640,7 +16681,15 @@ msgid "Manage Sender Domain"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
+msgid "Shared 3rd-party domains like <emailDomain/> will send from a shared domain. We recommend that you use your site's branded domain instead."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
 msgid "Shared 3rd-party domains like <emailDomain/> will send from MailPoet's shared domain. We recommend that you use your site's branded domain instead."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Email campaigns cannot be sent from shared 3rd-party domains like <emailDomain/>. Please send from your site's branded domain instead."
 msgstr ""
 
 #: assets/dist/js/commons.js:9
@@ -16986,10 +17035,6 @@ msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 msgid "Total recipients: "
-msgstr ""
-
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
-msgid "Email settings"
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41

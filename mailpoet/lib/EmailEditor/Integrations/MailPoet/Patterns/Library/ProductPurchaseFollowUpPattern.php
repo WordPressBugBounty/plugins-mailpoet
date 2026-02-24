@@ -29,8 +29,8 @@ class ProductPurchaseFollowUpPattern extends Pattern {
     <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
       <!-- wp:heading {"level":1} -->
       <h1 class="wp-block-heading">' .
-      /* translators: [Product] is the product category placeholder to translate */
-      __('Loving your [Product]? Make it even better', 'mailpoet') . '</h1>
+      /* translators: PRODUCT NAME is placeholder text that merchants replace with their own content. */
+      __('Loving your PRODUCT NAME? Make it even better', 'mailpoet') . '</h1>
       <!-- /wp:heading -->
 
       <!-- wp:paragraph {"style":{"typography":{"fontSize":"16px"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|30"}}}} -->
