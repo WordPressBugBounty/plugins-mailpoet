@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.21.3\n"
+"Project-Id-Version: MailPoet 5.22.0\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-24T08:26:25+00:00\n"
+"POT-Creation-Date: 2026-03-03T12:00:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: views/emails/congratulatoryMssEmail.html:50
+#: views/emails/congratulatoryMssEmail.html:52
 #: views/segments/translations.html:169
 #: views/subscribers/subscribers.html:106
 #: views/homepage.html:75
@@ -95,11 +95,19 @@ msgstr ""
 msgid "Congrats!"
 msgstr ""
 
-#: views/emails/congratulatoryMssEmail.html:50
+#: views/emails/congratulatoryMssEmail.html:54
+msgid "Your emails are now being sent"
+msgstr ""
+
+#: views/emails/congratulatoryMssEmail.html:56
 msgid "MailPoet is now sending your emails"
 msgstr ""
 
-#: views/emails/congratulatoryMssEmail.html:61
+#: views/emails/congratulatoryMssEmail.html:70
+msgid "This email was sent automatically after you activated your email sending key in your settings."
+msgstr ""
+
+#: views/emails/congratulatoryMssEmail.html:72
 msgid "This email was sent automatically with the MailPoet Sending Service after you activated your key in your MailPoet settings."
 msgstr ""
 
@@ -115,84 +123,85 @@ msgstr ""
 msgid "Cheers,"
 msgstr ""
 
-#: views/emails/newSubscriberNotification.html:9
+#: views/emails/newSubscriberNotification.html:12
 msgid "The MailPoet Plugin"
 msgstr ""
 
-#: views/emails/statsNotification.html:26
+#: views/emails/statsNotification.html:28
 msgid "Your stats are in!"
 msgstr ""
 
-#: views/emails/statsNotification.html:66
+#: views/emails/statsNotification.html:68
 msgid "Congratulations, you now have more than [subscribersLimit] subscribers!"
 msgstr ""
 
-#: views/emails/statsNotification.html:84
+#: views/emails/statsNotification.html:86
 msgid "Our free version is limited to [subscribersLimit] subscribers. You need to upgrade now to be able to continue using MailPoet."
 msgstr ""
 
-#: views/emails/statsNotification.html:184
-#: views/emails/statsNotificationAutomatedEmails.html:139
+#: views/emails/statsNotification.html:186
+#: views/emails/statsNotificationAutomatedEmails.html:141
 #: assets/dist/js/automation_analytics.js:2
 #: assets/dist/js/commons.js:2
 msgid "clicked"
 msgstr ""
 
-#: views/emails/statsNotification.html:236
-#: views/emails/statsNotificationAutomatedEmails.html:180
+#: views/emails/statsNotification.html:238
+#: views/emails/statsNotificationAutomatedEmails.html:182
 #: assets/dist/js/automation_analytics.js:2
 #: assets/dist/js/commons.js:2
 msgid "opened"
 msgstr ""
 
-#: views/emails/statsNotification.html:268
-#: views/emails/statsNotificationAutomatedEmails.html:199
+#: views/emails/statsNotification.html:270
+#: views/emails/statsNotificationAutomatedEmails.html:201
 #: assets/dist/js/commons.js:2
 msgid "machine-opened"
 msgstr ""
 
-#: views/emails/statsNotification.html:320
-#: views/emails/statsNotificationAutomatedEmails.html:239
+#: views/emails/statsNotification.html:322
+#: views/emails/statsNotificationAutomatedEmails.html:241
 #: assets/dist/js/automation_analytics.js:2
 msgid "unsubscribed"
 msgstr ""
 
-#: views/emails/statsNotification.html:352
-#: views/emails/statsNotificationAutomatedEmails.html:258
+#: views/emails/statsNotification.html:354
+#: views/emails/statsNotificationAutomatedEmails.html:260
 msgid "bounced"
 msgstr ""
 
-#: views/emails/statsNotification.html:411
+#: views/emails/statsNotification.html:413
 msgid "Most clicked link"
 msgstr ""
 
-#: views/emails/statsNotification.html:435
+#: views/emails/statsNotification.html:437
 msgid "%s unique clicks"
 msgstr ""
 
-#: views/emails/statsNotification.html:478
+#: views/emails/statsNotification.html:480
 msgid "View all stats"
 msgstr ""
 
-#: views/emails/statsNotificationAutomatedEmails.html:27
+#: views/emails/statsNotificationAutomatedEmails.html:29
 #: lib/Cron/Workers/StatsNotifications/AutomatedEmails.php:111
 msgid "Your monthly stats are in!"
 msgstr ""
 
-#: views/emails/statsNotificationLayout.html:86
-#: views/emails/statsNotificationLayout.html:95
+#: views/emails/statsNotificationLayout.html:87
+#: views/emails/statsNotificationLayout.html:96
 msgid "How to Improve Open and Click Rates"
 msgstr ""
 
-#: views/emails/statsNotificationLayout.html:87
+#: views/emails/statsNotificationLayout.html:88
 msgid "How to improve my open rate?"
 msgstr ""
 
-#: views/emails/statsNotificationLayout.html:96
+#: views/emails/statsNotificationLayout.html:97
 msgid "And my click rate?"
 msgstr ""
 
-#: views/emails/statsNotificationLayout.html:104
+#: views/emails/statsNotificationLayout.html:105
+#: views/emails/statsNotificationLayout.html:141
 msgid "Disable these emails"
 msgstr ""
 
@@ -2471,7 +2480,7 @@ msgid "Template name"
 msgstr ""
 
 #: views/newsletter/editor.html:368
-#: lib/Config/Menu.php:262
+#: lib/Config/Menu.php:267
 msgid "Newsletter Editor"
 msgstr ""
 
@@ -3124,8 +3133,8 @@ msgstr ""
 
 #: views/segments/translations.html:47
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:233
-#: lib/Config/Menu.php:410
-#: lib/Config/Menu.php:411
+#: lib/Config/Menu.php:415
+#: lib/Config/Menu.php:416
 #: assets/dist/js/admin.js:2
 msgid "Segments"
 msgstr ""
@@ -3395,8 +3404,8 @@ msgid "none of"
 msgstr ""
 
 #: views/segments/translations.html:129
-#: lib/Config/Menu.php:508
-#: lib/Config/Menu.php:509
+#: lib/Config/Menu.php:513
+#: lib/Config/Menu.php:514
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_analytics.js:2
@@ -3538,7 +3547,7 @@ msgstr ""
 #: views/segments/translations.html:168
 #: views/subscribers/subscribers.html:105
 #: views/homepage.html:74
-#: lib/Twig/Functions.php:350
+#: lib/Twig/Functions.php:355
 #: assets/dist/js/commons.js:2
 msgid "Excellent"
 msgstr ""
@@ -3551,7 +3560,7 @@ msgstr ""
 #: views/segments/translations.html:171
 #: views/subscribers/subscribers.html:108
 #: views/homepage.html:77
-#: lib/Twig/Functions.php:352
+#: lib/Twig/Functions.php:357
 #: assets/dist/js/commons.js:2
 msgid "Good"
 msgstr ""
@@ -3602,8 +3611,8 @@ msgstr ""
 
 #: views/segments/translations.html:182
 #: views/subscribers/subscribers.html:92
-#: lib/Config/Menu.php:461
-#: lib/Config/Menu.php:462
+#: lib/Config/Menu.php:466
+#: lib/Config/Menu.php:467
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:9
 #: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
@@ -3776,8 +3785,8 @@ msgid "ZIP extension is required to create Excel files. Please refer to the [lin
 msgstr ""
 
 #: views/subscribers/importExport/export.html:90
-#: lib/Config/Menu.php:372
-#: lib/Config/Menu.php:373
+#: lib/Config/Menu.php:377
+#: lib/Config/Menu.php:378
 #: assets/dist/js/admin.js:2
 msgid "Export"
 msgstr ""
@@ -4043,8 +4052,8 @@ msgid "Next step"
 msgstr ""
 
 #: views/subscribers/importExport/import.html:100
-#: lib/Config/Menu.php:359
-#: lib/Config/Menu.php:360
+#: lib/Config/Menu.php:364
+#: lib/Config/Menu.php:365
 #: assets/dist/js/admin.js:2
 msgid "Import"
 msgstr ""
@@ -4298,8 +4307,8 @@ msgid "Unsubscribed at %1$d, for an unknown reason."
 msgstr ""
 
 #: views/subscribers/subscribers.html:47
-#: lib/Config/Menu.php:385
-#: lib/Config/Menu.php:386
+#: lib/Config/Menu.php:390
+#: lib/Config/Menu.php:391
 #: assets/dist/js/admin.js:2
 msgid "Lists"
 msgstr ""
@@ -4984,8 +4993,8 @@ msgid "Upgrade plan"
 msgstr ""
 
 #: views/homepage.html:64
-#: lib/Config/Menu.php:334
-#: lib/Config/Menu.php:335
+#: lib/Config/Menu.php:339
+#: lib/Config/Menu.php:340
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_analytics.js:2
@@ -5624,8 +5633,8 @@ msgstr ""
 
 #: views/settings_translations.html:2
 #: lib/Config/Hooks.php:676
-#: lib/Config/Menu.php:435
-#: lib/Config/Menu.php:436
+#: lib/Config/Menu.php:440
+#: lib/Config/Menu.php:441
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:2
@@ -6262,24 +6271,24 @@ msgid "%1$s emails"
 msgstr ""
 
 #: views/settings_translations.html:198
-#: lib/Twig/Functions.php:245
+#: lib/Twig/Functions.php:250
 msgid "every minute"
 msgstr ""
 
 #. translators: %1$d is the amount of minutes.
 #: views/settings_translations.html:199
-#: lib/Twig/Functions.php:247
+#: lib/Twig/Functions.php:252
 msgid "every %1$d minutes"
 msgstr ""
 
 #: views/settings_translations.html:200
-#: lib/Twig/Functions.php:248
+#: lib/Twig/Functions.php:253
 msgid "every hour"
 msgstr ""
 
 #. translators: %1$d is the amount of hours.
 #: views/settings_translations.html:201
-#: lib/Twig/Functions.php:250
+#: lib/Twig/Functions.php:255
 msgid "every %1$d hours"
 msgstr ""
 
@@ -6651,10 +6660,10 @@ msgstr ""
 #. Author of the plugin
 #: views/woo_system_info.html:5
 #: mailpoet.php
-#: lib/Config/Capabilities.php:80
-#: lib/Config/Menu.php:206
-#: lib/Config/Menu.php:207
-#: lib/Config/Menu.php:720
+#: lib/Config/Capabilities.php:114
+#: lib/Config/Menu.php:211
+#: lib/Config/Menu.php:212
+#: lib/Config/Menu.php:729
 #: lib/Config/PrivacyPolicy.php:12
 #: lib/WooCommerce/MultichannelMarketing/MPMarketingChannel.php:49
 #: lib/WooCommerce/WooSystemInfoController.php:41
@@ -8996,31 +9005,31 @@ msgstr ""
 msgid "View MailPoet settings"
 msgstr ""
 
-#: lib/Config/Menu.php:193
-#: lib/Config/Menu.php:194
+#: lib/Config/Menu.php:198
+#: lib/Config/Menu.php:199
 msgid "Welcome Wizard"
 msgstr ""
 
-#: lib/Config/Menu.php:223
-#: lib/Config/Menu.php:224
+#: lib/Config/Menu.php:228
+#: lib/Config/Menu.php:229
 msgid "Home"
 msgstr ""
 
-#: lib/Config/Menu.php:236
-#: lib/Config/Menu.php:237
+#: lib/Config/Menu.php:241
+#: lib/Config/Menu.php:242
 #: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:81
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:2
 msgid "Emails"
 msgstr ""
 
-#: lib/Config/Menu.php:249
+#: lib/Config/Menu.php:254
 msgctxt "newsletters per page (screen options)"
 msgid "Number of newsletters per page"
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/Config/Menu.php:261
+#: lib/Config/Menu.php:266
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewsletterPattern.php:69
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:21
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:25
@@ -9030,81 +9039,81 @@ msgstr ""
 msgid "Newsletter"
 msgstr ""
 
-#: lib/Config/Menu.php:276
-#: lib/Config/Menu.php:277
+#: lib/Config/Menu.php:281
+#: lib/Config/Menu.php:282
 #: assets/dist/js/admin.js:2
 msgid "Forms"
 msgstr ""
 
-#: lib/Config/Menu.php:289
+#: lib/Config/Menu.php:294
 msgctxt "forms per page (screen options)"
 msgid "Number of forms per page"
 msgstr ""
 
-#: lib/Config/Menu.php:301
-#: lib/Config/Menu.php:302
+#: lib/Config/Menu.php:306
+#: lib/Config/Menu.php:307
 msgid "Form Editor"
 msgstr ""
 
-#: lib/Config/Menu.php:321
-#: lib/Config/Menu.php:322
+#: lib/Config/Menu.php:326
+#: lib/Config/Menu.php:327
 msgid "Select Form Template"
 msgstr ""
 
-#: lib/Config/Menu.php:347
+#: lib/Config/Menu.php:352
 msgctxt "subscribers per page (screen options)"
 msgid "Number of subscribers per page"
 msgstr ""
 
-#: lib/Config/Menu.php:398
+#: lib/Config/Menu.php:403
 msgctxt "lists per page (screen options)"
 msgid "Number of lists per page"
 msgstr ""
 
-#: lib/Config/Menu.php:423
+#: lib/Config/Menu.php:428
 msgctxt "segments per page (screen options)"
 msgid "Number of segments per page"
 msgstr ""
 
-#: lib/Config/Menu.php:448
-#: lib/Config/Menu.php:449
+#: lib/Config/Menu.php:453
+#: lib/Config/Menu.php:454
 #: assets/dist/js/admin.js:2
 msgid "Help"
 msgstr ""
 
-#: lib/Config/Menu.php:474
-#: lib/Config/Menu.php:475
+#: lib/Config/Menu.php:479
+#: lib/Config/Menu.php:480
 msgid "WooCommerce Setup"
 msgstr ""
 
-#: lib/Config/Menu.php:487
+#: lib/Config/Menu.php:492
 msgid "Experimental Features"
 msgstr ""
 
-#: lib/Config/Menu.php:497
+#: lib/Config/Menu.php:502
 msgid "Logs"
 msgstr ""
 
-#: lib/Config/Menu.php:518
-#: lib/Config/Menu.php:519
+#: lib/Config/Menu.php:523
+#: lib/Config/Menu.php:524
 msgid "Automation Editor"
 msgstr ""
 
-#: lib/Config/Menu.php:528
-#: lib/Config/Menu.php:529
+#: lib/Config/Menu.php:533
+#: lib/Config/Menu.php:534
 msgid "Automation Analytics"
 msgstr ""
 
-#: lib/Config/Menu.php:538
-#: lib/Config/Menu.php:539
+#: lib/Config/Menu.php:543
+#: lib/Config/Menu.php:544
 msgid "Automation Templates"
 msgstr ""
 
-#: lib/Config/Menu.php:548
+#: lib/Config/Menu.php:553
 msgid "Automation Preview"
 msgstr ""
 
-#: lib/Config/Menu.php:558
+#: lib/Config/Menu.php:563
 msgid "Automation Flow"
 msgstr ""
 
@@ -10076,20 +10085,20 @@ msgctxt "newsletter open rate, click rate and unsubscribe rate"
 msgid "%1$s%% clicks, %2$s%% opens, %3$s%% unsubscribes in a nutshell."
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:196
+#: lib/Cron/Workers/StatsNotifications/Worker.php:203
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:90
 msgid "Unsubscribe link"
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:197
+#: lib/Cron/Workers/StatsNotifications/Worker.php:204
 msgid "Unsubscribe link (without confirmation)"
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:198
+#: lib/Cron/Workers/StatsNotifications/Worker.php:205
 msgid "Manage subscription link"
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:199
+#: lib/Cron/Workers/StatsNotifications/Worker.php:206
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:106
 msgid "View in browser link"
 msgstr ""
@@ -10205,6 +10214,10 @@ msgstr ""
 msgid "How it works"
 msgstr ""
 
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:48
+msgid "Step 1 image"
+msgstr ""
+
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:56
 msgid "Step 1"
 msgstr ""
@@ -10218,6 +10231,14 @@ msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:78
 msgid "Step 2"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:92
+msgid "Step 2 image"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:108
+msgid "Step 3 image"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php:115
@@ -10242,6 +10263,10 @@ msgstr ""
 #. translators: A BRIEF DESCRIPTION OF THE EVENT is placeholder text that merchants replace with their own content.
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:35
 msgid "You're invited 🎉 Join us for A BRIEF DESCRIPTION OF THE EVENT and be part of our exclusive event series."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EventInvitationPattern.php:39
+msgid "Event invitation image"
 msgstr ""
 
 #. translators: Placeholder text that merchants replace with their own content.
@@ -10367,6 +10392,10 @@ msgstr ""
 msgid "Welcome to our weekly newsletter! Stay updated with the latest trends in hair care, styling tips, and exclusive offers."
 msgstr ""
 
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewsletterPattern.php:36
+msgid "Newsletter image"
+msgstr ""
+
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewsletterPattern.php:40
 msgid "This week, we explore new products that enhance shine and promote healthy hair growth. Don‘t miss out on our exclusive offers tailored just for you!"
 msgstr ""
@@ -10436,6 +10465,10 @@ msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:33
 msgid "Big news! Our sitewide sale is officially ON!"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:37
+msgid "Sale announcement image"
 msgstr ""
 
 #. translators: XX% OFF EVERYTHING is placeholder text that merchants replace with their own content.
@@ -11751,7 +11784,12 @@ msgstr ""
 msgid "This domain was already added to the list."
 msgstr ""
 
-#: lib/Services/CongratulatoryMssEmailController.php:31
+#: lib/Services/CongratulatoryMssEmailController.php:37
+msgctxt "Subject of an email confirming that the email sending service works"
+msgid "Your email sending is set up!"
+msgstr ""
+
+#: lib/Services/CongratulatoryMssEmailController.php:38
 msgctxt "Subject of an email confirming that MailPoet Sending Service works"
 msgid "Sending with MailPoet works!"
 msgstr ""
@@ -11973,7 +12011,7 @@ msgid "Imported by the administrator"
 msgstr ""
 
 #. translators: %s is name of the segment.
-#: lib/Subscribers/NewSubscriberNotificationMailer.php:95
+#: lib/Subscribers/NewSubscriberNotificationMailer.php:98
 msgid "New subscriber to %s"
 msgstr ""
 
@@ -12098,7 +12136,7 @@ msgstr ""
 msgid "%d seconds"
 msgstr ""
 
-#: lib/Twig/Functions.php:354
+#: lib/Twig/Functions.php:359
 #: assets/dist/js/commons.js:2
 msgid "Average"
 msgstr ""
@@ -15806,6 +15844,26 @@ msgstr ""
 
 #: assets/dist/js/commons.js:2
 msgid "Starting an automation when a booking is created is a premium feature."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "Booking starts"
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "Starts before or after a booking is scheduled to begin."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "start"
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "schedule"
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "Starting an automation before or after a booking begins is a premium feature."
 msgstr ""
 
 #: assets/dist/js/commons.js:2

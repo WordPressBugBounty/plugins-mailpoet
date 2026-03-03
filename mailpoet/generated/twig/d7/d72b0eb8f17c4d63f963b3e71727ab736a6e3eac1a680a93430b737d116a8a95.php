@@ -44,17 +44,20 @@ class __TwigTemplate_d3e8bf2dd0b6f553933582b6cf295d5ab8592820b519068b6de84e6d5df
         yield "
 ";
         // line 3
-        yield $this->extensions['MailPoet\Twig\I18n']->translate("How to improve my open rate?");
-        yield " https://www.mailpoet.com/how-to-improve-open-rates/
+        if ( !$this->extensions['MailPoet\Twig\Functions']->isGarden()) {
+            // line 4
+            yield $this->extensions['MailPoet\Twig\I18n']->translate("How to improve my open rate?");
+            yield " https://www.mailpoet.com/how-to-improve-open-rates/
 ";
-        // line 4
-        yield $this->extensions['MailPoet\Twig\I18n']->translate("And my click rate?");
-        yield " https://www.mailpoet.com/how-to-improve-click-rates/
+            // line 5
+            yield $this->extensions['MailPoet\Twig\I18n']->translate("And my click rate?");
+            yield " https://www.mailpoet.com/how-to-improve-click-rates/
 ";
-        // line 5
+        }
+        // line 7
         yield $this->extensions['MailPoet\Twig\I18n']->translate("Disable these emails");
         yield " ";
-        yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape(($context["linkSettings"] ?? null), "html", null, true);
+        yield ($context["linkSettings"] ?? null);
         yield "
 ";
         return; yield '';
@@ -88,7 +91,7 @@ class __TwigTemplate_d3e8bf2dd0b6f553933582b6cf295d5ab8592820b519068b6de84e6d5df
      */
     public function getDebugInfo()
     {
-        return array (  61 => 1,  52 => 5,  48 => 4,  44 => 3,  41 => 2,  39 => 1,);
+        return array (  64 => 1,  55 => 7,  50 => 5,  46 => 4,  44 => 3,  41 => 2,  39 => 1,);
     }
 
     public function getSourceContext()
