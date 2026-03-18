@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.22.1\n"
+"Project-Id-Version: MailPoet 5.22.2\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-09T16:31:38+00:00\n"
+"POT-Creation-Date: 2026-03-18T09:46:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -2057,10 +2057,6 @@ msgstr ""
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:92
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:119
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:142
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:70
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:93
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:120
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:143
 msgid "Product"
 msgstr ""
 
@@ -10159,44 +10155,44 @@ msgstr ""
 msgid "Missing required data"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartPattern.php:16
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartPattern.php:24
 msgid "Don‘t let this gem slip away"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartPattern.php:20
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartPattern.php:28
 msgid "You’ve already done the hard part: finding something great. Now’s the time to make it yours."
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartPattern.php:31
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartPattern.php:39
 msgid "Abandoned Cart"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:16
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:27
 msgid "We Saved Your Cart + Little Surprise"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:20
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:31
 msgid "Good news — your cart is still here! Even better? You can get 10% off if you check out in the next 24 hours."
 msgstr ""
 
 #. translators: %s: Site description personalization tag
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:24
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:35
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:42
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:40
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:53
 msgid "Use this code at checkout to redeem your discount:"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:34
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:45
 msgid "Finish checkout"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:40
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:51
 msgid "These items are waiting in your cart"
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:51
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:62
 msgid "Abandoned Cart with Discount"
 msgstr ""
 
@@ -10288,33 +10284,33 @@ msgstr ""
 msgid "Event Invitation"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:28
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:41
 msgid "Thank You for Your First Order"
 msgstr ""
 
 #. translators: %s is a placeholder for the shop name
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:34
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:47
 msgid "We’re thrilled you chose %s. Your order is being processed, and we can’t wait for you to receive it."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:38
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:51
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:58
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:39
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:59
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:56
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:52
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:75
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:69
 msgid "You might also like"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:43
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:44
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:61
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:56
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:57
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:74
 msgid "While you wait, check out other items that pair perfectly with your order."
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:66
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:166
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:67
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:167
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:85
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeEmailPattern.php:59
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:59
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:84
@@ -10337,8 +10333,9 @@ msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:42
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewProductsAnnouncementPattern.php:41
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:43
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:59
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductRestockNotificationPattern.php:41
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Pattern.php:102
 msgid "Product name"
 msgstr ""
 
@@ -10350,11 +10347,7 @@ msgstr ""
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:102
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:129
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:152
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:53
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:80
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:103
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:130
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:153
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:69
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductRestockNotificationPattern.php:51
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:53
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeEmailPattern.php:52
@@ -10417,11 +10410,11 @@ msgid "Visit our store"
 msgstr ""
 
 #. translators: %s is a placeholder for the customer first name
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:30
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:43
 msgid "%s, thank you for your order"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:35
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:48
 msgid "Thanks for shopping with us. Your order is being processed, and we can’t wait for you to receive it."
 msgstr ""
 
@@ -10430,17 +10423,22 @@ msgstr ""
 msgid "Post Purchase Thank You"
 msgstr ""
 
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:38
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Pattern.php:101
+msgid "Product placeholder"
+msgstr ""
+
 #. translators: PRODUCT NAME is placeholder text that merchants replace with their own content.
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:30
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:46
 msgid "Loving your PRODUCT NAME? Make it even better"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:35
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:51
 msgid "Here are a few essentials that pair perfectly."
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:180
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:98
 msgid "Product Purchase Follow-Up"
 msgstr ""
 
@@ -10526,7 +10524,7 @@ msgid "Hi %s, we are so glad to have you onboard. As a thank you, here is a 10%%
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:52
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:50
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:63
 msgid "Start shopping"
 msgstr ""
 
@@ -10535,12 +10533,12 @@ msgstr ""
 msgid "Welcome with Discount"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:28
-msgid "We Miss You! Here’s 15% Off "
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:41
+msgid "We Miss You! Here’s 15% Off"
 msgstr ""
 
 #. translators: %s is a placeholder for the first name
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:34
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:47
 msgid "Hi %s, come see what’s new — we’ve added fresh arrivals and exclusive deals just for you."
 msgstr ""
 
@@ -10549,39 +10547,39 @@ msgstr ""
 msgid "Win Back Customer"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:140
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:203
 msgctxt "Block pattern category"
 msgid "Newsletter"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:141
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:204
 msgid "A collection of newsletter email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:145
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:208
 msgctxt "Block pattern category"
 msgid "Welcome"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:146
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:209
 msgid "A collection of welcome email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:154
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:217
 msgctxt "Block pattern category"
 msgid "Post-purchase"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:155
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:218
 msgid "A collection of post-purchase email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:159
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:222
 msgctxt "Block pattern category"
 msgid "Abandoned cart"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:160
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:223
 msgid "A collection of abandoned cart email layouts."
 msgstr ""
 
@@ -16917,15 +16915,15 @@ msgid "Could not copy to clipboard"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
-msgid "Edit step name"
-msgstr ""
-
-#: assets/dist/js/commons.js:9
 msgid "Step name"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
 msgid "Give the automation step a name that indicates its purpose. E.g \"Abandoned cart recovery\". This name will be displayed only to you and not to the clients."
+msgstr ""
+
+#: assets/dist/js/commons.js:9
+msgid "Edit step name"
 msgstr ""
 
 #: assets/dist/js/commons.js:9
