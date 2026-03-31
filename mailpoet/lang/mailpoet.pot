@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.22.2\n"
+"Project-Id-Version: MailPoet 5.22.3\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-18T09:46:01+00:00\n"
+"POT-Creation-Date: 2026-03-31T06:59:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -649,8 +649,8 @@ msgid "Select the list that you want to add"
 msgstr ""
 
 #: views/form/editor.html:159
-#: views/newsletter/editor.html:1276
-#: views/newsletter/editor.html:1277
+#: views/newsletter/editor.html:1306
+#: views/newsletter/editor.html:1307
 #: views/segments/translations.html:54
 #: views/segments/translations.html:87
 #: views/subscription/manage_subscription.html:9
@@ -1526,7 +1526,7 @@ msgstr ""
 #: views/newsletter/templates/blocks/dynamicProducts/settings.hbs:278
 #: views/newsletter/templates/blocks/posts/settingsDisplayOptions.hbs:229
 #: views/newsletter/templates/blocks/products/settingsDisplayOptions.hbs:192
-#: views/newsletter/editor.html:1522
+#: views/newsletter/editor.html:1552
 msgid "Button"
 msgstr ""
 
@@ -2480,21 +2480,21 @@ msgstr ""
 msgid "Newsletter Editor"
 msgstr ""
 
-#: views/newsletter/editor.html:1268
+#: views/newsletter/editor.html:1298
 msgid "Custom"
 msgstr ""
 
-#: views/newsletter/editor.html:1285
+#: views/newsletter/editor.html:1315
 msgid "RSS Feed"
 msgstr ""
 
-#: views/newsletter/editor.html:1357
+#: views/newsletter/editor.html:1387
 msgid "Website"
 msgstr ""
 
-#: views/newsletter/editor.html:1423
-#: views/newsletter/editor.html:1478
-#: views/newsletter/editor.html:1663
+#: views/newsletter/editor.html:1453
+#: views/newsletter/editor.html:1508
+#: views/newsletter/editor.html:1693
 #: lib/Config/PopulatorData/Templates/KidsClothing.php:1282
 #: lib/Config/PopulatorData/Templates/KidsClothing.php:1342
 #: lib/Config/PopulatorData/Templates/KidsClothing.php:1463
@@ -2502,20 +2502,20 @@ msgstr ""
 msgid "Author:"
 msgstr ""
 
-#: views/newsletter/editor.html:1425
-#: views/newsletter/editor.html:1480
-#: views/newsletter/editor.html:1665
+#: views/newsletter/editor.html:1455
+#: views/newsletter/editor.html:1510
+#: views/newsletter/editor.html:1695
 #: lib/Config/PopulatorData/Templates/KidsClothing.php:1285
 #: lib/Config/PopulatorData/Templates/PostNotificationsBlank1Column.php:169
 msgid "Categories:"
 msgstr ""
 
-#: views/newsletter/editor.html:1427
-#: views/newsletter/editor.html:1429
-#: views/newsletter/editor.html:1482
-#: views/newsletter/editor.html:1484
-#: views/newsletter/editor.html:1667
-#: views/newsletter/editor.html:1669
+#: views/newsletter/editor.html:1457
+#: views/newsletter/editor.html:1459
+#: views/newsletter/editor.html:1512
+#: views/newsletter/editor.html:1514
+#: views/newsletter/editor.html:1697
+#: views/newsletter/editor.html:1699
 #: lib/Config/PopulatorData/Templates/KidsClothing.php:1327
 #: lib/Config/PopulatorData/Templates/KidsClothing.php:1330
 #: lib/Config/PopulatorData/Templates/KidsClothing.php:1387
@@ -2526,7 +2526,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: views/newsletter/editor.html:1620
+#: views/newsletter/editor.html:1650
 #: lib/Config/PopulatorData/Templates/AppWelcome.php:319
 #: lib/Config/PopulatorData/Templates/Avocado.php:654
 #: lib/Config/PopulatorData/Templates/Avocado.php:863
@@ -2664,7 +2664,7 @@ msgstr ""
 msgid "Unsubscribe"
 msgstr ""
 
-#: views/newsletter/editor.html:1620
+#: views/newsletter/editor.html:1650
 #: lib/Config/PopulatorData/Templates/ConfirmInterestBeforeDeactivation.php:163
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:76
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:102
@@ -2672,7 +2672,7 @@ msgstr ""
 msgid "Manage subscription"
 msgstr ""
 
-#: views/newsletter/editor.html:1620
+#: views/newsletter/editor.html:1650
 #: lib/Config/PopulatorData/Templates/Avocado.php:654
 #: lib/Config/PopulatorData/Templates/Avocado.php:863
 #: lib/Config/PopulatorData/Templates/Birds.php:1349
@@ -2793,23 +2793,23 @@ msgstr ""
 msgid "Add your postal address here!"
 msgstr ""
 
-#: views/newsletter/editor.html:1640
+#: views/newsletter/editor.html:1670
 msgid "An image of..."
 msgstr ""
 
-#: views/newsletter/editor.html:1776
+#: views/newsletter/editor.html:1806
 msgid "Facebook"
 msgstr ""
 
-#: views/newsletter/editor.html:1787
+#: views/newsletter/editor.html:1817
 msgid "Twitter"
 msgstr ""
 
-#: views/newsletter/editor.html:1800
+#: views/newsletter/editor.html:1830
 msgid "Edit this to insert text."
 msgstr ""
 
-#: views/newsletter/editor.html:1803
+#: views/newsletter/editor.html:1833
 #: lib/Config/PopulatorData/Templates/Avocado.php:999
 #: lib/Config/PopulatorData/Templates/Birds.php:209
 #: lib/Config/PopulatorData/Templates/Birds.php:1730
@@ -2905,8 +2905,8 @@ msgstr ""
 msgid "View this in your browser."
 msgstr ""
 
-#: views/newsletter/editor.html:1720
-#: views/newsletter/editor.html:1722
+#: views/newsletter/editor.html:1750
+#: views/newsletter/editor.html:1752
 msgctxt "Text of a button which links to an ecommerce product page"
 msgid "Buy now"
 msgstr ""
@@ -6727,7 +6727,7 @@ msgid "Automation not found."
 msgstr ""
 
 #: lib/AdminPages/Pages/Help.php:60
-#: lib/SystemReport/SystemReportCollector.php:92
+#: lib/SystemReport/SystemReportCollector.php:93
 msgid "Can‘t generate cron URL."
 msgstr ""
 
@@ -10549,37 +10549,64 @@ msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:203
 msgctxt "Block pattern category"
-msgid "Newsletter"
+msgid "Sales announcements"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:204
-msgid "A collection of newsletter email layouts."
+msgid "A collection of sales announcement email layouts."
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:208
 msgctxt "Block pattern category"
-msgid "Welcome"
+msgid "Educational campaign"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:209
+msgid "A collection of educational campaign email layouts."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:213
+msgctxt "Block pattern category"
+msgid "Events"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:214
+msgid "A collection of event email layouts."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:218
+msgctxt "Block pattern category"
+msgid "Newsletter"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:219
+msgid "A collection of newsletter email layouts."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:223
+msgctxt "Block pattern category"
+msgid "Welcome"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:224
 msgid "A collection of welcome email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:217
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:232
 msgctxt "Block pattern category"
 msgid "Post-purchase"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:218
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:233
 msgid "A collection of post-purchase email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:222
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:237
 msgctxt "Block pattern category"
 msgid "Abandoned cart"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:223
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:238
 msgid "A collection of abandoned cart email layouts."
 msgstr ""
 
@@ -12138,6 +12165,10 @@ msgstr ""
 msgid "%d seconds"
 msgstr ""
 
+#: lib/SystemReport/SystemReportCollector.php:146
+msgid "Managed by MailPoet Sending Service"
+msgstr ""
+
 #: lib/Twig/Functions.php:359
 #: assets/dist/js/commons.js:2
 msgid "Average"
@@ -12406,15 +12437,13 @@ msgstr ""
 
 #. translators: %s: Subscriber first name
 #: lib/WooCommerce/Emails/Templates/emails/block/marketing-confirmation.php:31
-#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:32
-#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:27
+#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:33
+#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:28
 msgid "Hello %s,"
 msgstr ""
 
 #. translators: %s: Default placeholder used when no subscriber name is available, e.g. "Hello there"
-#. translators: %s: Subscriber first name
 #: lib/WooCommerce/Emails/Templates/emails/block/marketing-confirmation.php:35
-#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:32
 msgctxt "subscriber name placeholder"
 msgid "there"
 msgstr ""
@@ -12422,34 +12451,34 @@ msgstr ""
 #. translators: %s: Site title
 #. translators: %s: Site name
 #: lib/WooCommerce/Emails/Templates/emails/block/marketing-confirmation.php:42
-#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:39
-#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:31
+#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:43
+#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:35
 msgid "You've received this message because you subscribed to %s. Please confirm your subscription to receive emails from us:"
 msgstr ""
 
 #: lib/WooCommerce/Emails/Templates/emails/block/marketing-confirmation.php:48
-#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:43
+#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:47
 msgid "Click here to confirm your subscription"
 msgstr ""
 
 #: lib/WooCommerce/Emails/Templates/emails/block/marketing-confirmation.php:53
-#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:45
-#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:39
+#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:49
+#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:43
 msgid "Thank you,"
 msgstr ""
 
 #: lib/WooCommerce/Emails/Templates/emails/block/marketing-confirmation.php:58
-#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:53
-#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:49
+#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:57
+#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:53
 msgid "If you received this email by mistake, simply delete it. You won't receive any more emails from us unless you confirm your subscription using the link above."
 msgstr ""
 
-#. translators: %s: Subscriber first name
-#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:27
-msgid "there"
+#: lib/WooCommerce/Emails/Templates/emails/marketing-confirmation.php:35
+#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:30
+msgid "Hello there,"
 msgstr ""
 
-#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:34
+#: lib/WooCommerce/Emails/Templates/emails/plain/marketing-confirmation.php:38
 msgid "Click here to confirm your subscription:"
 msgstr ""
 
@@ -16321,7 +16350,15 @@ msgid "The automation has been saved."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
+msgid "Failed to activate automation."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
 msgid "Well done! Automation is now activated!"
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "Failed to deactivate automation."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
@@ -16330,6 +16367,10 @@ msgstr ""
 
 #: assets/dist/js/commons.js:2
 msgid "Automation is deactivated. But recent users are still going through the flow."
+msgstr ""
+
+#: assets/dist/js/commons.js:2
+msgid "Failed to move automation to trash."
 msgstr ""
 
 #: assets/dist/js/commons.js:2
