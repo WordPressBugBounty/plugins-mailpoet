@@ -89,12 +89,22 @@ class __TwigTemplate_983c70cc527e9ec7b888be667e99a11703d8dd9de70fb8285afd14f53c3
         // line 36
         yield "  </tr>
   <tr>
-    <td align=\"center\" class=\"mailpoet-wrapper\" valign=\"top\" style=\"border-collapse:collapse;background-color:#f0f0f0\"><!--[if mso]>
+    <td align=\"center\" class=\"mailpoet-wrapper\" valign=\"top\" style=\"border-collapse:collapse;background-color:#f0f0f0";
+        // line 38
+        if ($this->extensions['MailPoet\Twig\Functions']->isGarden()) {
+            yield ";padding-top:24px;padding-bottom:24px";
+        }
+        yield "\"><!--[if mso]>
       <table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"
              width=\"660\">
         <tr>
           <td class=\"mailpoet_content-wrapper\" align=\"center\" valign=\"top\" width=\"660\">
-      <![endif]--><table class=\"mailpoet_content-wrapper\" border=\"0\" width=\"660\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-spacing:0;mso-table-lspace:0;mso-table-rspace:0;max-width:660px;width:100%;border-collapse:collapse;background-color:#ffffff\">
+      <![endif]--><table class=\"mailpoet_content-wrapper\" border=\"0\" width=\"660\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-spacing:0;mso-table-lspace:0;mso-table-rspace:0;max-width:660px;width:100%;border-collapse:collapse;background-color:#ffffff";
+        // line 43
+        if ($this->extensions['MailPoet\Twig\Functions']->isGarden()) {
+            yield ";border-radius:8px;overflow:hidden";
+        }
+        yield "\">
         <tbody>
 
         ";
@@ -210,23 +220,27 @@ class __TwigTemplate_983c70cc527e9ec7b888be667e99a11703d8dd9de70fb8285afd14f53c3
             <table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-spacing:0;mso-table-lspace:0;mso-table-rspace:0;border-collapse:collapse\">
               <tbody>
               <tr>
-                <td style=\"padding:20px;border-collapse:collapse\">
-                  <table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-spacing:0;mso-table-lspace:0;mso-table-rspace:0;border-collapse:collapse\">
-                    <tr>
-                      <td class=\"mailpoet_divider-cell\" style=\"border-top-width:1px;border-top-style:solid;border-top-color:#e8e8e8;border-collapse:collapse\"></td>
-                    </tr>
-                  </table>
+                <td class=\"mailpoet_spacer\" height=\"20\" valign=\"top\" style=\"border-collapse:collapse\"></td>
+              </tr>
+              <tr>
+                <td style=\"padding:0 20px;text-align:center;border-collapse:collapse;color:#999999;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;font-size:13px;line-height:20px\">
+                  &copy; ";
+            // line 134
+            yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape(($context["blogName"] ?? null), "html", null, true);
+            yield ". ";
+            yield $this->extensions['MailPoet\Twig\I18n']->translate("All Rights Reserved.");
+            yield "
                 </td>
               </tr>
               <tr>
-                <td style=\"padding:0 20px 20px;text-align:center;border-collapse:collapse;color:#999999;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;font-size:13px;line-height:20px\">
+                <td style=\"padding:4px 20px 20px;text-align:center;border-collapse:collapse;color:#999999;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;font-size:13px;line-height:20px\">
                   <a href=\"";
-            // line 140
+            // line 139
             yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape(($context["linkSettings"] ?? null), "html", null, true);
-            yield "\" style=\"color:#999999;text-decoration:underline\">
+            yield "\" style=\"color:#1e1e1e;text-decoration:underline\">
                     ";
-            // line 141
-            yield $this->extensions['MailPoet\Twig\I18n']->translate("Disable these emails");
+            // line 140
+            yield $this->extensions['MailPoet\Twig\I18n']->translate("Manage email preference");
             yield "
                   </a>
                 </td>
@@ -237,7 +251,7 @@ class __TwigTemplate_983c70cc527e9ec7b888be667e99a11703d8dd9de70fb8285afd14f53c3
         </tr>
         ";
         }
-        // line 150
+        // line 149
         yield "        </tbody>
       </table><!--[if mso]>
       </td>
@@ -281,7 +295,7 @@ class __TwigTemplate_983c70cc527e9ec7b888be667e99a11703d8dd9de70fb8285afd14f53c3
      */
     public function getDebugInfo()
     {
-        return array (  254 => 46,  238 => 150,  226 => 141,  222 => 140,  205 => 125,  182 => 105,  178 => 104,  168 => 97,  164 => 96,  153 => 88,  149 => 87,  126 => 67,  106 => 49,  104 => 48,  101 => 47,  99 => 46,  87 => 36,  81 => 33,  78 => 32,  76 => 31,  49 => 7,  39 => 1,);
+        return array (  268 => 46,  252 => 149,  240 => 140,  236 => 139,  226 => 134,  215 => 125,  192 => 105,  188 => 104,  178 => 97,  174 => 96,  163 => 88,  159 => 87,  136 => 67,  116 => 49,  114 => 48,  111 => 47,  109 => 46,  101 => 43,  91 => 38,  87 => 36,  81 => 33,  78 => 32,  76 => 31,  49 => 7,  39 => 1,);
     }
 
     public function getSourceContext()

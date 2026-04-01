@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.22.3\n"
+"Project-Id-Version: MailPoet 5.22.4\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-31T06:59:14+00:00\n"
+"POT-Creation-Date: 2026-04-01T14:25:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -127,64 +127,149 @@ msgstr ""
 msgid "The MailPoet Plugin"
 msgstr ""
 
-#: views/emails/statsNotification.html:28
+#: views/emails/statsNotification.html:29
 msgid "Your stats are in!"
 msgstr ""
 
-#: views/emails/statsNotification.html:68
+#: views/emails/statsNotification.html:69
 msgid "Congratulations, you now have more than [subscribersLimit] subscribers!"
 msgstr ""
 
-#: views/emails/statsNotification.html:86
+#: views/emails/statsNotification.html:87
 msgid "Our free version is limited to [subscribersLimit] subscribers. You need to upgrade now to be able to continue using MailPoet."
 msgstr ""
 
-#: views/emails/statsNotification.html:186
-#: views/emails/statsNotificationAutomatedEmails.html:141
+#: views/emails/statsNotification.html:187
+#: views/emails/statsNotificationAutomatedEmails.html:143
 #: assets/dist/js/automation_analytics.js:2
 #: assets/dist/js/commons.js:2
 msgid "clicked"
 msgstr ""
 
-#: views/emails/statsNotification.html:238
-#: views/emails/statsNotificationAutomatedEmails.html:182
+#: views/emails/statsNotification.html:239
+#: views/emails/statsNotificationAutomatedEmails.html:184
 #: assets/dist/js/automation_analytics.js:2
 #: assets/dist/js/commons.js:2
 msgid "opened"
 msgstr ""
 
-#: views/emails/statsNotification.html:270
-#: views/emails/statsNotificationAutomatedEmails.html:201
+#: views/emails/statsNotification.html:271
+#: views/emails/statsNotificationAutomatedEmails.html:203
 #: assets/dist/js/commons.js:2
 msgid "machine-opened"
 msgstr ""
 
-#: views/emails/statsNotification.html:322
-#: views/emails/statsNotificationAutomatedEmails.html:241
+#: views/emails/statsNotification.html:323
+#: views/emails/statsNotificationAutomatedEmails.html:243
 #: assets/dist/js/automation_analytics.js:2
 msgid "unsubscribed"
 msgstr ""
 
-#: views/emails/statsNotification.html:354
-#: views/emails/statsNotificationAutomatedEmails.html:260
+#: views/emails/statsNotification.html:355
+#: views/emails/statsNotificationAutomatedEmails.html:262
 msgid "bounced"
 msgstr ""
 
-#: views/emails/statsNotification.html:413
+#: views/emails/statsNotification.html:414
 msgid "Most clicked link"
 msgstr ""
 
-#: views/emails/statsNotification.html:437
+#: views/emails/statsNotification.html:438
 msgid "%s unique clicks"
 msgstr ""
 
-#: views/emails/statsNotification.html:480
+#: views/emails/statsNotification.html:481
 msgid "View all stats"
 msgstr ""
 
-#: views/emails/statsNotificationAutomatedEmails.html:29
-#: lib/Cron/Workers/StatsNotifications/AutomatedEmails.php:111
+#: views/emails/statsNotificationAutomatedEmails.html:31
+#: lib/Cron/Workers/StatsNotifications/AutomatedEmails.php:127
 msgid "Your monthly stats are in!"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:25
+msgid "Your monthly automation stats"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:36
+#: views/emails/statsNotificationGarden.html:34
+#: views/newsletter/templates/blocks/woocommerceContent/completed_order.hbs:6
+#: views/newsletter/templates/blocks/woocommerceContent/customer_note.hbs:6
+#: views/newsletter/templates/blocks/woocommerceContent/new_account.hbs:6
+#: views/newsletter/templates/blocks/woocommerceContent/processing_order.hbs:6
+#: views/newsletter/templates/blocks/woocommerceContentImproved/completed_order.hbs:10
+#: views/newsletter/templates/blocks/woocommerceContentImproved/customer_note.hbs:10
+#: views/newsletter/templates/blocks/woocommerceContentImproved/new_account.hbs:9
+#: views/newsletter/templates/blocks/woocommerceContentImproved/processing_order.hbs:10
+msgid "Hi %s,"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:44
+msgid "Here's a summary of how your active automations performed this month."
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:107
+#: views/emails/statsNotificationGarden.html:68
+#: views/subscribers/subscribers.html:79
+#: assets/dist/js/automation_analytics.js:2
+#: assets/dist/js/commons.js:9
+msgid "Clicked"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:161
+#: views/emails/statsNotificationGarden.html:122
+#: views/subscribers/subscribers.html:76
+#: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:82
+#: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:91
+#: assets/dist/js/automation_analytics.js:2
+#: assets/dist/js/commons.js:9
+msgid "Opened"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:188
+#: views/emails/statsNotificationGarden.html:149
+msgid "Machine-opened"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:238
+#: views/emails/statsNotificationGarden.html:199
+#: views/segments/translations.html:9
+#: views/subscribers/importExport/import.html:131
+#: views/subscribers/subscribers.html:30
+#: views/subscription/admin_user_status_field.html:23
+#: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:120
+#: lib/Subscribers/SubscriberListingRepository.php:366
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:188
+#: assets/dist/js/admin.js:2
+#: assets/dist/js/automation_analytics.js:2
+msgid "Unsubscribed"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:265
+#: views/emails/statsNotificationGarden.html:226
+#: views/segments/translations.html:11
+#: views/subscribers/subscribers.html:32
+#: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:128
+#: lib/Subscribers/SubscriberListingRepository.php:376
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:196
+#: assets/dist/js/admin.js:2
+msgid "Bounced"
+msgstr ""
+
+#: views/emails/statsNotificationAutomatedEmailsGarden.html:312
+msgid "View automation report"
+msgstr ""
+
+#: views/emails/statsNotificationGarden.html:25
+msgid "Your campaign stats"
+msgstr ""
+
+#: views/emails/statsNotificationGarden.html:42
+msgid "Here's how your campaign \"%s\" performed in the first 24 hours."
+msgstr ""
+
+#: views/emails/statsNotificationGarden.html:273
+msgid "View full campaign report"
 msgstr ""
 
 #: views/emails/statsNotificationLayout.html:87
@@ -201,8 +286,15 @@ msgid "And my click rate?"
 msgstr ""
 
 #: views/emails/statsNotificationLayout.html:105
-#: views/emails/statsNotificationLayout.html:141
 msgid "Disable these emails"
+msgstr ""
+
+#: views/emails/statsNotificationLayout.html:134
+msgid "All Rights Reserved."
+msgstr ""
+
+#: views/emails/statsNotificationLayout.html:140
+msgid "Manage email preference"
 msgstr ""
 
 #: views/form/templatesLegacy/blocks/date_days.hbs:3
@@ -2029,17 +2121,6 @@ msgstr ""
 msgid "Autogenerated content by WooCommerce"
 msgstr ""
 
-#: views/newsletter/templates/blocks/woocommerceContent/completed_order.hbs:6
-#: views/newsletter/templates/blocks/woocommerceContent/customer_note.hbs:6
-#: views/newsletter/templates/blocks/woocommerceContent/new_account.hbs:6
-#: views/newsletter/templates/blocks/woocommerceContent/processing_order.hbs:6
-#: views/newsletter/templates/blocks/woocommerceContentImproved/completed_order.hbs:10
-#: views/newsletter/templates/blocks/woocommerceContentImproved/customer_note.hbs:10
-#: views/newsletter/templates/blocks/woocommerceContentImproved/new_account.hbs:9
-#: views/newsletter/templates/blocks/woocommerceContentImproved/processing_order.hbs:10
-msgid "Hi %s,"
-msgstr ""
-
 #: views/newsletter/templates/blocks/woocommerceContent/completed_order.hbs:7
 msgid "We have finished processing your order."
 msgstr ""
@@ -2956,18 +3037,6 @@ msgstr ""
 msgid "Unconfirmed"
 msgstr ""
 
-#: views/segments/translations.html:9
-#: views/subscribers/importExport/import.html:131
-#: views/subscribers/subscribers.html:30
-#: views/subscription/admin_user_status_field.html:23
-#: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:120
-#: lib/Subscribers/SubscriberListingRepository.php:366
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:188
-#: assets/dist/js/admin.js:2
-#: assets/dist/js/automation_analytics.js:2
-msgid "Unsubscribed"
-msgstr ""
-
 #: views/segments/translations.html:10
 #: views/subscribers/importExport/import.html:132
 #: views/subscribers/subscribers.html:31
@@ -2977,15 +3046,6 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 msgid "Inactive"
-msgstr ""
-
-#: views/segments/translations.html:11
-#: views/subscribers/subscribers.html:32
-#: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:128
-#: lib/Subscribers/SubscriberListingRepository.php:376
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:196
-#: assets/dist/js/admin.js:2
-msgid "Bounced"
 msgstr ""
 
 #: views/segments/translations.html:12
@@ -3543,7 +3603,8 @@ msgstr ""
 #: views/segments/translations.html:168
 #: views/subscribers/subscribers.html:105
 #: views/homepage.html:74
-#: lib/Twig/Functions.php:355
+#: lib/Twig/Functions.php:365
+#: lib/Twig/Functions.php:375
 #: assets/dist/js/commons.js:2
 msgid "Excellent"
 msgstr ""
@@ -3556,7 +3617,8 @@ msgstr ""
 #: views/segments/translations.html:171
 #: views/subscribers/subscribers.html:108
 #: views/homepage.html:77
-#: lib/Twig/Functions.php:357
+#: lib/Twig/Functions.php:367
+#: lib/Twig/Functions.php:377
 #: assets/dist/js/commons.js:2
 msgid "Good"
 msgstr ""
@@ -4431,23 +4493,9 @@ msgstr ""
 msgid "Sent email"
 msgstr ""
 
-#: views/subscribers/subscribers.html:76
-#: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:82
-#: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:91
-#: assets/dist/js/automation_analytics.js:2
-#: assets/dist/js/commons.js:9
-msgid "Opened"
-msgstr ""
-
 #: views/subscribers/subscribers.html:78
 #: assets/dist/js/admin.js:2
 msgid "A machine-opened email is an email opened by a computer in the background without the user’s explicit request or knowledge. [link]Read more[/link]"
-msgstr ""
-
-#: views/subscribers/subscribers.html:79
-#: assets/dist/js/automation_analytics.js:2
-#: assets/dist/js/commons.js:9
-msgid "Clicked"
 msgstr ""
 
 #: views/subscribers/subscribers.html:80
@@ -6267,24 +6315,24 @@ msgid "%1$s emails"
 msgstr ""
 
 #: views/settings_translations.html:198
-#: lib/Twig/Functions.php:250
+#: lib/Twig/Functions.php:260
 msgid "every minute"
 msgstr ""
 
 #. translators: %1$d is the amount of minutes.
 #: views/settings_translations.html:199
-#: lib/Twig/Functions.php:252
+#: lib/Twig/Functions.php:262
 msgid "every %1$d minutes"
 msgstr ""
 
 #: views/settings_translations.html:200
-#: lib/Twig/Functions.php:253
+#: lib/Twig/Functions.php:263
 msgid "every hour"
 msgstr ""
 
 #. translators: %1$d is the amount of hours.
 #: views/settings_translations.html:201
-#: lib/Twig/Functions.php:255
+#: lib/Twig/Functions.php:265
 msgid "every %1$d hours"
 msgstr ""
 
@@ -10069,32 +10117,41 @@ msgstr ""
 msgid "There was an error processing your newsletter during sending. If possible, please contact us and report this issue."
 msgstr ""
 
+#: lib/Cron/Workers/StatsNotifications/AutomatedEmails.php:125
+msgid "Your monthly automation stats are in!"
+msgstr ""
+
+#. translators: %s is the name of the email campaign.
+#: lib/Cron/Workers/StatsNotifications/Worker.php:139
+msgid "Campaign performance summary: %s"
+msgstr ""
+
 #. translators: %s is the subject of the email.
-#: lib/Cron/Workers/StatsNotifications/Worker.php:133
+#: lib/Cron/Workers/StatsNotifications/Worker.php:142
 msgctxt "title of an automatic email containing statistics (newsletter open rate, click rate, etc)"
 msgid "Stats for email %s"
 msgstr ""
 
 #. translators: %1$s is the percentage of clicks, %2$s the percentage of opens and %3$s the number of unsubscribes.
-#: lib/Cron/Workers/StatsNotifications/Worker.php:155
+#: lib/Cron/Workers/StatsNotifications/Worker.php:168
 msgctxt "newsletter open rate, click rate and unsubscribe rate"
 msgid "%1$s%% clicks, %2$s%% opens, %3$s%% unsubscribes in a nutshell."
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:203
+#: lib/Cron/Workers/StatsNotifications/Worker.php:234
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:90
 msgid "Unsubscribe link"
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:204
+#: lib/Cron/Workers/StatsNotifications/Worker.php:235
 msgid "Unsubscribe link (without confirmation)"
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:205
+#: lib/Cron/Workers/StatsNotifications/Worker.php:236
 msgid "Manage subscription link"
 msgstr ""
 
-#: lib/Cron/Workers/StatsNotifications/Worker.php:206
+#: lib/Cron/Workers/StatsNotifications/Worker.php:237
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:106
 msgid "View in browser link"
 msgstr ""
@@ -12169,9 +12226,14 @@ msgstr ""
 msgid "Managed by MailPoet Sending Service"
 msgstr ""
 
-#: lib/Twig/Functions.php:359
+#: lib/Twig/Functions.php:369
+#: lib/Twig/Functions.php:379
 #: assets/dist/js/commons.js:2
 msgid "Average"
+msgstr ""
+
+#: lib/Twig/Functions.php:381
+msgid "Poor"
 msgstr ""
 
 #: lib/Util/DataInconsistency/DataInconsistencyController.php:47
