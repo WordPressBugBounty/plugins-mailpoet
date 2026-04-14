@@ -27,22 +27,17 @@ abstract class Abstract_Block_Renderer implements Block_Renderer {
  $margin_top_attrs = array();
  }
  $gap_style = WP_Style_Engine::compile_css( $margin_top_attrs, '' ) ?? '';
- $padding_style = WP_Style_Engine::compile_css( array_intersect_key( $email_attrs, array_flip( array( 'padding-left', 'padding-right' ) ) ), '' ) ?? '';
  $table_attrs = array(
  'align' => 'left',
  'width' => '100%',
  'style' => $gap_style,
  );
- $cell_attrs = array(
- 'style' => $padding_style,
- );
  $div_content = sprintf(
- '<div class="email-block-layout" style="%1$s %2$s">%3$s</div>',
+ '<div class="email-block-layout" style="%1$s">%2$s</div>',
  esc_attr( $gap_style ),
- esc_attr( $padding_style ),
  $content
  );
- return Table_Wrapper_Helper::render_outlook_table_wrapper( $div_content, $table_attrs, $cell_attrs );
+ return Table_Wrapper_Helper::render_outlook_table_wrapper( $div_content, $table_attrs );
  }
  public function render( string $block_content, array $parsed_block, Rendering_Context $rendering_context ): string {
  return $this->add_spacer(

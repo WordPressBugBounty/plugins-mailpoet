@@ -7,9 +7,11 @@ use Automattic\WooCommerce\EmailEditor\Engine\Renderer\Css_Inliner;
 use Automattic\WooCommerce\EmailEditor\Engine\Theme_Controller;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Fallback;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Post_Content;
+use Automattic\WooCommerce\EmailEditor\Integrations\Utils\Table_Wrapper_Helper;
 use WP_Block_Template;
 use WP_Block_Type_Registry;
 use WP_Post;
+use WP_Style_Engine;
 class Content_Renderer {
  private Process_Manager $process_manager;
  private Theme_Controller $theme_controller;
@@ -22,6 +24,8 @@ class Content_Renderer {
  private Fallback $fallback_renderer;
  private Email_Editor_Logger $logger;
  private $backup_post_content_callback;
+ private ?string $post_content_width = null;
+ private array $container_padding = array();
  private Css_Inliner $css_inliner;
  public function __construct(
  Process_Manager $preprocess_manager,
@@ -77,15 +81,92 @@ class Content_Renderer {
  }
  public function preprocess_parsed_blocks( array $parsed_blocks ): array {
  $styles = $this->theme_controller->get_styles();
- return $this->process_manager->preprocess( $parsed_blocks, $this->theme_controller->get_layout_settings(), $styles );
+ $layout = $this->theme_controller->get_layout_settings();
+ // Pass the CSS variables map so preprocessors can resolve preset
+ // references (e.g. var:preset|spacing|20) in block attributes.
+ $styles['__variables_map'] = $this->theme_controller->get_variables_values_map();
+ // Second pass (user blocks inside post-content): if root padding was
+ // applied to a container above post-content in the first pass (indicated
+ // by post_content_width < contentSize), remove root padding from styles
+ // to prevent double application. If the template delegates root padding
+ // (post_content_width == contentSize), keep it for user blocks.
+ if ( null !== $this->post_content_width ) {
+ $post_content_num = (float) str_replace( 'px', '', $this->post_content_width );
+ $content_size_num = (float) str_replace( 'px', '', $layout['contentSize'] );
+ // Use epsilon tolerance for floating-point comparison since width
+ // calculations involve round() and division that may produce imprecision.
+ if ( $post_content_num < $content_size_num - 0.01 ) {
+ unset( $styles['spacing']['padding']['left'], $styles['spacing']['padding']['right'] );
+ }
+ // Pass container padding from the first pass so the
+ // Spacing_Preprocessor can distribute it to user blocks.
+ if ( ! empty( $this->container_padding ) ) {
+ $styles['__container_padding'] = $this->container_padding;
+ }
+ }
+ $result = $this->process_manager->preprocess( $parsed_blocks, $layout, $styles );
+ // After the first pass: find the post-content block's width and container padding.
+ if ( null === $this->post_content_width ) {
+ $this->post_content_width = $this->find_post_content_width( $result );
+ $this->container_padding = $this->find_container_padding( $result );
+ }
+ return $result;
+ }
+ private function find_post_content_width( array $blocks, ?array $post_content_block_names = null ): ?string {
+ if ( null === $post_content_block_names ) {
+ $post_content_block_names = (array) apply_filters(
+ 'woocommerce_email_editor_post_content_block_names',
+ array( 'core/post-content' )
+ );
+ }
+ foreach ( $blocks as $block ) {
+ $block_name = $block['blockName'] ?? '';
+ if ( in_array( $block_name, $post_content_block_names, true ) ) {
+ return $block['email_attrs']['width'] ?? null;
+ }
+ if ( ! empty( $block['innerBlocks'] ) ) {
+ $found = $this->find_post_content_width( $block['innerBlocks'], $post_content_block_names );
+ if ( null !== $found ) {
+ return $found;
+ }
+ }
+ }
+ return null;
+ }
+ private function find_container_padding( array $blocks ): array {
+ $variables_map = $this->theme_controller->get_variables_values_map();
+ foreach ( $blocks as $block ) {
+ $email_attrs = $block['email_attrs'] ?? array();
+ if ( ! empty( $email_attrs['suppress-horizontal-padding'] ) ) {
+ $padding = $block['attrs']['style']['spacing']['padding'] ?? array();
+ $result = array();
+ if ( isset( $padding['left'] ) && is_string( $padding['left'] ) ) {
+ $result['left'] = $this->resolve_preset_padding( $padding['left'], $variables_map );
+ }
+ if ( isset( $padding['right'] ) && is_string( $padding['right'] ) ) {
+ $result['right'] = $this->resolve_preset_padding( $padding['right'], $variables_map );
+ }
+ if ( ! empty( $result ) ) {
+ return $result;
+ }
+ }
+ if ( ! empty( $block['innerBlocks'] ) ) {
+ $found = $this->find_container_padding( $block['innerBlocks'] );
+ if ( ! empty( $found ) ) {
+ return $found;
+ }
+ }
+ }
+ return array();
  }
  public function render_block( string $block_content, array $parsed_block ): string {
  $email_context = apply_filters( 'woocommerce_email_editor_rendering_email_context', array() );
  $context = new Rendering_Context( $this->theme_controller->get_theme(), $email_context );
  $block_type = $this->block_type_registry->get_registered( $parsed_block['blockName'] );
+ $result = null;
  try {
  if ( $block_type && isset( $block_type->render_email_callback ) && is_callable( $block_type->render_email_callback ) ) {
- return call_user_func( $block_type->render_email_callback, $block_content, $parsed_block, $context );
+ $result = call_user_func( $block_type->render_email_callback, $block_content, $parsed_block, $context );
  }
  } catch ( \Exception $error ) {
  $this->logger->error(
@@ -100,7 +181,64 @@ class Content_Renderer {
  // Returning the original content.
  return $block_content;
  }
- return $this->fallback_renderer->render( $block_content, $parsed_block, $context );
+ if ( null === $result ) {
+ $result = $this->fallback_renderer->render( $block_content, $parsed_block, $context );
+ }
+ return $this->add_root_horizontal_padding( $result, $parsed_block['email_attrs'] ?? array() );
+ }
+ private function add_root_horizontal_padding( string $content, array $email_attrs ): string {
+ $padding_left = $this->sum_padding_values(
+ $email_attrs['root-padding-left'] ?? null,
+ $email_attrs['container-padding-left'] ?? null
+ );
+ $padding_right = $this->sum_padding_values(
+ $email_attrs['root-padding-right'] ?? null,
+ $email_attrs['container-padding-right'] ?? null
+ );
+ $css_attrs = array();
+ if ( $padding_left > 0 ) {
+ $css_attrs['padding-left'] = $padding_left . 'px';
+ }
+ if ( $padding_right > 0 ) {
+ $css_attrs['padding-right'] = $padding_right . 'px';
+ }
+ if ( empty( $css_attrs ) ) {
+ return $content;
+ }
+ $padding_style = WP_Style_Engine::compile_css( $css_attrs, '' );
+ if ( empty( $padding_style ) ) {
+ return $content;
+ }
+ $table_attrs = array(
+ 'align' => 'left',
+ 'width' => '100%',
+ );
+ $cell_attrs = array(
+ 'style' => $padding_style,
+ );
+ $div_content = sprintf(
+ '<div class="email-root-padding" style="%1$s">%2$s</div>',
+ esc_attr( $padding_style ),
+ $content
+ );
+ return Table_Wrapper_Helper::render_outlook_table_wrapper( $div_content, $table_attrs, $cell_attrs );
+ }
+ private function sum_padding_values( ?string $value1, ?string $value2 ): float {
+ $sum = 0.0;
+ if ( null !== $value1 ) {
+ $sum += (float) str_replace( 'px', '', $value1 );
+ }
+ if ( null !== $value2 ) {
+ $sum += (float) str_replace( 'px', '', $value2 );
+ }
+ return $sum;
+ }
+ private function resolve_preset_padding( string $value, array $variables_map ): string {
+ if ( strpos( $value, 'var:preset|' ) !== 0 ) {
+ return $value;
+ }
+ $css_var_name = '--wp--' . str_replace( '|', '--', str_replace( 'var:', '', $value ) );
+ return $variables_map[ $css_var_name ] ?? $value;
  }
  private function set_template_globals( WP_Post $email_post, WP_Block_Template $template ) {
  global $_wp_current_template_content, $_wp_current_template_id, $wp_query, $post;
@@ -119,6 +257,8 @@ class Content_Renderer {
  remove_filter( 'render_block', array( $this, 'render_block' ) );
  remove_filter( 'block_parser_class', array( $this, 'block_parser' ) );
  remove_filter( 'woocommerce_email_blocks_renderer_parsed_blocks', array( $this, 'preprocess_parsed_blocks' ) );
+ $this->post_content_width = null;
+ $this->container_padding = array();
  // Restore the original core/post-content render callback.
  // Note: We always restore it, even if it was null originally.
  $post_content_type = $this->block_type_registry->get_registered( 'core/post-content' );

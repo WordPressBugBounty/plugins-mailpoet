@@ -26,9 +26,12 @@ class Process_Manager {
  Border_Style_Postprocessor $border_style_postprocessor
  ) {
  $this->register_preprocessor( $cleanup_preprocessor );
+ // Spacing must run before Width: it sets root-padding-left/right in
+ // email_attrs, which the Width preprocessor reads to subtract root
+ // padding only from blocks that actually receive it.
+ $this->register_preprocessor( $spacing_preprocessor );
  $this->register_preprocessor( $blocks_width_preprocessor );
  $this->register_preprocessor( $typography_preprocessor );
- $this->register_preprocessor( $spacing_preprocessor );
  $this->register_preprocessor( $quote_preprocessor );
  $this->register_postprocessor( $highlighting_postprocessor );
  $this->register_postprocessor( $border_style_postprocessor );
