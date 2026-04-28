@@ -2,6 +2,7 @@
 declare(strict_types = 1);
 namespace Automattic\WooCommerce\EmailEditor\Engine\Renderer\ContentRenderer\Preprocessors;
 if (!defined('ABSPATH')) exit;
+use Automattic\WooCommerce\EmailEditor\Engine\Renderer\ContentRenderer\Preset_Variable_Resolver;
 class Blocks_Width_Preprocessor implements Preprocessor {
  public function preprocess( array $parsed_blocks, array $layout, array $styles ): array {
  // Root padding is distributed to individual blocks by Spacing_Preprocessor
@@ -29,16 +30,16 @@ class Blocks_Width_Preprocessor implements Preprocessor {
  $layout_width -= $this->parse_number_from_string_with_pixels( $block['email_attrs']['root-padding-left'] ?? '0px' );
  $layout_width -= $this->parse_number_from_string_with_pixels( $block['email_attrs']['root-padding-right'] ?? '0px' );
  // Container padding may be preset references (var:preset|spacing|20).
- $layout_width -= $this->parse_number_from_string_with_pixels( $this->resolve_preset_value( $block['email_attrs']['container-padding-left'] ?? '0px', $variables_map ) );
- $layout_width -= $this->parse_number_from_string_with_pixels( $this->resolve_preset_value( $block['email_attrs']['container-padding-right'] ?? '0px', $variables_map ) );
+ $layout_width -= $this->parse_number_from_string_with_pixels( Preset_Variable_Resolver::resolve( $block['email_attrs']['container-padding-left'] ?? '0px', $variables_map ) );
+ $layout_width -= $this->parse_number_from_string_with_pixels( Preset_Variable_Resolver::resolve( $block['email_attrs']['container-padding-right'] ?? '0px', $variables_map ) );
  }
  // Resolve block padding — may be preset references like var:preset|spacing|20.
  // When suppress-horizontal-padding is set, the block's horizontal padding
  // has been distributed per-block by the Spacing_Preprocessor. Zero it out
  // so children get the full available width.
  $suppress_h_padding = ! empty( $block['email_attrs']['suppress-horizontal-padding'] );
- $block_padding_left = $suppress_h_padding ? '0px' : $this->resolve_preset_value( $block['attrs']['style']['spacing']['padding']['left'] ?? '0px', $variables_map );
- $block_padding_right = $suppress_h_padding ? '0px' : $this->resolve_preset_value( $block['attrs']['style']['spacing']['padding']['right'] ?? '0px', $variables_map );
+ $block_padding_left = $suppress_h_padding ? '0px' : Preset_Variable_Resolver::resolve( $block['attrs']['style']['spacing']['padding']['left'] ?? '0px', $variables_map );
+ $block_padding_right = $suppress_h_padding ? '0px' : Preset_Variable_Resolver::resolve( $block['attrs']['style']['spacing']['padding']['right'] ?? '0px', $variables_map );
  $width_input = $block['attrs']['width'] ?? '100%';
  // Currently we support only % and px units in case only the number is provided we assume it's %
  // because editor saves percent values as a number.
@@ -81,13 +82,6 @@ class Blocks_Width_Preprocessor implements Preprocessor {
  private function parse_number_from_string_with_pixels( string $value ): float {
  return (float) str_replace( 'px', '', $value );
  }
- private function resolve_preset_value( string $value, array $variables_map ): string {
- if ( strpos( $value, 'var:preset|' ) !== 0 ) {
- return $value;
- }
- $css_var_name = '--wp--' . str_replace( '|', '--', str_replace( 'var:', '', $value ) );
- return $variables_map[ $css_var_name ] ?? $value;
- }
  private function add_missing_column_widths( array $columns, float $columns_width, array $variables_map = array() ): array {
  $columns_count_with_defined_width = 0;
  $defined_column_width = 0;
@@ -98,8 +92,8 @@ class Blocks_Width_Preprocessor implements Preprocessor {
  $defined_column_width += $this->convert_width_to_pixels( $column['attrs']['width'], $columns_width );
  } else {
  // When width is not set we need to add padding to the defined column width for better ratio accuracy.
- $defined_column_width += $this->parse_number_from_string_with_pixels( $this->resolve_preset_value( $column['attrs']['style']['spacing']['padding']['left'] ?? '0px', $variables_map ) );
- $defined_column_width += $this->parse_number_from_string_with_pixels( $this->resolve_preset_value( $column['attrs']['style']['spacing']['padding']['right'] ?? '0px', $variables_map ) );
+ $defined_column_width += $this->parse_number_from_string_with_pixels( Preset_Variable_Resolver::resolve( $column['attrs']['style']['spacing']['padding']['left'] ?? '0px', $variables_map ) );
+ $defined_column_width += $this->parse_number_from_string_with_pixels( Preset_Variable_Resolver::resolve( $column['attrs']['style']['spacing']['padding']['right'] ?? '0px', $variables_map ) );
  $border_width = $column['attrs']['style']['border']['width'] ?? '0px';
  $defined_column_width += $this->parse_number_from_string_with_pixels( $column['attrs']['style']['border']['left']['width'] ?? $border_width );
  $defined_column_width += $this->parse_number_from_string_with_pixels( $column['attrs']['style']['border']['right']['width'] ?? $border_width );
@@ -111,8 +105,8 @@ class Blocks_Width_Preprocessor implements Preprocessor {
  if ( ! isset( $column['attrs']['width'] ) || empty( $column['attrs']['width'] ) ) {
  // Add padding to the specific column width because it's not included in the default width.
  $column_width = $default_columns_width;
- $column_width += $this->parse_number_from_string_with_pixels( $this->resolve_preset_value( $column['attrs']['style']['spacing']['padding']['left'] ?? '0px', $variables_map ) );
- $column_width += $this->parse_number_from_string_with_pixels( $this->resolve_preset_value( $column['attrs']['style']['spacing']['padding']['right'] ?? '0px', $variables_map ) );
+ $column_width += $this->parse_number_from_string_with_pixels( Preset_Variable_Resolver::resolve( $column['attrs']['style']['spacing']['padding']['left'] ?? '0px', $variables_map ) );
+ $column_width += $this->parse_number_from_string_with_pixels( Preset_Variable_Resolver::resolve( $column['attrs']['style']['spacing']['padding']['right'] ?? '0px', $variables_map ) );
  $border_width = $column['attrs']['style']['border']['width'] ?? '0px';
  $column_width += $this->parse_number_from_string_with_pixels( $column['attrs']['style']['border']['left']['width'] ?? $border_width );
  $column_width += $this->parse_number_from_string_with_pixels( $column['attrs']['style']['border']['right']['width'] ?? $border_width );

@@ -100,6 +100,8 @@ class Daemon {
     yield $this->workersFactory->createBounceWorker();
     yield $this->workersFactory->createExportFilesCleanupWorker();
     yield $this->workersFactory->createLogCleanupWorker();
+    yield $this->workersFactory->createSendingTaskSubscribersCleanupWorker();
+    yield $this->workersFactory->createSendingQueueBodyCleanupWorker();
     yield $this->workersFactory->createSubscribersEmailCountsWorker();
     yield $this->workersFactory->createInactiveSubscribersWorker();
     yield $this->workersFactory->createUnsubscribeTokensWorker();
@@ -117,5 +119,6 @@ class Daemon {
     yield $this->workersFactory->createBackfillEngagementDataWorker();
     yield $this->workersFactory->createMixpanelWorker();
     yield $this->workersFactory->createTracksWorker();
+    yield $this->workersFactory->createStatisticsExportWorker();
   }
 }

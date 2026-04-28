@@ -286,12 +286,12 @@ class NewsletterSaveController {
 
   private function getNewsletter(array $data): NewsletterEntity {
     if (!isset($data['id'])) {
-      throw new UnexpectedValueException();
+      throw new UnexpectedValueException('Missing newsletter ID in data');
     }
 
     $newsletter = $this->newslettersRepository->findOneById((int)$data['id']);
     if (!$newsletter) {
-      throw new NotFoundException();
+      throw new NotFoundException('Newsletter not found');
     }
     return $newsletter;
   }
@@ -475,7 +475,7 @@ class NewsletterSaveController {
       $task = $queue->getTask();
 
       if (!$task instanceof ScheduledTaskEntity) {
-        throw new InvalidStateException();
+        throw new InvalidStateException('Newsletter queue has no associated scheduled task');
       }
 
       $newsletterQueueTask->preProcessNewsletter($newsletter, $task);

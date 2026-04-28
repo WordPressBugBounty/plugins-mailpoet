@@ -24,7 +24,7 @@ class Cookies {
     $value = json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     $error = json_last_error();
     if ($error || ($value === false)) {
-      throw new InvalidArgumentException();
+      throw new InvalidArgumentException('Failed to JSON-encode cookie value');
     }
 
     setcookie(

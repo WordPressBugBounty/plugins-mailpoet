@@ -229,7 +229,7 @@ class PageRenderer {
       ) {
         DIPanel::init();
       }
-      if (is_admin() && $this->subscribersCountCacheRecalculation->shouldBeScheduled()) {
+      if ($this->wp->isAdmin() && $this->subscribersCountCacheRecalculation->shouldBeScheduled()) {
         $this->subscribersCountCacheRecalculation->schedule();
       }
 

@@ -141,10 +141,10 @@ class Content_Renderer {
  $padding = $block['attrs']['style']['spacing']['padding'] ?? array();
  $result = array();
  if ( isset( $padding['left'] ) && is_string( $padding['left'] ) ) {
- $result['left'] = $this->resolve_preset_padding( $padding['left'], $variables_map );
+ $result['left'] = Preset_Variable_Resolver::resolve( $padding['left'], $variables_map );
  }
  if ( isset( $padding['right'] ) && is_string( $padding['right'] ) ) {
- $result['right'] = $this->resolve_preset_padding( $padding['right'], $variables_map );
+ $result['right'] = Preset_Variable_Resolver::resolve( $padding['right'], $variables_map );
  }
  if ( ! empty( $result ) ) {
  return $result;
@@ -233,13 +233,6 @@ class Content_Renderer {
  }
  return $sum;
  }
- private function resolve_preset_padding( string $value, array $variables_map ): string {
- if ( strpos( $value, 'var:preset|' ) !== 0 ) {
- return $value;
- }
- $css_var_name = '--wp--' . str_replace( '|', '--', str_replace( 'var:', '', $value ) );
- return $variables_map[ $css_var_name ] ?? $value;
- }
  private function set_template_globals( WP_Post $email_post, WP_Block_Template $template ) {
  global $_wp_current_template_content, $_wp_current_template_id, $wp_query, $post;
  // Backup current values of globals.
@@ -292,7 +285,7 @@ class Content_Renderer {
  }
  ',
  $layout['contentSize'],
- $layout['wideSize']
+ $layout['wideSize'] ?? $layout['contentSize']
  );
  // Get styles from theme.
  $styles .= $this->theme_controller->get_stylesheet_for_rendering( $post, $template );

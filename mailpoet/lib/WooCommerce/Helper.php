@@ -66,6 +66,17 @@ class Helper {
     return wc_get_customer_order_count($userId);
   }
 
+  public function wcGetCustomer(int $userId): ?\WC_Customer {
+    if (!class_exists(\WC_Customer::class)) {
+      return null;
+    }
+    try {
+      return new \WC_Customer($userId);
+    } catch (\Throwable $e) {
+      return null;
+    }
+  }
+
   public function wcGetOrder($order = false) {
     return wc_get_order($order);
   }
@@ -101,7 +112,7 @@ class Helper {
     return wc_get_price_decimals();
   }
 
-  public function wcGetPriceDecimalSeperator(): string {
+  public function wcGetPriceDecimalSeparator(): string {
     return wc_get_price_decimal_separator();
   }
 
@@ -260,10 +271,6 @@ class Helper {
     return array_values($result);
   }
 
-  public function wcGetPriceDecimalSeparator() {
-    return wc_get_price_decimal_separator();
-  }
-
   public function getLatestCoupon(): ?string {
     $coupons = $this->wp->getPosts([
       'numberposts' => 1,
@@ -319,7 +326,7 @@ class Helper {
   public function getWoocommerceStoreConfig(): array {
     return [
       'precision' => $this->wcGetPriceDecimals(),
-      'decimalSeparator' => $this->wcGetPriceDecimalSeperator(),
+      'decimalSeparator' => $this->wcGetPriceDecimalSeparator(),
       'thousandSeparator' => $this->wcGetPriceThousandSeparator(),
       'code' => $this->getWoocommerceCurrency(),
       'symbol' => html_entity_decode($this->getWoocommerceCurrencySymbol(), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401),

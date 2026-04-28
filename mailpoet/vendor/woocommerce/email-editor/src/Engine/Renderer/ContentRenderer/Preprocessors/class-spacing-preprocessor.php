@@ -2,15 +2,17 @@
 declare(strict_types = 1);
 namespace Automattic\WooCommerce\EmailEditor\Engine\Renderer\ContentRenderer\Preprocessors;
 if (!defined('ABSPATH')) exit;
+use Automattic\WooCommerce\EmailEditor\Engine\Renderer\ContentRenderer\Preset_Variable_Resolver;
 class Spacing_Preprocessor implements Preprocessor {
  private ?array $post_content_block_names = null;
  public function preprocess( array $parsed_blocks, array $layout, array $styles ): array {
  $root_padding = $this->get_root_padding( $styles );
  $container_padding = $styles['__container_padding'] ?? array();
- $parsed_blocks = $this->add_block_gaps( $parsed_blocks, $styles['spacing']['blockGap'] ?? '', null, $root_padding, false, $container_padding );
+ $variables_map = $styles['__variables_map'] ?? array();
+ $parsed_blocks = $this->add_block_gaps( $parsed_blocks, $styles['spacing']['blockGap'] ?? '', null, $root_padding, false, $container_padding, $variables_map );
  return $parsed_blocks;
  }
- private function get_block_horizontal_padding( array $block ): array {
+ private function get_block_horizontal_padding( array $block, array $variables_map = array() ): array {
  $padding = $block['attrs']['style']['spacing']['padding'] ?? array();
  $has_left = isset( $padding['left'] );
  $has_right = isset( $padding['right'] );
@@ -22,6 +24,10 @@ class Spacing_Preprocessor implements Preprocessor {
  if ( ! is_string( $left ) || ! is_string( $right ) || preg_match( '/[<>"\']/', $left . $right ) ) {
  return array();
  }
+ // Resolve preset variable references (e.g. "var:preset|spacing|20")
+ // to their pixel values so downstream consumers get usable CSS values.
+ $left = Preset_Variable_Resolver::resolve( $left, $variables_map );
+ $right = Preset_Variable_Resolver::resolve( $right, $variables_map );
  if ( $this->is_zero_value( $left ) && $this->is_zero_value( $right ) ) {
  return array();
  }
@@ -31,7 +37,7 @@ class Spacing_Preprocessor implements Preprocessor {
  );
  }
  private const CONTAINER_BLOCKS = array( 'core/group', 'core/post-content' );
- private function add_block_gaps( array $parsed_blocks, string $gap = '', $parent_block = null, array $root_padding = array(), bool $apply_root_padding = false, array $container_padding = array() ): array {
+ private function add_block_gaps( array $parsed_blocks, string $gap = '', $parent_block = null, array $root_padding = array(), bool $apply_root_padding = false, array $container_padding = array(), array $variables_map = array() ): array {
  foreach ( $parsed_blocks as $key => $block ) {
  $block_name = $block['blockName'] ?? '';
  $parent_block_name = $parent_block['blockName'] ?? '';
@@ -93,7 +99,7 @@ class Spacing_Preprocessor implements Preprocessor {
  // When a container wrapping post-content has its own non-zero
  // horizontal padding, distribute it as container-padding to
  // descendant blocks and suppress the container's own CSS padding.
- $block_padding = $this->get_block_horizontal_padding( $block );
+ $block_padding = $this->get_block_horizontal_padding( $block, $variables_map );
  if ( ! empty( $block_padding ) ) {
  $children_container_pad = $block_padding;
  $block['email_attrs']['suppress-horizontal-padding'] = true;
@@ -102,7 +108,7 @@ class Spacing_Preprocessor implements Preprocessor {
  // Root-level container with own padding that wraps post-content:
  // distribute its padding as container-padding and suppress its own CSS.
  $children_apply = true;
- $block_padding = $this->get_block_horizontal_padding( $block );
+ $block_padding = $this->get_block_horizontal_padding( $block, $variables_map );
  if ( ! empty( $block_padding ) ) {
  $children_container_pad = $block_padding;
  $block['email_attrs']['suppress-horizontal-padding'] = true;
@@ -111,7 +117,7 @@ class Spacing_Preprocessor implements Preprocessor {
  // (it delegates everything to children).
  unset( $block['email_attrs']['root-padding-left'], $block['email_attrs']['root-padding-right'] );
  }
- $block['innerBlocks'] = $this->add_block_gaps( $block['innerBlocks'] ?? array(), $gap, $block, $root_padding, $children_apply, $children_container_pad );
+ $block['innerBlocks'] = $this->add_block_gaps( $block['innerBlocks'] ?? array(), $gap, $block, $root_padding, $children_apply, $children_container_pad, $variables_map );
  $parsed_blocks[ $key ] = $block;
  }
  return $parsed_blocks;
