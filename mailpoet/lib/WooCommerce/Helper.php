@@ -49,6 +49,8 @@ class Helper {
   public function isWooCommerceCustomOrdersTableEnabled(): bool {
     if (
       $this->isWooCommerceActive()
+      // Stubs reflect the current WC version; the runtime check guards older WooCommerce installs that lack this helper.
+      // @phpstan-ignore-next-line function.alreadyNarrowedType
       && method_exists('\Automattic\WooCommerce\Utilities\OrderUtil', 'custom_orders_table_usage_is_enabled')
       && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled()
     ) {
@@ -195,6 +197,7 @@ class Helper {
   }
 
   public function getOrdersTableName() {
+    // @phpstan-ignore function.impossibleType (WC stub omits this method; the runtime check is meaningful for older WC versions)
     if (!method_exists('\Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore', 'get_orders_table_name')) {
       throw new RuntimeException('Cannot get orders table name when running a WooCommerce version that doesn\'t support custom order tables.');
     }
@@ -203,6 +206,7 @@ class Helper {
   }
 
   public function getAddressesTableName() {
+    // @phpstan-ignore function.impossibleType (WC stub omits this method; the runtime check is meaningful for older WC versions)
     if (!method_exists('\Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore', 'get_addresses_table_name')) {
       throw new RuntimeException('Cannot get addresses table name when running a WooCommerce version that doesn\'t support custom order tables.');
     }
@@ -216,6 +220,10 @@ class Helper {
 
   public function wcGetCouponCodeById(int $id): string {
     return wc_get_coupon_code_by_id($id);
+  }
+
+  public function wcGetCouponIdByCode(string $code): int {
+    return (int)wc_get_coupon_id_by_code($code);
   }
 
   /**
@@ -360,7 +368,9 @@ class Helper {
    * @return bool
    */
   public function isCheckoutRequest(): bool {
-    $requestUri = !empty($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : '';
+    $requestUri = is_string($_SERVER['REQUEST_URI'] ?? null) && $_SERVER['REQUEST_URI'] !== ''
+      ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']))
+      : '';
     $isRegularCheckout = is_checkout();
     $isBlockCheckout = WC()->is_rest_api_request()
       && (strpos($requestUri, 'wc/store/checkout') !== false || strpos($requestUri, 'wc/store/v1/checkout') !== false);

@@ -172,7 +172,7 @@ class Image extends Abstract_Block_Renderer {
  $theme_data = $rendering_context->get_theme_json()->get_data();
  $align = $parsed_block['attrs']['align'] ?? '';
  $styles = array(
- 'text-align' => $align ? 'center' : 'left',
+ 'text-align' => $align ? 'center' : $rendering_context->get_default_text_align(),
  );
  $styles['font-size'] = $parsed_block['email_attrs']['font-size'] ?? $theme_data['styles']['typography']['fontSize'];
  return \WP_Style_Engine::compile_css( $styles, '' );
@@ -208,10 +208,10 @@ class Image extends Abstract_Block_Renderer {
  $caption_html = Table_Wrapper_Helper::render_table_wrapper( '{caption_content}', $caption_table_attrs, $caption_cell_attrs );
  }
  $styles['width'] = '100%';
- $align = $parsed_block['attrs']['align'] ?? 'left';
+ $align = $parsed_block['attrs']['align'] ?? $rendering_context->get_default_text_align();
  // Map block alignment to valid HTML/CSS alignment values.
  // "full" and "wide" are not valid text-align or table align values.
- $css_align = in_array( $align, array( 'full', 'wide' ), true ) ? 'center' : $align;
+ $css_align = in_array( $align, array( 'full', 'wide' ), true ) ? 'center' : $rendering_context->resolve_text_align( $align );
  $table_attrs = array(
  'style' => \WP_Style_Engine::compile_css( $styles, '' ),
  'width' => '100%',

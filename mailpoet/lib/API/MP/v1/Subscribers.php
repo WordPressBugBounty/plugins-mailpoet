@@ -17,6 +17,7 @@ use MailPoet\Segments\SegmentsRepository;
 use MailPoet\Settings\SettingsController;
 use MailPoet\Statistics\Track\Unsubscribes;
 use MailPoet\Subscribers\ConfirmationEmailMailer;
+use MailPoet\Subscribers\ConfirmationEmailResolver;
 use MailPoet\Subscribers\NewSubscriberNotificationMailer;
 use MailPoet\Subscribers\RequiredCustomFieldValidator;
 use MailPoet\Subscribers\Source;
@@ -79,6 +80,9 @@ class Subscribers {
   /** @var SubscriberTagRepository */
   private $subscriberTagRepository;
 
+  /** @var ConfirmationEmailResolver */
+  private $confirmationEmailResolver;
+
   public function __construct (
     ConfirmationEmailMailer $confirmationEmailMailer,
     NewSubscriberNotificationMailer $newSubscriberNotificationMailer,
@@ -94,7 +98,8 @@ class Subscribers {
     WPFunctions $wp,
     Unsubscribes $unsubscribesTracker,
     TagRepository $tagRepository,
-    SubscriberTagRepository $subscriberTagRepository
+    SubscriberTagRepository $subscriberTagRepository,
+    ConfirmationEmailResolver $confirmationEmailResolver
   ) {
     $this->confirmationEmailMailer = $confirmationEmailMailer;
     $this->newSubscriberNotificationMailer = $newSubscriberNotificationMailer;
@@ -111,6 +116,7 @@ class Subscribers {
     $this->unsubscribesTracker = $unsubscribesTracker;
     $this->tagRepository = $tagRepository;
     $this->subscriberTagRepository = $subscriberTagRepository;
+    $this->confirmationEmailResolver = $confirmationEmailResolver;
   }
 
   public function getSubscriber($subscriberIdOrEmail): array {
@@ -377,7 +383,8 @@ class Subscribers {
 
     // send confirmation email
     if ($sendConfirmationEmail) {
-      $this->_sendConfirmationEmail($subscriber);
+      [$confirmationEmailId, $confirmationPageId] = $this->confirmationEmailResolver->resolveFromSegments($foundSegments);
+      $this->_sendConfirmationEmail($subscriber, $confirmationEmailId, $confirmationPageId);
     }
 
     if (!$skipSubscriberNotification && ($subscriber->getStatus() === SubscriberEntity::STATUS_SUBSCRIBED)) {
@@ -438,9 +445,9 @@ class Subscribers {
    * @param array $filter {
    *     Filters to retrieve subscribers.
    *
-   *     @type string        $status       One of values: subscribed, unconfirmed, unsubscribed, inactive, bounced
-   *     @type int           $listId       id of a list or dynamic segment
-   *     @type \DateTime|int $minUpdatedAt DateTime object or timestamp of last update of subscriber.
+   *     @type string                 $status       One of values: subscribed, unconfirmed, unsubscribed, inactive, bounced
+   *     @type int                    $listId       id of a list or dynamic segment
+   *     @type \DateTimeInterface|int $minUpdatedAt DateTime/DateTimeImmutable instance or timestamp of last update of subscriber.
    * }
    */
   private function buildListingDefinition(array $filter, int $limit = 50, int $offset = 0): ListingDefinition {
@@ -452,7 +459,7 @@ class Subscribers {
     }
     // Set filtering by minimal updatedAt
     if (isset($filter['minUpdatedAt'])) {
-      if ($filter['minUpdatedAt'] instanceof \DateTime) {
+      if ($filter['minUpdatedAt'] instanceof \DateTimeInterface) {
         $listingFilters['minUpdatedAt'] = $filter['minUpdatedAt'];
       } elseif (is_int($filter['minUpdatedAt'])) {
         $listingFilters['minUpdatedAt'] = Carbon::createFromTimestamp($filter['minUpdatedAt']);
@@ -480,9 +487,9 @@ class Subscribers {
   /**
    * @throws APIException
    */
-  protected function _sendConfirmationEmail(SubscriberEntity $subscriberEntity) {
+  protected function _sendConfirmationEmail(SubscriberEntity $subscriberEntity, ?int $confirmationEmailId = null, ?int $confirmationPageId = null) {
     try {
-      $this->confirmationEmailMailer->sendConfirmationEmailOnce($subscriberEntity);
+      $this->confirmationEmailMailer->sendConfirmationEmailOnce($subscriberEntity, $confirmationEmailId, $confirmationPageId);
     } catch (\Exception $e) {
       throw new APIException(
         // translators: %s is the error message

@@ -139,7 +139,9 @@ class WP {
     $signupConfirmationEnabled = SettingsController::getInstance()->get('signup_confirmation.enabled');
     $status = $signupConfirmationEnabled ? SubscriberEntity::STATUS_UNCONFIRMED : SubscriberEntity::STATUS_SUBSCRIBED;
     // we want to mark a new subscriber as unsubscribe when the checkbox from registration is unchecked
-    if (isset($_POST['mailpoet']['subscribe_on_register_active']) && (bool)$_POST['mailpoet']['subscribe_on_register_active'] === true) {
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- type narrowing only, value is read as bool
+    $mailpoetPost = isset($_POST['mailpoet']) && is_array($_POST['mailpoet']) ? $_POST['mailpoet'] : [];
+    if (isset($mailpoetPost['subscribe_on_register_active']) && (bool)$mailpoetPost['subscribe_on_register_active'] === true) {
       $status = SubscriberEntity::STATUS_UNSUBSCRIBED;
     }
 
@@ -250,6 +252,9 @@ class WP {
       /** @var ConfirmationEmailMailer $confirmationEmailMailer */
       $confirmationEmailMailer = ContainerWrapper::getInstance()->get(ConfirmationEmailMailer::class);
       try {
+        // Per-list confirmation settings are not resolved here because this path
+        // subscribes to the WordPress Users segment (TYPE_WP_USERS),
+        // which does not support custom confirmation overrides.
         $confirmationEmailMailer->sendConfirmationEmailOnce($subscriber);
       } catch (\Exception $e) {
         // ignore errors

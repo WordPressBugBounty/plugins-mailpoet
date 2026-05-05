@@ -27,6 +27,7 @@ class Content_Renderer {
  private ?string $post_content_width = null;
  private array $container_padding = array();
  private Css_Inliner $css_inliner;
+ private ?Rendering_Context $rendering_context = null;
  public function __construct(
  Process_Manager $preprocess_manager,
  Css_Inliner $css_inliner,
@@ -56,6 +57,15 @@ class Content_Renderer {
  $post_content_type->render_callback = array( $post_content_renderer, 'render_stateless' );
  }
  }
+ public function set_rendering_context( Rendering_Context $rendering_context ): void {
+ $this->rendering_context = $rendering_context;
+ }
+ public function get_current_rendering_context(): ?Rendering_Context {
+ return $this->rendering_context;
+ }
+ public function restore_rendering_context( ?Rendering_Context $rendering_context ): void {
+ $this->rendering_context = $rendering_context;
+ }
  public function render( WP_Post $post, WP_Block_Template $template ): string {
  $result = $this->render_without_css_inline( $post, $template );
  $styles = '<style>' . $result['styles'] . '</style>';
@@ -63,6 +73,9 @@ class Content_Renderer {
  return $this->process_manager->postprocess( $html );
  }
  public function render_without_css_inline( WP_Post $post, WP_Block_Template $template ): array {
+ if ( null === $this->rendering_context ) {
+ $this->rendering_context = $this->create_rendering_context( null, $post, $template );
+ }
  $this->set_template_globals( $post, $template );
  $this->initialize();
  try {
@@ -104,7 +117,7 @@ class Content_Renderer {
  $styles['__container_padding'] = $this->container_padding;
  }
  }
- $result = $this->process_manager->preprocess( $parsed_blocks, $layout, $styles );
+ $result = $this->process_manager->preprocess( $parsed_blocks, $layout, $styles, $this->get_rendering_context() );
  // After the first pass: find the post-content block's width and container padding.
  if ( null === $this->post_content_width ) {
  $this->post_content_width = $this->find_post_content_width( $result );
@@ -160,8 +173,7 @@ class Content_Renderer {
  return array();
  }
  public function render_block( string $block_content, array $parsed_block ): string {
- $email_context = apply_filters( 'woocommerce_email_editor_rendering_email_context', array() );
- $context = new Rendering_Context( $this->theme_controller->get_theme(), $email_context );
+ $context = $this->get_rendering_context();
  $block_type = $this->block_type_registry->get_registered( $parsed_block['blockName'] );
  $result = null;
  try {
@@ -210,7 +222,7 @@ class Content_Renderer {
  return $content;
  }
  $table_attrs = array(
- 'align' => 'left',
+ 'align' => $this->get_rendering_context()->get_default_text_align(),
  'width' => '100%',
  );
  $cell_attrs = array(
@@ -252,6 +264,7 @@ class Content_Renderer {
  remove_filter( 'woocommerce_email_blocks_renderer_parsed_blocks', array( $this, 'preprocess_parsed_blocks' ) );
  $this->post_content_width = null;
  $this->container_padding = array();
+ $this->rendering_context = null;
  // Restore the original core/post-content render callback.
  // Note: We always restore it, even if it was null originally.
  $post_content_type = $this->block_type_registry->get_registered( 'core/post-content' );
@@ -265,6 +278,19 @@ class Content_Renderer {
  $_wp_current_template_id = $this->backup_template_id;
  $wp_query = $this->backup_query; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- Restoring of the query.
  $post = $this->backup_post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- Restoring of the post.
+ }
+ private function get_rendering_context(): Rendering_Context {
+ if ( null === $this->rendering_context ) {
+ $this->rendering_context = $this->create_rendering_context();
+ }
+ return $this->rendering_context;
+ }
+ public function create_rendering_context( ?string $language = null, ?WP_Post $post = null, ?WP_Block_Template $template = null ): Rendering_Context {
+ $email_context = apply_filters( 'woocommerce_email_editor_rendering_email_context', array(), $post, $template );
+ if ( ! is_array( $email_context ) ) {
+ $email_context = array();
+ }
+ return new Rendering_Context( $this->theme_controller->get_theme(), $email_context, $language );
  }
  private function collect_styles( WP_Post $post, $template = null ): string {
  $styles = (string) file_get_contents( __DIR__ . '/' . self::CONTENT_STYLES_FILE );

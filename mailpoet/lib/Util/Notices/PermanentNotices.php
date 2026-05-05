@@ -9,6 +9,7 @@ use MailPoet\Config\Menu;
 use MailPoet\Config\ServicesChecker;
 use MailPoet\Cron\CronHelper;
 use MailPoet\Mailer\MailerFactory;
+use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Services\AuthorizedSenderDomainController;
 use MailPoet\Settings\SettingsController;
 use MailPoet\Settings\TrackingConfig;
@@ -79,6 +80,9 @@ class PermanentNotices {
   /** @var SendingQueueBodyCleanupNotice */
   private $sendingQueueBodyCleanupNotice;
 
+  /** @var StuckPostNotificationNotice */
+  private $stuckPostNotificationNotice;
+
   public function __construct(
     WPFunctions $wp,
     CronHelper $cronHelper,
@@ -90,7 +94,8 @@ class PermanentNotices {
     ServicesChecker $serviceChecker,
     MailerFactory $mailerFactory,
     SenderDomainAuthenticationNotices $senderDomainAuthenticationNotices,
-    AuthorizedSenderDomainController $senderDomainController
+    AuthorizedSenderDomainController $senderDomainController,
+    NewslettersRepository $newslettersRepository
   ) {
     $this->wp = $wp;
     $this->phpVersionWarnings = new PHPVersionWarnings();
@@ -111,6 +116,7 @@ class PermanentNotices {
     $this->databaseEngineNotice = new DatabaseEngineNotice($wp, $entityManager);
     $this->wordPressPlaygroundNotice = new WordPressPlaygroundNotice();
     $this->sendingQueueBodyCleanupNotice = new SendingQueueBodyCleanupNotice($settings, $wp);
+    $this->stuckPostNotificationNotice = new StuckPostNotificationNotice($wp, $newslettersRepository);
     $this->senderDomainAuthenticationNotices = $senderDomainAuthenticationNotices;
   }
 
@@ -180,6 +186,9 @@ class PermanentNotices {
     $this->sendingQueueBodyCleanupNotice->init(
       Menu::isOnMailPoetAdminPage($excludeSetupWizard)
     );
+    $this->stuckPostNotificationNotice->init(
+      Menu::isOnMailPoetAdminPage($excludeSetupWizard)
+    );
     $excludeDomainAuthenticationNotices = [
       'mailpoet-settings',
       'mailpoet-newsletter-editor',
@@ -231,6 +240,9 @@ class PermanentNotices {
         break;
       case (SendingQueueBodyCleanupNotice::OPTION_NAME):
         $this->sendingQueueBodyCleanupNotice->disable();
+        break;
+      case (StuckPostNotificationNotice::OPTION_NAME):
+        $this->stuckPostNotificationNotice->disable();
         break;
     }
   }

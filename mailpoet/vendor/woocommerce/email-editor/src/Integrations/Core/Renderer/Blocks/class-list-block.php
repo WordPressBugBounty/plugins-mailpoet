@@ -9,7 +9,7 @@ class List_Block extends Abstract_Block_Renderer {
  $content = $this->render_content( $block_content, $parsed_block, $rendering_context );
  $email_attrs = $parsed_block['email_attrs'] ?? array();
  unset( $email_attrs['margin-top'] );
- return $this->add_spacer( $content, $email_attrs );
+ return $this->add_spacer_with_context( $content, $email_attrs, $rendering_context );
  }
  protected function render_content( string $block_content, array $parsed_block, Rendering_Context $rendering_context ): string {
  $html = new \WP_HTML_Tag_Processor( $block_content );

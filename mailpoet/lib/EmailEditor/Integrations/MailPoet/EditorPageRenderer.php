@@ -73,13 +73,14 @@ class EditorPageRenderer {
   }
 
   public function render() {
-    $postId = isset($_GET['post']) ? intval($_GET['post']) : 0;
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- is_numeric guard plus int cast is the sanitization
+    $rawPostId = $_GET['post'] ?? null;
+    $postId = is_numeric($rawPostId) ? intval($rawPostId) : 0;
     $post = $this->wp->getPost($postId);
-    $currentPostType = $post->post_type; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
-
-    if (!$post instanceof \WP_Post || $currentPostType !== EditorInitController::MAILPOET_EMAIL_POST_TYPE) {
+    if (!$post instanceof \WP_Post || $post->post_type !== EditorInitController::MAILPOET_EMAIL_POST_TYPE) { // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
       return;
     }
+    $currentPostType = $post->post_type; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
     $newsletter = $this->newslettersRepository->findOneBy(['wpPost' => $postId]);
     if (!$newsletter instanceof NewsletterEntity) {
       return;
@@ -235,7 +236,7 @@ class EditorPageRenderer {
       '/wp/v2/taxonomies?context=view',
     ];
 
-    if ($templateSlug) {
+    if (is_string($templateSlug) && $templateSlug !== '') {
       $routes[] = '/wp/v2/templates/lookup?slug=' . $templateSlug;
     } else {
       $routes[] = '/wp/v2/mailpoet_email?context=edit&per_page=30&status=publish,sent';

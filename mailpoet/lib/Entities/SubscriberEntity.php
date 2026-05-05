@@ -42,6 +42,13 @@ class SubscriberEntity {
 
   public const OBSOLETE_LINK_TOKEN_LENGTH = 6;
   public const LINK_TOKEN_LENGTH = 32;
+  public const TIME_ZONE_FIELD_NAME = 'mailpoet_subscriber_timezone';
+  public const TIME_ZONE_SOURCE_FORM = 'form';
+  public const TIME_ZONE_SOURCE_SITE_FALLBACK = 'site_fallback';
+  public const TIME_ZONE_CONFIDENCE_BROWSER = 90;
+
+  /** @var array<string,bool>|null */
+  private static $validTimeZones = null;
 
   use AutoincrementedIdTrait;
   use CreatedAtTrait;
@@ -100,6 +107,30 @@ class SubscriberEntity {
   private $confirmedIp;
 
   /**
+   * @ORM\Column(type="string", nullable=true)
+   * @var string|null
+   */
+  private $timeZone;
+
+  /**
+   * @ORM\Column(type="string", nullable=true)
+   * @var string|null
+   */
+  private $timeZoneSource;
+
+  /**
+   * @ORM\Column(type="integer", nullable=true)
+   * @var int|null
+   */
+  private $timeZoneConfidence;
+
+  /**
+   * @ORM\Column(type="datetimetz", nullable=true)
+   * @var DateTimeInterface|null
+   */
+  private $timeZoneUpdatedAt;
+
+  /**
    * @ORM\Column(type="datetimetz", nullable=true)
    * @var DateTimeInterface|null
    */
@@ -110,6 +141,12 @@ class SubscriberEntity {
    * @var DateTimeInterface|null
    */
   private $lastSubscribedAt;
+
+  /**
+   * @ORM\Column(type="datetimetz", nullable=true)
+   * @var DateTimeInterface|null
+   */
+  private $lastConfirmationEmailSentAt;
 
   /**
    * @ORM\Column(type="text", nullable=true)
@@ -359,6 +396,65 @@ class SubscriberEntity {
     $this->confirmedIp = $confirmedIp;
   }
 
+  public function getTimeZone(): ?string {
+    return $this->timeZone;
+  }
+
+  public function setTimeZone(?string $timeZone): void {
+    $this->timeZone = $timeZone;
+  }
+
+  public function getTimeZoneSource(): ?string {
+    return $this->timeZoneSource;
+  }
+
+  public function setTimeZoneSource(?string $timeZoneSource): void {
+    $this->timeZoneSource = $timeZoneSource;
+  }
+
+  public function getTimeZoneConfidence(): ?int {
+    return $this->timeZoneConfidence;
+  }
+
+  public function setTimeZoneConfidence(?int $timeZoneConfidence): void {
+    $this->timeZoneConfidence = $timeZoneConfidence;
+  }
+
+  public function getTimeZoneUpdatedAt(): ?DateTimeInterface {
+    return $this->timeZoneUpdatedAt;
+  }
+
+  public function setTimeZoneUpdatedAt(?DateTimeInterface $timeZoneUpdatedAt): void {
+    $this->timeZoneUpdatedAt = $timeZoneUpdatedAt;
+  }
+
+  /**
+   * @param mixed $timeZone
+   */
+  public static function sanitizeTimeZone($timeZone): ?string {
+    if (!is_string($timeZone)) {
+      return null;
+    }
+    $timeZone = trim($timeZone);
+    if ($timeZone === '' || strlen($timeZone) > 64) {
+      return null;
+    }
+    return self::isValidTimeZone($timeZone) ? $timeZone : null;
+  }
+
+  /**
+   * @param mixed $timeZone
+   */
+  public static function isValidTimeZone($timeZone): bool {
+    if (!is_string($timeZone) || $timeZone === '') {
+      return false;
+    }
+    if (self::$validTimeZones === null) {
+      self::$validTimeZones = array_fill_keys(\DateTimeZone::listIdentifiers(), true);
+    }
+    return isset(self::$validTimeZones[$timeZone]);
+  }
+
   /**
    * @return DateTimeInterface|null
    */
@@ -385,6 +481,20 @@ class SubscriberEntity {
    */
   public function setLastSubscribedAt($lastSubscribedAt) {
     $this->lastSubscribedAt = $lastSubscribedAt;
+  }
+
+  /**
+   * @return DateTimeInterface|null
+   */
+  public function getLastConfirmationEmailSentAt() {
+    return $this->lastConfirmationEmailSentAt;
+  }
+
+  /**
+   * @param DateTimeInterface|null $lastConfirmationEmailSentAt
+   */
+  public function setLastConfirmationEmailSentAt($lastConfirmationEmailSentAt) {
+    $this->lastConfirmationEmailSentAt = $lastConfirmationEmailSentAt;
   }
 
   /**
