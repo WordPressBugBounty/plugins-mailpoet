@@ -7352,6 +7352,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/API/JSON/v1/UserFlags.php'
  ),
+ 'MailPoet\\API\\JSON\\v1\\WoocommerceProductVariations' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/API/JSON/v1/WoocommerceProductVariations.php'
+ ),
  'MailPoet\\API\\JSON\\v1\\WoocommerceSettings' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/API/JSON/v1/WoocommerceSettings.php'
@@ -8116,6 +8120,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Automation/Integrations/MailPoet/Triggers/SomeoneSubscribesTrigger.php'
  ),
+ 'MailPoet\\Automation\\Integrations\\MailPoet\\Triggers\\SomeoneUnsubscribesTrigger' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Automation/Integrations/MailPoet/Triggers/SomeoneUnsubscribesTrigger.php'
+ ),
  'MailPoet\\Automation\\Integrations\\MailPoet\\Triggers\\UserRegistrationTrigger' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Automation/Integrations/MailPoet/Triggers/UserRegistrationTrigger.php'
@@ -8328,6 +8336,18 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Captcha/ReCaptchaValidator.php'
  ),
+ 'MailPoet\\Captcha\\TurnstileHooks' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Captcha/TurnstileHooks.php'
+ ),
+ 'MailPoet\\Captcha\\TurnstileRenderer' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Captcha/TurnstileRenderer.php'
+ ),
+ 'MailPoet\\Captcha\\TurnstileValidator' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Captcha/TurnstileValidator.php'
+ ),
  'MailPoet\\Captcha\\Validator\\CaptchaValidator' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Captcha/Validator/CaptchaValidator.php'
@@ -8335,6 +8355,10 @@ return array(
  'MailPoet\\Captcha\\Validator\\RecaptchaValidator' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Captcha/Validator/RecaptchaValidator.php'
+ ),
+ 'MailPoet\\Captcha\\Validator\\TurnstileValidator' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Captcha/Validator/TurnstileValidator.php'
  ),
  'MailPoet\\Captcha\\Validator\\ValidationError' => array(
  'version' => 'dev-trunk',
@@ -8960,6 +8984,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/Workers/StatsNotifications/Worker.php'
  ),
+ 'MailPoet\\Cron\\Workers\\SubscriberLimitNotificationWorker' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/Workers/SubscriberLimitNotificationWorker.php'
+ ),
  'MailPoet\\Cron\\Workers\\SubscriberLinkTokens' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/Workers/SubscriberLinkTokens.php'
@@ -9239,6 +9267,10 @@ return array(
  'MailPoet\\Doctrine\\WPDB\\Statement' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Doctrine/WPDB/Statement.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\BlockEmailContentDetector' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/BlockEmailContentDetector.php'
  ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypesController' => array(
  'version' => 'dev-trunk',
@@ -10320,6 +10352,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260430_120000.php'
  ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260504_120000_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260504_120000_Db.php'
+ ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrator/AppMigration.php'
@@ -10880,6 +10916,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Segments/DynamicSegments/Filters/WooCommerceProduct.php'
  ),
+ 'MailPoet\\Segments\\DynamicSegments\\Filters\\WooCommerceProductVariation' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Segments/DynamicSegments/Filters/WooCommerceProductVariation.php'
+ ),
  'MailPoet\\Segments\\DynamicSegments\\Filters\\WooCommercePurchaseDate' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Segments/DynamicSegments/Filters/WooCommercePurchaseDate.php'
@@ -11243,6 +11283,18 @@ return array(
  'MailPoet\\Subscribers\\SubscriberIPsRepository' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Subscribers/SubscriberIPsRepository.php'
+ ),
+ 'MailPoet\\Subscribers\\SubscriberLimitNotificationEvaluator' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/SubscriberLimitNotificationEvaluator.php'
+ ),
+ 'MailPoet\\Subscribers\\SubscriberLimitNotificationMailer' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/SubscriberLimitNotificationMailer.php'
+ ),
+ 'MailPoet\\Subscribers\\SubscriberLimitNotificationScheduler' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/SubscriberLimitNotificationScheduler.php'
  ),
  'MailPoet\\Subscribers\\SubscriberListingRepository' => array(
  'version' => 'dev-trunk',
@@ -11812,6 +11864,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/generated/twig/a1/a1eb89b1f26b23fd541827afddae561a0fa6270b2d10b9917b15faab61c18aba.php'
  ),
+ '__TwigTemplate_0a0464bc24c6a5361dc783179cf979fb047f07bd9a3c1073790aa4402d2ffd3b' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/generated/twig/e9/e96ac2137a462ae8edb3500e63583138990c44a7f86c94a4bdee6f17155b081a.php'
+ ),
  '__TwigTemplate_0caa1806b4e6bad50c4bb59fbbdec799771fc97376dbc0dd12d0fe0df7e756ad' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/generated/twig/26/26cfaab925cf4fae36b91febc98be57735e35aa7533110f2361e64038327d0c0.php'
@@ -12291,6 +12347,10 @@ return array(
  '__TwigTemplate_bf1afcdd39b977c640e7d80e1226553f8b3fa42753dc0980108bb10dea17eb4d' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/generated/twig/07/0719eabee9dc6fc55797b0040da567be8003547f5a6db8c10ea35cd2fc6b4326.php'
+ ),
+ '__TwigTemplate_c033fba0b7cbf706f8bf8b2c6a274eeaad1e8f18e136694adafd658b11ce3260' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/generated/twig/2f/2f40f16b744697b581e55847d2eb87d0a0c4e61e8b7b7016cd585ece1a0c25cd.php'
  ),
  '__TwigTemplate_c260ca698e3584b2cbf2795424a7e23a50fca4519ec42363a4acb3eb996211e7' => array(
  'version' => 'dev-trunk',

@@ -24,6 +24,8 @@ use MailPoet\WP\Functions as WPFunctions;
 use MailPoetVendor\Carbon\CarbonImmutable;
 
 class Shortcodes {
+  const DEFAULT_ARCHIVE_LIMIT = 100;
+
   /** @var Pages */
   private $subscriptionPages;
 
@@ -188,7 +190,7 @@ class Shortcodes {
       'endDate' => null,
       'segmentIds' => [],
       'subjectContains' => '',
-      'limit' => null,
+      'limit' => self::DEFAULT_ARCHIVE_LIMIT,
     ];
 
     if (!is_array($params)) {

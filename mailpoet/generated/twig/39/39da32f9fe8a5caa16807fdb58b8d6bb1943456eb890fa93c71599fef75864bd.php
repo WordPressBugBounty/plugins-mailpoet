@@ -103,59 +103,63 @@ class __TwigTemplate_756448057f537f5715d1a262e5a4bc2ae04cea7f694f005ae4bcfe6c686
         // line 18
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["products"] ?? null));
         yield ";
-    var mailpoet_membership_plans = ";
+    var mailpoet_variable_products = ";
         // line 19
+        yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["variable_products"] ?? null));
+        yield ";
+    var mailpoet_membership_plans = ";
+        // line 20
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["membership_plans"] ?? null));
         yield ";
     var mailpoet_subscription_products = ";
-        // line 20
+        // line 21
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["subscription_products"] ?? null));
         yield ";
     var mailpoet_can_use_woocommerce_memberships = ";
-        // line 21
+        // line 22
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["can_use_woocommerce_memberships"] ?? null));
         yield ";
     var mailpoet_can_use_woocommerce_subscriptions = ";
-        // line 22
+        // line 23
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["can_use_woocommerce_subscriptions"] ?? null));
         yield ";
     var mailpoet_woocommerce_currency_symbol = ";
-        // line 23
+        // line 24
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["woocommerce_currency_symbol"] ?? null));
         yield ";
     var mailpoet_woocommerce_countries = ";
-        // line 24
+        // line 25
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["woocommerce_countries"] ?? null));
         yield ";
     var mailpoet_woocommerce_payment_methods = ";
-        // line 25
+        // line 26
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["woocommerce_payment_methods"] ?? null));
         yield ";
     var mailpoet_woocommerce_shipping_methods = ";
-        // line 26
+        // line 27
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["woocommerce_shipping_methods"] ?? null));
         yield ";
     var mailpoet_signup_forms = ";
-        // line 27
+        // line 28
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["signup_forms"] ?? null));
         yield ";
     var mailpoet_automations = ";
-        // line 28
+        // line 29
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["automations"] ?? null));
         yield ";
   </script>
 
   ";
-        // line 31
-        yield from         $this->loadTemplate("segments/translations.html", "segments/dynamic.html", 31)->unwrap()->yield($context);
+        // line 32
+        yield from         $this->loadTemplate("segments/translations.html", "segments/dynamic.html", 32)->unwrap()->yield($context);
         return; yield '';
     }
 
-    // line 35
+    // line 36
     public function block_after_translations($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 36
+        // line 37
         yield "  ";
         yield do_action("mailpoet_segments_translations_after");
         yield "
@@ -184,7 +188,7 @@ class __TwigTemplate_756448057f537f5715d1a262e5a4bc2ae04cea7f694f005ae4bcfe6c686
      */
     public function getDebugInfo()
     {
-        return array (  156 => 36,  152 => 35,  147 => 31,  141 => 28,  137 => 27,  133 => 26,  129 => 25,  125 => 24,  121 => 23,  117 => 22,  113 => 21,  109 => 20,  105 => 19,  101 => 18,  97 => 17,  93 => 16,  89 => 15,  85 => 14,  81 => 13,  77 => 12,  73 => 11,  69 => 10,  65 => 9,  61 => 8,  57 => 7,  52 => 4,  48 => 3,  37 => 1,);
+        return array (  160 => 37,  156 => 36,  151 => 32,  145 => 29,  141 => 28,  137 => 27,  133 => 26,  129 => 25,  125 => 24,  121 => 23,  117 => 22,  113 => 21,  109 => 20,  105 => 19,  101 => 18,  97 => 17,  93 => 16,  89 => 15,  85 => 14,  81 => 13,  77 => 12,  73 => 11,  69 => 10,  65 => 9,  61 => 8,  57 => 7,  52 => 4,  48 => 3,  37 => 1,);
     }
 
     public function getSourceContext()

@@ -67,7 +67,9 @@ class __TwigTemplate_a48d787d9575f1182960bff4df69cda2c5953bb35a467320cc2088e9c84
 \t\tOrder summary<br><span style=\"color: #3c3c3c; display: block; font-size: 14px; font-weight: normal;\">";
         // line 15
         yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape(MailPoetVendor\Twig\Extension\CoreExtension::sprintf($this->extensions['MailPoet\Twig\I18n']->translate("Order #%s", "woocommerce"), "12345"), "html", null, true);
-        yield " (March 3, 2025)</span>
+        yield " (";
+        yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape($this->extensions['MailPoetVendor\Twig\Extension\CoreExtension']->formatDate("2025-03-03", $this->extensions['MailPoet\Twig\Functions']->getWPDateFormat()), "html", null, true);
+        yield ")</span>
 \t</h2>
 \t<div style=\"margin-bottom: 24px;\">
 \t\t<table class=\"td font-family email-order-details\" cellspacing=\"0\" cellpadding=\"6\" border=\"0\" style='color: #636363; border: 0; vertical-align: middle; font-family: \"Helvetica Neue\",Helvetica,Roboto,Arial,sans-serif; width: 100%;' width=\"100%\">
@@ -253,7 +255,7 @@ class __TwigTemplate_a48d787d9575f1182960bff4df69cda2c5953bb35a467320cc2088e9c84
      */
     public function getDebugInfo()
     {
-        return array (  219 => 109,  206 => 99,  198 => 94,  187 => 86,  182 => 84,  178 => 83,  171 => 79,  167 => 78,  159 => 73,  149 => 68,  140 => 62,  132 => 57,  109 => 43,  105 => 42,  100 => 40,  83 => 26,  78 => 24,  66 => 15,  60 => 12,  56 => 11,  52 => 10,  42 => 3,  38 => 1,);
+        return array (  221 => 109,  208 => 99,  200 => 94,  189 => 86,  184 => 84,  180 => 83,  173 => 79,  169 => 78,  161 => 73,  151 => 68,  142 => 62,  134 => 57,  111 => 43,  107 => 42,  102 => 40,  85 => 26,  80 => 24,  66 => 15,  60 => 12,  56 => 11,  52 => 10,  42 => 3,  38 => 1,);
     }
 
     public function getSourceContext()

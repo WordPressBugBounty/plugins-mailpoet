@@ -31,6 +31,7 @@ use MailPoet\Segments\DynamicSegments\Filters\WooCommerceMembership;
 use MailPoet\Segments\DynamicSegments\Filters\WooCommerceNumberOfOrders;
 use MailPoet\Segments\DynamicSegments\Filters\WooCommerceNumberOfReviews;
 use MailPoet\Segments\DynamicSegments\Filters\WooCommerceProduct;
+use MailPoet\Segments\DynamicSegments\Filters\WooCommerceProductVariation;
 use MailPoet\Segments\DynamicSegments\Filters\WooCommercePurchaseDate;
 use MailPoet\Segments\DynamicSegments\Filters\WooCommercePurchasedWithAttribute;
 use MailPoet\Segments\DynamicSegments\Filters\WooCommerceSingleOrderValue;
@@ -417,6 +418,21 @@ class FilterDataMapper {
       }
       $filterData['operator'] = $data['operator'];
       $filterData['product_ids'] = $data['product_ids'];
+    } elseif ($data['action'] === WooCommerceProductVariation::ACTION_PRODUCT_VARIATION) {
+      if (!isset($data['variation_ids']) || !is_array($data['variation_ids']) || count($data['variation_ids']) === 0) {
+        throw new InvalidFilterException('Missing variation', InvalidFilterException::MISSING_VARIATION_ID);
+      }
+      if (
+        !isset($data['operator']) || !in_array($data['operator'], [
+          DynamicSegmentFilterData::OPERATOR_ANY,
+          DynamicSegmentFilterData::OPERATOR_ALL,
+          DynamicSegmentFilterData::OPERATOR_NONE,
+        ], true)
+      ) {
+        throw new InvalidFilterException('Missing operator', InvalidFilterException::MISSING_OPERATOR);
+      }
+      $filterData['operator'] = $data['operator'];
+      $filterData['variation_ids'] = $data['variation_ids'];
     } elseif ($data['action'] === WooCommerceCountry::ACTION_CUSTOMER_COUNTRY) {
       if (!isset($data['country_code'])) {
         throw new InvalidFilterException('Missing country', InvalidFilterException::MISSING_COUNTRY);
