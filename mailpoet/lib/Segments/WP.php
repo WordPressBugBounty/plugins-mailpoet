@@ -19,6 +19,7 @@ use MailPoet\Subscribers\ConfirmationEmailMailer;
 use MailPoet\Subscribers\Source;
 use MailPoet\Subscribers\SubscriberSegmentRepository;
 use MailPoet\Subscribers\SubscribersRepository;
+use MailPoet\Util\DBCollationChecker;
 use MailPoet\WooCommerce\Helper as WooCommerceHelper;
 use MailPoet\WP\Functions as WPFunctions;
 use MailPoetVendor\Carbon\Carbon;
@@ -53,6 +54,9 @@ class WP {
   /** @var EntityManager */
   private $entityManager;
 
+  /** @var DBCollationChecker */
+  private $collationChecker;
+
   /** @var string */
   private $subscribersTable;
 
@@ -68,7 +72,8 @@ class WP {
     SubscriberChangesNotifier $subscriberChangesNotifier,
     Validator $validator,
     SegmentsRepository $segmentsRepository,
-    EntityManager $entityManager
+    EntityManager $entityManager,
+    DBCollationChecker $collationChecker
   ) {
     $this->wp = $wp;
     $this->welcomeScheduler = $welcomeScheduler;
@@ -79,6 +84,7 @@ class WP {
     $this->validator = $validator;
     $this->segmentsRepository = $segmentsRepository;
     $this->entityManager = $entityManager;
+    $this->collationChecker = $collationChecker;
     $this->databaseConnection = $this->entityManager->getConnection();
     $this->subscribersTable = $this->entityManager->getClassMetadata(SubscriberEntity::class)->getTableName();
   }
@@ -478,13 +484,22 @@ class WP {
         WHERE s.wp_user_id IS NULL AND u.user_email != ''";
     $insertedUserIds = $this->databaseConnection->fetchAllAssociative($selectSql);
 
-    // Insert new users into the subscribers table
+    // Insert new users into the subscribers table.
+    // The email-based join can cross a collation boundary when wp_users.user_email and
+    // mailpoet_subscribers.email use different (but compatible) collations — force a
+    // matching collation to avoid "Illegal mix of collations" errors.
+    $emailCollation = $this->collationChecker->getCollateIfNeeded(
+      $wpdb->users,
+      'user_email',
+      $this->subscribersTable,
+      'email'
+    );
     $insertSql =
       "INSERT IGNORE INTO {$this->subscribersTable} (wp_user_id, email, status, created_at, `source`, deleted_at)
         SELECT wu.id, wu.user_email, :subscriberStatus, CURRENT_TIMESTAMP(), :source, {$deletedAt}
         FROM {$wpdb->users} wu
         LEFT JOIN {$this->subscribersTable} s ON wu.id = s.wp_user_id
-        LEFT JOIN {$this->subscribersTable} existingSubscriber ON wu.user_email = existingSubscriber.email
+        LEFT JOIN {$this->subscribersTable} existingSubscriber ON wu.user_email = existingSubscriber.email {$emailCollation}
         WHERE s.wp_user_id IS NULL AND wu.user_email != ''
         ON DUPLICATE KEY UPDATE
           wp_user_id = wu.id,
