@@ -10,6 +10,7 @@ use MailPoet\Automation\Engine\Integration;
 use MailPoet\Automation\Engine\Registry;
 use MailPoet\Automation\Engine\WordPress;
 use MailPoet\Automation\Integrations\MailPoet\Actions\SendEmailAction;
+use MailPoet\Automation\Integrations\MailPoet\Actions\SendLatestNewsletterAction;
 use MailPoet\Automation\Integrations\MailPoet\Analytics\Analytics;
 use MailPoet\Automation\Integrations\MailPoet\Hooks\AutomationEditorLoadingHooks;
 use MailPoet\Automation\Integrations\MailPoet\Hooks\CreateAutomationRunHook;
@@ -50,6 +51,9 @@ class MailPoetIntegration implements Integration {
 
   /** @var SendEmailAction */
   private $sendEmailAction;
+
+  /** @var SendLatestNewsletterAction */
+  private $sendLatestNewsletterAction;
 
   /** @var AutomationEditorLoadingHooks  */
   private $automationEditorLoadingHooks;
@@ -95,6 +99,7 @@ class MailPoetIntegration implements Integration {
     SomeoneUnsubscribesTrigger $someoneUnsubscribesTrigger,
     UserRegistrationTrigger $userRegistrationTrigger,
     SendEmailAction $sendEmailAction,
+    SendLatestNewsletterAction $sendLatestNewsletterAction,
     AutomationEditorLoadingHooks $automationEditorLoadingHooks,
     CreateAutomationRunHook $createAutomationRunHook,
     TemplatesFactory $templatesFactory,
@@ -114,6 +119,7 @@ class MailPoetIntegration implements Integration {
     $this->someoneUnsubscribesTrigger = $someoneUnsubscribesTrigger;
     $this->userRegistrationTrigger = $userRegistrationTrigger;
     $this->sendEmailAction = $sendEmailAction;
+    $this->sendLatestNewsletterAction = $sendLatestNewsletterAction;
     $this->automationEditorLoadingHooks = $automationEditorLoadingHooks;
     $this->createAutomationRunHook = $createAutomationRunHook;
     $this->templatesFactory = $templatesFactory;
@@ -133,6 +139,7 @@ class MailPoetIntegration implements Integration {
     $registry->addTrigger($this->someoneUnsubscribesTrigger);
     $registry->addTrigger($this->userRegistrationTrigger);
     $registry->addAction($this->sendEmailAction);
+    $registry->addAction($this->sendLatestNewsletterAction);
     $registry->addSubjectTransformer($this->orderToSubscriberTransformer);
     $registry->addSubjectTransformer($this->orderToSegmentTransformer);
     $registry->addSubjectTransformer($this->subscriberToWordPressUserTransformer);

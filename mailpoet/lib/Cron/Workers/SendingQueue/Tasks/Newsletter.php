@@ -25,6 +25,7 @@ use MailPoet\Newsletter\NewsletterDeleteController;
 use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Newsletter\Renderer\PostProcess\OpenTracking;
 use MailPoet\Newsletter\Renderer\Renderer;
+use MailPoet\Newsletter\Sending\NewsletterReplayMetadata;
 use MailPoet\Newsletter\Sending\ScheduledTasksRepository;
 use MailPoet\Newsletter\Sending\SendingQueuesRepository;
 use MailPoet\NewsletterProcessingException;
@@ -132,10 +133,20 @@ class Newsletter {
     $queue = $task->getSendingQueue();
     $newsletter = $queue ? $queue->getNewsletter() : null;
 
+    $allowedStatuses = [NewsletterEntity::STATUS_ACTIVE, NewsletterEntity::STATUS_SENDING];
+    if (
+      $queue
+      && NewsletterReplayMetadata::isLatestNewsletterReplayMeta($queue->getMeta())
+      && $newsletter
+      && $newsletter->getType() === NewsletterEntity::TYPE_STANDARD
+    ) {
+      $allowedStatuses[] = NewsletterEntity::STATUS_SENT;
+    }
+
     if (
       is_null($newsletter)
       || $newsletter->getDeletedAt() !== null
-      || !in_array($newsletter->getStatus(), [NewsletterEntity::STATUS_ACTIVE, NewsletterEntity::STATUS_SENDING])
+      || !in_array($newsletter->getStatus(), $allowedStatuses, true)
     ) {
       $this->recoverFromInvalidState($task);
       return null;
@@ -318,7 +329,9 @@ class Newsletter {
         'queue_id' => $queue->getId(),
       ]
     );
-    $this->newslettersRepository->setAsCorrupt($newsletter);
+    if (!NewsletterReplayMetadata::isLatestNewsletterReplayMeta($queue->getMeta())) {
+      $this->newslettersRepository->setAsCorrupt($newsletter);
+    }
     $this->sendingQueuesRepository->pause($queue);
   }
 

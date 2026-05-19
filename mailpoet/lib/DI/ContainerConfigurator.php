@@ -204,6 +204,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Automation\Integrations\MailPoet\Triggers\SomeoneUnsubscribesTrigger::class)->setPublic(true)->setShared(false);
     $container->autowire(\MailPoet\Automation\Integrations\MailPoet\Triggers\UserRegistrationTrigger::class)->setPublic(true)->setShared(false);
     $container->autowire(\MailPoet\Automation\Integrations\MailPoet\Actions\SendEmailAction::class)->setPublic(true);
+    $container->autowire(\MailPoet\Automation\Integrations\MailPoet\Actions\SendLatestNewsletterAction::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Integrations\MailPoet\Hooks\AutomationEditorLoadingHooks::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Integrations\MailPoet\Hooks\CreateAutomationRunHook::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Integrations\MailPoet\SubjectTransformers\OrderSubjectToSubscriberSubjectTransformer::class)->setPublic(true)->setShared(false);
@@ -221,6 +222,8 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\WooCommerce::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\ContextFactory::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\WooCommerceIntegration::class)->setPublic(true);
+    $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\SubjectTransformers\CustomerSubjectToWordPressUserSubjectTransformer::class)->setPublic(true)->setShared(false);
+    $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\SubjectTransformers\OrderSubjectToWordPressUserSubjectTransformer::class)->setPublic(true)->setShared(false);
     $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\Fields\CustomerFieldsFactory::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\Fields\CustomerOrderFieldsFactory::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Integrations\WooCommerce\Fields\CustomerReviewFieldsFactory::class)->setPublic(true);
@@ -448,6 +451,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Router\Endpoints\FormPreview::class)->setPublic(true);
     $container->autowire(\MailPoet\Router\Endpoints\Subscription::class)->setPublic(true);
     $container->autowire(\MailPoet\Router\Endpoints\ViewInBrowser::class)->setPublic(true);
+    $container->autowire(\MailPoet\Router\Endpoints\ExportDownload::class)->setPublic(true);
     $container->autowire(\MailPoet\Router\Endpoints\TemplateImage::class)->setPublic(true);
     $container->autowire(\MailPoet\Router\Endpoints\Track::class)->setPublic(true);
     $container->autowire(\MailPoet\Router\Endpoints\Captcha::class)->setPublic(true);
@@ -635,6 +639,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Newsletter\Statistics\Export\StatisticsExporter::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\Scheduler\AutomaticEmailScheduler::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\Scheduler\AutomationEmailScheduler::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\Scheduler\LatestNewsletterScheduler::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\Scheduler\WelcomeScheduler::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\Scheduler\PostNotificationScheduler::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\Scheduler\ReEngagementScheduler::class)->setPublic(true);
@@ -643,6 +648,10 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Newsletter\Sending\ScheduledTaskSubscribersListingRepository::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\Sending\SendingQueuesRepository::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\Sending\TimeZoneCampaignScheduler::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\Sharing\PublicEmailController::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\Sharing\PublicEmailRoute::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\Sharing\ShareMetadataBuilder::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\Sharing\ShareVisibility::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\ViewInBrowser\ViewInBrowserController::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\ViewInBrowser\ViewInBrowserRenderer::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\NewsletterCoupon::class)->setPublic(true);

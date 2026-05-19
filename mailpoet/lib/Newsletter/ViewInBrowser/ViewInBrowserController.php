@@ -9,6 +9,8 @@ use MailPoet\EmailEditor\Integrations\MailPoet\DependencyNotice;
 use MailPoet\Entities\SubscriberEntity;
 use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Newsletter\Sending\SendingQueuesRepository;
+use MailPoet\Newsletter\Sharing\ShareMetadataBuilder;
+use MailPoet\Newsletter\Sharing\ShareVisibility;
 use MailPoet\Newsletter\Url as NewsletterUrl;
 use MailPoet\Subscribers\LinkTokens;
 use MailPoet\Subscribers\SubscribersRepository;
@@ -35,6 +37,12 @@ class ViewInBrowserController {
   /** @var DependencyNotice */
   private $dependencyNotice;
 
+  /** @var ShareVisibility */
+  private $shareVisibility;
+
+  /** @var ShareMetadataBuilder */
+  private $shareMetadataBuilder;
+
   public function __construct(
     LinkTokens $linkTokens,
     NewsletterUrl $newsletterUrl,
@@ -42,7 +50,9 @@ class ViewInBrowserController {
     ViewInBrowserRenderer $viewInBrowserRenderer,
     SendingQueuesRepository $sendingQueuesRepository,
     DependencyNotice $dependencyNotice,
-    SubscribersRepository $subscribersRepository
+    SubscribersRepository $subscribersRepository,
+    ShareVisibility $shareVisibility,
+    ShareMetadataBuilder $shareMetadataBuilder
   ) {
     $this->linkTokens = $linkTokens;
     $this->viewInBrowserRenderer = $viewInBrowserRenderer;
@@ -51,6 +61,8 @@ class ViewInBrowserController {
     $this->newsletterUrl = $newsletterUrl;
     $this->dependencyNotice = $dependencyNotice;
     $this->newslettersRepository = $newslettersRepository;
+    $this->shareVisibility = $shareVisibility;
+    $this->shareMetadataBuilder = $shareMetadataBuilder;
   }
 
   public function view(array $data) {
@@ -68,7 +80,14 @@ class ViewInBrowserController {
       throw new \InvalidArgumentException("Subscriber did not receive the newsletter yet");
     }
 
-    return $this->viewInBrowserRenderer->render($isPreview, $newsletter, $subscriber, $queue);
+    $html = $this->viewInBrowserRenderer->render($isPreview, $newsletter, $subscriber, $queue);
+    if (!$isPreview && $this->shareVisibility->canShare($newsletter)) {
+      $publicUrl = $this->newsletterUrl->getPublicShareUrl($newsletter);
+      // Pass $publicUrl as both the share target and the replaceState target so the
+      // tokenised view-in-browser URL is scrubbed from the address bar on load.
+      return $this->shareMetadataBuilder->injectShareToolbar($html, $newsletter, $publicUrl, $publicUrl);
+    }
+    return $html;
   }
 
   private function getNewsletter(array $data) {

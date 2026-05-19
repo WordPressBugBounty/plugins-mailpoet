@@ -53,6 +53,7 @@ class WooCommerceProductVariation implements Filter {
 
     if ($operator === DynamicSegmentFilterData::OPERATOR_ANY) {
       $orderStatsAlias = $this->wooFilterHelper->applyOrderStatusFilter($queryBuilder);
+      $this->filterHelper->applyDatePeriodFilter($queryBuilder, "$orderStatsAlias.date_created", $filterData, false, DynamicSegmentFilterData::TIMEFRAME_ALL_TIME);
       $this->applyProductJoin($queryBuilder, $orderStatsAlias);
       $queryBuilder->andWhere("product.variation_id IN (:variations_{$parameterSuffix})");
     } elseif ($operator === DynamicSegmentFilterData::OPERATOR_ALL) {
@@ -61,6 +62,7 @@ class WooCommerceProductVariation implements Filter {
         $uniqueParameterSuffix = Security::generateRandomString();
         $subQuery = $this->filterHelper->getNewSubscribersQueryBuilder();
         $subOrderStatsAlias = $this->wooFilterHelper->applyOrderStatusFilter($subQuery);
+        $this->filterHelper->applyDatePeriodFilter($subQuery, "$subOrderStatsAlias.date_created", $filterData, false, DynamicSegmentFilterData::TIMEFRAME_ALL_TIME);
         $this->applyProductJoin($subQuery, $subOrderStatsAlias);
         $subQuery->andWhere("product.variation_id = :variation_{$uniqueParameterSuffix}");
         $subQuery->setParameter("variation_{$uniqueParameterSuffix}", $variationId);
@@ -77,6 +79,7 @@ class WooCommerceProductVariation implements Filter {
       $subQuery = $this->createQueryBuilder($subscribersTable);
       $subQuery->select("DISTINCT $subscribersTable.id");
       $orderStatsAlias = $this->wooFilterHelper->applyOrderStatusFilter($subQuery);
+      $this->filterHelper->applyDatePeriodFilter($subQuery, "$orderStatsAlias.date_created", $filterData, false, DynamicSegmentFilterData::TIMEFRAME_ALL_TIME);
       $subQuery = $this->applyProductJoin($subQuery, $orderStatsAlias);
       $subQuery->andWhere("product.variation_id IN (:variations_{$parameterSuffix})");
       $queryBuilder->where("{$subscribersTable}.id NOT IN ({$this->filterHelper->getInterpolatedSQL($subQuery)})");

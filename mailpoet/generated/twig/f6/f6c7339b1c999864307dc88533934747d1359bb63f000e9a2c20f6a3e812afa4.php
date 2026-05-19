@@ -79,9 +79,7 @@ class __TwigTemplate_a17e2438ddfd4e3557203ffbe70dd0d2f66dd1c8aaa59af411df81cca14
         yield $this->extensions['MailPoet\Twig\I18n']->translate("Order summary", "woocommerce");
         yield "<br><span style=\"color: #3c3c3c; display: block; font-size: 14px; font-weight: normal;\">";
         yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape(MailPoetVendor\Twig\Extension\CoreExtension::sprintf($this->extensions['MailPoet\Twig\I18n']->translate("Order #%s", "woocommerce"), "12345"), "html", null, true);
-        yield " (";
-        yield $this->env->getRuntime('MailPoetVendor\Twig\Runtime\EscaperRuntime')->escape($this->extensions['MailPoetVendor\Twig\Extension\CoreExtension']->formatDate("2025-03-03", $this->extensions['MailPoet\Twig\Functions']->getWPDateFormat()), "html", null, true);
-        yield ")</span>
+        yield " (March 3, 2025)</span>
 \t</h2>
 \t<div style=\"margin-bottom: 24px;\">
 \t\t<table class=\"td font-family email-order-details\" cellspacing=\"0\" cellpadding=\"6\" border=\"0\" style='color: #636363; border: 0; vertical-align: middle; font-family: \"Helvetica Neue\",Helvetica,Roboto,Arial,sans-serif; width: 100%;' width=\"100%\">
@@ -267,7 +265,7 @@ class __TwigTemplate_a17e2438ddfd4e3557203ffbe70dd0d2f66dd1c8aaa59af411df81cca14
      */
     public function getDebugInfo()
     {
-        return array (  233 => 113,  220 => 103,  212 => 98,  201 => 90,  196 => 88,  192 => 87,  185 => 83,  181 => 82,  173 => 77,  163 => 72,  154 => 66,  146 => 61,  123 => 47,  119 => 46,  114 => 44,  97 => 30,  92 => 28,  76 => 19,  70 => 16,  65 => 14,  61 => 13,  56 => 11,  52 => 10,  42 => 3,  38 => 1,);
+        return array (  231 => 113,  218 => 103,  210 => 98,  199 => 90,  194 => 88,  190 => 87,  183 => 83,  179 => 82,  171 => 77,  161 => 72,  152 => 66,  144 => 61,  121 => 47,  117 => 46,  112 => 44,  95 => 30,  90 => 28,  76 => 19,  70 => 16,  65 => 14,  61 => 13,  56 => 11,  52 => 10,  42 => 3,  38 => 1,);
     }
 
     public function getSourceContext()

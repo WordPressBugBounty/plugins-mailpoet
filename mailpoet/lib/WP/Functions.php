@@ -109,6 +109,10 @@ class Functions {
     return add_query_arg($key, $value, $url); // nosemgrep: tools.wpscan-semgrep-rules.audit.php.wp.security.xss.query-arg
   }
 
+  public function addRewriteRule($regex, $query, $after = 'bottom') {
+    return add_rewrite_rule($regex, $query, $after);
+  }
+
   public function addScreenOption($option, $args = []) {
     add_screen_option($option, $args);
   }
@@ -211,6 +215,10 @@ class Functions {
     return get_bloginfo($show, $filter);
   }
 
+  public function hasCustomLogo() {
+    return has_custom_logo();
+  }
+
   public function getCategories($args = '') {
     return get_categories($args);
   }
@@ -261,6 +269,10 @@ class Functions {
 
   public function getOption($option, $default = false) {
     return get_option($option, $default);
+  }
+
+  public function getQueryVar($queryVar, $default = '') {
+    return get_query_var($queryVar, $default);
   }
 
   public function getPages($args = []) {
@@ -518,6 +530,10 @@ class Functions {
 
   public function shortcodeParseAtts($text) {
     return shortcode_parse_atts($text);
+  }
+
+  public function sanitizeTitle($title, $fallbackTitle = '', $context = 'save') {
+    return sanitize_title($title, $fallbackTitle, $context);
   }
 
   public function singlePostTitle($prefix = '', $display = true) {
