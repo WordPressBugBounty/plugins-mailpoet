@@ -86,7 +86,7 @@ class AutomationEditorLoadingHooks {
         $wpPostId = $newsletterEntity->getWpPostId();
         if ($wpPostId) {
           $wpPost = $this->wp->getPost($wpPostId);
-          $disconnectEmail = !$wpPost instanceof \WP_Post || !$this->blockEmailContentDetector->hasMeaningfulContent($wpPost);
+          $disconnectEmail = !($wpPost instanceof \WP_Post) || !$this->blockEmailContentDetector->hasMeaningfulContent($wpPost);
           if (!$disconnectEmail && (int)($args['email_wp_post_id'] ?? 0) !== (int)$wpPostId) {
             $args['email_wp_post_id'] = $wpPostId;
           }

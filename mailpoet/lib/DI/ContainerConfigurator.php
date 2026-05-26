@@ -99,7 +99,6 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\API\JSON\v1\Services::class)->setPublic(true);
     $container->autowire(\MailPoet\API\JSON\v1\Settings::class)->setPublic(true);
     $container->autowire(\MailPoet\API\JSON\v1\UserFlags::class)->setPublic(true);
-    $container->autowire(\MailPoet\API\JSON\v1\SendingTaskSubscribers::class)->setPublic(true);
     $container->autowire(\MailPoet\API\JSON\v1\Setup::class)->setPublic(true);
     $container->autowire(\MailPoet\API\JSON\v1\StatisticsExport::class)->setPublic(true);
     $container->autowire(\MailPoet\API\JSON\v1\SubscriberStats::class)->setPublic(true);
@@ -167,8 +166,10 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Automation\Engine\Validation\AutomationRules\ValidStepValidationRule::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Engine\Validation\AutomationValidator::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Engine\WordPress::class)->setPublic(true);
+    $container->autowire(\MailPoet\Automation\Integrations\MailPoet\Actions\AutomationSendEmailSubjectResolver::class)->setPublic(true);
     // Automation - API endpoints
     $container->autowire(\MailPoet\Automation\Engine\Endpoints\Automations\AutomationsGetEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Automation\Engine\Endpoints\Automations\AutomationVersionsGetEndpoint::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Engine\Endpoints\Automations\AutomationTemplateGetEndpoint::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Engine\Endpoints\Automations\AutomationTemplatesGetEndpoint::class)->setPublic(true);
     $container->autowire(\MailPoet\Automation\Engine\Endpoints\Automations\AutomationsPutEndpoint::class)->setPublic(true);
@@ -379,6 +380,8 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\BlockEmailContentDetector::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\DependencyNotice::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypesController::class)->setPublic(true);
+    $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\AutomationEmailContextProvider::class)->setPublic(true);
+    $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\AutomationEmailPreviewOrderProvider::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes\PoweredByMailpoet::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Coupons\CouponBlockDetector::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Coupons\CouponBlockFailureTranslator::class)->setPublic(true);
@@ -389,6 +392,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\Patterns\PatternsController::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\PersonalizationTags\Link::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\PersonalizationTags\LinksToShortcodesConvertor::class)->setPublic(true);
+    $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\PersonalizationTags\OrderReviewUrl::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\PersonalizationTags\Site::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\PersonalizationTags\Subscriber::class)->setPublic(true);
     $container->autowire(\MailPoet\EmailEditor\Integrations\MailPoet\PersonalizationTagManager::class)->setPublic(true);
@@ -440,6 +444,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     // Logging
     $container->autowire(\MailPoet\Logging\LoggerFactory::class)->setPublic(true);
     $container->autowire(\MailPoet\Logging\LogRepository::class)->setPublic(true);
+    $container->autowire(\MailPoet\Logging\LogListingRepository::class)->setPublic(true);
     // Notices
     $container->autowire(\MailPoet\Util\Notices\PermanentNotices::class);
     $container->autowire(\MailPoet\Util\Notices\PendingApprovalNotice::class)->setPublic(true);
@@ -487,6 +492,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Subscribers\SubscriberLimitNotificationMailer::class)->setPublic(true);
     $container->autowire(\MailPoet\Subscribers\SubscriberLimitNotificationScheduler::class)->setPublic(true);
     $container->autowire(\MailPoet\Subscribers\ConfirmationEmailMailer::class)->setPublic(true);
+    $container->autowire(\MailPoet\Subscribers\BulkActionController::class)->setPublic(true);
     $container->autowire(\MailPoet\Subscribers\BulkConfirmationEmailResender::class)->setPublic(true);
     $container->autowire(\MailPoet\Subscribers\RequiredCustomFieldValidator::class)->setPublic(true);
     $container->autowire(\MailPoet\Subscribers\SubscriberActions::class)->setPublic(true);
@@ -597,6 +603,8 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Newsletter\DynamicProducts::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\NewsletterSaveController::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\NewsletterDeleteController::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\BulkActionController::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\StatusController::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\NewsletterResendController::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\NewsletterPostsRepository::class)->setPublic(true);
     $container->autowire(\MailPoet\Newsletter\NewslettersRepository::class)->setPublic(true);
@@ -709,6 +717,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Captcha\CaptchaRenderer::class)->setPublic(true);
     $container->autowire(\MailPoet\Captcha\CaptchaHooks::class)->setPublic(true);
     $container->autowire(\MailPoet\Captcha\CaptchaPhrase::class);
+    $container->autowire(\MailPoet\Captcha\BehavioralSignals::class);
     $container->autowire(\MailPoet\Captcha\Validator\CaptchaValidator::class)->setPublic(true);
     $container->autowire(\MailPoet\Captcha\Validator\RecaptchaValidator::class)->setPublic(true);
 
@@ -755,6 +764,22 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Segments\RestApi\Endpoints\SegmentsBulkActionEndpoint::class)->setPublic(true);
     $container->autowire(\MailPoet\Segments\RestApi\Endpoints\DynamicSegmentsListingEndpoint::class)->setPublic(true);
     $container->autowire(\MailPoet\Segments\RestApi\Endpoints\DynamicSegmentsBulkActionEndpoint::class)->setPublic(true);
+    // Logs REST API
+    $container->autowire(\MailPoet\Logging\RestApi\Api::class)->setPublic(true);
+    $container->autowire(\MailPoet\Logging\RestApi\Endpoints\LogsListingEndpoint::class)->setPublic(true);
+    // Subscribers REST API
+    $container->autowire(\MailPoet\Subscribers\RestApi\Api::class)->setPublic(true);
+    $container->autowire(\MailPoet\Subscribers\RestApi\Endpoints\SubscribersListingEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Subscribers\RestApi\Endpoints\SubscribersBulkActionEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Subscribers\RestApi\Endpoints\SubscriberConfirmationEmailEndpoint::class)->setPublic(true);
+    // Newsletters REST API
+    $container->autowire(\MailPoet\Newsletter\RestApi\Api::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\RestApi\Endpoints\NewslettersListingEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\RestApi\Endpoints\NewslettersBulkActionEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\RestApi\Endpoints\NewsletterDuplicateEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\RestApi\Endpoints\NewsletterStatusEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\RestApi\Endpoints\SendingStatusListingEndpoint::class)->setPublic(true);
+    $container->autowire(\MailPoet\Newsletter\RestApi\Endpoints\SendingStatusResendEndpoint::class)->setPublic(true);
     // CAPTCHA
     $container->autowire(\MailPoet\Captcha\ReCaptchaHooks::class)->setPublic(true);
     $container->autowire(\MailPoet\Captcha\ReCaptchaValidator::class)->setPublic(true);

@@ -7428,10 +7428,6 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/API/JSON/v1/SendingQueue.php'
  ),
- 'MailPoet\\API\\JSON\\v1\\SendingTaskSubscribers' => array(
- 'version' => 'dev-trunk',
- 'path' => $baseDir . '/lib/API/JSON/v1/SendingTaskSubscribers.php'
- ),
  'MailPoet\\API\\JSON\\v1\\Services' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/API/JSON/v1/Services.php'
@@ -7531,6 +7527,18 @@ return array(
  'MailPoet\\API\\REST\\Response' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/API/REST/Response.php'
+ ),
+ 'MailPoet\\Abilities\\Abilities' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Abilities/Abilities.php'
+ ),
+ 'MailPoet\\Abilities\\WooCommerceAutomationTemplates' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Abilities/WooCommerceAutomationTemplates.php'
+ ),
+ 'MailPoet\\Abilities\\WooCommerceMarketingStatus' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Abilities/WooCommerceMarketingStatus.php'
  ),
  'MailPoet\\AccessDeniedException' => array(
  'version' => 'dev-trunk',
@@ -7852,6 +7860,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Automation/Engine/Endpoints/Automations/AutomationTemplatesGetEndpoint.php'
  ),
+ 'MailPoet\\Automation\\Engine\\Endpoints\\Automations\\AutomationVersionsGetEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Automation/Engine/Endpoints/Automations/AutomationVersionsGetEndpoint.php'
+ ),
  'MailPoet\\Automation\\Engine\\Endpoints\\Automations\\AutomationsCreateFromTemplateEndpoint' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Automation/Engine/Endpoints/Automations/AutomationsCreateFromTemplateEndpoint.php'
@@ -8099,6 +8111,10 @@ return array(
  'MailPoet\\Automation\\Integrations\\Core\\Filters\\StringFilter' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Automation/Integrations/Core/Filters/StringFilter.php'
+ ),
+ 'MailPoet\\Automation\\Integrations\\MailPoet\\Actions\\AutomationSendEmailSubjectResolver' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Automation/Integrations/MailPoet/Actions/AutomationSendEmailSubjectResolver.php'
  ),
  'MailPoet\\Automation\\Integrations\\MailPoet\\Actions\\SendEmailAction' => array(
  'version' => 'dev-trunk',
@@ -8415,6 +8431,10 @@ return array(
  'MailPoet\\Cache\\TransientCache' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cache/TransientCache.php'
+ ),
+ 'MailPoet\\Captcha\\BehavioralSignals' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Captcha/BehavioralSignals.php'
  ),
  'MailPoet\\Captcha\\CaptchaConstants' => array(
  'version' => 'dev-trunk',
@@ -9392,6 +9412,14 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Doctrine/WPDB/Statement.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\AutomationEmailContextProvider' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/AutomationEmailContextProvider.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\AutomationEmailPreviewOrderProvider' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/AutomationEmailPreviewOrderProvider.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\BlockEmailContentDetector' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/BlockEmailContentDetector.php'
@@ -9496,6 +9524,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbstractAbandonedCartPattern.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\AskForReviewPostPurchasePattern' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\EducationalCampaignPattern' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php'
@@ -9567,6 +9599,10 @@ return array(
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\LinksToShortcodesConvertor' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/LinksToShortcodesConvertor.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\OrderReviewUrl' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/OrderReviewUrl.php'
  ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\Site' => array(
  'version' => 'dev-trunk',
@@ -10180,6 +10216,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Logging/LogHandler.php'
  ),
+ 'MailPoet\\Logging\\LogListingRepository' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Logging/LogListingRepository.php'
+ ),
  'MailPoet\\Logging\\LogRepository' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Logging/LogRepository.php'
@@ -10191,6 +10231,14 @@ return array(
  'MailPoet\\Logging\\PluginVersionProcessor' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Logging/PluginVersionProcessor.php'
+ ),
+ 'MailPoet\\Logging\\RestApi\\Api' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Logging/RestApi/Api.php'
+ ),
+ 'MailPoet\\Logging\\RestApi\\Endpoints\\LogsListingEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Logging/RestApi/Endpoints/LogsListingEndpoint.php'
  ),
  'MailPoet\\Mailer\\Mailer' => array(
  'version' => 'dev-trunk',
@@ -10560,6 +10608,14 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Newsletter/BlockPostQuery.php'
  ),
+ 'MailPoet\\Newsletter\\BulkActionController' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/BulkActionController.php'
+ ),
+ 'MailPoet\\Newsletter\\BulkActionException' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/BulkActionException.php'
+ ),
  'MailPoet\\Newsletter\\DynamicProducts' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Newsletter/DynamicProducts.php'
@@ -10748,6 +10804,34 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Newsletter/Renderer/StylesHelper.php'
  ),
+ 'MailPoet\\Newsletter\\RestApi\\Api' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/RestApi/Api.php'
+ ),
+ 'MailPoet\\Newsletter\\RestApi\\Endpoints\\NewsletterDuplicateEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/RestApi/Endpoints/NewsletterDuplicateEndpoint.php'
+ ),
+ 'MailPoet\\Newsletter\\RestApi\\Endpoints\\NewsletterStatusEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/RestApi/Endpoints/NewsletterStatusEndpoint.php'
+ ),
+ 'MailPoet\\Newsletter\\RestApi\\Endpoints\\NewslettersBulkActionEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/RestApi/Endpoints/NewslettersBulkActionEndpoint.php'
+ ),
+ 'MailPoet\\Newsletter\\RestApi\\Endpoints\\NewslettersListingEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/RestApi/Endpoints/NewslettersListingEndpoint.php'
+ ),
+ 'MailPoet\\Newsletter\\RestApi\\Endpoints\\SendingStatusListingEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/RestApi/Endpoints/SendingStatusListingEndpoint.php'
+ ),
+ 'MailPoet\\Newsletter\\RestApi\\Endpoints\\SendingStatusResendEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/RestApi/Endpoints/SendingStatusResendEndpoint.php'
+ ),
  'MailPoet\\Newsletter\\Scheduler\\AutomaticEmailScheduler' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Newsletter/Scheduler/AutomaticEmailScheduler.php'
@@ -10868,6 +10952,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Newsletter/Statistics/WooCommerceRevenue.php'
  ),
+ 'MailPoet\\Newsletter\\StatusController' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Newsletter/StatusController.php'
+ ),
  'MailPoet\\Newsletter\\Url' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Newsletter/Url.php'
@@ -10987,6 +11075,10 @@ return array(
  'MailPoet\\Segments\\DynamicSegments\\Filters\\EmailActionClickAny' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Segments/DynamicSegments/Filters/EmailActionClickAny.php'
+ ),
+ 'MailPoet\\Segments\\DynamicSegments\\Filters\\EmailLinkFilter' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Segments/DynamicSegments/Filters/EmailLinkFilter.php'
  ),
  'MailPoet\\Segments\\DynamicSegments\\Filters\\EmailOpensAbsoluteCountAction' => array(
  'version' => 'dev-trunk',
@@ -11336,6 +11428,14 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Statistics/UserAgentsRepository.php'
  ),
+ 'MailPoet\\Subscribers\\BulkActionController' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/BulkActionController.php'
+ ),
+ 'MailPoet\\Subscribers\\BulkActionException' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/BulkActionException.php'
+ ),
  'MailPoet\\Subscribers\\BulkConfirmationEmailResender' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Subscribers/BulkConfirmationEmailResender.php'
@@ -11419,6 +11519,22 @@ return array(
  'MailPoet\\Subscribers\\RequiredCustomFieldValidator' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Subscribers/RequiredCustomFieldValidator.php'
+ ),
+ 'MailPoet\\Subscribers\\RestApi\\Api' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/RestApi/Api.php'
+ ),
+ 'MailPoet\\Subscribers\\RestApi\\Endpoints\\SubscriberConfirmationEmailEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/RestApi/Endpoints/SubscriberConfirmationEmailEndpoint.php'
+ ),
+ 'MailPoet\\Subscribers\\RestApi\\Endpoints\\SubscribersBulkActionEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php'
+ ),
+ 'MailPoet\\Subscribers\\RestApi\\Endpoints\\SubscribersListingEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/RestApi/Endpoints/SubscribersListingEndpoint.php'
  ),
  'MailPoet\\Subscribers\\Source' => array(
  'version' => 'dev-trunk',

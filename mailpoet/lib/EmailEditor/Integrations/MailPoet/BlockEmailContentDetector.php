@@ -35,9 +35,7 @@ class BlockEmailContentDetector {
     $this->wp = $wp;
   }
 
-  /**
-   * @param \WP_Post|string $postOrContent
-   */
+  /** @param \WP_Post|string $postOrContent */
   public function hasMeaningfulContent($postOrContent): bool {
     if ($postOrContent instanceof \WP_Post) {
       $content = (string)$postOrContent->post_content; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps

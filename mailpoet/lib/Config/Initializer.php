@@ -8,6 +8,7 @@ if (!defined('ABSPATH')) exit;
 use Automattic\WooCommerce\EmailEditor\Bootstrap as EmailEditorBootstrap;
 use Automattic\WooCommerce\EmailEditor\Email_Editor_Container;
 use Automattic\WooCommerce\EmailEditor\Engine\Logger\Email_Editor_Logger;
+use MailPoet\Abilities\Abilities;
 use MailPoet\API\JSON\API;
 use MailPoet\API\REST\API as RestApi;
 use MailPoet\AutomaticEmails\AutomaticEmails;
@@ -23,7 +24,9 @@ use MailPoet\EmailEditor\Integrations\MailPoet\EmailEditor as MailpoetEmailEdito
 use MailPoet\EmailEditor\Integrations\MailPoet\Logger;
 use MailPoet\Form\RestApi\Api as FormsRestApi;
 use MailPoet\InvalidStateException;
+use MailPoet\Logging\RestApi\Api as LogsRestApi;
 use MailPoet\Migrator\Cli as MigratorCli;
+use MailPoet\Newsletter\RestApi\Api as NewslettersRestApi;
 use MailPoet\Newsletter\Sharing\PublicEmailRoute;
 use MailPoet\PostEditorBlocks\PostEditorBlock;
 use MailPoet\PostEditorBlocks\WooCommerceBlocksIntegration;
@@ -31,6 +34,7 @@ use MailPoet\Router;
 use MailPoet\Segments\RestApi\Api as SegmentsRestApi;
 use MailPoet\Settings\SettingsController;
 use MailPoet\Statistics\Track\SubscriberActivityTracker;
+use MailPoet\Subscribers\RestApi\Api as SubscribersRestApi;
 use MailPoet\Tags\RestApi\Api as TagsRestApi;
 use MailPoet\Util\ConflictResolver;
 use MailPoet\Util\LegacyDatabase;
@@ -132,6 +136,15 @@ class Initializer {
   /** @var SegmentsRestApi */
   private $segmentsRestApi;
 
+  /** @var LogsRestApi */
+  private $logsRestApi;
+
+  /** @var SubscribersRestApi */
+  private $subscribersRestApi;
+
+  /** @var NewslettersRestApi */
+  private $newslettersRestApi;
+
   /** @var MailPoetIntegration */
   private $automationMailPoetIntegration;
 
@@ -197,6 +210,9 @@ class Initializer {
     CustomFieldsRestApi $customFieldsRestApi,
     FormsRestApi $formsRestApi,
     SegmentsRestApi $segmentsRestApi,
+    LogsRestApi $logsRestApi,
+    SubscribersRestApi $subscribersRestApi,
+    NewslettersRestApi $newslettersRestApi,
     PublicEmailRoute $publicEmailRoute
   ) {
     $this->rendererFactory = $rendererFactory;
@@ -234,6 +250,9 @@ class Initializer {
     $this->customFieldsRestApi = $customFieldsRestApi;
     $this->formsRestApi = $formsRestApi;
     $this->segmentsRestApi = $segmentsRestApi;
+    $this->logsRestApi = $logsRestApi;
+    $this->subscribersRestApi = $subscribersRestApi;
+    $this->newslettersRestApi = $newslettersRestApi;
     $this->publicEmailRoute = $publicEmailRoute;
 
     $emailEditorContainer = Email_Editor_Container::container();
@@ -270,6 +289,7 @@ class Initializer {
     );
 
     $this->emailEditorBootstrap->init();
+    $this->setupAbilities();
 
     $this->wpFunctions->addAction('activated_plugin', [
       new PluginActivatedHook(new DeferredAdminNotices),
@@ -344,6 +364,11 @@ class Initializer {
     $this->hooks->initEarlyHooks();
   }
 
+  private function setupAbilities(): void {
+    require_once __DIR__ . '/../Abilities/Abilities.php';
+    Abilities::init();
+  }
+
   public function runActivator() {
     try {
       $this->wpFunctions->addOption(self::PLUGIN_ACTIVATED, true); // used in afterPluginActivation
@@ -406,6 +431,9 @@ class Initializer {
       $this->customFieldsRestApi->initialize();
       $this->formsRestApi->initialize();
       $this->segmentsRestApi->initialize();
+      $this->logsRestApi->initialize();
+      $this->subscribersRestApi->initialize();
+      $this->newslettersRestApi->initialize();
       $this->blockTypesController->initialize();
       $this->wpFunctions->doAction('mailpoet_initialized', MAILPOET_VERSION);
     } catch (InvalidStateException $e) {
