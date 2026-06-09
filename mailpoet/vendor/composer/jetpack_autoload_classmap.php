@@ -9516,6 +9516,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartPattern.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\AbandonedCartReminderPattern' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartReminderPattern.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\AbandonedCartWithDiscountPattern' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php'
@@ -12211,6 +12215,10 @@ return array(
  'MailPoet\\WooCommerce\\MultichannelMarketing\\MPMarketingChannelDataController' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/WooCommerce/MultichannelMarketing/MPMarketingChannelDataController.php'
+ ),
+ 'MailPoet\\WooCommerce\\NonPersistablePreviewData' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/WooCommerce/NonPersistablePreviewData.php'
  ),
  'MailPoet\\WooCommerce\\RandomCouponCodeGenerator' => array(
  'version' => 'dev-trunk',

@@ -115,7 +115,7 @@ class Manage {
             && $subscriber instanceof SubscriberEntity
             && $subscriber->getStatus() === SubscriberEntity::STATUS_SUBSCRIBED
           );
-          $subscriber = $this->subscriberSaveController->createOrUpdate($subscriberData, $subscriber);
+          $subscriber = $this->subscriberSaveController->createOrUpdate($this->filterToEditableFields($subscriberData), $subscriber);
           if ($shouldTrackUnsubscribe) {
             $this->unsubscribesTracker->track(
               (int)$subscriber->getId(),
@@ -247,6 +247,20 @@ class Manage {
       $isGlobalResubscribe
         ? $this->getCurrentSubscribedSegmentIds($subscriber)
         : array_diff($subscribeIds, $currentSegmentIds)
+    );
+  }
+
+  /**
+   * The manage-subscription form only edits the subscriber's name, email and
+   * global status. Subscription choices and custom fields are handled
+   * separately. Keep only those fields when saving the subscriber so any other
+   * submitted key is ignored. `status` is already validated by
+   * hasInvalidStatus().
+   */
+  private function filterToEditableFields(array $subscriberData): array {
+    return array_intersect_key(
+      $subscriberData,
+      array_flip(['email', 'first_name', 'last_name', 'status'])
     );
   }
 

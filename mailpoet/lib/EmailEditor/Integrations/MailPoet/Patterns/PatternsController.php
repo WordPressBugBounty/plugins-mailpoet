@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) exit;
 
 
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartPattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartReminderPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartWithDiscountPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AskForReviewPostPurchasePattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\EducationalCampaignPattern;
@@ -51,6 +52,12 @@ class PatternsController {
   /**
    * Get the content of a pattern by name.
    *
+   * Returns the email content (get_email_content()), which uses dynamic blocks
+   * such as the WooCommerce product collection bound to the customer's cart
+   * instead of the static placeholders shown in the editor's pattern preview.
+   * For patterns without an email-specific variant this is identical to the
+   * preview content.
+   *
    * @param string $patternName The pattern name (e.g., 'welcome-email-content')
    * @return string|null The pattern content or null if not found
    */
@@ -63,12 +70,20 @@ class PatternsController {
         $patternData = $this->wp->applyFilters('mailpoet_email_editor_integration_register_pattern', [
           'name' => $pattern->get_namespace() . '/' . $pattern->get_name(),
           'properties' => $pattern->get_properties(),
+          'email_content' => $pattern->get_email_content(),
         ], $pattern);
 
-        if (!is_array($patternData) || !isset($patternData['properties']) || !is_array($patternData['properties'])) {
+        if (!is_array($patternData)) {
           return null;
         }
-        $content = $patternData['properties']['content'] ?? null;
+
+        $emailContent = $patternData['email_content'] ?? null;
+        if (is_string($emailContent) && $emailContent !== '') {
+          return $emailContent;
+        }
+
+        $properties = $patternData['properties'] ?? null;
+        $content = is_array($properties) ? ($properties['content'] ?? null) : null;
         return is_string($content) ? $content : null;
       }
     }
@@ -99,6 +114,7 @@ class PatternsController {
         new PostPurchaseThankYouPattern($this->cdnAssetUrl),
         new ProductPurchaseFollowUpPattern($this->cdnAssetUrl),
         new AbandonedCartPattern($this->cdnAssetUrl),
+        new AbandonedCartReminderPattern($this->cdnAssetUrl),
       ]);
 
       if ($this->wooCommerceHelper->wcSupportsOrderReviewUrl()) {
