@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.29.0\n"
+"Project-Id-Version: MailPoet 5.30.0\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-09T08:44:24+00:00\n"
+"POT-Creation-Date: 2026-06-16T03:35:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -248,7 +248,7 @@ msgstr ""
 #: views/subscription/admin_user_status_field.html:23
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:120
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:133
-#: lib/Subscribers/SubscriberListingRepository.php:842
+#: lib/Subscribers/SubscriberListingRepository.php:852
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:240
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
@@ -261,7 +261,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:35
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:128
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:132
-#: lib/Subscribers/SubscriberListingRepository.php:852
+#: lib/Subscribers/SubscriberListingRepository.php:862
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:248
 #: assets/dist/js/admin.js:2
 msgid "Bounced"
@@ -321,7 +321,7 @@ msgid "You have reached %s% of the free version’s subscriber limit."
 msgstr ""
 
 #: views/form/templatesLegacy/blocks/date_days.hbs:3
-#: views/form/editor.html:141
+#: views/form/editor.html:143
 #: views/subscribers/subscribers.html:89
 #: lib/Form/Block/Date.php:71
 #: lib/Form/Block/Date.php:213
@@ -329,7 +329,7 @@ msgid "Day"
 msgstr ""
 
 #: views/form/templatesLegacy/blocks/date_months.hbs:3
-#: views/form/editor.html:142
+#: views/form/editor.html:144
 #: views/subscribers/subscribers.html:88
 #: lib/Form/Block/Date.php:80
 #: lib/Form/Block/Date.php:147
@@ -337,7 +337,7 @@ msgid "Month"
 msgstr ""
 
 #: views/form/templatesLegacy/blocks/date_years.hbs:5
-#: views/form/editor.html:143
+#: views/form/editor.html:145
 #: views/subscribers/subscribers.html:87
 #: lib/Form/Block/Date.php:89
 #: lib/Form/Block/Date.php:105
@@ -351,13 +351,13 @@ msgid "Preselect today's date:"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/date_formats.hbs:9
-#: views/form/editor.html:139
+#: views/form/editor.html:141
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:310
 msgid "Order"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/date_types.hbs:2
-#: views/form/editor.html:138
+#: views/form/editor.html:140
 msgid "Type of date"
 msgstr ""
 
@@ -366,7 +366,7 @@ msgid "Number of lines:"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/field.hbs:61
-#: views/form/editor.html:179
+#: views/form/editor.html:181
 msgid "Automatically add paragraphs"
 msgstr ""
 
@@ -385,31 +385,31 @@ msgid "Please specify a type."
 msgstr ""
 
 #: views/form/templatesLegacy/settings/field_form.hbs:21
-#: views/form/editor.html:125
+#: views/form/editor.html:127
 msgid "Text Input"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/field_form.hbs:25
-#: views/form/editor.html:126
+#: views/form/editor.html:128
 msgid "Text Area"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/field_form.hbs:29
-#: views/form/editor.html:127
+#: views/form/editor.html:129
 #: assets/dist/js/commons.js:2
 #: assets/dist/js/custom_fields.js:1
 msgid "Radio buttons"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/field_form.hbs:33
-#: views/form/editor.html:128
+#: views/form/editor.html:130
 #: assets/dist/js/commons.js:2
 #: assets/dist/js/custom_fields.js:1
 msgid "Checkbox"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/field_form.hbs:41
-#: views/form/editor.html:137
+#: views/form/editor.html:139
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:62
 #: assets/dist/js/automation_analytics.js:1
 #: assets/dist/js/commons.js:2
@@ -449,7 +449,7 @@ msgid "Done"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/field_form.hbs:37
-#: views/form/editor.html:129
+#: views/form/editor.html:131
 msgctxt "Form input type"
 msgid "Select"
 msgstr ""
@@ -490,62 +490,62 @@ msgid "Validate for:"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/validate.hbs:6
-#: views/form/editor.html:150
+#: views/form/editor.html:152
 msgid "Nothing"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/validate.hbs:11
-#: views/form/editor.html:151
+#: views/form/editor.html:153
 #: assets/dist/js/commons.js:2
 msgid "Numbers only"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/validate.hbs:16
-#: views/form/editor.html:152
+#: views/form/editor.html:154
 msgid "Alphanumerical"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/validate.hbs:21
-#: views/form/editor.html:153
+#: views/form/editor.html:155
 msgid "Phone number, (+,-,#,(,) and spaces allowed)"
 msgstr ""
 
 #: views/form/templatesLegacy/settings/values.hbs:4
-#: views/form/editor.html:154
+#: views/form/editor.html:156
 msgid "Add item"
 msgstr ""
 
-#: views/form/editor.html:42
+#: views/form/editor.html:44
 msgid "Display the form"
 msgstr ""
 
-#: views/form/editor.html:43
+#: views/form/editor.html:45
 msgid "Enable"
 msgstr ""
 
-#: views/form/editor.html:45
+#: views/form/editor.html:47
 #: views/segments/translations.html:40
 #: views/subscribers/subscribers.html:91
 msgid "Back"
 msgstr ""
 
-#: views/form/editor.html:46
+#: views/form/editor.html:48
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:148
 msgid "Form"
 msgstr ""
 
-#: views/form/editor.html:48
+#: views/form/editor.html:50
 #: views/newsletter/templates/blocks/social/settings.hbs:27
 #: views/newsletter/templates/components/sidebar/styles.hbs:2
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:4
 msgid "Styles"
 msgstr ""
 
-#: views/form/editor.html:49
+#: views/form/editor.html:51
 msgid "Color"
 msgstr ""
 
-#: views/form/editor.html:50
+#: views/form/editor.html:52
 #: views/newsletter/templates/blocks/button/settings.hbs:78
 #: views/newsletter/templates/blocks/coupon/settings.hbs:62
 #: views/newsletter/templates/blocks/divider/settings.hbs:28
@@ -555,207 +555,207 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: views/form/editor.html:51
+#: views/form/editor.html:53
 msgid "Background Image"
 msgstr ""
 
-#: views/form/editor.html:52
+#: views/form/editor.html:54
 msgid "Select Image…"
 msgstr ""
 
-#: views/form/editor.html:53
+#: views/form/editor.html:55
 msgid "Font Size"
 msgstr ""
 
-#: views/form/editor.html:54
+#: views/form/editor.html:56
 msgid "Font"
 msgstr ""
 
-#: views/form/editor.html:55
+#: views/form/editor.html:57
 msgid "Inherit from theme"
 msgstr ""
 
-#: views/form/editor.html:56
+#: views/form/editor.html:58
 msgid "Inherit style from theme"
 msgstr ""
 
-#: views/form/editor.html:68
+#: views/form/editor.html:70
 msgid "Apply styles to all inputs"
 msgstr ""
 
-#: views/form/editor.html:75
+#: views/form/editor.html:77
 msgid "Form saved."
 msgstr ""
 
-#: views/form/editor.html:76
+#: views/form/editor.html:78
 msgid "Cookies reset — you will see all your dismissed popup forms again."
 msgstr ""
 
-#: views/form/editor.html:77
+#: views/form/editor.html:79
 msgid "Custom field saved."
 msgstr ""
 
-#: views/form/editor.html:78
+#: views/form/editor.html:80
 msgid "Display your form in a fixed horizontal bar at the top or bottom of posts or pages."
 msgstr ""
 
-#: views/form/editor.html:79
+#: views/form/editor.html:81
 msgid "Display your form in a slide–in form on top of your page content."
 msgstr ""
 
-#: views/form/editor.html:80
+#: views/form/editor.html:82
 msgid "Display your form in a pop-up window."
 msgstr ""
 
-#: views/form/editor.html:81
+#: views/form/editor.html:83
 msgid "How should this popup open?"
 msgstr ""
 
-#: views/form/editor.html:82
+#: views/form/editor.html:84
 msgid "On page load"
 msgstr ""
 
-#: views/form/editor.html:83
+#: views/form/editor.html:85
 msgid "On click"
 msgstr ""
 
-#: views/form/editor.html:84
+#: views/form/editor.html:86
 msgid "Click trigger selector"
 msgstr ""
 
-#: views/form/editor.html:85
+#: views/form/editor.html:87
 msgid "Examples: #signup-button, .open-newsletter-popup, a[href=\"#newsletter\"]"
 msgstr ""
 
-#: views/form/editor.html:86
+#: views/form/editor.html:88
 msgid "Delay and Exit-intent display are disabled in \"On click\" mode."
 msgstr ""
 
-#: views/form/editor.html:87
+#: views/form/editor.html:89
 msgid "Display on exit-intent"
 msgstr ""
 
-#: views/form/editor.html:88
+#: views/form/editor.html:90
 msgid "Show the form immediately if the visitor attempts to leave the site."
 msgstr ""
 
-#: views/form/editor.html:89
+#: views/form/editor.html:91
 msgid "Exit-intent display"
 msgstr ""
 
-#: views/form/editor.html:90
+#: views/form/editor.html:92
 msgid "This form placement allows you to add this form at the end of all the pages or posts, below the content."
 msgstr ""
 
-#: views/form/editor.html:93
+#: views/form/editor.html:95
 msgid "Display on the homepage"
 msgstr ""
 
-#: views/form/editor.html:107
+#: views/form/editor.html:109
 msgid "Show animation on display"
 msgstr ""
 
-#: views/form/editor.html:109
+#: views/form/editor.html:111
 msgid "You can add this form to a [link]widget area of your theme[/link] (new tab)."
 msgstr ""
 
-#: views/form/editor.html:110
+#: views/form/editor.html:112
 msgid "You can add this form to your site using the [link]site editor[/link] (new tab)."
 msgstr ""
 
-#: views/form/editor.html:111
+#: views/form/editor.html:113
 msgid "You can also use a block on any page or post, or this shortcode if you prefer [shortcode]."
 msgstr ""
 
-#: views/form/editor.html:112
+#: views/form/editor.html:114
 msgid "When needed, use [link]PHP[/link] or an [link]iFrame[/link] HTML element."
 msgstr ""
 
-#: views/form/editor.html:113
+#: views/form/editor.html:115
 msgid "This form adds the subscribers to these lists"
 msgstr ""
 
-#: views/form/editor.html:114
+#: views/form/editor.html:116
 msgid "After submit…"
 msgstr ""
 
-#: views/form/editor.html:115
+#: views/form/editor.html:117
 msgid "Show message"
 msgstr ""
 
-#: views/form/editor.html:116
+#: views/form/editor.html:118
 msgid "Go to Page"
 msgstr ""
 
-#: views/form/editor.html:117
+#: views/form/editor.html:119
 #: assets/dist/js/admin.js:2
 msgid "Please select a list"
 msgstr ""
 
-#: views/form/editor.html:118
+#: views/form/editor.html:120
 msgid "Fields"
 msgstr ""
 
-#: views/form/editor.html:119
-#: lib/Config/Menu.php:397
-#: lib/Config/Menu.php:398
+#: views/form/editor.html:121
+#: lib/Config/Menu.php:373
+#: lib/Config/Menu.php:374
 #: assets/dist/js/custom_fields.js:1
 msgid "Custom Fields"
 msgstr ""
 
-#: views/form/editor.html:120
+#: views/form/editor.html:122
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:1
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:4
 msgid "Layout"
 msgstr ""
 
-#: views/form/editor.html:121
+#: views/form/editor.html:123
 msgid "Number of lines"
 msgstr ""
 
-#: views/form/editor.html:124
+#: views/form/editor.html:126
 msgid "This field will be deleted for all your subscribers. Are you sure?"
 msgstr ""
 
-#: views/form/editor.html:131
+#: views/form/editor.html:133
 msgid "Display on posts with these categories"
 msgstr ""
 
-#: views/form/editor.html:132
+#: views/form/editor.html:134
 msgid "Display on all post/product category archives"
 msgstr ""
 
-#: views/form/editor.html:133
+#: views/form/editor.html:135
 msgid "Display on posts with these tags"
 msgstr ""
 
-#: views/form/editor.html:134
+#: views/form/editor.html:136
 msgid "Display on all post/product tag archives"
 msgstr ""
 
-#: views/form/editor.html:135
+#: views/form/editor.html:137
 msgid "Select specific tags"
 msgstr ""
 
-#: views/form/editor.html:136
+#: views/form/editor.html:138
 msgid "Select specific categories"
 msgstr ""
 
-#: views/form/editor.html:140
+#: views/form/editor.html:142
 msgid "Preselect today’s date"
 msgstr ""
 
-#: views/form/editor.html:149
+#: views/form/editor.html:151
 #: assets/dist/js/commons.js:2
 msgid "Validate for"
 msgstr ""
 
-#: views/form/editor.html:155
+#: views/form/editor.html:157
 #: assets/dist/js/commons.js:2
 msgid "Mandatory field"
 msgstr ""
 
-#: views/form/editor.html:156
+#: views/form/editor.html:158
 #: views/segments/translations.html:89
 #: views/subscribers/subscribers.html:28
 #: lib/API/MP/v1/CustomFields.php:35
@@ -767,11 +767,11 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
-#: views/form/editor.html:157
+#: views/form/editor.html:159
 msgid "Input field used to catch subscribers’ first names."
 msgstr ""
 
-#: views/form/editor.html:158
+#: views/form/editor.html:160
 #: views/segments/translations.html:90
 #: views/subscribers/subscribers.html:29
 #: lib/API/MP/v1/CustomFields.php:43
@@ -783,32 +783,32 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: views/form/editor.html:159
+#: views/form/editor.html:161
 msgid "Input field used to catch subscribers’ last names."
 msgstr ""
 
-#: views/form/editor.html:160
+#: views/form/editor.html:162
 msgid "List selection"
 msgstr ""
 
-#: views/form/editor.html:161
+#: views/form/editor.html:163
 msgid "Allow your subscribers to select which list(s) they want to subscribe to."
 msgstr ""
 
-#: views/form/editor.html:162
+#: views/form/editor.html:164
 msgid "Select list(s):"
 msgstr ""
 
-#: views/form/editor.html:163
+#: views/form/editor.html:165
 #: views/subscribers/importExport/import.html:57
 msgid "Please select at least one list"
 msgstr ""
 
-#: views/form/editor.html:164
+#: views/form/editor.html:166
 msgid "Select the list that you want to add"
 msgstr ""
 
-#: views/form/editor.html:165
+#: views/form/editor.html:167
 #: views/newsletter/editor.html:1307
 #: views/newsletter/editor.html:1308
 #: views/segments/translations.html:57
@@ -831,433 +831,433 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: views/form/editor.html:166
+#: views/form/editor.html:168
 msgid "Input field used to catch subscribers’ email addresses."
 msgstr ""
 
-#: views/form/editor.html:167
+#: views/form/editor.html:169
 msgid "Submit button"
 msgstr ""
 
-#: views/form/editor.html:168
+#: views/form/editor.html:170
 msgid "Button used to submit the form."
 msgstr ""
 
-#: views/form/editor.html:170
+#: views/form/editor.html:172
 msgid "Email input or submit is missing. Try reloading the form editor."
 msgstr ""
 
-#: views/form/editor.html:172
+#: views/form/editor.html:174
 msgid "Display label within input"
 msgstr ""
 
-#: views/form/editor.html:175
+#: views/form/editor.html:177
 msgid "Custom HTML"
 msgstr ""
 
-#: views/form/editor.html:176
+#: views/form/editor.html:178
 msgid "Display custom text or HTML code in your form."
 msgstr ""
 
-#: views/form/editor.html:177
+#: views/form/editor.html:179
 msgid "Subscribe to our newsletter and join [mailpoet_subscribers_count] other subscribers."
 msgstr ""
 
-#: views/form/editor.html:180
+#: views/form/editor.html:182
 msgid "Create Custom Field"
 msgstr ""
 
-#: views/form/editor.html:181
+#: views/form/editor.html:183
 msgid "Create a new custom field for your subscribers."
 msgstr ""
 
-#: views/form/editor.html:182
+#: views/form/editor.html:184
 msgid "New Custom Field."
 msgstr ""
 
-#: views/form/editor.html:186
+#: views/form/editor.html:188
 msgid "The custom field [name] already exists. Please choose another name."
 msgstr ""
 
-#: views/form/editor.html:187
+#: views/form/editor.html:189
 msgid "This is what the success message looks like."
 msgstr ""
 
-#: views/form/editor.html:188
+#: views/form/editor.html:190
 msgid "This is what the error message looks like."
 msgstr ""
 
-#: views/form/editor.html:189
+#: views/form/editor.html:191
 msgid "Form Preview"
 msgstr ""
 
-#: views/form/editor.html:190
+#: views/form/editor.html:192
 msgid "Font Family"
 msgstr ""
 
-#: views/form/editor.html:191
+#: views/form/editor.html:193
 msgid "Theme’s default fonts"
 msgstr ""
 
-#: views/form/editor.html:209
+#: views/form/editor.html:211
 msgid "Psssst. We try our best to show you what the widget might look like, but better check the final result on your website."
 msgstr ""
 
-#: views/form/editor.html:210
+#: views/form/editor.html:212
 msgid "Close Button Style"
 msgstr ""
 
-#: views/form/editor.html:211
+#: views/form/editor.html:213
 msgid "A video tour of the form editor"
 msgstr ""
 
-#: views/form/editor.html:212
+#: views/form/editor.html:214
 msgid "Please save the form first!"
 msgstr ""
 
-#: views/form/editor.html:213
+#: views/form/editor.html:215
 #: views/subscribers/importExport/import.html:147
 #: views/subscribers/subscribers.html:125
 #: assets/dist/js/tags.js:1
 msgid "Add new tag"
 msgstr ""
 
-#: views/form/editor.html:44
+#: views/form/editor.html:46
 msgctxt "A placeholder for form name input"
 msgid "Add form name"
 msgstr ""
 
-#: views/form/editor.html:47
+#: views/form/editor.html:49
 msgctxt "A settings section heading"
 msgid "Settings"
 msgstr ""
 
-#: views/form/editor.html:57
+#: views/form/editor.html:59
 msgctxt "A label for checkbox in form style settings"
 msgid "Display Fullwidth"
 msgstr ""
 
-#: views/form/editor.html:58
+#: views/form/editor.html:60
 msgctxt "A label for checkbox in form style settings"
 msgid "Bold"
 msgstr ""
 
-#: views/form/editor.html:59
+#: views/form/editor.html:61
 msgctxt "A label for checkbox in form style settings"
 msgid "Border Size"
 msgstr ""
 
-#: views/form/editor.html:60
+#: views/form/editor.html:62
 msgctxt "A label for checkbox in form style settings"
 msgid "Border Radius"
 msgstr ""
 
-#: views/form/editor.html:61
+#: views/form/editor.html:63
 msgctxt "A label for form style settings"
 msgid "Input Padding"
 msgstr ""
 
-#: views/form/editor.html:62
+#: views/form/editor.html:64
 msgctxt "A label for form style settings"
 msgid "Form Padding"
 msgstr ""
 
-#: views/form/editor.html:63
+#: views/form/editor.html:65
 msgctxt "A label for form style settings"
 msgid "Alignment"
 msgstr ""
 
-#: views/form/editor.html:64
+#: views/form/editor.html:66
 msgctxt "An alignment value for form editor"
 msgid "left"
 msgstr ""
 
-#: views/form/editor.html:65
+#: views/form/editor.html:67
 msgctxt "An alignment value for form editor"
 msgid "center"
 msgstr ""
 
-#: views/form/editor.html:66
+#: views/form/editor.html:68
 msgctxt "An alignment value for form editor"
 msgid "right"
 msgstr ""
 
-#: views/form/editor.html:67
+#: views/form/editor.html:69
 msgctxt "A label for checkbox in form style settings"
 msgid "Border"
 msgstr ""
 
-#: views/form/editor.html:69
+#: views/form/editor.html:71
 msgctxt "A label for form width settings"
 msgid "Form width"
 msgstr ""
 
-#: views/form/editor.html:70
+#: views/form/editor.html:72
 msgctxt "A settings section heading"
 msgid "Custom field settings"
 msgstr ""
 
-#: views/form/editor.html:71
+#: views/form/editor.html:73
 msgctxt "A settings section heading"
 msgid "Form settings"
 msgstr ""
 
-#: views/form/editor.html:72
+#: views/form/editor.html:74
 msgctxt "A settings section heading"
 msgid "Form Placement"
 msgstr ""
 
-#: views/form/editor.html:73
+#: views/form/editor.html:75
 msgctxt "A label for a select box"
 msgid "Form placement"
 msgstr ""
 
-#: views/form/editor.html:74
+#: views/form/editor.html:76
 msgctxt "A settings section heading"
 msgid "Custom CSS"
 msgstr ""
 
-#: views/form/editor.html:91
+#: views/form/editor.html:93
 msgctxt "This is a text on a switch if a form should be displayed bellow all pages"
 msgid "Display on all pages"
 msgstr ""
 
-#: views/form/editor.html:92
+#: views/form/editor.html:94
 msgctxt "This is a text on a switch if a form should be displayed bellow all posts"
 msgid "Display on all posts/products"
 msgstr ""
 
-#: views/form/editor.html:94
+#: views/form/editor.html:96
 msgctxt "Label on a selection of different times"
 msgid "Display with a delay of"
 msgstr ""
 
-#: views/form/editor.html:95
+#: views/form/editor.html:97
 msgctxt "Placement of a fixed bar form, on top of the page or on the bottom"
 msgid "Position"
 msgstr ""
 
-#: views/form/editor.html:96
+#: views/form/editor.html:98
 msgctxt "Placement of a fixed bar form, on top of the page or on the bottom"
 msgid "top"
 msgstr ""
 
-#: views/form/editor.html:97
+#: views/form/editor.html:99
 msgctxt "Placement of a fixed bar form, on top of the page or on the bottom"
 msgid "bottom"
 msgstr ""
 
-#: views/form/editor.html:98
+#: views/form/editor.html:100
 msgctxt "Placement of a slide in form, on the left or right side of the page"
 msgid "left"
 msgstr ""
 
-#: views/form/editor.html:99
+#: views/form/editor.html:101
 msgctxt "Placement of a slide in  form, on the left or right side of the page"
 msgid "right"
 msgstr ""
 
-#: views/form/editor.html:100
+#: views/form/editor.html:102
 msgctxt "times selection should be in the end \"30 sec\""
 msgid "%1s sec"
 msgstr ""
 
-#: views/form/editor.html:101
+#: views/form/editor.html:103
 msgctxt "Label on a selection of different times"
 msgid "Show form every"
 msgstr ""
 
-#: views/form/editor.html:102
+#: views/form/editor.html:104
 msgctxt "times selection"
 msgid "Always"
 msgstr ""
 
-#: views/form/editor.html:103
+#: views/form/editor.html:105
 msgctxt "times selection should be in the end \"1 day\""
 msgid "1 day"
 msgstr ""
 
-#: views/form/editor.html:104
+#: views/form/editor.html:106
 msgctxt "times selection should be in the end \"7 days\""
 msgid "%1s days"
 msgstr ""
 
-#: views/form/editor.html:105
+#: views/form/editor.html:107
 msgctxt "Text on a button to save and close a form"
 msgid "Close"
 msgstr ""
 
-#: views/form/editor.html:106
+#: views/form/editor.html:108
 msgctxt "Label in the form placement section (Other form placements)"
 msgid "Shortcode & other"
 msgstr ""
 
-#: views/form/editor.html:108
+#: views/form/editor.html:110
 msgctxt "Value in a selectbox with a list of animations"
 msgid "No Animation"
 msgstr ""
 
-#: views/form/editor.html:122
+#: views/form/editor.html:124
 msgctxt "Text on the save button"
 msgid "Update custom field"
 msgstr ""
 
-#: views/form/editor.html:123
+#: views/form/editor.html:125
 msgctxt "Text on the delete button"
 msgid "Delete this custom field"
 msgstr ""
 
-#: views/form/editor.html:130
+#: views/form/editor.html:132
 msgctxt "It is a placeholder in the select box - verb"
 msgid "Select"
 msgstr ""
 
-#: views/form/editor.html:144
+#: views/form/editor.html:146
 msgctxt "Number of rows in textarea"
 msgid "1 line"
 msgstr ""
 
-#: views/form/editor.html:145
+#: views/form/editor.html:147
 msgctxt "Number of rows in textarea"
 msgid "2 lines"
 msgstr ""
 
-#: views/form/editor.html:146
+#: views/form/editor.html:148
 msgctxt "Number of rows in textarea"
 msgid "3 lines"
 msgstr ""
 
-#: views/form/editor.html:147
+#: views/form/editor.html:149
 msgctxt "Number of rows in textarea"
 msgid "4 lines"
 msgstr ""
 
-#: views/form/editor.html:148
+#: views/form/editor.html:150
 msgctxt "Number of rows in textarea"
 msgid "5 lines"
 msgstr ""
 
-#: views/form/editor.html:169
+#: views/form/editor.html:171
 msgctxt "a default value for a subscription form button"
 msgid "Subscribe!"
 msgstr ""
 
-#: views/form/editor.html:171
+#: views/form/editor.html:173
 msgctxt "settings for a label of an input"
 msgid "Label"
 msgstr ""
 
-#: views/form/editor.html:173
+#: views/form/editor.html:175
 msgctxt "Settings - if label should be displayed"
 msgid "Display label"
 msgstr ""
 
-#: views/form/editor.html:174
+#: views/form/editor.html:176
 msgctxt "The name of the block in the editor"
 msgid "Divider / Spacer"
 msgstr ""
 
-#: views/form/editor.html:178
+#: views/form/editor.html:180
 msgctxt "Textarea label"
 msgid "Custom text"
 msgstr ""
 
-#: views/form/editor.html:183
+#: views/form/editor.html:185
 msgctxt "Label on form submit button."
 msgid "Create"
 msgstr ""
 
-#: views/form/editor.html:184
+#: views/form/editor.html:186
 msgctxt "Label for form field for custom input name"
 msgid "Field name"
 msgstr ""
 
-#: views/form/editor.html:185
+#: views/form/editor.html:187
 msgctxt "Label for form field for custom input type"
 msgid "Select a field type"
 msgstr ""
 
-#: views/form/editor.html:192
+#: views/form/editor.html:194
 msgctxt "Heading in the font selection list: Arial, Times, ..."
 msgid "Standard fonts"
 msgstr ""
 
-#: views/form/editor.html:193
+#: views/form/editor.html:195
 msgctxt "Heading in the font selection list for a list of custom fonts"
 msgid "Custom fonts"
 msgstr ""
 
-#: views/form/editor.html:194
+#: views/form/editor.html:196
 msgctxt "Settings in the spacer block"
 msgid "Height"
 msgstr ""
 
-#: views/form/editor.html:195
+#: views/form/editor.html:197
 msgctxt "Settings in the spacer block"
 msgid "Enable Divider"
 msgstr ""
 
-#: views/form/editor.html:196
+#: views/form/editor.html:198
 msgctxt "How a background image will be rendered: scale, fit or tile"
 msgid "Scale"
 msgstr ""
 
-#: views/form/editor.html:197
+#: views/form/editor.html:199
 msgctxt "How a background image will be rendered: scale, fit or tile"
 msgid "Fit"
 msgstr ""
 
-#: views/form/editor.html:198
+#: views/form/editor.html:200
 msgctxt "How a background image will be rendered: scale, fit or tile"
 msgid "Tile"
 msgstr ""
 
-#: views/form/editor.html:199
+#: views/form/editor.html:201
 msgctxt "Settings in the divider block (solid, dotted, …)"
 msgid "Divider Style"
 msgstr ""
 
-#: views/form/editor.html:200
+#: views/form/editor.html:202
 msgctxt "Setting in the divider block"
 msgid "Solid"
 msgstr ""
 
-#: views/form/editor.html:201
+#: views/form/editor.html:203
 msgctxt "Setting in the divider block"
 msgid "Dashed"
 msgstr ""
 
-#: views/form/editor.html:202
+#: views/form/editor.html:204
 msgctxt "Setting in the divider block"
 msgid "Dotted"
 msgstr ""
 
-#: views/form/editor.html:203
+#: views/form/editor.html:205
 msgctxt "Settings in the divider block"
 msgid "Divider Height"
 msgstr ""
 
-#: views/form/editor.html:204
+#: views/form/editor.html:206
 msgctxt "Settings in the divider block"
 msgid "Divider Width"
 msgstr ""
 
-#: views/form/editor.html:205
+#: views/form/editor.html:207
 msgctxt "Settings in the divider block"
 msgid "Background"
 msgstr ""
 
-#: views/form/editor.html:206
+#: views/form/editor.html:208
 msgctxt "heading above the settings"
 msgid "Message Color"
 msgstr ""
 
-#: views/form/editor.html:207
+#: views/form/editor.html:209
 msgctxt "A label for the success message color"
 msgid "Success"
 msgstr ""
 
-#: views/form/editor.html:208
+#: views/form/editor.html:210
 msgctxt "A label for the error message color"
 msgid "Error"
 msgstr ""
@@ -1272,7 +1272,6 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:40
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Close"
@@ -1797,6 +1796,7 @@ msgstr ""
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:7
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:10
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:25
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 #: assets/dist/js/tags.js:1
 msgid "Cancel"
 msgstr ""
@@ -2139,7 +2139,7 @@ msgstr ""
 #: views/newsletter/templates/blocks/posts/settingsSelection.hbs:11
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:122
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Scheduled"
 msgstr ""
 
@@ -2147,7 +2147,7 @@ msgstr ""
 #: views/newsletter/templates/blocks/products/settingsSelection.hbs:9
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:117
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Draft"
 msgstr ""
 
@@ -2669,7 +2669,7 @@ msgid "Template name"
 msgstr ""
 
 #: views/newsletter/editor.html:368
-#: lib/Config/Menu.php:273
+#: lib/Config/Menu.php:261
 msgid "Newsletter Editor"
 msgstr ""
 
@@ -2854,7 +2854,7 @@ msgstr ""
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:94
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Unsubscribe"
 msgstr ""
 
@@ -2862,7 +2862,7 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/ConfirmInterestBeforeDeactivation.php:163
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:69
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:102
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Manage subscription"
 msgstr ""
 
@@ -3135,6 +3135,7 @@ msgstr ""
 
 #: views/segments/translations.html:6
 #: lib/Subscribers/ImportExport/Export/Export.php:68
+#: assets/dist/js/admin.js:2
 msgid "List"
 msgstr ""
 
@@ -3143,7 +3144,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:32
 #: views/subscription/admin_user_status_field.html:12
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:112
-#: lib/Subscribers/SubscriberListingRepository.php:832
+#: lib/Subscribers/SubscriberListingRepository.php:842
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:232
 #: assets/dist/js/admin.js:2
 msgid "Subscribed"
@@ -3152,7 +3153,7 @@ msgstr ""
 #: views/segments/translations.html:8
 #: views/subscribers/subscribers.html:31
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:116
-#: lib/Subscribers/SubscriberListingRepository.php:837
+#: lib/Subscribers/SubscriberListingRepository.php:847
 #: assets/dist/js/admin.js:2
 msgid "Unconfirmed"
 msgstr ""
@@ -3161,7 +3162,7 @@ msgstr ""
 #: views/subscribers/importExport/import.html:138
 #: views/subscribers/subscribers.html:34
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:124
-#: lib/Subscribers/SubscriberListingRepository.php:847
+#: lib/Subscribers/SubscriberListingRepository.php:857
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:260
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
@@ -3250,10 +3251,10 @@ msgstr ""
 #: views/segments/translations.html:29
 #: views/subscribers/subscribers.html:21
 #: lib/CustomFields/CustomFieldsRepository.php:295
-#: lib/Form/Listing/FormListingRepository.php:36
+#: lib/Form/Listing/FormListingRepository.php:41
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:174
 #: lib/Segments/SegmentListingRepository.php:99
-#: lib/Subscribers/SubscriberListingRepository.php:857
+#: lib/Subscribers/SubscriberListingRepository.php:867
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/custom_fields.js:1
 msgid "Trash"
@@ -3321,8 +3322,8 @@ msgstr ""
 
 #: views/segments/translations.html:50
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:237
-#: lib/Config/Menu.php:438
-#: lib/Config/Menu.php:439
+#: lib/Config/Menu.php:399
+#: lib/Config/Menu.php:400
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/custom_fields.js:1
 msgid "Segments"
@@ -3608,8 +3609,8 @@ msgid "none of"
 msgstr ""
 
 #: views/segments/translations.html:134
-#: lib/Config/Menu.php:524
-#: lib/Config/Menu.php:525
+#: lib/Config/Menu.php:485
+#: lib/Config/Menu.php:486
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_analytics.js:1
@@ -3849,8 +3850,8 @@ msgstr ""
 
 #: views/segments/translations.html:192
 #: views/subscribers/subscribers.html:96
-#: lib/Config/Menu.php:477
-#: lib/Config/Menu.php:478
+#: lib/Config/Menu.php:438
+#: lib/Config/Menu.php:439
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 #: assets/dist/js/email-editor-blocks/powered-by-mailpoet-block.js:1
@@ -4028,8 +4029,8 @@ msgid "ZIP extension is required to create Excel files. Please refer to the [lin
 msgstr ""
 
 #: views/subscribers/importExport/export.html:90
-#: lib/Config/Menu.php:371
-#: lib/Config/Menu.php:372
+#: lib/Config/Menu.php:347
+#: lib/Config/Menu.php:348
 #: assets/dist/js/admin.js:2
 msgid "Export"
 msgstr ""
@@ -4309,8 +4310,8 @@ msgid "Next step"
 msgstr ""
 
 #: views/subscribers/importExport/import.html:106
-#: lib/Config/Menu.php:358
-#: lib/Config/Menu.php:359
+#: lib/Config/Menu.php:334
+#: lib/Config/Menu.php:335
 #: assets/dist/js/admin.js:2
 msgid "Import"
 msgstr ""
@@ -4571,8 +4572,8 @@ msgid "Reason: %1$s. Details: %2$s"
 msgstr ""
 
 #: views/subscribers/subscribers.html:52
-#: lib/Config/Menu.php:410
-#: lib/Config/Menu.php:411
+#: lib/Config/Menu.php:386
+#: lib/Config/Menu.php:387
 #: assets/dist/js/admin.js:2
 msgid "Lists"
 msgstr ""
@@ -4754,8 +4755,8 @@ msgstr ""
 #: views/subscribers/subscribers.html:124
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:214
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:253
-#: lib/Config/Menu.php:384
-#: lib/Config/Menu.php:385
+#: lib/Config/Menu.php:360
+#: lib/Config/Menu.php:361
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 #: assets/dist/js/tags.js:1
@@ -5309,8 +5310,8 @@ msgid "Upgrade plan"
 msgstr ""
 
 #: views/homepage.html:64
-#: lib/Config/Menu.php:333
-#: lib/Config/Menu.php:334
+#: lib/Config/Menu.php:321
+#: lib/Config/Menu.php:322
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_analytics.js:1
@@ -5651,7 +5652,7 @@ msgstr ""
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Sent"
 msgstr ""
 
@@ -5945,9 +5946,9 @@ msgid "Activate MailPoet Sending Service"
 msgstr ""
 
 #: views/settings_translations.html:2
-#: lib/Config/Hooks.php:695
-#: lib/Config/Menu.php:451
-#: lib/Config/Menu.php:452
+#: lib/Config/Hooks.php:741
+#: lib/Config/Menu.php:412
+#: lib/Config/Menu.php:413
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_editor.js:1
 #: assets/dist/js/commons.js:2
@@ -6780,6 +6781,7 @@ msgstr ""
 #: views/settings_translations.html:245
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:4
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:7
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Send a test email"
 msgstr ""
 
@@ -7074,7 +7076,7 @@ msgstr ""
 #: lib/Config/Capabilities.php:114
 #: lib/Config/Menu.php:217
 #: lib/Config/Menu.php:218
-#: lib/Config/Menu.php:748
+#: lib/Config/Menu.php:709
 #: lib/Config/PrivacyPolicy.php:12
 #: lib/WooCommerce/MultichannelMarketing/MPMarketingChannel.php:49
 #: lib/WooCommerce/WooSystemInfoController.php:41
@@ -7159,6 +7161,7 @@ msgstr ""
 
 #: lib/AdminPages/Pages/Help.php:60
 #: lib/SystemReport/SystemReportCollector.php:93
+#: lib/WooCommerce/WooSystemInfo.php:44
 msgid "Can‘t generate cron URL."
 msgstr ""
 
@@ -8879,293 +8882,323 @@ msgstr ""
 msgid "New Email"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:98
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:102
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:101
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:114
 msgid "Birthday email"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:99
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:102
 msgid "Send a birthday email to your subscribers on their special day."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:118
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:134
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:107
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:108
+msgid "A birthday treat from us"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:107
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:108
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:48
+msgid "Happy birthday!"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:109
+msgid "Enjoy 10% off your next order"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:109
+msgid "Wishing you a wonderful day"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:133
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:149
 msgid "Welcome new subscribers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:119
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:134
 msgid "Send a welcome email when someone subscribes to your list. Optionally, you can choose to send this email after a specified period."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:127
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:168
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:142
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:183
 msgid "Welcome email"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:128
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:169
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:143
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:184
 msgid "Welcome to our community!"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:129
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:144
 msgid "Thanks for subscribing"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:159
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:175
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:174
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:190
 msgid "Welcome new WordPress users"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:160
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:175
 msgid "Send a welcome email when a new WordPress user registers to your website. Optionally, you can choose to send this email after a specified period."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:170
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:185
 msgid "Thanks for joining us"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:198
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:205
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:213
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:220
 msgid "Welcome series for new subscribers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:199
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:214
 msgid "Welcome new subscribers and start building a relationship with them. Send an email immediately after someone subscribes to your list to introduce your brand and a follow-up two days later to keep the conversation going."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:221
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:228
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:236
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:243
 msgid "Welcome series for new WordPress users"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:222
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:237
 msgid "Welcome new WordPress users to your site. Send an email immediately after a WordPress user registers. Send a follow-up email two days later with more in-depth information."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:244
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:251
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:259
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:275
 msgid "Celebrate first-time buyers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:245
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:260
 msgid "Welcome your first-time customers by sending an email with a special offer for their next purchase. Make them feel appreciated within your brand."
 msgstr ""
 
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:268
+msgid "First purchase thank you"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:269
+msgid "Thank you for your first order!"
+msgstr ""
+
 #: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:270
-msgid "Thank you"
+msgid "Welcome to the family! Check out what’s next for you."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:271
-msgid "Thank You for Choosing Us!"
-msgstr ""
-
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:294
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:301
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:315
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:331
 msgid "Thank loyal customers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:295
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:316
 msgid "These are your most important customers. Make them feel special by sending a thank you note for supporting your brand."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:317
 #: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:324
-msgid "Win back customers"
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:325
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:45
+msgid "Thank you for your loyalty"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:318
-msgid "Rekindle the relationship with past customers by reminding them of their favorite products and showcasing what’s new, encouraging a return to your brand."
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:326
+msgid "We appreciate your continued support"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:340
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:349
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:356
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:372
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:381
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:388
 msgid "Abandoned cart reminder"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:341
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:373
 msgid "Nudge your shoppers to complete the purchase after they have added a product to the cart but haven’t completed the order."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:350
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:382
 msgid "You left something behind!"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:351
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:383
 msgid "Complete your purchase today"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:380
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:387
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:412
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:419
 msgid "Abandoned cart campaign"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:381
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:413
 msgid "Encourage your potential customers to finalize their purchase when they have added items to their cart but haven’t finished the order yet. Offer a coupon code as a last resort to convert them to customers."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:404
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:411
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:436
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:452
 msgid "Purchased a product"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:405
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:439
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:473
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:437
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:477
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:517
 msgid "Share care instructions or simply thank the customer for making an order."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:419
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:420
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:453
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:454
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:487
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:488
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:445
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:446
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:485
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:486
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:525
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:526
 msgid "Important information about your order"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:438
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:445
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:447
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:487
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:527
+msgid "A few details about your purchase"
+msgstr ""
+
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:476
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:492
 msgid "Purchased a product with a tag"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:472
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:479
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:516
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:532
 msgid "Purchased in a category"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:506
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:513
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:556
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:563
 msgid "Ask to leave a review post-purchase"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:507
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:557
 msgid "Encourage your customers to leave a review a few days after their purchase. Show them their opinion matters."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:529
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:536
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:579
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:586
 msgid "Follow up on a positive review (4-5 stars)"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:530
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:580
 msgid "Thank your happy customers for their feedback and let them know you appreciate their support."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:552
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:559
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:602
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:609
 msgid "Follow up on a negative review (1-2 stars)"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:553
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:603
 msgid "Reach out to unhappy customers and show you care. Offer help or gather more feedback to improve."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:575
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:582
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:625
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:632
 msgid "Follow up after a subscription purchase"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:576
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:626
 msgid "Thank new subscribers and let them know what to expect. A warm welcome goes a long way."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:598
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:605
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:648
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:655
 msgid "Follow up after a subscription renewal"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:599
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:649
 msgid "Reinforce the value of your subscription by reminding customers what they’re getting after every renewal."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:621
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:628
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:671
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:678
 msgid "Follow up after failed renewal"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:622
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:672
 msgid "Help customers fix failed payments and continue their subscription without disruption."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:644
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:651
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:694
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:701
 msgid "Follow up on churned subscription"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:645
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:695
 msgid "Reach out to subscribers who canceled and ask for their feedback to help improve your service."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:667
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:674
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:717
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:724
 msgid "Follow up when trial ends"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:668
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:718
 msgid "Check in with customers after their trial ends. Encourage them to keep enjoying the benefits of their subscription."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:690
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:697
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:740
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:747
 msgid "Win back churned subscribers"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:691
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:741
 msgid "Re-engage former subscribers by showing what’s new and why it’s worth coming back."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:713
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:720
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:763
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:770
 msgid "Abandoned booking reminder"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:714
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:764
 msgid "Remind customers who left a booking in their cart to complete their reservation."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:736
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:743
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:786
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:793
 msgid "Follow-up after a new booking"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:737
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:787
 msgid "Send a confirmation email after a new booking is created."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:759
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:766
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:809
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:816
 msgid "Pre-visit reminder"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:760
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:810
 msgid "Send a reminder before a booking starts. Customize the timing in the trigger settings."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:782
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:789
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:832
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:839
 msgid "Educational drip after booking"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:783
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:833
 msgid "Send a series of emails after a booking is created to help customers prepare for their visit."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:805
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:812
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:855
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:862
 msgid "Post-booking review request"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:806
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:856
 msgid "Ask for feedback after a booking is completed."
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:828
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:835
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:878
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:885
 msgid "Next booking nudge"
 msgstr ""
 
-#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:829
+#: lib/Automation/Integrations/MailPoet/Templates/TemplatesFactory.php:879
 msgid "Encourage customers to rebook after their booking is completed."
 msgstr ""
 
@@ -9725,45 +9758,45 @@ msgstr ""
 msgid "MailPoet version update is in progress, please refresh the page in a minute."
 msgstr ""
 
-#: lib/Config/Hooks.php:648
+#: lib/Config/Hooks.php:694
 msgid "Give feedback"
 msgstr ""
 
-#: lib/Config/Hooks.php:651
+#: lib/Config/Hooks.php:697
 msgid "five star"
 msgstr ""
 
-#: lib/Config/Hooks.php:651
+#: lib/Config/Hooks.php:697
 msgid "Thanks :)"
 msgstr ""
 
-#: lib/Config/Hooks.php:651
+#: lib/Config/Hooks.php:697
 msgid "Help other businesses grow their email lists – share your ★★★★★ MailPoet experience!"
 msgstr ""
 
-#: lib/Config/Hooks.php:655
+#: lib/Config/Hooks.php:701
 msgid "Thank you for using MailPoet."
 msgstr ""
 
-#: lib/Config/Hooks.php:662
+#: lib/Config/Hooks.php:708
 msgid "You do not have permission to perform this action."
 msgstr ""
 
-#: lib/Config/Hooks.php:663
+#: lib/Config/Hooks.php:709
 msgid "Unauthorized"
 msgstr ""
 
-#: lib/Config/Hooks.php:672
+#: lib/Config/Hooks.php:718
 #: lib/Router/Endpoints/Subscription.php:106
 msgid "Security check failed."
 msgstr ""
 
-#: lib/Config/Hooks.php:673
+#: lib/Config/Hooks.php:719
 #: assets/dist/js/commons.js:2
 msgid "Error"
 msgstr ""
 
-#: lib/Config/Hooks.php:695
+#: lib/Config/Hooks.php:741
 msgid "View MailPoet settings"
 msgstr ""
 
@@ -9785,13 +9818,8 @@ msgstr ""
 msgid "Emails"
 msgstr ""
 
-#: lib/Config/Menu.php:260
-msgctxt "newsletters per page (screen options)"
-msgid "Number of newsletters per page"
-msgstr ""
-
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/Config/Menu.php:272
+#: lib/Config/Menu.php:260
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewsletterPattern.php:69
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:21
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:25
@@ -9802,97 +9830,93 @@ msgstr ""
 msgid "Newsletter"
 msgstr ""
 
-#: lib/Config/Menu.php:287
-#: lib/Config/Menu.php:288
+#: lib/Config/Menu.php:275
+#: lib/Config/Menu.php:276
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/custom_fields.js:1
 msgid "Forms"
 msgstr ""
 
-#: lib/Config/Menu.php:300
-#: lib/Config/Menu.php:301
+#: lib/Config/Menu.php:288
+#: lib/Config/Menu.php:289
 msgid "Form Editor"
 msgstr ""
 
-#: lib/Config/Menu.php:320
-#: lib/Config/Menu.php:321
+#: lib/Config/Menu.php:308
+#: lib/Config/Menu.php:309
 msgid "Select Form Template"
 msgstr ""
 
-#: lib/Config/Menu.php:346
-msgctxt "subscribers per page (screen options)"
-msgid "Number of subscribers per page"
-msgstr ""
-
+#: lib/Config/Menu.php:425
 #: lib/Config/Menu.php:426
-msgctxt "lists per page (screen options)"
-msgid "Number of lists per page"
-msgstr ""
-
-#: lib/Config/Menu.php:464
-#: lib/Config/Menu.php:465
 #: assets/dist/js/admin.js:2
 msgid "Help"
 msgstr ""
 
-#: lib/Config/Menu.php:490
-#: lib/Config/Menu.php:491
+#: lib/Config/Menu.php:451
+#: lib/Config/Menu.php:452
 msgid "WooCommerce Setup"
 msgstr ""
 
-#: lib/Config/Menu.php:503
+#: lib/Config/Menu.php:464
 msgid "Experimental Features"
 msgstr ""
 
-#: lib/Config/Menu.php:513
+#: lib/Config/Menu.php:474
 msgid "Logs"
 msgstr ""
 
-#: lib/Config/Menu.php:534
-#: lib/Config/Menu.php:535
+#: lib/Config/Menu.php:495
+#: lib/Config/Menu.php:496
 msgid "Automation Editor"
 msgstr ""
 
-#: lib/Config/Menu.php:544
-#: lib/Config/Menu.php:545
+#: lib/Config/Menu.php:505
+#: lib/Config/Menu.php:506
 msgid "Automation Analytics"
 msgstr ""
 
-#: lib/Config/Menu.php:554
-#: lib/Config/Menu.php:555
+#: lib/Config/Menu.php:515
+#: lib/Config/Menu.php:516
 msgid "Automation Templates"
 msgstr ""
 
-#: lib/Config/Menu.php:564
+#: lib/Config/Menu.php:525
 msgid "Automation Preview"
 msgstr ""
 
-#: lib/Config/Menu.php:574
+#: lib/Config/Menu.php:535
 msgid "Automation Flow"
 msgstr ""
 
-#: lib/Config/PersonalDataErasers.php:16
+#: lib/Config/PersonalDataErasers.php:21
 msgid "MailPoet Subscribers"
 msgstr ""
 
-#: lib/Config/PersonalDataExporters.php:35
+#: lib/Config/PersonalDataErasers.php:30
+#: lib/Config/PersonalDataExporters.php:78
+#: lib/WooCommerce/OrderAttributionPrivacy.php:215
+msgid "MailPoet WooCommerce Order Attribution"
+msgstr ""
+
+#: lib/Config/PersonalDataExporters.php:37
 msgid "MailPoet Lists"
 msgstr ""
 
-#: lib/Config/PersonalDataExporters.php:43
+#: lib/Config/PersonalDataExporters.php:45
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:62
 msgid "MailPoet Subscriber Data"
 msgstr ""
 
-#: lib/Config/PersonalDataExporters.php:52
+#: lib/Config/PersonalDataExporters.php:54
 msgid "MailPoet Emails"
 msgstr ""
 
-#: lib/Config/PersonalDataExporters.php:60
+#: lib/Config/PersonalDataExporters.php:62
 msgid "MailPoet Email Clicks"
 msgstr ""
 
-#: lib/Config/PersonalDataExporters.php:68
+#: lib/Config/PersonalDataExporters.php:70
 msgid "MailPoet Email Opens"
 msgstr ""
 
@@ -10735,45 +10759,49 @@ msgid "No identifiable information is otherwise tracked outside this website exc
 msgstr ""
 
 #: lib/Config/PrivacyPolicy.php:45
+msgid "If email tracking is enabled and you make a purchase in our WooCommerce store after clicking a link in one of our emails, we store identifiers of that email, the click, and your subscriber profile with the order to attribute the purchase to the email. This information is kept for the lifetime of the order and is included when you request an export of your personal data; it is removed when your personal data is erased or the order is anonymized."
+msgstr ""
+
+#: lib/Config/PrivacyPolicy.php:48
 msgid "Below is a list of cookies that may be generated by MailPoet (note that some cookies are only utilized when WooCommerce is installed and activated):"
 msgstr ""
 
 #. translators: %s is the name of the cookie.
-#: lib/Config/PrivacyPolicy.php:49
-#: lib/Config/PrivacyPolicy.php:58
-#: lib/Config/PrivacyPolicy.php:67
-#: lib/Config/PrivacyPolicy.php:78
+#: lib/Config/PrivacyPolicy.php:52
+#: lib/Config/PrivacyPolicy.php:61
+#: lib/Config/PrivacyPolicy.php:70
+#: lib/Config/PrivacyPolicy.php:81
 msgid "Cookie name: %s"
 msgstr ""
 
 #. translators: %s is the number of days.
-#: lib/Config/PrivacyPolicy.php:52
-#: lib/Config/PrivacyPolicy.php:61
-#: lib/Config/PrivacyPolicy.php:70
+#: lib/Config/PrivacyPolicy.php:55
+#: lib/Config/PrivacyPolicy.php:64
+#: lib/Config/PrivacyPolicy.php:73
 msgid "Cookie expiry: %s days."
 msgstr ""
 
-#: lib/Config/PrivacyPolicy.php:54
+#: lib/Config/PrivacyPolicy.php:57
 msgid "Cookie description: The purpose of this cookie is to track the last time a subscriber viewed any page on the site."
 msgstr ""
 
-#: lib/Config/PrivacyPolicy.php:63
+#: lib/Config/PrivacyPolicy.php:66
 msgid "Cookie description: The purpose of this cookie is to track which newsletter sent from your website has acquired a click-through and a subsequent purchase in your WooCommerce store."
 msgstr ""
 
-#: lib/Config/PrivacyPolicy.php:72
+#: lib/Config/PrivacyPolicy.php:75
 msgid "Cookie description: The purpose of this cookie is to track subscriber engagement. It is used when the user logs in, signs up in a form, confirms subscription to a newsletter, or places an order through WooCommerce."
 msgstr ""
 
-#: lib/Config/PrivacyPolicy.php:74
+#: lib/Config/PrivacyPolicy.php:77
 msgid "Note: User must be opted-in and a confirmed subscriber."
 msgstr ""
 
-#: lib/Config/PrivacyPolicy.php:80
+#: lib/Config/PrivacyPolicy.php:83
 msgid "Cookie expiry: the expiration date varies and can be set per form."
 msgstr ""
 
-#: lib/Config/PrivacyPolicy.php:82
+#: lib/Config/PrivacyPolicy.php:85
 msgid "Cookie description: This cookie is used to track if a user has previously dismissed a specific form, preventing the re-display of the form until the cookie's expiration date. It is applicable for popup, slide-in, or fixed bar forms."
 msgstr ""
 
@@ -10957,11 +10985,11 @@ msgid "Value cannot be empty"
 msgstr ""
 
 #: lib/CustomFields/CustomFieldsRepository.php:290
-#: lib/Form/Listing/FormListingRepository.php:31
+#: lib/Form/Listing/FormListingRepository.php:36
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:106
 #: lib/Newsletter/Sending/ScheduledTaskSubscribersListingRepository.php:48
 #: lib/Segments/SegmentListingRepository.php:94
-#: lib/Subscribers/SubscriberListingRepository.php:827
+#: lib/Subscribers/SubscriberListingRepository.php:837
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_templates.js:1
@@ -11079,6 +11107,7 @@ msgid "Abandoned Cart"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartReminderPattern.php:24
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:129
 msgid "Still thinking it over?"
 msgstr ""
 
@@ -11103,48 +11132,173 @@ msgstr ""
 msgid "Good news — your cart is still here! Even better? You can get 10% off if you check out in the next 24 hours."
 msgstr ""
 
-#. translators: %s: Site description personalization tag
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:35
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:42
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:53
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:39
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:184
 msgid "Use this code at checkout to redeem your discount:"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:45
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:43
 msgid "Finish checkout"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:51
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:49
 msgid "These items are waiting in your cart"
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:62
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AbandonedCartWithDiscountPattern.php:60
 msgid "Abandoned Cart with Discount"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:20
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:54
 msgid "How was your experience?"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:25
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:59
 msgid "Thanks again for your order. Your feedback helps other shoppers choose with confidence."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:30
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:64
 msgid "If you have a minute, your review would mean a lot."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:36
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:70
 msgid "Leave a review"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:43
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:77
 msgid "We appreciate your time and hope to see you again soon."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:55
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:93
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:149
+msgid "Thanks for your review!"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:97
+msgid "Your review made our day. We’re thrilled you had a good experience and grateful that you took the time to share it."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:101
+msgid "Reviews like yours help other shoppers choose with confidence. Thanks for being part of our community."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:105
+msgid "With appreciation,"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:121
+msgid "Sorry to hear that"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:125
+msgid "Thank you for being honest in your review. We’re sorry your experience did not meet expectations."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:129
+msgid "We’d like to understand what happened and see how we can make things right. Reply to this email and our team will help."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:133
+msgid "We appreciate the chance to improve,"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:153
+msgid "Thank you for taking the time to leave such a thoughtful review. We’re grateful for your support and happy to hear you enjoyed your purchase."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:157
+msgid "As a thank you, here’s a discount coupon for your next order:"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:165
+msgid "Shop again"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:171
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:113
+msgid "See you soon,"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:184
+msgid "Positive review follow-up"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:188
+msgid "Negative review follow-up"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:192
+msgid "Reward positive reviewer"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php:195
 msgid "Ask for a product review"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:52
+msgid "Wishing you a day filled with good things."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:56
+msgid "We’re glad you’re part of our community. Here’s to another year of moments worth celebrating."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:68
+msgid "Happy birthday - here’s 10% off"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:72
+msgid "A little birthday treat for your next order."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:76
+msgid "We’re wishing you a wonderful day. Use this code for 10% off your next order:"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:82
+msgid "Valid for the next 10 days."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:88
+msgid "Shop birthday picks"
+msgstr ""
+
+#. translators: Name of a content pattern used as starting content of an email
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:100
+msgid "Birthday Email with Discount"
+msgstr ""
+
+#. translators: Name of a content pattern used as starting content of an email
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php:104
+msgid "Birthday Email"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/CategoryPurchaseFollowUpPattern.php:49
+msgid "Great choice! Here is more you might love"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/CategoryPurchaseFollowUpPattern.php:54
+msgid "We picked a few more favorites from the same category as your order."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/CategoryPurchaseFollowUpPattern.php:64
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:73
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:166
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:65
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:66
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TagPurchaseFollowUpPattern.php:64
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeEmailPattern.php:66
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:54
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:159
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:213
+msgid "Happy shopping!"
+msgstr ""
+
+#. translators: Name of a content pattern used as starting content of an email
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/CategoryPurchaseFollowUpPattern.php:77
+msgid "Category Purchase Follow-Up"
 msgstr ""
 
 #. translators: %s: Site title personalization tag
@@ -11235,41 +11389,28 @@ msgstr ""
 msgid "Event Invitation"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:41
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:48
 msgid "Thank You for Your First Order"
 msgstr ""
 
 #. translators: %s is a placeholder for the shop name
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:47
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:54
 msgid "We’re thrilled you chose %s. Your order is being processed, and we can’t wait for you to receive it."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:51
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:58
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:58
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:52
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:75
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:69
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:198
 msgid "You might also like"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:56
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:57
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:74
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:63
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:203
 msgid "While you wait, check out other items that pair perfectly with your order."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:66
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:166
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:67
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:85
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeEmailPattern.php:66
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:59
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:84
-msgid "Happy shopping!"
-msgstr ""
-
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:79
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/FirstPurchaseThankYouPattern.php:86
 msgid "First Purchase Thank You"
 msgstr ""
 
@@ -11284,9 +11425,8 @@ msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:42
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewProductsAnnouncementPattern.php:41
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:59
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductRestockNotificationPattern.php:41
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Pattern.php:102
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Pattern.php:121
 msgid "Product name"
 msgstr ""
 
@@ -11298,7 +11438,6 @@ msgstr ""
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:102
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:129
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewArrivalsAnnouncementPattern.php:152
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:69
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductRestockNotificationPattern.php:51
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php:53
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeEmailPattern.php:59
@@ -11360,36 +11499,30 @@ msgstr ""
 msgid "Visit our store"
 msgstr ""
 
-#. translators: %s is a placeholder for the customer first name
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:43
-msgid "%s, thank you for your order"
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:50
+msgid "Your continued support means a lot to us."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:48
-msgid "Thanks for shopping with us. Your order is being processed, and we can’t wait for you to receive it."
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:55
+msgid "Here are a few picks that pair well with your recent order."
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:80
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/PostPurchaseThankYouPattern.php:78
 msgid "Post Purchase Thank You"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:38
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Pattern.php:101
-msgid "Product placeholder"
-msgstr ""
-
 #. translators: PRODUCT NAME is placeholder text that merchants replace with their own content.
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:46
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:51
 msgid "Loving your PRODUCT NAME? Make it even better"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:51
-msgid "Here are a few essentials that pair perfectly."
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:56
+msgid "Here are a few essentials that pair perfectly with your purchase."
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:98
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/ProductPurchaseFollowUpPattern.php:79
 msgid "Product Purchase Follow-Up"
 msgstr ""
 
@@ -11443,6 +11576,19 @@ msgstr ""
 msgid "Sale Announcement"
 msgstr ""
 
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TagPurchaseFollowUpPattern.php:49
+msgid "You have great taste — there is more where that came from"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TagPurchaseFollowUpPattern.php:54
+msgid "We picked a few more favorites from the same collection as your order."
+msgstr ""
+
+#. translators: Name of a content pattern used as starting content of an email
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TagPurchaseFollowUpPattern.php:77
+msgid "Tagged Product Purchase Follow-Up"
+msgstr ""
+
 #. translators: %s: Site title personalization tag
 #. translators: %s: Store name personalization tag
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeEmailPattern.php:30
@@ -11478,96 +11624,152 @@ msgstr ""
 msgid "Welcome Email"
 msgstr ""
 
-#. translators: %s: Customer full name personalization tag
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:36
-msgid "Hi %s, we are so glad to have you onboard. As a thank you, here is a 10%% discount for your first purchase."
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:34
+msgid "We are so glad to have you onboard. As a thank you, here is a 10% discount for your first purchase."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:52
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:63
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:47
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:192
 msgid "Start shopping"
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:72
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WelcomeWithDiscountEmailPattern.php:67
 msgid "Welcome with Discount"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:41
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:95
+msgid "We miss you"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:99
+msgid "It’s been a little while since your last visit, and we’d love to welcome you back."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:103
+msgid "New favorites may be waiting for you in the shop. We picked a few products that go well with your last order."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:133
+msgid "There’s still time to find something you’ll love. These picks are based on what you bought last time."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:137
+msgid "Come back when you’re ready and continue where you left off."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:143
+msgid "Browse recommendations"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:149
+msgid "Recommended for your return"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:175
 msgid "We Miss You! Here’s 15% Off"
 msgstr ""
 
-#. translators: %s is a placeholder for the first name
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:47
-msgid "Hi %s, come see what’s new — we’ve added fresh arrivals and exclusive deals just for you."
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:179
+msgid "We’ve got an exclusive deal waiting just for you."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:226
+msgid "Win Back Customer Reminder"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:230
+msgid "Win Back Customer Final Nudge"
 msgstr ""
 
 #. translators: Name of a content pattern used as starting content of an email
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:97
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/WinBackCustomerPattern.php:234
 msgid "Win Back Customer"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:233
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/Pattern.php:120
+msgid "Product placeholder"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:245
 msgctxt "Block pattern category"
 msgid "Sales announcements"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:234
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:246
 msgid "A collection of sales announcement email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:238
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:250
 msgctxt "Block pattern category"
 msgid "Educational campaign"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:239
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:251
 msgid "A collection of educational campaign email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:243
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:255
 msgctxt "Block pattern category"
 msgid "Events"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:244
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:256
 msgid "A collection of event email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:248
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:260
 msgctxt "Block pattern category"
 msgid "Newsletter"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:249
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:261
 msgid "A collection of newsletter email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:253
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:265
 msgctxt "Block pattern category"
 msgid "Welcome"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:254
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:266
 msgid "A collection of welcome email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:262
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:270
+msgctxt "Block pattern category"
+msgid "Celebrations"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:271
+msgid "A collection of celebration email layouts."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:279
 msgctxt "Block pattern category"
 msgid "Post-purchase"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:263
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:280
 msgid "A collection of post-purchase email layouts."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:267
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:284
 msgctxt "Block pattern category"
 msgid "Abandoned cart"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:268
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:285
 msgid "A collection of abandoned cart email layouts."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:289
+msgctxt "Block pattern category"
+msgid "Review"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Patterns/PatternsController.php:290
+msgid "A collection of review follow-up email layouts."
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:101
@@ -12572,21 +12774,21 @@ msgid "View full newsletter"
 msgstr ""
 
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:62
-#: lib/Subscribers/SubscriberListingRepository.php:896
+#: lib/Subscribers/SubscriberListingRepository.php:906
 msgid "All Lists"
 msgstr ""
 
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:127
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:142
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Sending"
 msgstr ""
 
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:160
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Active"
 msgstr ""
 
@@ -12881,6 +13083,7 @@ msgid "Homepage link"
 msgstr ""
 
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:121
+#: lib/WooCommerce/OrderAttributionPrivacy.php:186
 msgid "Subscriber ID"
 msgstr ""
 
@@ -13453,11 +13656,11 @@ msgid "Your MailPoet subscriber list is at %d%% of its limit"
 msgstr ""
 
 #. translators: %s is the number of subscribers without a list.
-#: lib/Subscribers/SubscriberListingRepository.php:882
+#: lib/Subscribers/SubscriberListingRepository.php:892
 msgid "Subscribers without a list (%s)"
 msgstr ""
 
-#: lib/Subscribers/SubscriberListingRepository.php:935
+#: lib/Subscribers/SubscriberListingRepository.php:945
 msgid "All Tags"
 msgstr ""
 
@@ -13618,7 +13821,7 @@ msgid "Unsupported data inconsistency check."
 msgstr ""
 
 #. translators: the %1$s is the link, the %2$s is the error message.
-#: lib/Util/Helpers.php:130
+#: lib/Util/Helpers.php:143
 msgid "Please see %1$s for more information. %2$s."
 msgstr ""
 
@@ -13976,6 +14179,26 @@ msgstr ""
 msgid "Set up automations to send abandoned cart reminders, welcome new subscribers, celebrate first-time buyers, and much more."
 msgstr ""
 
+#: lib/WooCommerce/OrderAttributionPrivacy.php:183
+msgid "Email click ID"
+msgstr ""
+
+#: lib/WooCommerce/OrderAttributionPrivacy.php:184
+msgid "Email ID"
+msgstr ""
+
+#: lib/WooCommerce/OrderAttributionPrivacy.php:185
+msgid "Sending queue ID"
+msgstr ""
+
+#: lib/WooCommerce/OrderAttributionPrivacy.php:190
+msgid "Order number"
+msgstr ""
+
+#: lib/WooCommerce/OrderAttributionPrivacy.php:209
+msgid "Attribution reconciliation record"
+msgstr ""
+
 #: lib/WooCommerce/TransactionalEmails.php:121
 msgctxt "Default footer text for a WooCommerce transactional email"
 msgid "Footer text"
@@ -14146,6 +14369,10 @@ msgstr ""
 
 #: assets/dist/js/admin.js:2
 msgid "No items found."
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+msgid "No items found that begin with „%1$s“. Tip: use * to match anywhere, e.g. <link>%2$s</link>."
 msgstr ""
 
 #: assets/dist/js/admin.js:2
@@ -14737,13 +14964,15 @@ msgid "When your subscribers reply to your emails, their emails will go to this 
 msgstr ""
 
 #: assets/dist/js/admin.js:2
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 msgid "Schedule"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:7
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:40
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:42
 msgid "Send"
 msgstr ""
 
@@ -15240,11 +15469,11 @@ msgid "Sending status"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-msgid "The email could not be resent. Please try again."
+msgid "Failure reason (if applicable)"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-msgid "Failure reason (if applicable)"
+msgid "The email could not be resent. Please try again."
 msgstr ""
 
 #: assets/dist/js/admin.js:2
@@ -15264,31 +15493,31 @@ msgid "No sending task found."
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "You’ve been using MailPoet for %d month now, and we would love to read your own review."
 msgid_plural "You’ve been using MailPoet for %d months now, and we would love to read your own review."
 msgstr[0] ""
 msgstr[1] ""
 
 #: assets/dist/js/admin.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "You’ve been using MailPoet for %d day now, and we would love to read your own review."
 msgid_plural "You’ve been using MailPoet for %d days now, and we would love to read your own review."
 msgstr[0] ""
 msgstr[1] ""
 
 #: assets/dist/js/admin.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Thank you! Time to tell the world?"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "%s, did you know that hundreds of WordPress users read the reviews on the plugin repository? They’re also a source of inspiration for our team."
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Rate us now"
 msgstr ""
 
@@ -15459,6 +15688,14 @@ msgstr ""
 
 #: assets/dist/js/admin.js:2
 msgid "Go back to email listing page"
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+msgid "WordPress users"
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+msgid "WooCommerce customers"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
@@ -16248,14 +16485,6 @@ msgid "Show more"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
-msgid "The start date must be before or equal to the end date."
-msgstr ""
-
-#: assets/dist/js/admin.js:2
-msgid "No logs found."
-msgstr ""
-
-#: assets/dist/js/admin.js:2
 msgid "Message"
 msgstr ""
 
@@ -16265,6 +16494,14 @@ msgstr ""
 
 #: assets/dist/js/admin.js:2
 msgid "Created On"
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+msgid "The start date must be before or equal to the end date."
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+msgid "No logs found."
 msgstr ""
 
 #: assets/dist/js/admin.js:2
@@ -18803,7 +19040,7 @@ msgid "Show"
 msgstr ""
 
 #: assets/dist/js/commons.js:2
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Corrupt"
 msgstr ""
 
@@ -19831,14 +20068,15 @@ msgstr ""
 msgid "You’ve tried to select a block that is part of a template that may be used in other emails. Would you like to edit the template?"
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:40
-msgid "Now"
-msgstr ""
-
 #. translators: Order of day, month, and year. Available formats are 'dmy', 'mdy', and 'ymd'.
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 msgctxt "date order"
 msgid "dmy"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:42
+msgid "Now"
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
@@ -19847,10 +20085,6 @@ msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 msgid "All customers"
-msgstr ""
-
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
-msgid "Recipients"
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
@@ -19872,7 +20106,15 @@ msgid "Select segment(s)"
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "Select list(s) and segment(s)"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 msgid "Total recipients: "
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "Recipients"
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
@@ -19916,10 +20158,6 @@ msgid "Add a preview text to capture subscribers' attention and increase open ra
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
-msgid "Inbox preview"
-msgstr ""
-
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 msgid "(No sender)"
 msgstr ""
 
@@ -19929,6 +20167,10 @@ msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
 msgid "(No preview text)"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "Inbox preview"
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
@@ -19944,41 +20186,115 @@ msgid "Add a tracking code to use with Google Analytics"
 msgstr ""
 
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "An error occurred while sending the email."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "Are you ready to schedule?"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "Are you ready to send?"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "Your email will be sent at the specified date and time."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+msgid "Your email will be sent immediately."
+msgstr ""
+
+#. translators: %s is the formatted send date or "Immediately".
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:42
+msgid "Send: %s"
+msgstr ""
+
+#. translators: %s is the recipient segment label.
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Recipients: %s"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "No subscribers yet. You can still send a test email."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "All emails must include an \"Unsubscribe\" link."
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Insert link"
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Limit this coupon to the recipient's email address."
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "When enabled, the generated coupon can only be redeemed by the email address it was sent to."
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Usage restriction"
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Goes well with the order"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Shows cross-sells of the products from the order that triggered the automation. When the purchased products have no cross-sells, their related products are shown instead."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Sample products are shown in the editor. Each customer will see products that go well with their own order."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "More with the same tag"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Shows other products sharing tags with the products from the order that triggered the automation."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Sample products are shown in the editor. Each customer will see products with the same tags as their own order."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "More from the same category"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Shows other products from the categories of the products from the order that triggered the automation."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "Sample products are shown in the editor. Each customer will see products from the same categories as their own order."
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Share feedback"
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 #: assets/dist/js/newsletter_editor.js:2
 msgid "Return back to the Automation"
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Review & schedule"
 msgstr ""
 
-#: assets/dist/js/email_editor_integration/email_editor_integration.js:41
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
 msgid "Review & send"
+msgstr ""
+
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:43
+msgid "The email could not be saved. Please try again."
 msgstr ""
 
 #: assets/dist/js/marketing-optin-block/marketing-optin-block.js:1

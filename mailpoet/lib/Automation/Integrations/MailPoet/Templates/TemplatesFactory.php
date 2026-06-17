@@ -15,6 +15,8 @@ use MailPoet\WooCommerce\WooCommerceBookings\Helper as WooCommerceBookingsHelper
 use MailPoet\WooCommerce\WooCommerceSubscriptions\Helper as WooCommerceSubscriptions;
 
 class TemplatesFactory {
+  private const MIN_WOOCOMMERCE_VERSION_FOR_GENERATED_COUPON_BLOCK = '10.8.0';
+
   /** @var AutomationBuilder */
   private $builder;
 
@@ -60,7 +62,6 @@ class TemplatesFactory {
     if ($this->woocommerce->isWooCommerceActive()) {
       $templates[] = $this->createFirstPurchaseTemplate();
       $templates[] = $this->createThankLoyalCustomersTemplate();
-      $templates[] = $this->createWinBackCustomersTemplate();
       $templates[] = $this->createAbandonedCartTemplate();
       $templates[] = $this->createAbandonedCartCampaignTemplate();
       $templates[] = $this->createPurchasedProductTemplate();
@@ -95,15 +96,29 @@ class TemplatesFactory {
   }
 
   private function createBirthdayEmailTemplate(): AutomationTemplate {
+    $usesDiscountPattern = $this->woocommerce->isWooCommerceActive() && $this->supportsGeneratedCouponBlock();
+
     return new AutomationTemplate(
       'birthday-email',
       'celebrations',
       __('Birthday email', 'mailpoet'),
       __('Send a birthday email to your subscribers on their special day.', 'mailpoet'),
-      function (): Automation {
+      function (bool $preview = false) use ($usesDiscountPattern): Automation {
+        $emailArgs = $this->createBlockEditorEmailArgs(
+          $preview,
+          $usesDiscountPattern ? 'birthday-email-with-discount' : 'birthday-email-content',
+          $usesDiscountPattern ? __('A birthday treat from us', 'mailpoet') : __('Happy birthday!', 'mailpoet'),
+          $usesDiscountPattern ? __('A birthday treat from us', 'mailpoet') : __('Happy birthday!', 'mailpoet'),
+          $usesDiscountPattern ? __('Enjoy 10% off your next order', 'mailpoet') : __('Wishing you a wonderful day', 'mailpoet'),
+          'birthday-email'
+        );
+
         return $this->builder->createFromSequence(
           __('Birthday email', 'mailpoet'),
-          []
+          [
+            ['key' => 'mailpoet:annual-date'],
+            ['key' => 'mailpoet:send-email', 'args' => $emailArgs],
+          ]
         );
       },
       [
@@ -249,7 +264,16 @@ class TemplatesFactory {
         'Welcome your first-time customers by sending an email with a special offer for their next purchase. Make them feel appreciated within your brand.',
         'mailpoet'
       ),
-      function (): Automation {
+      function (bool $preview = false): Automation {
+        $emailArgs = $this->createBlockEditorEmailArgs(
+          $preview,
+          'first-purchase-thank-you',
+          __('First purchase thank you', 'mailpoet'),
+          __('Thank you for your first order!', 'mailpoet'),
+          __('Welcome to the family! Check out what’s next for you.', 'mailpoet'),
+          'first-purchase'
+        );
+
         return $this->builder->createFromSequence(
           __('Celebrate first-time buyers', 'mailpoet'),
           [
@@ -269,10 +293,7 @@ class TemplatesFactory {
             ],
             [
               'key' => 'mailpoet:send-email',
-              'args' => [
-                'name' => __('Thank you', 'mailpoet'),
-                'subject' => __('Thank You for Choosing Us!', 'mailpoet'),
-              ],
+              'args' => $emailArgs,
             ],
           ],
           [
@@ -299,37 +320,48 @@ class TemplatesFactory {
         'These are your most important customers. Make them feel special by sending a thank you note for supporting your brand.',
         'mailpoet'
       ),
-      function (): Automation {
+      function (bool $preview = false): Automation {
+        $emailArgs = $this->createBlockEditorEmailArgs(
+          $preview,
+          'post-purchase-thank-you',
+          __('Thank you for your loyalty', 'mailpoet'),
+          __('Thank you for your loyalty', 'mailpoet'),
+          __('We appreciate your continued support', 'mailpoet'),
+          'thank-loyal-customers'
+        );
+
         return $this->builder->createFromSequence(
           __('Thank loyal customers', 'mailpoet'),
-          []
+          [
+            [
+              'key' => 'woocommerce:order-completed',
+              'filters' => [
+                'operator' => 'and',
+                'groups' => [
+                  [
+                    'operator' => 'and',
+                    'filters' => [
+                      [
+                        'field' => 'woocommerce:customer:order-count',
+                        'condition' => 'greater-than',
+                        'value' => 5,
+                        'params' => ['in_the_last' => ['number' => 365, 'unit' => 'days']],
+                      ],
+                    ],
+                  ],
+                ],
+              ],
+            ],
+            ['key' => 'core:delay', 'args' => ['delay' => 1, 'delay_type' => 'DAYS']],
+            [
+              'key' => 'mailpoet:send-email',
+              'args' => $emailArgs,
+            ],
+          ]
         );
       },
       [
         'automationSteps' => 1, // trigger and all delay steps are excluded
-      ],
-      AutomationTemplate::TYPE_PREMIUM,
-      'people'
-    );
-  }
-
-  private function createWinBackCustomersTemplate(): AutomationTemplate {
-    return new AutomationTemplate(
-      'win-back-customers',
-      'purchase',
-      __('Win back customers', 'mailpoet'),
-      __(
-        'Rekindle the relationship with past customers by reminding them of their favorite products and showcasing what’s new, encouraging a return to your brand.',
-        'mailpoet'
-      ),
-      function (): Automation {
-        return $this->builder->createFromSequence(
-          __('Win back customers', 'mailpoet'),
-          []
-        );
-      },
-      [
-        'automationSteps' => 4, // trigger and all delay steps are excluded
       ],
       AutomationTemplate::TYPE_PREMIUM,
       'people'
@@ -409,7 +441,16 @@ class TemplatesFactory {
         'Share care instructions or simply thank the customer for making an order.',
         'mailpoet'
       ),
-      function (): Automation {
+      function (bool $preview = false): Automation {
+        $emailArgs = $this->createBlockEditorEmailArgs(
+          $preview,
+          'product-purchase-follow-up',
+          __('Important information about your order', 'mailpoet'),
+          __('Important information about your order', 'mailpoet'),
+          __('A few details about your purchase', 'mailpoet'),
+          'purchased-product'
+        );
+
         return $this->builder->createFromSequence(
           __('Purchased a product', 'mailpoet'),
           [
@@ -418,10 +459,7 @@ class TemplatesFactory {
             ],
             [
               'key' => 'mailpoet:send-email',
-              'args' => [
-                'name' => __('Important information about your order', 'mailpoet'),
-                'subject' => __('Important information about your order', 'mailpoet'),
-              ],
+              'args' => $emailArgs,
             ],
           ]
         );
@@ -443,7 +481,16 @@ class TemplatesFactory {
         'Share care instructions or simply thank the customer for making an order.',
         'mailpoet'
       ),
-      function (): Automation {
+      function (bool $preview = false): Automation {
+        $emailArgs = $this->createBlockEditorEmailArgs(
+          $preview,
+          'tag-purchase-follow-up',
+          __('Important information about your order', 'mailpoet'),
+          __('Important information about your order', 'mailpoet'),
+          __('A few details about your purchase', 'mailpoet'),
+          'purchased-product-with-tag'
+        );
+
         return $this->builder->createFromSequence(
           __('Purchased a product with a tag', 'mailpoet'),
           [
@@ -452,10 +499,7 @@ class TemplatesFactory {
             ],
             [
               'key' => 'mailpoet:send-email',
-              'args' => [
-                'name' => __('Important information about your order', 'mailpoet'),
-                'subject' => __('Important information about your order', 'mailpoet'),
-              ],
+              'args' => $emailArgs,
             ],
           ]
         );
@@ -477,7 +521,16 @@ class TemplatesFactory {
         'Share care instructions or simply thank the customer for making an order.',
         'mailpoet'
       ),
-      function (): Automation {
+      function (bool $preview = false): Automation {
+        $emailArgs = $this->createBlockEditorEmailArgs(
+          $preview,
+          'category-purchase-follow-up',
+          __('Important information about your order', 'mailpoet'),
+          __('Important information about your order', 'mailpoet'),
+          __('A few details about your purchase', 'mailpoet'),
+          'purchased-in-category'
+        );
+
         return $this->builder->createFromSequence(
           __('Purchased in a category', 'mailpoet'),
           [
@@ -486,10 +539,7 @@ class TemplatesFactory {
             ],
             [
               'key' => 'mailpoet:send-email',
-              'args' => [
-                'name' => __('Important information about your order', 'mailpoet'),
-                'subject' => __('Important information about your order', 'mailpoet'),
-              ],
+              'args' => $emailArgs,
             ],
           ]
         );
@@ -845,6 +895,21 @@ class TemplatesFactory {
       AutomationTemplate::TYPE_PREMIUM,
       'calendar'
     );
+  }
+
+  private function supportsGeneratedCouponBlock(): bool {
+    $wooCommerceVersion = $this->woocommerceHelper->getWooCommerceVersion();
+    if (!$wooCommerceVersion) {
+      return false;
+    }
+
+    $numericVersionLength = strspn($wooCommerceVersion, '0123456789.');
+    $numericVersion = substr($wooCommerceVersion, 0, $numericVersionLength);
+    if ($numericVersion === '') {
+      return false;
+    }
+
+    return version_compare($numericVersion, self::MIN_WOOCOMMERCE_VERSION_FOR_GENERATED_COUPON_BLOCK, '>=');
   }
 
   /**

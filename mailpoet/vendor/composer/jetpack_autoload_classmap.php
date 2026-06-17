@@ -9532,6 +9532,14 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/AskForReviewPostPurchasePattern.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\BirthdayEmailPattern' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\CategoryPurchaseFollowUpPattern' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/CategoryPurchaseFollowUpPattern.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\EducationalCampaignPattern' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/EducationalCampaignPattern.php'
@@ -9571,6 +9579,10 @@ return array(
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\SaleAnnouncementPattern' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\TagPurchaseFollowUpPattern' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/TagPurchaseFollowUpPattern.php'
  ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\WelcomeEmailPattern' => array(
  'version' => 'dev-trunk',
@@ -9615,6 +9627,10 @@ return array(
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\Subscriber' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/Subscriber.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\ProductCollection\\OrderProductCollectionProcessor' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/ProductCollection/OrderProductCollectionProcessor.php'
  ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Templates\\Library\\Newsletter' => array(
  'version' => 'dev-trunk',
@@ -10539,6 +10555,10 @@ return array(
  'MailPoet\\Migrations\\Db\\Migration_20260514_120000_Db' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260514_120000_Db.php'
+ ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260609_120000_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260609_120000_Db.php'
  ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',
@@ -12219,6 +12239,26 @@ return array(
  'MailPoet\\WooCommerce\\NonPersistablePreviewData' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/WooCommerce/NonPersistablePreviewData.php'
+ ),
+ 'MailPoet\\WooCommerce\\OrderAttributionFields' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/WooCommerce/OrderAttributionFields.php'
+ ),
+ 'MailPoet\\WooCommerce\\OrderAttributionPrivacy' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/WooCommerce/OrderAttributionPrivacy.php'
+ ),
+ 'MailPoet\\WooCommerce\\OrderAttributionReconciler' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/WooCommerce/OrderAttributionReconciler.php'
+ ),
+ 'MailPoet\\WooCommerce\\OrderAttributionRevenueReader' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/WooCommerce/OrderAttributionRevenueReader.php'
+ ),
+ 'MailPoet\\WooCommerce\\OrderAttributionWriter' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/WooCommerce/OrderAttributionWriter.php'
  ),
  'MailPoet\\WooCommerce\\RandomCouponCodeGenerator' => array(
  'version' => 'dev-trunk',

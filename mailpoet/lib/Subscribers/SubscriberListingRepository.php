@@ -260,11 +260,10 @@ class SubscriberListingRepository extends ListingRepository {
     }
 
     $search = $definition->getSearch();
-    if ($search && strlen(trim($search)) > 0) {
-      $search = Helpers::escapeSearch($search);
+    if ($search && strlen(trim($search)) > 0 && trim($search) !== '*') {
       $query
         ->andWhere('(s.email LIKE :search OR s.first_name LIKE :search OR s.last_name LIKE :search)')
-        ->setParameter('search', "%$search%");
+        ->setParameter('search', Helpers::buildSearchLikePattern($search));
     }
 
     $filters = $definition->getFilters();
@@ -580,10 +579,12 @@ class SubscriberListingRepository extends ListingRepository {
   }
 
   protected function applySearch(QueryBuilder $queryBuilder, string $search, array $parameters = []) {
-    $search = Helpers::escapeSearch($search);
+    if (trim($search) === '*') {
+      return;
+    }
     $queryBuilder
       ->andWhere('s.email LIKE :search or s.firstName LIKE :search or s.lastName LIKE :search')
-      ->setParameter('search', "%$search%");
+      ->setParameter('search', Helpers::buildSearchLikePattern($search));
   }
 
   protected function applyFilters(QueryBuilder $queryBuilder, array $filters) {
@@ -791,6 +792,15 @@ class SubscriberListingRepository extends ListingRepository {
       $sortBy = self::DEFAULT_SORT_BY;
     }
     $queryBuilder->addOrderBy("s.$sortBy", $sortOrder);
+    if ($sortBy !== 'id') {
+      // Deterministic tiebreaker so pagination stays stable when the sorted
+      // column has duplicate values. created_at has per-second granularity, so
+      // large or imported lists tie often; pairing it with id also matches the
+      // deleted_at_created index (deleted_at, created_at + implicit id), which
+      // serves the default listing with the WHERE pinning deleted_at, keeping
+      // the sort index-backed.
+      $queryBuilder->addOrderBy('s.id', $sortOrder);
+    }
   }
 
   public function getGroups(ListingDefinition $definition): array {
@@ -971,6 +981,11 @@ class SubscriberListingRepository extends ListingRepository {
       ->from($subscribersTable);
     $subscribersIdsQuery = $this->applyConstraintsForDynamicSegment($subscribersIdsQuery, $definition, $segment);
     $subscribersIdsQuery->orderBy($this->getDynamicSegmentSortColumn($sortBy, $subscribersTable), $sortOrder);
+    if ($sortBy !== 'id') {
+      // The page boundary is cut here, so this query needs the same id
+      // tiebreaker as applySorting() for pagination to stay stable.
+      $subscribersIdsQuery->addOrderBy($this->getDynamicSegmentSortColumn('id', $subscribersTable), $sortOrder);
+    }
     $subscribersIdsQuery->setFirstResult($definition->getOffset());
     $subscribersIdsQuery->setMaxResults($definition->getLimit());
 
@@ -1012,11 +1027,11 @@ class SubscriberListingRepository extends ListingRepository {
     $subscribersQuery = $this->dynamicSegmentsFilter->apply($subscribersQuery, $segment);
     // Apply group, search to fetch only necessary ids
     $subscribersTable = $this->entityManager->getClassMetadata(SubscriberEntity::class)->getTableName();
-    if ($definition->getSearch()) {
-      $search = Helpers::escapeSearch((string)$definition->getSearch());
+    $search = (string)$definition->getSearch();
+    if (strlen(trim($search)) > 0 && trim($search) !== '*') {
       $subscribersQuery
         ->andWhere("$subscribersTable.email LIKE :search or $subscribersTable.first_name LIKE :search or $subscribersTable.last_name LIKE :search")
-        ->setParameter('search', "%$search%");
+        ->setParameter('search', Helpers::buildSearchLikePattern($search));
     }
     if ($definition->getGroup()) {
       if ($definition->getGroup() === 'trash') {

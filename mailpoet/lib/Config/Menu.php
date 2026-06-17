@@ -245,7 +245,7 @@ class Menu {
     );
 
     // Emails page
-    $newslettersPage = $this->wp->addSubmenuPage(
+    $this->wp->addSubmenuPage(
       self::MAIN_PAGE_SLUG,
       $this->setPageTitle(__('Emails', 'mailpoet')),
       esc_html__('Emails', 'mailpoet'),
@@ -256,18 +256,6 @@ class Menu {
         'newsletters',
       ]
     );
-
-    // add limit per page to screen options
-    $this->wp->addAction('load-' . $newslettersPage, function() {
-      $this->wp->addScreenOption('per_page', [
-        'label' => _x(
-          'Number of newsletters per page',
-          'newsletters per page (screen options)',
-          'mailpoet'
-        ),
-        'option' => 'mailpoet_newsletters_per_page',
-      ]);
-    });
 
     // newsletter editor
     $this->wp->addSubmenuPage(
@@ -331,7 +319,7 @@ class Menu {
     );
 
     // Subscribers page
-    $subscribersPage = $this->wp->addSubmenuPage(
+    $this->wp->addSubmenuPage(
       self::MAIN_PAGE_SLUG,
       $this->setPageTitle(__('Subscribers', 'mailpoet')),
       esc_html__('Subscribers', 'mailpoet'),
@@ -342,18 +330,6 @@ class Menu {
         'subscribers',
       ]
     );
-
-    // add limit per page to screen options
-    $this->wp->addAction('load-' . $subscribersPage, function() {
-      $this->wp->addScreenOption('per_page', [
-        'label' => _x(
-          'Number of subscribers per page',
-          'subscribers per page (screen options)',
-          'mailpoet'
-        ),
-        'option' => 'mailpoet_subscribers_per_page',
-      ]);
-    });
 
     // import
     $this->wp->addSubmenuPage(
@@ -408,7 +384,7 @@ class Menu {
     );
 
     // Lists page
-    $listsPage = $this->wp->addSubmenuPage(
+    $this->wp->addSubmenuPage(
       self::MAIN_PAGE_SLUG,
       $this->setPageTitle(__('Lists', 'mailpoet')),
       esc_html__('Lists', 'mailpoet'),
@@ -419,21 +395,6 @@ class Menu {
         'lists',
       ]
     );
-
-    // add limit per page to screen options
-    // The lists page renders the StaticSegments listing, which reads its limit
-    // via PageLimit::getLimitPerPage('segments') -- so the screen option must
-    // write to the `mailpoet_segments_per_page` user meta.
-    $this->wp->addAction('load-' . $listsPage, function() {
-      $this->wp->addScreenOption('per_page', [
-        'label' => _x(
-          'Number of lists per page',
-          'lists per page (screen options)',
-          'mailpoet'
-        ),
-        'option' => 'mailpoet_segments_per_page',
-      ]);
-    });
 
     // Segments page
     $this->wp->addSubmenuPage(

@@ -9,6 +9,8 @@ use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartPat
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartReminderPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AbandonedCartWithDiscountPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\AskForReviewPostPurchasePattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\BirthdayEmailPattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\CategoryPurchaseFollowUpPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\EducationalCampaignPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\EventInvitationPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\FirstPurchaseThankYouPattern;
@@ -19,6 +21,7 @@ use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\PostPurchaseThan
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\ProductPurchaseFollowUpPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\ProductRestockNotificationPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\SaleAnnouncementPattern;
+use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\TagPurchaseFollowUpPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\WelcomeEmailPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\WelcomeWithDiscountEmailPattern;
 use MailPoet\EmailEditor\Integrations\MailPoet\Patterns\Library\WinBackCustomerPattern;
@@ -105,6 +108,7 @@ class PatternsController {
       new ProductRestockNotificationPattern($this->cdnAssetUrl),
       new NewArrivalsAnnouncementPattern($this->cdnAssetUrl),
       new WelcomeEmailPattern($this->cdnAssetUrl),
+      new BirthdayEmailPattern($this->cdnAssetUrl),
     ];
 
     // WooCommerce-dependent patterns (uses product blocks or purchase/abandoned-cart categories)
@@ -113,8 +117,14 @@ class PatternsController {
         new FirstPurchaseThankYouPattern($this->cdnAssetUrl),
         new PostPurchaseThankYouPattern($this->cdnAssetUrl),
         new ProductPurchaseFollowUpPattern($this->cdnAssetUrl),
+        new TagPurchaseFollowUpPattern($this->cdnAssetUrl),
+        new CategoryPurchaseFollowUpPattern($this->cdnAssetUrl),
+        new WinBackCustomerPattern($this->cdnAssetUrl, true),
+        new WinBackCustomerPattern($this->cdnAssetUrl, false, true),
         new AbandonedCartPattern($this->cdnAssetUrl),
         new AbandonedCartReminderPattern($this->cdnAssetUrl),
+        new AskForReviewPostPurchasePattern($this->cdnAssetUrl, 'positive-follow-up'),
+        new AskForReviewPostPurchasePattern($this->cdnAssetUrl, 'negative-follow-up'),
       ]);
 
       if ($this->wooCommerceHelper->wcSupportsOrderReviewUrl()) {
@@ -128,8 +138,10 @@ class PatternsController {
       if ($wooCommerceVersion && version_compare($wooCommerceVersion, self::MIN_WOOCOMMERCE_VERSION_FOR_GENERATED_COUPON_BLOCK, '>=')) {
         $this->patterns = array_merge($this->patterns, [
           new WelcomeWithDiscountEmailPattern($this->cdnAssetUrl),
+          new BirthdayEmailPattern($this->cdnAssetUrl, true),
           new WinBackCustomerPattern($this->cdnAssetUrl),
           new AbandonedCartWithDiscountPattern($this->cdnAssetUrl),
+          new AskForReviewPostPurchasePattern($this->cdnAssetUrl, 'reward-positive'),
         ]);
       }
     }
@@ -256,6 +268,11 @@ class PatternsController {
         'label' => _x('Welcome', 'Block pattern category', 'mailpoet'),
         'description' => __('A collection of welcome email layouts.', 'mailpoet'),
       ],
+      [
+        'name' => 'celebrations',
+        'label' => _x('Celebrations', 'Block pattern category', 'mailpoet'),
+        'description' => __('A collection of celebration email layouts.', 'mailpoet'),
+      ],
     ];
 
     // WooCommerce-dependent categories
@@ -269,6 +286,11 @@ class PatternsController {
         'name' => 'abandoned-cart',
         'label' => _x('Abandoned cart', 'Block pattern category', 'mailpoet'),
         'description' => __('A collection of abandoned cart email layouts.', 'mailpoet'),
+      ];
+      $categories[] = [
+        'name' => 'review',
+        'label' => _x('Review', 'Block pattern category', 'mailpoet'),
+        'description' => __('A collection of review follow-up email layouts.', 'mailpoet'),
       ];
     }
 

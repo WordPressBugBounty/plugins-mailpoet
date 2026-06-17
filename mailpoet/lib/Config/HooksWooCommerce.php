@@ -13,6 +13,9 @@ use MailPoet\Statistics\Track\WooCommercePurchases;
 use MailPoet\Subscription\Registration;
 use MailPoet\WooCommerce\MailPoetTask;
 use MailPoet\WooCommerce\MultichannelMarketing\MPMarketingChannelController;
+use MailPoet\WooCommerce\OrderAttributionPrivacy;
+use MailPoet\WooCommerce\OrderAttributionReconciler;
+use MailPoet\WooCommerce\OrderAttributionWriter;
 use MailPoet\WooCommerce\Settings as WooCommerceSettings;
 use MailPoet\WooCommerce\SubscriberEngagement;
 use MailPoet\WooCommerce\Subscription as WooCommerceSubscription;
@@ -46,6 +49,15 @@ class HooksWooCommerce {
   /** @var MPMarketingChannelController */
   private $marketingChannelController;
 
+  /** @var OrderAttributionWriter */
+  private $orderAttributionWriter;
+
+  /** @var OrderAttributionReconciler */
+  private $orderAttributionReconciler;
+
+  /** @var OrderAttributionPrivacy */
+  private $orderAttributionPrivacy;
+
   public function __construct(
     WooCommerceSubscription $woocommerceSubscription,
     WooCommerceSegment $woocommerceSegment,
@@ -55,7 +67,10 @@ class HooksWooCommerce {
     LoggerFactory $loggerFactory,
     Tracker $tracker,
     SubscriberEngagement $subscriberEngagement,
-    MPMarketingChannelController $marketingChannelController
+    MPMarketingChannelController $marketingChannelController,
+    OrderAttributionWriter $orderAttributionWriter,
+    OrderAttributionReconciler $orderAttributionReconciler,
+    OrderAttributionPrivacy $orderAttributionPrivacy
   ) {
     $this->woocommerceSubscription = $woocommerceSubscription;
     $this->woocommerceSegment = $woocommerceSegment;
@@ -66,6 +81,9 @@ class HooksWooCommerce {
     $this->tracker = $tracker;
     $this->subscriberEngagement = $subscriberEngagement;
     $this->marketingChannelController = $marketingChannelController;
+    $this->orderAttributionWriter = $orderAttributionWriter;
+    $this->orderAttributionReconciler = $orderAttributionReconciler;
+    $this->orderAttributionPrivacy = $orderAttributionPrivacy;
   }
 
   public function extendWooCommerceCheckoutForm() {
@@ -129,6 +147,54 @@ class HooksWooCommerce {
       $this->woocommercePurchases->trackPurchase($id, $useCookies);
     } catch (\Throwable $e) {
       $this->logError($e, 'WooCommerce Purchases');
+    }
+  }
+
+  public function markAttributionWritesStarted() {
+    try {
+      $this->orderAttributionWriter->markWritesStartedIfActive();
+    } catch (\Throwable $e) {
+      $this->logError($e, 'WooCommerce Order Attribution');
+    }
+  }
+
+  public function writeOrderAttribution($order) {
+    try {
+      $this->orderAttributionWriter->writeForOrder($order);
+    } catch (\Throwable $e) {
+      $this->logError($e, 'WooCommerce Order Attribution');
+    }
+  }
+
+  public function writeOrderAttributionForNewOrder($order) {
+    try {
+      $this->orderAttributionWriter->writeForNewOrder($order);
+    } catch (\Throwable $e) {
+      $this->logError($e, 'WooCommerce Order Attribution');
+    }
+  }
+
+  public function reconcileOrderAttribution($order) {
+    try {
+      $this->orderAttributionReconciler->reconcileForOrder($order, OrderAttributionReconciler::TRIGGER_STATUS_CHANGED);
+    } catch (\Throwable $e) {
+      $this->logError($e, 'WooCommerce Order Attribution Reconciliation');
+    }
+  }
+
+  public function reconcileOrderAttributionOnRefund($order) {
+    try {
+      $this->orderAttributionReconciler->reconcileForOrder($order, OrderAttributionReconciler::TRIGGER_REFUND);
+    } catch (\Throwable $e) {
+      $this->logError($e, 'WooCommerce Order Attribution Reconciliation');
+    }
+  }
+
+  public function removeOrderAttributionPersonalData($order) {
+    try {
+      $this->orderAttributionPrivacy->removeOrderPersonalData($order);
+    } catch (\Throwable $e) {
+      $this->logError($e, 'WooCommerce Order Attribution Privacy');
     }
   }
 
