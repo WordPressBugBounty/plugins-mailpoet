@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) exit;
 
 use MailPoet\AdminPages\AssetsController;
 use MailPoet\AdminPages\PageRenderer;
+use MailPoet\Logging\LogRepository;
 use MailPoet\WP\Functions as WPFunctions;
 use MailPoetVendor\Carbon\Carbon;
 
@@ -20,14 +21,19 @@ class Logs {
   /** @var WPFunctions */
   private $wp;
 
+  /** @var LogRepository */
+  private $logRepository;
+
   public function __construct(
     AssetsController $assetsController,
     PageRenderer $pageRenderer,
-    WPFunctions $wp
+    WPFunctions $wp,
+    LogRepository $logRepository
   ) {
     $this->assetsController = $assetsController;
     $this->pageRenderer = $pageRenderer;
     $this->wp = $wp;
+    $this->logRepository = $logRepository;
   }
 
   public function render() {
@@ -36,6 +42,9 @@ class Logs {
     $dateFrom = (new Carbon())->subDays(7);
     $data = [
       'logs_default_from' => $dateFrom->format('Y-m-d'),
+      'logs_filter_options' => [
+        'names' => $this->logRepository->getDistinctNames(),
+      ],
       'api' => [
         'root' => rtrim($this->wp->escUrlRaw($this->wp->restUrl()), '/'),
         'nonce' => $this->wp->wpCreateNonce('wp_rest'),

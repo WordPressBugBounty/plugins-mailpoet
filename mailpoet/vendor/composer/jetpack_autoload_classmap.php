@@ -7520,6 +7520,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/API/REST/Exception.php'
  ),
+ 'MailPoet\\API\\REST\\ListingRequestValidationTrait' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/API/REST/ListingRequestValidationTrait.php'
+ ),
  'MailPoet\\API\\REST\\Request' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/API/REST/Request.php'
@@ -7851,6 +7855,10 @@ return array(
  'MailPoet\\Automation\\Engine\\Data\\SubjectEntry' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Automation/Engine/Data/SubjectEntry.php'
+ ),
+ 'MailPoet\\Automation\\Engine\\Endpoints\\Automations\\AutomationTemplateEmailPreviewEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Automation/Engine/Endpoints/Automations/AutomationTemplateEmailPreviewEndpoint.php'
  ),
  'MailPoet\\Automation\\Engine\\Endpoints\\Automations\\AutomationTemplateGetEndpoint' => array(
  'version' => 'dev-trunk',
@@ -8243,6 +8251,10 @@ return array(
  'MailPoet\\Automation\\Integrations\\MailPoet\\Templates\\EmailFactory' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Automation/Integrations/MailPoet/Templates/EmailFactory.php'
+ ),
+ 'MailPoet\\Automation\\Integrations\\MailPoet\\Templates\\TemplateEmailPreviewRenderer' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Automation/Integrations/MailPoet/Templates/TemplateEmailPreviewRenderer.php'
  ),
  'MailPoet\\Automation\\Integrations\\MailPoet\\Templates\\TemplatesFactory' => array(
  'version' => 'dev-trunk',
@@ -8960,6 +8972,54 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/ActionScheduler/RemoteExecutorHandler.php'
  ),
+ 'MailPoet\\Cron\\CliCommands\\ClaimedTaskRunner' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/ClaimedTaskRunner.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\Cli' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/Cli.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\CronCommand' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/CronCommand.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\DaemonRunner' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/DaemonRunner.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\ExecutionLimitOverride' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/ExecutionLimitOverride.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\ScheduledTaskResolver' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/ScheduledTaskResolver.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\ScheduledTasksLister' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/ScheduledTasksLister.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\TaskAdder' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/TaskAdder.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\TaskCanceller' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/TaskCanceller.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\TaskRunner' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/TaskRunner.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\TaskTrigger' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/TaskTrigger.php'
+ ),
+ 'MailPoet\\Cron\\CliCommands\\WorkerTypesCatalog' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/CliCommands/WorkerTypesCatalog.php'
+ ),
  'MailPoet\\Cron\\CronHelper' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/CronHelper.php'
@@ -9015,6 +9075,10 @@ return array(
  'MailPoet\\Cron\\Workers\\Bounce' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/Workers/Bounce.php'
+ ),
+ 'MailPoet\\Cron\\Workers\\BounceTaskSubscribersCleanup' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/Workers/BounceTaskSubscribersCleanup.php'
  ),
  'MailPoet\\Cron\\Workers\\BulkConfirmationEmailResend' => array(
  'version' => 'dev-trunk',
@@ -9536,6 +9600,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BirthdayEmailPattern.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\BookingAutomationEmailPattern' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/BookingAutomationEmailPattern.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\CategoryPurchaseFollowUpPattern' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/CategoryPurchaseFollowUpPattern.php'
@@ -9579,6 +9647,10 @@ return array(
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\SaleAnnouncementPattern' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SaleAnnouncementPattern.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\SubscriptionAutomationEmailPattern' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Patterns/Library/SubscriptionAutomationEmailPattern.php'
  ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Patterns\\Library\\TagPurchaseFollowUpPattern' => array(
  'version' => 'dev-trunk',
@@ -10220,6 +10292,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Listing/Handler.php'
  ),
+ 'MailPoet\\Listing\\ListingDateRangeFilterTrait' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Listing/ListingDateRangeFilterTrait.php'
+ ),
  'MailPoet\\Listing\\ListingDefinition' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Listing/ListingDefinition.php'
@@ -10256,9 +10332,17 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Logging/RestApi/Api.php'
  ),
+ 'MailPoet\\Logging\\RestApi\\Endpoints\\LogsDeleteEndpoint' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Logging/RestApi/Endpoints/LogsDeleteEndpoint.php'
+ ),
  'MailPoet\\Logging\\RestApi\\Endpoints\\LogsListingEndpoint' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Logging/RestApi/Endpoints/LogsListingEndpoint.php'
+ ),
+ 'MailPoet\\Logging\\RestApi\\LogsFilterTrait' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Logging/RestApi/LogsFilterTrait.php'
  ),
  'MailPoet\\Mailer\\Mailer' => array(
  'version' => 'dev-trunk',
@@ -10559,6 +10643,10 @@ return array(
  'MailPoet\\Migrations\\Db\\Migration_20260609_120000_Db' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260609_120000_Db.php'
+ ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260610_120000_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260610_120000_Db.php'
  ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',
@@ -11508,6 +11596,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Subscribers/ImportExport/ImportExportRepository.php'
  ),
+ 'MailPoet\\Subscribers\\ImportExport\\Import\\Cli' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/ImportExport/Import/Cli.php'
+ ),
  'MailPoet\\Subscribers\\ImportExport\\Import\\Import' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Subscribers/ImportExport/Import/Import.php'
@@ -12096,6 +12188,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Util/Security.php'
  ),
+ 'MailPoet\\Util\\ThirdPartyOutput' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Util/ThirdPartyOutput.php'
+ ),
  'MailPoet\\Util\\Url' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Util/Url.php'
@@ -12243,14 +12339,6 @@ return array(
  'MailPoet\\WooCommerce\\OrderAttributionFields' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/WooCommerce/OrderAttributionFields.php'
- ),
- 'MailPoet\\WooCommerce\\OrderAttributionPrivacy' => array(
- 'version' => 'dev-trunk',
- 'path' => $baseDir . '/lib/WooCommerce/OrderAttributionPrivacy.php'
- ),
- 'MailPoet\\WooCommerce\\OrderAttributionReconciler' => array(
- 'version' => 'dev-trunk',
- 'path' => $baseDir . '/lib/WooCommerce/OrderAttributionReconciler.php'
  ),
  'MailPoet\\WooCommerce\\OrderAttributionRevenueReader' => array(
  'version' => 'dev-trunk',

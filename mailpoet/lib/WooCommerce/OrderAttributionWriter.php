@@ -20,8 +20,6 @@ use WC_Order;
 class OrderAttributionWriter {
   const WRITES_STARTED_AT_OPTION = 'mailpoet_woo_attribution_writes_started_at';
 
-  const META_PREFIX = OrderAttributionFields::META_PREFIX;
-
   // 'typein' is Woo's source type for direct traffic. A clear non-MailPoet source
   // (organic, referral, non-MailPoet utm, admin, mobile_app) is never overwritten.
   const OVERWRITABLE_SOURCE_TYPES = ['', 'typein', 'unknown'];
@@ -77,11 +75,8 @@ class OrderAttributionWriter {
 
     $click = $this->resolveCanonicalClick($order);
     if (!$click) {
-      $this->removeEmptyPlaceholders($order);
-      $order->save_meta_data();
       return;
     }
-    $this->writeMailPoetFields($order, $click);
     $this->writeStandardSourceFields($order, $click);
     $order->save_meta_data();
   }
@@ -216,30 +211,11 @@ class OrderAttributionWriter {
     return $subscriber instanceof SubscriberEntity ? $subscriber->getEmail() : null;
   }
 
-  private function writeMailPoetFields(WC_Order $order, StatisticsClickEntity $click): void {
-    $newsletter = $click->getNewsletter();
-    $queue = $click->getQueue();
-    $subscriber = $click->getSubscriber();
-    $values = [
-      OrderAttributionFields::FIELD_CLICK_ID => (string)$click->getId(),
-      OrderAttributionFields::FIELD_NEWSLETTER_ID => $newsletter ? (string)$newsletter->getId() : '',
-      OrderAttributionFields::FIELD_QUEUE_ID => $queue ? (string)$queue->getId() : '',
-      OrderAttributionFields::FIELD_SUBSCRIBER_ID => $subscriber ? (string)$subscriber->getId() : '',
-    ];
-    foreach ($values as $fieldName => $value) {
-      if ($value === '') {
-        $this->removeEmptyPlaceholder($order, $fieldName);
-        continue;
-      }
-      $order->update_meta_data(OrderAttributionFields::getMetaKey($fieldName), $value);
-    }
-  }
-
   private function writeStandardSourceFields(WC_Order $order, StatisticsClickEntity $click): void {
     $sourceType = $this->getMetaString($order, OrderAttributionFields::getMetaKey('source_type'));
     $utmSource = $this->getMetaString($order, OrderAttributionFields::getMetaKey('utm_source'));
-    $isOverwritable = in_array($sourceType, self::OVERWRITABLE_SOURCE_TYPES, true) || $utmSource === 'mailpoet';
-    if (!$isOverwritable) {
+    $sessionStartTime = $this->getMetaString($order, OrderAttributionFields::getMetaKey('session_start_time'));
+    if (!self::shouldWriteStandardSourceFields($sourceType, $utmSource, $sessionStartTime, $click->getUpdatedAt(), $this->wp->wpTimezone())) {
       return;
     }
     $values = [
@@ -258,23 +234,42 @@ class OrderAttributionWriter {
     }
   }
 
-  /**
-   * WooCommerce persists the registered MailPoet fields as empty strings on checkout
-   * orders (the placeholders from STOMAIL-7487). When no attribution is resolved,
-   * the empty placeholders are removed so "no eligible click" leaves no MailPoet
-   * meta behind. Non-empty values are never removed.
-   */
-  private function removeEmptyPlaceholders(WC_Order $order): void {
-    foreach (OrderAttributionFields::FIELD_NAMES as $fieldName) {
-      $this->removeEmptyPlaceholder($order, $fieldName);
+  public static function shouldWriteStandardSourceFields(
+    string $sourceType,
+    string $utmSource,
+    string $sessionStartTime,
+    \DateTimeInterface $clickUpdatedAt,
+    \DateTimeZone $wooSessionTimeZone
+  ): bool {
+    if (in_array($sourceType, self::OVERWRITABLE_SOURCE_TYPES, true) || $utmSource === 'mailpoet') {
+      return true;
     }
+    $wooSessionStart = self::parseWooSessionStartTime($sessionStartTime, $wooSessionTimeZone);
+    return $wooSessionStart && $clickUpdatedAt->getTimestamp() >= $wooSessionStart->getTimestamp();
   }
 
-  private function removeEmptyPlaceholder(WC_Order $order, string $fieldName): void {
-    $metaKey = OrderAttributionFields::getMetaKey($fieldName);
-    if ($order->meta_exists($metaKey) && $this->getMetaString($order, $metaKey) === '') {
-      $order->delete_meta_data($metaKey);
+  /**
+   * Woo stores session_start_time as sourcebuster's `current_add.fd`, a wall-clock
+   * string with no timezone. It is the visitor's browser-local time, which the server
+   * cannot recover exactly, so we interpret it in the site timezone as the best
+   * single-region approximation. Multi-region skew is accepted within the documented
+   * last-click tolerance (STOMAIL-8186).
+   */
+  private static function parseWooSessionStartTime(string $sessionStartTime, \DateTimeZone $timeZone): ?\DateTimeImmutable {
+    $sessionStartTime = trim($sessionStartTime);
+    if ($sessionStartTime === '') {
+      return null;
     }
+    $date = \DateTimeImmutable::createFromFormat(
+      '!Y-m-d H:i:s',
+      $sessionStartTime,
+      $timeZone
+    );
+    $errors = \DateTimeImmutable::getLastErrors();
+    if (!$date || ($errors !== false && ((int)$errors['warning_count'] > 0 || (int)$errors['error_count'] > 0))) {
+      return null;
+    }
+    return $date;
   }
 
   private function getMetaString(WC_Order $order, string $metaKey): string {

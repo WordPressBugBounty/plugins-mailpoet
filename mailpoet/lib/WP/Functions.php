@@ -340,6 +340,14 @@ class Functions {
     return get_post_type($post);
   }
 
+  /**
+   * @param string $status
+   * @return object|null
+   */
+  public function getPostStatusObject($status) {
+    return get_post_status_object($status);
+  }
+
   public function getPosts(?array $args = null) {
     return get_posts($args);
   }
@@ -720,6 +728,15 @@ class Functions {
 
   public function wpTrimWords($text, $numWords = 55, $more = null) {
     return wp_trim_words($text, $numWords, $more);
+  }
+
+  public function wpCacheSet($key, $data, $group = '', $expire = 0) {
+    // phpcs:ignore WordPressVIPMinimum.Performance.LowExpiryCacheTime.CacheTimeUndetermined -- generic wrapper, expiry is controlled by callers.
+    return wp_cache_set($key, $data, $group, $expire);
+  }
+
+  public function wpCacheDelete($key, $group = '') {
+    return wp_cache_delete($key, $group);
   }
 
   public function wpUploadDir($time = null, $createDir = true, $refreshCache = false) {

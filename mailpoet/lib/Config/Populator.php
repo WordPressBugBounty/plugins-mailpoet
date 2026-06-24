@@ -221,7 +221,9 @@ class Populator {
       $captchaPageId = $captchaPage->ID;
     }
 
-    $this->settings->set('subscription.pages.captcha', $captchaPageId);
+    if (empty($this->settings->get('subscription.pages.captcha'))) {
+      $this->settings->set('subscription.pages.captcha', $captchaPageId);
+    }
   }
 
   private function createDefaultSettings() {

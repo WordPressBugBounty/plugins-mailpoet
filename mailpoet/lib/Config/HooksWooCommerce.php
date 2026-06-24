@@ -13,8 +13,6 @@ use MailPoet\Statistics\Track\WooCommercePurchases;
 use MailPoet\Subscription\Registration;
 use MailPoet\WooCommerce\MailPoetTask;
 use MailPoet\WooCommerce\MultichannelMarketing\MPMarketingChannelController;
-use MailPoet\WooCommerce\OrderAttributionPrivacy;
-use MailPoet\WooCommerce\OrderAttributionReconciler;
 use MailPoet\WooCommerce\OrderAttributionWriter;
 use MailPoet\WooCommerce\Settings as WooCommerceSettings;
 use MailPoet\WooCommerce\SubscriberEngagement;
@@ -52,12 +50,6 @@ class HooksWooCommerce {
   /** @var OrderAttributionWriter */
   private $orderAttributionWriter;
 
-  /** @var OrderAttributionReconciler */
-  private $orderAttributionReconciler;
-
-  /** @var OrderAttributionPrivacy */
-  private $orderAttributionPrivacy;
-
   public function __construct(
     WooCommerceSubscription $woocommerceSubscription,
     WooCommerceSegment $woocommerceSegment,
@@ -68,9 +60,7 @@ class HooksWooCommerce {
     Tracker $tracker,
     SubscriberEngagement $subscriberEngagement,
     MPMarketingChannelController $marketingChannelController,
-    OrderAttributionWriter $orderAttributionWriter,
-    OrderAttributionReconciler $orderAttributionReconciler,
-    OrderAttributionPrivacy $orderAttributionPrivacy
+    OrderAttributionWriter $orderAttributionWriter
   ) {
     $this->woocommerceSubscription = $woocommerceSubscription;
     $this->woocommerceSegment = $woocommerceSegment;
@@ -82,8 +72,6 @@ class HooksWooCommerce {
     $this->subscriberEngagement = $subscriberEngagement;
     $this->marketingChannelController = $marketingChannelController;
     $this->orderAttributionWriter = $orderAttributionWriter;
-    $this->orderAttributionReconciler = $orderAttributionReconciler;
-    $this->orderAttributionPrivacy = $orderAttributionPrivacy;
   }
 
   public function extendWooCommerceCheckoutForm() {
@@ -171,30 +159,6 @@ class HooksWooCommerce {
       $this->orderAttributionWriter->writeForNewOrder($order);
     } catch (\Throwable $e) {
       $this->logError($e, 'WooCommerce Order Attribution');
-    }
-  }
-
-  public function reconcileOrderAttribution($order) {
-    try {
-      $this->orderAttributionReconciler->reconcileForOrder($order, OrderAttributionReconciler::TRIGGER_STATUS_CHANGED);
-    } catch (\Throwable $e) {
-      $this->logError($e, 'WooCommerce Order Attribution Reconciliation');
-    }
-  }
-
-  public function reconcileOrderAttributionOnRefund($order) {
-    try {
-      $this->orderAttributionReconciler->reconcileForOrder($order, OrderAttributionReconciler::TRIGGER_REFUND);
-    } catch (\Throwable $e) {
-      $this->logError($e, 'WooCommerce Order Attribution Reconciliation');
-    }
-  }
-
-  public function removeOrderAttributionPersonalData($order) {
-    try {
-      $this->orderAttributionPrivacy->removeOrderPersonalData($order);
-    } catch (\Throwable $e) {
-      $this->logError($e, 'WooCommerce Order Attribution Privacy');
     }
   }
 
