@@ -71,8 +71,12 @@ class __TwigTemplate_176225ef6518abb3a235b9f1785c332f068c4c798b602f397b3f290225c
         // line 14
         yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["api"] ?? null));
         yield ";
+      var mailpoet_logs_download = ";
+        // line 15
+        yield $this->extensions['MailPoet\Twig\Functions']->jsonEncode(($context["download"] ?? null));
+        yield ";
     ";
-        // line 16
+        // line 17
         yield "  </script>
 </div>
 
@@ -101,7 +105,7 @@ class __TwigTemplate_176225ef6518abb3a235b9f1785c332f068c4c798b602f397b3f290225c
      */
     public function getDebugInfo()
     {
-        return array (  73 => 16,  69 => 14,  65 => 13,  60 => 12,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  77 => 17,  73 => 15,  69 => 14,  65 => 13,  60 => 12,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()

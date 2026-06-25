@@ -9704,6 +9704,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/ProductCollection/OrderProductCollectionProcessor.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\ProductCollection\\ProductCollectionEmailRendererRegistrar' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/ProductCollection/ProductCollectionEmailRendererRegistrar.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Templates\\Library\\Newsletter' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php'
@@ -10323,6 +10327,10 @@ return array(
  'MailPoet\\Logging\\LoggerFactory' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Logging/LoggerFactory.php'
+ ),
+ 'MailPoet\\Logging\\LogsDownload' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Logging/LogsDownload.php'
  ),
  'MailPoet\\Logging\\PluginVersionProcessor' => array(
  'version' => 'dev-trunk',

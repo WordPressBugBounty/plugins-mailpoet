@@ -8,6 +8,7 @@ if (!defined('ABSPATH')) exit;
 use MailPoet\AdminPages\AssetsController;
 use MailPoet\AdminPages\PageRenderer;
 use MailPoet\Logging\LogRepository;
+use MailPoet\Logging\LogsDownload;
 use MailPoet\WP\Functions as WPFunctions;
 use MailPoetVendor\Carbon\Carbon;
 
@@ -48,6 +49,10 @@ class Logs {
       'api' => [
         'root' => rtrim($this->wp->escUrlRaw($this->wp->restUrl()), '/'),
         'nonce' => $this->wp->wpCreateNonce('wp_rest'),
+      ],
+      'download' => [
+        'action_url' => $this->wp->adminUrl('admin-post.php'),
+        'nonce' => LogsDownload::createNonce($this->wp),
       ],
     ];
     $this->pageRenderer->displayPage('logs.html', $data);
