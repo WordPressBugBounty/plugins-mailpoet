@@ -9088,9 +9088,9 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/Workers/ExportFilesCleanup.php'
  ),
- 'MailPoet\\Cron\\Workers\\InactiveSubscribers' => array(
+ 'MailPoet\\Cron\\Workers\\InactiveSubscribersMaintenance' => array(
  'version' => 'dev-trunk',
- 'path' => $baseDir . '/lib/Cron/Workers/InactiveSubscribers.php'
+ 'path' => $baseDir . '/lib/Cron/Workers/InactiveSubscribersMaintenance.php'
  ),
  'MailPoet\\Cron\\Workers\\KeyCheck\\KeyCheckWorker' => array(
  'version' => 'dev-trunk',
@@ -9204,10 +9204,6 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/Workers/SubscribersCountCacheRecalculation.php'
  ),
- 'MailPoet\\Cron\\Workers\\SubscribersEmailCount' => array(
- 'version' => 'dev-trunk',
- 'path' => $baseDir . '/lib/Cron/Workers/SubscribersEmailCount.php'
- ),
  'MailPoet\\Cron\\Workers\\SubscribersEngagementScore' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/Workers/SubscribersEngagementScore.php'
@@ -9215,6 +9211,10 @@ return array(
  'MailPoet\\Cron\\Workers\\SubscribersLastEngagement' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Cron/Workers/SubscribersLastEngagement.php'
+ ),
+ 'MailPoet\\Cron\\Workers\\SubscribersSegmentsCountSync' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Cron/Workers/SubscribersSegmentsCountSync.php'
  ),
  'MailPoet\\Cron\\Workers\\SubscribersStatsReport' => array(
  'version' => 'dev-trunk',
@@ -9680,6 +9680,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\Date' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/Date.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\Link' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/Link.php'
@@ -9687,6 +9691,10 @@ return array(
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\LinksToShortcodesConvertor' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/LinksToShortcodesConvertor.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\Newsletter' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/Newsletter.php'
  ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\OrderReviewUrl' => array(
  'version' => 'dev-trunk',
@@ -10532,6 +10540,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/App/Migration_20260515_120000_App.php'
  ),
+ 'MailPoet\\Migrations\\App\\Migration_20260623_120000_App' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/App/Migration_20260623_120000_App.php'
+ ),
  'MailPoet\\Migrations\\Db\\DbMigrationTemplate' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrator/DbMigrationTemplate.php'
@@ -10655,6 +10667,10 @@ return array(
  'MailPoet\\Migrations\\Db\\Migration_20260610_120000_Db' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260610_120000_Db.php'
+ ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260622_120000_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260622_120000_Db.php'
  ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',
@@ -11675,6 +11691,10 @@ return array(
  'MailPoet\\Subscribers\\RestApi\\Endpoints\\SubscribersListingEndpoint' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Subscribers/RestApi/Endpoints/SubscribersListingEndpoint.php'
+ ),
+ 'MailPoet\\Subscribers\\SegmentsCountRecalculator' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/SegmentsCountRecalculator.php'
  ),
  'MailPoet\\Subscribers\\Source' => array(
  'version' => 'dev-trunk',

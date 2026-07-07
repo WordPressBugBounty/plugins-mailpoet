@@ -178,7 +178,9 @@ class Manage {
         $this->subscriberSegmentRepository->createOrUpdate(
           $subscriber,
           $segment,
-          SubscriberEntity::STATUS_UNSUBSCRIBED
+          SubscriberEntity::STATUS_UNSUBSCRIBED,
+          false,
+          true
         );
       }
     }
@@ -190,9 +192,13 @@ class Manage {
       $this->subscriberSegmentRepository->createOrUpdate(
         $subscriber,
         $segments[$segmentId],
-        SubscriberEntity::STATUS_SUBSCRIBED
+        SubscriberEntity::STATUS_SUBSCRIBED,
+        false,
+        true
       );
     }
+
+    $this->subscribersRepository->recalculateSegmentsCount([(int)$subscriber->getId()]);
 
     $this->sendNotificationsForNewSegments(
       $subscriber,
@@ -230,7 +236,9 @@ class Manage {
       $this->subscriberSegmentRepository->createOrUpdate(
         $subscriber,
         $segments[$segmentId],
-        SubscriberEntity::STATUS_UNSUBSCRIBED
+        SubscriberEntity::STATUS_UNSUBSCRIBED,
+        false,
+        true
       );
     }
 
@@ -238,9 +246,13 @@ class Manage {
       $this->subscriberSegmentRepository->createOrUpdate(
         $subscriber,
         $segments[$segmentId],
-        SubscriberEntity::STATUS_SUBSCRIBED
+        SubscriberEntity::STATUS_SUBSCRIBED,
+        false,
+        true
       );
     }
+
+    $this->subscribersRepository->recalculateSegmentsCount([(int)$subscriber->getId()]);
 
     $this->sendNotificationsForNewSegments(
       $subscriber,

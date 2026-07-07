@@ -187,20 +187,31 @@ class Cli {
       return;
     }
 
+    $rowsRead = $totals['rows'] + $totals['skipped'];
+    $skippedNotice = '';
+    if ($totals['skipped'] > 0) {
+      $skippedTemplate = $totals['skipped'] === 1
+        ? ' %d row was skipped because its column count did not match the header.'
+        : ' %d rows were skipped because their column count did not match the header.';
+      $skippedNotice = sprintf($skippedTemplate, $totals['skipped']);
+    }
+
     if ($options['dry_run']) {
       WP_CLI::success(sprintf(
-        'Dry run: %d rows read, %d subscribers with a valid email. Nothing was written.',
-        $totals['rows'],
-        $totals['valid']
+        'Dry run: %d rows read, %d subscribers with a valid email. Nothing was written.%s',
+        $rowsRead,
+        $totals['valid'],
+        $skippedNotice
       ));
       return;
     }
 
     WP_CLI::success(sprintf(
-      'Import finished: %d created, %d updated (out of %d rows).',
+      'Import finished: %d created, %d updated (out of %d rows).%s',
       $totals['created'],
       $totals['updated'],
-      $totals['rows']
+      $rowsRead,
+      $skippedNotice
     ));
   }
 
@@ -210,7 +221,7 @@ class Cli {
    *
    * @param array{segments: string[], status: string, existing_status: string, update_existing: bool, tags: string[], batch_size: int, dry_run: bool} $options
    * @param callable(string): void|null $logger
-   * @return array{created: int, updated: int, valid: int, rows: int}
+   * @return array{created: int, updated: int, valid: int, rows: int, skipped: int}
    * @throws \RuntimeException
    */
   public function run(string $file, array $options, ?callable $logger = null): array {
@@ -244,11 +255,23 @@ class Cli {
       }
       $columns = $this->buildColumns($header);
 
-      $totals = ['created' => 0, 'updated' => 0, 'valid' => 0, 'rows' => 0];
+      $headerColumnCount = count($header);
+      $totals = ['created' => 0, 'updated' => 0, 'valid' => 0, 'rows' => 0, 'skipped' => 0];
       $batch = [];
+      $lineNumber = 1; // header is line 1
       while (is_array($row = fgetcsv($handle, 0, ',', '"', '\\'))) {
+        $lineNumber++;
         if ($row === [null]) {
           continue; // skip blank lines
+        }
+        // fgetcsv does not pad short rows or trim long ones. A row whose column
+        // count differs from the header would misalign the per-column arrays built
+        // in Import (a value landing on the wrong subscriber), so skip it and warn
+        // rather than guessing which columns are missing.
+        if (count($row) !== $headerColumnCount) {
+          $totals['skipped']++;
+          $log(sprintf('  Skipped line %d: expected %d column(s) but found %d.', $lineNumber, $headerColumnCount, count($row)));
+          continue;
         }
         $totals['rows']++;
         $batch[] = $row;
@@ -272,7 +295,7 @@ class Cli {
    * @param array<string|int, array{index: int}> $columns
    * @param int[] $segmentIds
    * @param array{segments: string[], status: string, existing_status: string, update_existing: bool, tags: string[], batch_size: int, dry_run: bool} $options
-   * @param array{created: int, updated: int, valid: int, rows: int} $totals
+   * @param array{created: int, updated: int, valid: int, rows: int, skipped: int} $totals
    * @param callable(string): void $log
    */
   private function processBatch(
