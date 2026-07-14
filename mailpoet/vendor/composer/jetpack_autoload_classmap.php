@@ -9904,6 +9904,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Form/Block/Checkbox.php'
  ),
+ 'MailPoet\\Form\\Block\\Close' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Form/Block/Close.php'
+ ),
  'MailPoet\\Form\\Block\\Column' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Form/Block/Column.php'
@@ -10672,6 +10676,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260622_120000_Db.php'
  ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260709_120000_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260709_120000_Db.php'
+ ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrator/AppMigration.php'
@@ -11119,6 +11127,10 @@ return array(
  'MailPoet\\NotFoundException' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/exceptions.php'
+ ),
+ 'MailPoet\\PostEditorBlocks\\ManageSubscriptionBlock' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/PostEditorBlocks/ManageSubscriptionBlock.php'
  ),
  'MailPoet\\PostEditorBlocks\\MarketingOptinBlock' => array(
  'version' => 'dev-trunk',

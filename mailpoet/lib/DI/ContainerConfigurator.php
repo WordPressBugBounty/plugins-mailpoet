@@ -303,6 +303,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\PostEditorBlocks\PostEditorBlock::class);
     $container->autowire(\MailPoet\PostEditorBlocks\SubscriptionFormBlock::class);
     $container->autowire(\MailPoet\PostEditorBlocks\NewsletterBlock::class)->setPublic(true);
+    $container->autowire(\MailPoet\PostEditorBlocks\ManageSubscriptionBlock::class)->setPublic(true);
     $container->autowire(\MailPoet\PostEditorBlocks\WooCommerceBlocksIntegration::class);
     // Subscribers import CLI
     $container->autowire(\MailPoet\Subscribers\ImportExport\Import\Cli::class)->setPublic(true);
@@ -446,6 +447,7 @@ class ContainerConfigurator implements IContainerConfigurator {
     $container->autowire(\MailPoet\Form\Block\Radio::class);
     $container->autowire(\MailPoet\Form\Block\Segment::class);
     $container->autowire(\MailPoet\Form\Block\Select::class);
+    $container->autowire(\MailPoet\Form\Block\Close::class);
     $container->autowire(\MailPoet\Form\Block\Submit::class);
     $container->autowire(\MailPoet\Form\Block\Text::class);
     $container->autowire(\MailPoet\Form\Block\Textarea::class);
