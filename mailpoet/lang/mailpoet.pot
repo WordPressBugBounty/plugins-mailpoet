@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.34.0\n"
+"Project-Id-Version: MailPoet 5.34.1\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-13T14:35:02+00:00\n"
+"POT-Creation-Date: 2026-07-21T05:14:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -251,7 +251,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:120
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:150
 #: lib/Subscribers/SubscriberListingRepository.php:1040
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:240
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:244
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
 msgid "Unsubscribed"
@@ -264,7 +264,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:128
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:149
 #: lib/Subscribers/SubscriberListingRepository.php:1050
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:248
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:252
 #: assets/dist/js/admin.js:2
 msgid "Bounced"
 msgstr ""
@@ -355,7 +355,7 @@ msgstr ""
 
 #: views/form/templatesLegacy/settings/date_formats.hbs:9
 #: views/form/editor.html:142
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:471
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:480
 msgid "Order"
 msgstr ""
 
@@ -771,7 +771,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:72
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:140
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:61
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:282
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:286
 #: assets/dist/js/admin.js:2
 msgid "First name"
 msgstr ""
@@ -787,7 +787,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:80
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:141
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:62
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:291
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:295
 #: assets/dist/js/admin.js:2
 msgid "Last name"
 msgstr ""
@@ -1708,6 +1708,7 @@ msgstr ""
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:282
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:291
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:300
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:309
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:1
 msgid "Link"
 msgstr ""
@@ -3177,7 +3178,7 @@ msgstr ""
 #: views/subscription/admin_user_status_field.html:12
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:112
 #: lib/Subscribers/SubscriberListingRepository.php:1030
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:232
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:236
 #: assets/dist/js/admin.js:2
 msgid "Subscribed"
 msgstr ""
@@ -3195,7 +3196,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:35
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:124
 #: lib/Subscribers/SubscriberListingRepository.php:1045
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:260
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:264
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 msgid "Inactive"
@@ -3400,10 +3401,10 @@ msgstr ""
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:156
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:165
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:174
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:344
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:353
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:20
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:135
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:136
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:143
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:144
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
 msgid "Subscriber"
@@ -4555,7 +4556,7 @@ msgstr ""
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:196
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:142
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:88
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:228
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:232
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_analytics.js:1
@@ -5592,9 +5593,9 @@ msgstr ""
 #. translators: %d is the error code.
 #. translators: %d will be replaced by an error code
 #: views/layout.html:117
-#: lib/Services/Bridge/API.php:296
-#: lib/Services/Bridge/API.php:355
-#: lib/Services/Bridge/API.php:404
+#: lib/Services/Bridge/API.php:315
+#: lib/Services/Bridge/API.php:374
+#: lib/Services/Bridge/API.php:423
 msgid "An error has happened while performing a request, the server has responded with response code %d"
 msgstr ""
 
@@ -6871,7 +6872,15 @@ msgid "Partial – additionally track email engagement (opens, clicks). Disable 
 msgstr ""
 
 #: views/settings_translations.html:257
-msgid "Basic – only use data your site already has about your subscribers. Disable email engagement and cookie-based tracking, and re-engagement emails."
+msgid "Basic / None – only use data your site already has about your subscribers. Disable email engagement and cookie-based tracking, and re-engagement emails."
+msgstr ""
+
+#: views/settings_translations.html:258
+msgid "Tracking consent for unknown subscribers"
+msgstr ""
+
+#: views/settings_translations.html:259
+msgid "Some subscribers have never been asked whether they allow open and click tracking. Choose whether to track them by default. Select No for a strict opt-in approach, where only subscribers who explicitly allow tracking are tracked. This helps with the consent rules in France and Italy. It has no effect when engagement tracking above is set to Basic / None."
 msgstr ""
 
 #: views/settings_translations.html:44
@@ -7548,9 +7557,9 @@ msgstr ""
 
 #: lib/API/JSON/v1/SendingQueue.php:101
 #: lib/API/JSON/v1/SendingQueue.php:265
-#: lib/Newsletter/NewsletterResendController.php:151
+#: lib/Newsletter/NewsletterResendController.php:157
 #: lib/Newsletter/StatusController.php:65
-#: lib/Services/Bridge/API.php:448
+#: lib/Services/Bridge/API.php:467
 msgid "Subscribers limit reached."
 msgstr ""
 
@@ -8747,7 +8756,7 @@ msgid "Cannot send the email because an order is required to generate the review
 msgstr ""
 
 #: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:333
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:485
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:496
 msgid "Cannot send the email because WooCommerce cannot generate an order review link for this order."
 msgstr ""
 
@@ -9741,7 +9750,7 @@ msgid "The characters you entered did not match the CAPTCHA image. Please try ag
 msgstr ""
 
 #: lib/Captcha/PageRenderer.php:68
-#: lib/Subscription/Pages.php:324
+#: lib/Subscription/Pages.php:345
 msgid "MailPoet Page"
 msgstr ""
 
@@ -9869,7 +9878,8 @@ msgstr ""
 
 #: lib/Config/Hooks.php:696
 #: lib/Logging/LogsDownload.php:38
-#: lib/Router/Endpoints/Subscription.php:106
+#: lib/Router/Endpoints/Subscription.php:109
+#: lib/Router/Endpoints/Subscription.php:131
 msgid "Security check failed."
 msgstr ""
 
@@ -10152,8 +10162,8 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/WordPressTheme.php:1266
 #: lib/Config/PopulatorData/Templates/WorldCup.php:725
 #: lib/Config/PopulatorData/Templates/YogaStudio.php:699
-#: lib/Subscription/Pages.php:429
-#: lib/Subscription/Pages.php:610
+#: lib/Subscription/Pages.php:456
+#: lib/Subscription/Pages.php:663
 msgid "Manage your subscription"
 msgstr ""
 
@@ -10960,20 +10970,20 @@ msgstr ""
 msgid "Daemon does not set correctly."
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:272
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:276
 msgid "No subject"
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:305
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:309
 msgid "Recipient-restricted generated coupons are only supported in automation emails sent to one subscriber at a time. Disable recipient restriction, remove the generated coupon block, or use an existing coupon before sending this email."
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:306
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:310
 #: lib/EmailEditor/Integrations/MailPoet/Coupons/CouponBlockFailureTranslator.php:17
 msgid "Auto-generated coupon codes are only supported in regular newsletters and automation emails sent to one subscriber at a time. Remove the generated coupon block or use an existing coupon before sending this email."
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:540
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:551
 msgid "There was an error processing your newsletter during sending. If possible, please contact us and report this issue."
 msgstr ""
 
@@ -12306,7 +12316,7 @@ msgstr ""
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:253
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:262
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:271
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:114
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:122
 msgid "Site"
 msgstr ""
 
@@ -12315,7 +12325,7 @@ msgid "Site Description"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:269
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:128
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:136
 msgid "Homepage URL"
 msgstr ""
 
@@ -12331,7 +12341,11 @@ msgstr ""
 msgid "View in browser URL"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:469
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:307
+msgid "Tracking opt-out URL"
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:478
 msgid "Order Review URL"
 msgstr ""
 
@@ -13308,55 +13322,55 @@ msgstr ""
 msgid "Not active"
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:104
+#: lib/Newsletter/NewsletterResendController.php:110
 msgid "Resend to non-openers requires email tracking to be enabled."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:109
+#: lib/Newsletter/NewsletterResendController.php:115
 msgid "Only standard newsletters can be resent."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:114
+#: lib/Newsletter/NewsletterResendController.php:120
 msgid "Only sent newsletters can be resent."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:120
+#: lib/Newsletter/NewsletterResendController.php:126
 msgid "This email is still being sent. Wait until sending is complete."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:125
+#: lib/Newsletter/NewsletterResendController.php:131
 msgid "A resent email cannot be resent again."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:130
+#: lib/Newsletter/NewsletterResendController.php:136
 msgid "This email has already been resent."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:136
+#: lib/Newsletter/NewsletterResendController.php:142
 msgid "This email has no sent date and cannot be resent."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:142
+#: lib/Newsletter/NewsletterResendController.php:148
 msgid "You can resend this email at least 1 day after it was sent."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:146
+#: lib/Newsletter/NewsletterResendController.php:152
 msgid "You can only resend this email within 3 days of sending it."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:168
+#: lib/Newsletter/NewsletterResendController.php:174
 msgid "Subject line is required."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:174
+#: lib/Newsletter/NewsletterResendController.php:180
 msgid "The subject line must be different from the original email."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:180
+#: lib/Newsletter/NewsletterResendController.php:186
 msgid "All recipients have already opened this email."
 msgstr ""
 
-#: lib/Newsletter/NewsletterResendController.php:216
+#: lib/Newsletter/NewsletterResendController.php:222
 msgid "No eligible recipients found. All non-openers have since unsubscribed, bounced, or left the original segments."
 msgstr ""
 
@@ -13554,11 +13568,19 @@ msgstr ""
 msgid "View in your browser"
 msgstr ""
 
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:116
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:114
+msgid "Tracking opt-out link"
+msgstr ""
+
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:118
+msgid "Opt out of tracking"
+msgstr ""
+
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:124
 msgid "Site title"
 msgstr ""
 
-#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:120
+#: lib/Newsletter/Shortcodes/ShortcodesHelper.php:128
 msgid "Homepage link"
 msgstr ""
 
@@ -13772,63 +13794,76 @@ msgstr ""
 msgid "Subscribers without a list"
 msgstr ""
 
-#: lib/Services/Bridge/API.php:432
+#: lib/Services/Bridge/API.php:212
+msgid "The bounces report request failed without a response"
+msgstr ""
+
+#. translators: %d is the HTTP response code.
+#: lib/Services/Bridge/API.php:214
+msgid "The bounces report request failed with response code %d"
+msgstr ""
+
+#: lib/Services/Bridge/API.php:226
+msgid "The bounces report response was not in the expected format"
+msgstr ""
+
+#: lib/Services/Bridge/API.php:451
 msgid "Key is valid, but the action is forbidden."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:434
+#: lib/Services/Bridge/API.php:453
 msgid "The email address is not authorized."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:436
+#: lib/Services/Bridge/API.php:455
 msgid "Key is valid, but not approved yet; you can send only to authorized email addresses at the moment."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:438
+#: lib/Services/Bridge/API.php:457
 msgid "Email violates Sender Domain's DMARC policy. Please set up sender authentication."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:440
+#: lib/Services/Bridge/API.php:459
 msgid "Email violates Sender Domain requirements. Please authenticate the sender domain."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:442
+#: lib/Services/Bridge/API.php:461
 msgid "No valid API key provided."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:444
+#: lib/Services/Bridge/API.php:463
 msgid "Insufficient privileges."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:446
+#: lib/Services/Bridge/API.php:465
 msgid "Email volume limit reached."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:450
+#: lib/Services/Bridge/API.php:469
 msgid "You cannot use a free email address. Please use an address from your website’s domain, for example."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:452
+#: lib/Services/Bridge/API.php:471
 msgid "Invalid email."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:454
+#: lib/Services/Bridge/API.php:473
 msgid "This email was already added to the list."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:456
+#: lib/Services/Bridge/API.php:475
 msgid "Domain not found."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:458
+#: lib/Services/Bridge/API.php:477
 msgid "Some DNS records were not set up correctly. Please check the records again. You may need to wait up to 24 hours for DNS changes to propagate."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:460
+#: lib/Services/Bridge/API.php:479
 msgid "Invalid domain. Please enter a valid domain name."
 msgstr ""
 
-#: lib/Services/Bridge/API.php:462
+#: lib/Services/Bridge/API.php:481
 msgid "This domain was already added to the list."
 msgstr ""
 
@@ -13842,12 +13877,12 @@ msgctxt "Subject of an email confirming that MailPoet Sending Service works"
 msgid "Sending with MailPoet works!"
 msgstr ""
 
-#: lib/Settings/SettingsController.php:121
+#: lib/Settings/SettingsController.php:124
 #: lib/Subscribers/ConfirmationEmailCustomizer.php:55
 msgid "Confirm your subscription to [site:title]"
 msgstr ""
 
-#: lib/Settings/SettingsController.php:133
+#: lib/Settings/SettingsController.php:136
 msgid ""
 "Hello [subscriber:firstname | default:there],\n"
 "\n"
@@ -14183,7 +14218,7 @@ msgid "All Tags"
 msgstr ""
 
 #. translators: %s is email address which already exists.
-#: lib/Subscribers/SubscriberSaveController.php:310
+#: lib/Subscribers/SubscriberSaveController.php:323
 msgid "A subscriber with E-mail \"%s\" already exists."
 msgstr ""
 
@@ -14225,72 +14260,100 @@ msgstr ""
 msgid "[link]Log in to your account[/link] to update your email."
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:228
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:226
+msgid "Allow tracking of email opens and link clicks"
+msgstr ""
+
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:232
 msgid "Email subscription status"
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:272
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:276
 msgid "This controls whether you receive emails overall. Your list choices below control which public lists you receive."
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:336
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:309
+msgid "Email activity tracking"
+msgstr ""
+
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:353
 msgid "Your lists"
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:341
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:358
 msgid "Choose Yes for lists you want to receive and No for lists you do not want to receive."
 msgstr ""
 
-#: lib/Subscription/Pages.php:331
+#: lib/Subscription/Pages.php:327
+msgid "If you confirm, tracking of email opens and link clicks will stop. This is separate from unsubscribing: you will keep receiving emails."
+msgstr ""
+
+#: lib/Subscription/Pages.php:352
 msgid "Hmmm... we don't have a record of you."
 msgstr ""
 
-#: lib/Subscription/Pages.php:355
+#: lib/Subscription/Pages.php:379
 msgid "Your email address doesn't appear in our lists anymore. Sign up again or contact us if this appears to be a mistake."
 msgstr ""
 
-#: lib/Subscription/Pages.php:415
+#: lib/Subscription/Pages.php:442
 msgid "You are now subscribed!"
 msgstr ""
 
 #. translators: %s is the website title or website name.
-#: lib/Subscription/Pages.php:419
+#: lib/Subscription/Pages.php:446
 msgid "You have subscribed to %s"
 msgstr ""
 
-#: lib/Subscription/Pages.php:435
+#: lib/Subscription/Pages.php:462
 msgid "You are now unsubscribed."
 msgstr ""
 
-#: lib/Subscription/Pages.php:441
+#: lib/Subscription/Pages.php:468
 msgid "Thank you for letting us know!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:447
+#: lib/Subscription/Pages.php:475
+msgid "You have opted out of email activity tracking."
+msgstr ""
+
+#: lib/Subscription/Pages.php:477
+msgid "Opt out of email activity tracking"
+msgstr ""
+
+#: lib/Subscription/Pages.php:483
 msgid "Confirm you want to unsubscribe"
 msgstr ""
 
-#: lib/Subscription/Pages.php:453
+#: lib/Subscription/Pages.php:489
 msgid "Yup, we've added you to our email list. You'll hear from us shortly."
 msgstr ""
 
-#: lib/Subscription/Pages.php:470
+#: lib/Subscription/Pages.php:506
 msgid "Subscription management form is only available to mailing lists subscribers."
 msgstr ""
 
-#: lib/Subscription/Pages.php:493
+#: lib/Subscription/Pages.php:529
 msgid "Accidentally unsubscribed?"
 msgstr ""
 
-#: lib/Subscription/Pages.php:499
+#: lib/Subscription/Pages.php:535
 msgid "Thank you for letting us know why you unsubscribed."
 msgstr ""
 
-#: lib/Subscription/Pages.php:577
+#: lib/Subscription/Pages.php:613
 msgid "We appreciate your continued interest in our updates. Expect to hear from us again soon!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:605
+#: lib/Subscription/Pages.php:624
+msgid "Tracking of email opens and link clicks is now off. You will keep receiving emails as usual."
+msgstr ""
+
+#: lib/Subscription/Pages.php:631
+msgid "Stop tracking my activity"
+msgstr ""
+
+#: lib/Subscription/Pages.php:658
 msgid "Link to subscription management page is only available to mailing lists subscribers."
 msgstr ""
 

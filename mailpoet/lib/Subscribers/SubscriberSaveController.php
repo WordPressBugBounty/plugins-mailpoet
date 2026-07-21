@@ -116,6 +116,12 @@ class SubscriberSaveController {
       $data = $this->wp->stripslashesDeep($data);
     }
 
+    // Proof-of-consent fields are stamped server-side only. The manage page sets
+    // them by calling createOrUpdate() directly; this client-data path (admin/API)
+    // may change the consent state but must never forge the record of how or
+    // against what wording it was given.
+    unset($data['tracking_consent_method'], $data['tracking_consent_copy']);
+
     if (empty($data['segments'])) {
       $data['segments'] = [];
     }
@@ -233,6 +239,13 @@ class SubscriberSaveController {
     if (isset($data['first_name'])) $subscriber->setFirstName($data['first_name']);
     if (isset($data['last_name'])) $subscriber->setLastName($data['last_name']);
     if (isset($data['status'])) $subscriber->setStatus($data['status']);
+    if (isset($data['tracking_consent'])) {
+      $subscriber->setTrackingConsent(
+        (string)$data['tracking_consent'],
+        $data['tracking_consent_method'] ?? SubscriberEntity::TRACKING_CONSENT_METHOD_ADMIN,
+        $data['tracking_consent_copy'] ?? null
+      );
+    }
     if (isset($data['source'])) $subscriber->setSource($data['source']);
     if (isset($data['wp_user_id'])) $subscriber->setWpUserId($data['wp_user_id']);
     if (isset($data['subscribed_ip'])) $subscriber->setSubscribedIp($data['subscribed_ip']);

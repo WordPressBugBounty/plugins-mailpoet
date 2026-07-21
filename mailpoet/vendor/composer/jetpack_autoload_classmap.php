@@ -10680,6 +10680,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260709_120000_Db.php'
  ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260715_100000_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260715_100000_Db.php'
+ ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrator/AppMigration.php'
@@ -11468,6 +11472,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Services/Bridge/API.php'
  ),
+ 'MailPoet\\Services\\Bridge\\BouncesReportException' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Services/Bridge/BouncesReportException.php'
+ ),
  'MailPoet\\Services\\CongratulatoryMssEmailController' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Services/CongratulatoryMssEmailController.php'
@@ -11779,6 +11787,10 @@ return array(
  'MailPoet\\Subscribers\\SubscribersRepository' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Subscribers/SubscribersRepository.php'
+ ),
+ 'MailPoet\\Subscribers\\TrackingConsentController' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Subscribers/TrackingConsentController.php'
  ),
  'MailPoet\\Subscription\\AdminUserSubscription' => array(
  'version' => 'dev-trunk',
