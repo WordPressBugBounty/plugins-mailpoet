@@ -13,7 +13,9 @@ use MailPoetVendor\Carbon\Carbon;
 
 class SubscribersEngagementScore extends SimpleWorker {
   const AUTOMATIC_SCHEDULING = true;
-  const BATCH_SIZE = 60;
+  const SUPPORT_MULTIPLE_INSTANCES = false;
+  const BATCH_SIZE = 1000;
+  const SEGMENTS_BATCH_SIZE = 100;
   const TASK_TYPE = 'subscribers_engagement_score';
 
   /** @var SegmentsRepository */
@@ -37,34 +39,32 @@ class SubscribersEngagementScore extends SimpleWorker {
   }
 
   public function processTaskStrategy(ScheduledTaskEntity $task, $timer) {
-    $recalculatedSubscribersCount = $this->recalculateSubscribers();
-    if ($recalculatedSubscribersCount > 0) {
-      $this->scheduleImmediately();
-      return true;
+    while ($this->recalculateSubscribers() > 0) {
+      $this->cronHelper->enforceExecutionLimit($timer); // Throws exception and interrupts process if over execution limit
     }
-
-    $recalculatedSegmentsCount = $this->recalculateSegments();
-    if ($recalculatedSegmentsCount > 0) {
-      $this->scheduleImmediately();
-      return true;
+    while ($this->recalculateSegments($timer) > 0) {
+      $this->cronHelper->enforceExecutionLimit($timer);
     }
-
     $this->schedule();
     return true;
   }
 
   private function recalculateSubscribers(): int {
-    $subscribers = $this->subscribersRepository->findByUpdatedScoreNotInLastMonth(self::BATCH_SIZE);
-    foreach ($subscribers as $subscriber) {
-      $this->statisticsOpensRepository->recalculateSubscriberScore($subscriber);
-    }
-    return count($subscribers);
+    $subscriberIds = $this->subscribersRepository->findIdsByUpdatedScoreNotInLastMonth(self::BATCH_SIZE);
+    $this->statisticsOpensRepository->recalculateSubscribersScore($subscriberIds);
+    return count($subscriberIds);
   }
 
-  private function recalculateSegments(): int {
-    $segments = $this->segmentsRepository->findByUpdatedScoreNotInLastDay(self::BATCH_SIZE);
+  /**
+   * @param float $timer
+   */
+  private function recalculateSegments($timer): int {
+    $segments = $this->segmentsRepository->findByUpdatedScoreNotInLastDay(self::SEGMENTS_BATCH_SIZE);
     foreach ($segments as $segment) {
       $this->statisticsOpensRepository->recalculateSegmentScore($segment);
+      // A single segment recalculation can be slow on large lists, so check the limit per segment,
+      // not only per batch. Each processed segment is flushed immediately, so progress survives.
+      $this->cronHelper->enforceExecutionLimit($timer);
     }
     return count($segments);
   }

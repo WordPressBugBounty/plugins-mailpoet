@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.34.1\n"
+"Project-Id-Version: MailPoet 5.34.2\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-21T05:14:09+00:00\n"
+"POT-Creation-Date: 2026-07-22T16:09:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -4645,12 +4645,10 @@ msgid "%1$d subscribers were moved to the trash."
 msgstr ""
 
 #: views/subscribers/subscribers.html:60
-#: assets/dist/js/admin.js:2
 msgid "1 subscriber was permanently deleted."
 msgstr ""
 
 #: views/subscribers/subscribers.html:61
-#: assets/dist/js/admin.js:2
 msgid "%1$d subscribers were permanently deleted."
 msgstr ""
 
@@ -7517,7 +7515,7 @@ msgstr ""
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:188
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:238
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:264
-#: lib/Subscribers/BulkActionController.php:186
+#: lib/Subscribers/BulkActionController.php:191
 msgid "This list does not exist."
 msgid_plural "These lists do not exist."
 msgstr[0] ""
@@ -13276,7 +13274,7 @@ msgstr ""
 #. translators: %s is the offending bulk-action name.
 #: lib/Newsletter/BulkActionController.php:59
 #: lib/Subscribers/BulkActionController.php:94
-#: lib/Subscribers/BulkActionController.php:165
+#: lib/Subscribers/BulkActionController.php:170
 msgid "Invalid bulk action '%s' provided."
 msgstr ""
 
@@ -13913,25 +13911,25 @@ msgstr ""
 msgid "The emails are spam and should be reported"
 msgstr ""
 
-#: lib/Subscribers/BulkActionController.php:178
+#: lib/Subscribers/BulkActionController.php:183
 msgid "A list is required for this bulk action."
 msgstr ""
 
-#: lib/Subscribers/BulkActionController.php:200
+#: lib/Subscribers/BulkActionController.php:205
 msgid "A tag is required for this bulk action."
 msgstr ""
 
-#: lib/Subscribers/BulkActionController.php:208
+#: lib/Subscribers/BulkActionController.php:213
 msgid "This tag does not exist."
 msgstr ""
 
 #. translators: %s is the action name.
-#: lib/Subscribers/BulkActionController.php:220
+#: lib/Subscribers/BulkActionController.php:225
 msgid "The '%s' bulk action requires a list."
 msgstr ""
 
 #. translators: %s is the action name.
-#: lib/Subscribers/BulkActionController.php:232
+#: lib/Subscribers/BulkActionController.php:237
 msgid "The '%s' bulk action requires a tag."
 msgstr ""
 
@@ -14175,27 +14173,27 @@ msgid "Sign-up confirmation is disabled in your MailPoet settings. Please enable
 msgstr ""
 
 #: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:90
-#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:173
+#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:174
 msgid "No subscribers selected."
 msgstr ""
 
-#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:146
+#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:147
 msgid "You do not have permission to resend confirmation emails."
 msgstr ""
 
-#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:153
+#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:154
 msgid "Confirmation emails can be resent in bulk only from the Unconfirmed subscribers view."
 msgstr ""
 
-#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:225
+#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:226
 msgid "Select all requires a valid subscriber view."
 msgstr ""
 
-#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:233
+#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:234
 msgid "This bulk action can only be applied from the Trash view."
 msgstr ""
 
-#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:241
+#: lib/Subscribers/RestApi/Endpoints/SubscribersBulkActionEndpoint.php:242
 msgid "This bulk action cannot be applied from the Trash view."
 msgstr ""
 
@@ -14898,6 +14896,14 @@ msgid "Custom fields"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
+msgid "Not deletable"
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+msgid "This subscriber is linked to a WordPress user or WooCommerce customer, so it is kept and will not be permanently deleted."
+msgstr ""
+
+#: assets/dist/js/admin.js:2
 msgid "All %s subscribers matching this view are selected."
 msgstr ""
 
@@ -14983,6 +14989,18 @@ msgstr[1] ""
 #: assets/dist/js/admin.js:2
 msgid "%d selected subscriber was skipped."
 msgid_plural "%d selected subscribers were skipped."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/dist/js/admin.js:2
+msgid "%s subscriber was permanently deleted."
+msgid_plural "%s subscribers were permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/dist/js/admin.js:2
+msgid "%s subscriber was kept because it is linked to a WordPress user or WooCommerce customer."
+msgid_plural "%s subscribers were kept because they are linked to a WordPress user or WooCommerce customer."
 msgstr[0] ""
 msgstr[1] ""
 

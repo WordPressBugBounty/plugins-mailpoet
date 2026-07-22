@@ -6301,7 +6301,7 @@ class FreeCachedContainer extends Container
      */
     protected function getStatisticsOpensRepositoryService()
     {
-        return $this->services['MailPoet\\Statistics\\StatisticsOpensRepository'] = new \MailPoet\Statistics\StatisticsOpensRepository(($this->services['MailPoetVendor\\Doctrine\\ORM\\EntityManager'] ?? $this->getEntityManagerService()), ($this->services['MailPoet\\Subscribers\\Statistics\\SubscriberStatisticsRepository'] ?? $this->getSubscriberStatisticsRepositoryService()));
+        return $this->services['MailPoet\\Statistics\\StatisticsOpensRepository'] = new \MailPoet\Statistics\StatisticsOpensRepository(($this->services['MailPoetVendor\\Doctrine\\ORM\\EntityManager'] ?? $this->getEntityManagerService()), ($this->services['MailPoet\\Settings\\TrackingConfig'] ?? $this->getTrackingConfigService()));
     }
 
     /**
