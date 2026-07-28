@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.34.2\n"
+"Project-Id-Version: MailPoet 5.34.3\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-22T16:09:16+00:00\n"
+"POT-Creation-Date: 2026-07-28T13:32:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -434,7 +434,7 @@ msgstr ""
 #: views/subscribers/importExport/import/step_data_manipulation.html:14
 #: lib/API/JSON/v1/DynamicSegments.php:110
 #: lib/API/JSON/v1/ImportExport.php:124
-#: lib/API/JSON/v1/Segments.php:101
+#: lib/API/JSON/v1/Segments.php:102
 msgid "Please specify a name."
 msgstr ""
 
@@ -7326,7 +7326,7 @@ msgstr ""
 
 #: lib/API/JSON/v1/DynamicSegments.php:106
 #: lib/API/JSON/v1/ImportExport.php:128
-#: lib/API/JSON/v1/Segments.php:105
+#: lib/API/JSON/v1/Segments.php:106
 msgid "Another record already exists. Please specify a different \"name\"."
 msgstr ""
 
@@ -7506,11 +7506,11 @@ msgstr ""
 msgid "Error when activating MailPoet Premium plugin."
 msgstr ""
 
-#: lib/API/JSON/v1/Segments.php:86
-#: lib/API/JSON/v1/Segments.php:137
-#: lib/API/JSON/v1/Segments.php:147
-#: lib/API/JSON/v1/Segments.php:211
-#: lib/API/JSON/v1/Segments.php:233
+#: lib/API/JSON/v1/Segments.php:87
+#: lib/API/JSON/v1/Segments.php:138
+#: lib/API/JSON/v1/Segments.php:148
+#: lib/API/JSON/v1/Segments.php:212
+#: lib/API/JSON/v1/Segments.php:234
 #: lib/API/MP/v1/Subscribers.php:546
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:188
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:238
@@ -7521,14 +7521,14 @@ msgid_plural "These lists do not exist."
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/API/JSON/v1/Segments.php:117
-#: lib/API/JSON/v1/Segments.php:153
+#: lib/API/JSON/v1/Segments.php:118
+#: lib/API/JSON/v1/Segments.php:154
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:192
 msgid "This list cannot be moved to trash."
 msgstr ""
 
 #. translators: %1$s is a comma-separated list of emails for which the segment is used.
-#: lib/API/JSON/v1/Segments.php:164
+#: lib/API/JSON/v1/Segments.php:165
 #: lib/API/MP/v1/Segments.php:102
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:200
 msgctxt "Alert shown when trying to delete segment, which is assigned to any automatic emails."
@@ -7536,7 +7536,7 @@ msgid "List cannot be deleted because it’s used for %1$s email"
 msgstr ""
 
 #. translators: %1$s is a comma-separated list of forms for which the segment is used.
-#: lib/API/JSON/v1/Segments.php:176
+#: lib/API/JSON/v1/Segments.php:177
 #: lib/API/MP/v1/Segments.php:115
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:209
 msgctxt "Alert shown when trying to delete segment, when it is assigned to a form."
@@ -7545,12 +7545,20 @@ msgid_plural "List cannot be deleted because it’s used for %1$s forms"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/API/JSON/v1/Segments.php:224
+#: lib/API/JSON/v1/Segments.php:225
 msgid "Duplicating of segment failed."
 msgstr ""
 
-#: lib/API/JSON/v1/Segments.php:258
+#: lib/API/JSON/v1/Segments.php:259
 msgid "No segment IDs provided."
+msgstr ""
+
+#: lib/API/JSON/v1/Segments.php:270
+msgid "Invalid filter segment."
+msgstr ""
+
+#: lib/API/JSON/v1/Segments.php:279
+msgid "The recipient count could not be calculated."
 msgstr ""
 
 #: lib/API/JSON/v1/SendingQueue.php:101
@@ -10934,15 +10942,15 @@ msgstr ""
 msgid "Your License Key for MailPoet is expiring! Don't forget to [link]renew your license[/link] by %s to keep enjoying automatic updates and Premium support."
 msgstr ""
 
-#: lib/Config/Shortcodes.php:188
+#: lib/Config/Shortcodes.php:193
 msgid "Oops! There are no newsletters to display."
 msgstr ""
 
-#: lib/Config/Shortcodes.php:308
+#: lib/Config/Shortcodes.php:313
 msgid "Read in a new tab"
 msgstr ""
 
-#: lib/Config/Shortcodes.php:311
+#: lib/Config/Shortcodes.php:316
 msgid "Preview in a new tab"
 msgstr ""
 
@@ -11128,7 +11136,7 @@ msgstr ""
 #: lib/Form/RestApi/Endpoints/FormsListingEndpoint.php:99
 #: lib/Logging/RestApi/LogsFilterTrait.php:22
 #: lib/Segments/RestApi/Endpoints/AbstractSegmentsListingEndpoint.php:114
-#: lib/Tags/RestApi/Endpoints/TagsGetEndpoint.php:71
+#: lib/Tags/RestApi/Endpoints/TagsGetEndpoint.php:75
 msgid "Filters must be an object."
 msgstr ""
 
@@ -14384,7 +14392,7 @@ msgstr ""
 msgid "At least one tag id is required."
 msgstr ""
 
-#: lib/Tags/RestApi/Endpoints/TagsGetEndpoint.php:82
+#: lib/Tags/RestApi/Endpoints/TagsGetEndpoint.php:86
 msgid "Unsupported tags filter."
 msgstr ""
 
@@ -15502,6 +15510,16 @@ msgstr ""
 
 #: assets/dist/js/admin.js:2
 msgid "This count may change at the time of sending."
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:47
+msgid "We couldn't calculate the number of recipients. You can still send this email."
+msgstr ""
+
+#: assets/dist/js/admin.js:2
+#: assets/dist/js/email_editor_integration/email_editor_integration.js:47
+msgid "Unavailable"
 msgstr ""
 
 #: assets/dist/js/admin.js:2
