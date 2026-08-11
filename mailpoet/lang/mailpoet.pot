@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.35.0\n"
+"Project-Id-Version: MailPoet 5.35.1\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-04T07:58:11+00:00\n"
+"POT-Creation-Date: 2026-08-10T11:36:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -251,7 +251,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:120
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:150
 #: lib/Subscribers/SubscriberListingRepository.php:1040
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:244
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:250
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
 msgid "Unsubscribed"
@@ -264,7 +264,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:128
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:149
 #: lib/Subscribers/SubscriberListingRepository.php:1050
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:252
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:258
 #: assets/dist/js/admin.js:2
 msgid "Bounced"
 msgstr ""
@@ -770,7 +770,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:72
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:140
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:61
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:286
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:292
 #: assets/dist/js/admin.js:2
 msgid "First name"
 msgstr ""
@@ -786,7 +786,7 @@ msgstr ""
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:80
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:141
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:62
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:295
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:301
 #: assets/dist/js/admin.js:2
 msgid "Last name"
 msgstr ""
@@ -2638,7 +2638,7 @@ msgstr ""
 #: views/newsletter/templates/components/save.hbs:27
 #: views/newsletter/templates/components/save.hbs:48
 #: views/subscribers/subscribers.html:91
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:83
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:89
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 #: assets/dist/js/tags.js:1
@@ -3178,7 +3178,7 @@ msgstr ""
 #: views/subscription/admin_user_status_field.html:12
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:112
 #: lib/Subscribers/SubscriberListingRepository.php:1030
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:236
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:242
 #: assets/dist/js/admin.js:2
 msgid "Subscribed"
 msgstr ""
@@ -3196,7 +3196,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:35
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:124
 #: lib/Subscribers/SubscriberListingRepository.php:1045
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:264
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:270
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 msgid "Inactive"
@@ -4556,7 +4556,7 @@ msgstr ""
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:196
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:142
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:88
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:232
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:238
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/automation_analytics.js:1
@@ -5891,88 +5891,88 @@ msgctxt "Promotion for our email sending service: title of the third part"
 msgid "MailPoet account connected"
 msgstr ""
 
-#: views/parsley-translations.html:3
-#: views/parsley-translations.html:14
+#: views/parsley-translations.html:10
+#: views/parsley-translations.html:21
 #: lib/Form/Block/BlockRendererHelper.php:303
 msgid "This value seems to be invalid."
 msgstr ""
 
-#: views/parsley-translations.html:5
+#: views/parsley-translations.html:12
 #: lib/Form/Block/BlockRendererHelper.php:39
 #: lib/Form/Block/BlockRendererHelper.php:291
 msgid "This value should be a valid email."
 msgstr ""
 
-#: views/parsley-translations.html:6
+#: views/parsley-translations.html:13
 #: lib/Form/Block/BlockRendererHelper.php:293
 msgid "This value should be a valid url."
 msgstr ""
 
-#: views/parsley-translations.html:7
+#: views/parsley-translations.html:14
 #: lib/Form/Block/BlockRendererHelper.php:295
 msgid "This value should be a valid number."
 msgstr ""
 
-#: views/parsley-translations.html:8
+#: views/parsley-translations.html:15
 #: lib/Form/Block/BlockRendererHelper.php:297
 msgid "This value should be a valid integer."
 msgstr ""
 
-#: views/parsley-translations.html:9
+#: views/parsley-translations.html:16
 #: lib/Form/Block/BlockRendererHelper.php:299
 msgid "This value should be digits."
 msgstr ""
 
-#: views/parsley-translations.html:10
+#: views/parsley-translations.html:17
 #: lib/Form/Block/BlockRendererHelper.php:301
 msgid "This value should be alphanumeric."
 msgstr ""
 
-#: views/parsley-translations.html:12
+#: views/parsley-translations.html:19
 msgid "This value should not be blank."
 msgstr ""
 
-#: views/parsley-translations.html:13
+#: views/parsley-translations.html:20
 msgid "This value is required."
 msgstr ""
 
-#: views/parsley-translations.html:15
+#: views/parsley-translations.html:22
 msgid "This value should be greater than or equal to %s."
 msgstr ""
 
-#: views/parsley-translations.html:16
+#: views/parsley-translations.html:23
 msgid "This value should be lower than or equal to %s."
 msgstr ""
 
-#: views/parsley-translations.html:17
+#: views/parsley-translations.html:24
 msgid "This value should be between %s and %s."
 msgstr ""
 
-#: views/parsley-translations.html:18
+#: views/parsley-translations.html:25
 msgid "This value is too short. It should have %s characters or more."
 msgstr ""
 
-#: views/parsley-translations.html:19
+#: views/parsley-translations.html:26
 msgid "This value is too long. It should have %s characters or fewer."
 msgstr ""
 
-#: views/parsley-translations.html:20
+#: views/parsley-translations.html:27
 msgid "This value length is invalid. It should be between %s and %s characters long."
 msgstr ""
 
-#: views/parsley-translations.html:21
+#: views/parsley-translations.html:28
 msgid "You must select at least %s choices."
 msgstr ""
 
-#: views/parsley-translations.html:22
+#: views/parsley-translations.html:29
 msgid "You must select %s choices or fewer."
 msgstr ""
 
-#: views/parsley-translations.html:23
+#: views/parsley-translations.html:30
 msgid "You must select between %s and %s choices."
 msgstr ""
 
-#: views/parsley-translations.html:24
+#: views/parsley-translations.html:31
 msgid "This value should be the same."
 msgstr ""
 
@@ -6873,11 +6873,35 @@ msgid "Basic / None – only use data your site already has about your subscribe
 msgstr ""
 
 #: views/settings_translations.html:258
-msgid "Tracking consent for unknown subscribers"
+msgid "Subscriber choice (open and click tracking)"
 msgstr ""
 
 #: views/settings_translations.html:259
-msgid "Some subscribers have never been asked whether they allow open and click tracking. Choose whether to track them by default. Select No for a strict opt-in approach, where only subscribers who explicitly allow tracking are tracked. This helps with the consent rules in France and Italy. It has no effect when engagement tracking above is set to Basic / None."
+msgid "Choose whether subscribers can decide for themselves whether their opens and clicks are measured. This has no effect when engagement tracking above is set to Basic / None."
+msgstr ""
+
+#: views/settings_translations.html:260
+msgid "Track everyone, don't ask"
+msgstr ""
+
+#: views/settings_translations.html:261
+msgid "Subscribers see no tracking controls, and nothing is added to your emails, forms or checkout. This is how MailPoet works today."
+msgstr ""
+
+#: views/settings_translations.html:262
+msgid "Ask new subscribers"
+msgstr ""
+
+#: views/settings_translations.html:263
+msgid "New subscribers choose when they sign up. Everyone already on your list keeps being tracked until they turn it off themselves, so your current statistics are unaffected."
+msgstr ""
+
+#: views/settings_translations.html:264
+msgid "Ask everyone"
+msgstr ""
+
+#: views/settings_translations.html:265
+msgid "Nobody is measured until they allow it, including subscribers already on your list. Use this for the consent rules in France and Italy. Expect open and click rates to drop sharply until people respond."
 msgstr ""
 
 #: views/settings_translations.html:44
@@ -8761,7 +8785,7 @@ msgid "Cannot send the email because an order is required to generate the review
 msgstr ""
 
 #: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:333
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:496
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:566
 msgid "Cannot send the email because WooCommerce cannot generate an order review link for this order."
 msgstr ""
 
@@ -10975,20 +10999,20 @@ msgstr ""
 msgid "Daemon does not set correctly."
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:276
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:344
 msgid "No subject"
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:309
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:377
 msgid "Recipient-restricted generated coupons are only supported in automation emails sent to one subscriber at a time. Disable recipient restriction, remove the generated coupon block, or use an existing coupon before sending this email."
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:310
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:378
 #: lib/EmailEditor/Integrations/MailPoet/Coupons/CouponBlockFailureTranslator.php:17
 msgid "Auto-generated coupon codes are only supported in regular newsletters and automation emails sent to one subscriber at a time. Remove the generated coupon block or use an existing coupon before sending this email."
 msgstr ""
 
-#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:551
+#: lib/Cron/Workers/SendingQueue/Tasks/Newsletter.php:621
 msgid "There was an error processing your newsletter during sending. If possible, please contact us and report this issue."
 msgstr ""
 
@@ -13901,12 +13925,12 @@ msgctxt "Subject of an email confirming that MailPoet Sending Service works"
 msgid "Sending with MailPoet works!"
 msgstr ""
 
-#: lib/Settings/SettingsController.php:124
+#: lib/Settings/SettingsController.php:125
 #: lib/Subscribers/ConfirmationEmailCustomizer.php:55
 msgid "Confirm your subscription to [site:title]"
 msgstr ""
 
-#: lib/Settings/SettingsController.php:136
+#: lib/Settings/SettingsController.php:137
 msgid ""
 "Hello [subscriber:firstname | default:there],\n"
 "\n"
@@ -14268,43 +14292,43 @@ msgstr ""
 msgid "Yes, please add me to your mailing list."
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:83
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:89
 msgid "Save changes"
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:106
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:112
 msgid "Need to change your email address? Unsubscribe using the form below, then simply sign up again."
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:127
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:133
 msgid "[link]Edit your profile[/link] to update your email."
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:133
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:139
 msgid "[link]Log in to your account[/link] to update your email."
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:226
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:232
 msgid "Allow tracking of email opens and link clicks"
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:232
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:238
 msgid "Email subscription status"
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:276
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:282
 msgid "This controls whether you receive emails overall. Your list choices below control which public lists you receive."
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:309
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:321
 msgid "Email activity tracking"
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:353
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:367
 msgid "Your lists"
 msgstr ""
 
-#: lib/Subscription/ManageSubscriptionFormRenderer.php:358
+#: lib/Subscription/ManageSubscriptionFormRenderer.php:372
 msgid "Choose Yes for lists you want to receive and No for lists you do not want to receive."
 msgstr ""
 

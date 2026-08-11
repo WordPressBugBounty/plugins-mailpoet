@@ -2668,6 +2668,7 @@ class ComposerStaticInit2769184bc03a099ec6f4dce25a325723
  'MailPoet\\Migrations\\App\\Migration_20260421_155908_App' => __DIR__ . '/../..' . '/lib/Migrations/App/Migration_20260421_155908_App.php',
  'MailPoet\\Migrations\\App\\Migration_20260515_120000_App' => __DIR__ . '/../..' . '/lib/Migrations/App/Migration_20260515_120000_App.php',
  'MailPoet\\Migrations\\App\\Migration_20260623_120000_App' => __DIR__ . '/../..' . '/lib/Migrations/App/Migration_20260623_120000_App.php',
+ 'MailPoet\\Migrations\\App\\Migration_20260805_120000_App' => __DIR__ . '/../..' . '/lib/Migrations/App/Migration_20260805_120000_App.php',
  'MailPoet\\Migrations\\Db\\DbMigrationTemplate' => __DIR__ . '/../..' . '/lib/Migrator/DbMigrationTemplate.php',
  'MailPoet\\Migrations\\Db\\Migration_20221028_105818' => __DIR__ . '/../..' . '/lib/Migrations/Db/Migration_20221028_105818.php',
  'MailPoet\\Migrations\\Db\\Migration_20221110_151621' => __DIR__ . '/../..' . '/lib/Migrations/Db/Migration_20221110_151621.php',

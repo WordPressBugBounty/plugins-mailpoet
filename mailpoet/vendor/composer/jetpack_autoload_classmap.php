@@ -10552,6 +10552,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/App/Migration_20260623_120000_App.php'
  ),
+ 'MailPoet\\Migrations\\App\\Migration_20260805_120000_App' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/App/Migration_20260805_120000_App.php'
+ ),
  'MailPoet\\Migrations\\Db\\DbMigrationTemplate' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrator/DbMigrationTemplate.php'
