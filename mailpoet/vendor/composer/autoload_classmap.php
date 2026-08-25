@@ -2365,6 +2365,7 @@ return array(
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\BlockEmailContentDetector' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/BlockEmailContentDetector.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypesController' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypesController.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\AbstractBlock' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/AbstractBlock.php',
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\LatestPosts' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/LatestPosts.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/PoweredByMailpoet.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Cli' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Cli.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Coupons\\CouponBlock' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Coupons/CouponBlock.php',

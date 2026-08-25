@@ -346,6 +346,7 @@ class FreeCachedContainer extends Container
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\AutomationEmailPreviewOrderProvider' => 'getAutomationEmailPreviewOrderProviderService',
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\BlockEmailContentDetector' => 'getBlockEmailContentDetectorService',
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypesController' => 'getBlockTypesControllerService',
+            'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\LatestPosts' => 'getLatestPostsService',
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet' => 'getPoweredByMailpoetService',
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Cli' => 'getCli2Service',
             'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Coupons\\CouponBlockDetector' => 'getCouponBlockDetectorService',
@@ -4128,7 +4129,17 @@ class FreeCachedContainer extends Container
      */
     protected function getBlockTypesControllerService()
     {
-        return $this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypesController'] = new \MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypesController(($this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet'] ?? $this->getPoweredByMailpoetService()));
+        return $this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypesController'] = new \MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypesController(($this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet'] ?? $this->getPoweredByMailpoetService()), ($this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\LatestPosts'] ?? $this->getLatestPostsService()));
+    }
+
+    /**
+     * Gets the public 'MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes\LatestPosts' shared autowired service.
+     *
+     * @return \MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes\LatestPosts
+     */
+    protected function getLatestPostsService()
+    {
+        return $this->services['MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\LatestPosts'] = new \MailPoet\EmailEditor\Integrations\MailPoet\Blocks\BlockTypes\LatestPosts(($this->services['MailPoet\\Newsletter\\AutomatedLatestContent'] ?? $this->getAutomatedLatestContent2Service()), ($this->services['MailPoet\\Newsletter\\NewsletterPostsRepository'] ?? $this->getNewsletterPostsRepositoryService()), ($this->services['MailPoet\\Newsletter\\NewslettersRepository'] ?? $this->getNewslettersRepositoryService()), ($this->services['MailPoet\\WP\\Functions'] ?? ($this->services['MailPoet\\WP\\Functions'] = new \MailPoet\WP\Functions())));
     }
 
     /**

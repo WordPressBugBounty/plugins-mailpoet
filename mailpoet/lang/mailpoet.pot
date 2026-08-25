@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.36.0\n"
+"Project-Id-Version: MailPoet 5.36.1\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-18T12:12:19+00:00\n"
+"POT-Creation-Date: 2026-08-25T02:53:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -93,7 +93,7 @@ msgstr ""
 
 #: views/emails/congratulatoryMssEmail.html:52
 #: views/segments/translations.html:185
-#: views/subscribers/subscribers.html:114
+#: views/subscribers/subscribers.html:115
 #: views/homepage.html:78
 #: assets/dist/js/commons.js:2
 msgid "Congrats!"
@@ -217,7 +217,7 @@ msgstr ""
 
 #: views/emails/statsNotificationAutomatedEmailsGarden.html:107
 #: views/emails/statsNotificationGarden.html:68
-#: views/subscribers/subscribers.html:84
+#: views/subscribers/subscribers.html:85
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:147
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
@@ -227,7 +227,7 @@ msgstr ""
 
 #: views/emails/statsNotificationAutomatedEmailsGarden.html:161
 #: views/emails/statsNotificationGarden.html:122
-#: views/subscribers/subscribers.html:81
+#: views/subscribers/subscribers.html:82
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:143
 #: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:82
 #: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:91
@@ -246,7 +246,7 @@ msgstr ""
 #: views/emails/statsNotificationGarden.html:199
 #: views/segments/translations.html:9
 #: views/subscribers/importExport/import.html:137
-#: views/subscribers/subscribers.html:34
+#: views/subscribers/subscribers.html:35
 #: views/subscription/admin_user_status_field.html:23
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:120
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:150
@@ -260,7 +260,7 @@ msgstr ""
 #: views/emails/statsNotificationAutomatedEmailsGarden.html:265
 #: views/emails/statsNotificationGarden.html:226
 #: views/segments/translations.html:11
-#: views/subscribers/subscribers.html:36
+#: views/subscribers/subscribers.html:37
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:128
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:149
 #: lib/Subscribers/SubscriberListingRepository.php:1050
@@ -324,7 +324,7 @@ msgstr ""
 
 #: views/form/templatesLegacy/blocks/date_days.hbs:3
 #: views/form/editor.html:144
-#: views/subscribers/subscribers.html:90
+#: views/subscribers/subscribers.html:91
 #: lib/Form/Block/Date.php:71
 #: lib/Form/Block/Date.php:213
 msgid "Day"
@@ -332,7 +332,7 @@ msgstr ""
 
 #: views/form/templatesLegacy/blocks/date_months.hbs:3
 #: views/form/editor.html:145
-#: views/subscribers/subscribers.html:89
+#: views/subscribers/subscribers.html:90
 #: lib/Form/Block/Date.php:80
 #: lib/Form/Block/Date.php:147
 msgid "Month"
@@ -340,7 +340,7 @@ msgstr ""
 
 #: views/form/templatesLegacy/blocks/date_years.hbs:5
 #: views/form/editor.html:146
-#: views/subscribers/subscribers.html:88
+#: views/subscribers/subscribers.html:89
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:240
 #: lib/Form/Block/Date.php:89
 #: lib/Form/Block/Date.php:105
@@ -356,6 +356,7 @@ msgstr ""
 #: views/form/templatesLegacy/settings/date_formats.hbs:9
 #: views/form/editor.html:142
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:480
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
 msgid "Order"
 msgstr ""
 
@@ -534,7 +535,7 @@ msgstr ""
 
 #: views/form/editor.html:48
 #: views/segments/translations.html:40
-#: views/subscribers/subscribers.html:92
+#: views/subscribers/subscribers.html:93
 msgid "Back"
 msgstr ""
 
@@ -715,6 +716,7 @@ msgid "Custom Fields"
 msgstr ""
 
 #: views/form/editor.html:123
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:40
 msgid "Layout"
 msgstr ""
@@ -767,7 +769,7 @@ msgstr ""
 
 #: views/form/editor.html:159
 #: views/segments/translations.html:89
-#: views/subscribers/subscribers.html:29
+#: views/subscribers/subscribers.html:30
 #: lib/API/MP/v1/CustomFields.php:35
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:72
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:140
@@ -783,7 +785,7 @@ msgstr ""
 
 #: views/form/editor.html:161
 #: views/segments/translations.html:90
-#: views/subscribers/subscribers.html:30
+#: views/subscribers/subscribers.html:31
 #: lib/API/MP/v1/CustomFields.php:43
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:80
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:141
@@ -957,7 +959,7 @@ msgstr ""
 
 #: views/form/editor.html:224
 #: views/subscribers/importExport/import.html:147
-#: views/subscribers/subscribers.html:126
+#: views/subscribers/subscribers.html:127
 #: assets/dist/js/tags.js:1
 msgid "Add new tag"
 msgstr ""
@@ -1623,12 +1625,14 @@ msgstr ""
 #: views/newsletter/templates/blocks/automatedLatestContentLayout/settings.hbs:8
 #: views/newsletter/templates/blocks/posts/settingsSelection.hbs:6
 #: views/newsletter/templates/blocks/posts/widget.hbs:4
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
 msgid "Posts"
 msgstr ""
 
 #: views/newsletter/templates/blocks/automatedLatestContent/settings.hbs:9
 #: views/newsletter/templates/blocks/automatedLatestContentLayout/settings.hbs:9
 #: views/newsletter/templates/blocks/posts/settingsSelection.hbs:7
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
 msgid "Pages"
 msgstr ""
 
@@ -1969,6 +1973,7 @@ msgstr ""
 
 #: views/newsletter/templates/blocks/container/settings.hbs:1
 #: views/newsletter/templates/components/sidebar/layout.hbs:2
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
 msgid "Columns"
 msgstr ""
 
@@ -2661,7 +2666,7 @@ msgstr ""
 #: views/newsletter/templates/components/save.hbs:22
 #: views/newsletter/templates/components/save.hbs:27
 #: views/newsletter/templates/components/save.hbs:48
-#: views/subscribers/subscribers.html:91
+#: views/subscribers/subscribers.html:92
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:89
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
@@ -3198,7 +3203,7 @@ msgstr ""
 
 #: views/segments/translations.html:7
 #: views/subscribers/importExport/import.html:136
-#: views/subscribers/subscribers.html:33
+#: views/subscribers/subscribers.html:34
 #: views/subscription/admin_user_status_field.html:12
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:112
 #: lib/Subscribers/SubscriberListingRepository.php:1030
@@ -3208,7 +3213,7 @@ msgid "Subscribed"
 msgstr ""
 
 #: views/segments/translations.html:8
-#: views/subscribers/subscribers.html:32
+#: views/subscribers/subscribers.html:33
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:116
 #: lib/Subscribers/SubscriberListingRepository.php:1035
 #: assets/dist/js/admin.js:2
@@ -3217,7 +3222,7 @@ msgstr ""
 
 #: views/segments/translations.html:10
 #: views/subscribers/importExport/import.html:138
-#: views/subscribers/subscribers.html:35
+#: views/subscribers/subscribers.html:36
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:124
 #: lib/Subscribers/SubscriberListingRepository.php:1045
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:270
@@ -3227,7 +3232,7 @@ msgid "Inactive"
 msgstr ""
 
 #: views/segments/translations.html:12
-#: views/subscribers/subscribers.html:56
+#: views/subscribers/subscribers.html:57
 #: assets/dist/js/admin.js:2
 msgid "Created on"
 msgstr ""
@@ -3297,7 +3302,7 @@ msgid "Add new segment"
 msgstr ""
 
 #: views/segments/translations.html:28
-#: views/subscribers/subscribers.html:21
+#: views/subscribers/subscribers.html:22
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation.js:1
 #: assets/dist/js/custom_fields.js:1
@@ -3306,7 +3311,7 @@ msgid "Edit"
 msgstr ""
 
 #: views/segments/translations.html:29
-#: views/subscribers/subscribers.html:22
+#: views/subscribers/subscribers.html:23
 #: lib/CustomFields/CustomFieldsRepository.php:320
 #: lib/Form/Listing/FormListingRepository.php:47
 #: lib/Newsletter/Listing/NewsletterListingRepository.php:174
@@ -3318,7 +3323,7 @@ msgid "Trash"
 msgstr ""
 
 #: views/segments/translations.html:30
-#: views/subscribers/subscribers.html:23
+#: views/subscribers/subscribers.html:24
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/custom_fields.js:1
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:13
@@ -3416,7 +3421,7 @@ msgstr ""
 
 #. translators: automation subject (entity entering automation) title
 #: views/segments/translations.html:56
-#: views/subscribers/subscribers.html:51
+#: views/subscribers/subscribers.html:52
 #: views/help.html:76
 #: lib/Automation/Integrations/MailPoet/Subjects/SubscriberSubject.php:49
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:129
@@ -3805,7 +3810,7 @@ msgid "Learn more."
 msgstr ""
 
 #: views/segments/translations.html:178
-#: views/subscribers/subscribers.html:107
+#: views/subscribers/subscribers.html:108
 #: views/homepage.html:71
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:152
 #: lib/Subscribers/ImportExport/PersonalDataExporters/NewsletterClicksExporter.php:28
@@ -3819,38 +3824,38 @@ msgid "Unknown"
 msgstr ""
 
 #: views/segments/translations.html:179
-#: views/subscribers/subscribers.html:108
+#: views/subscribers/subscribers.html:109
 #: views/homepage.html:72
 msgid "Not enough data."
 msgstr ""
 
 #: views/segments/translations.html:180
-#: views/subscribers/subscribers.html:109
+#: views/subscribers/subscribers.html:110
 #: views/homepage.html:73
 msgid "Fewer than 3 emails sent ever"
 msgstr ""
 
 #: views/segments/translations.html:181
-#: views/subscribers/subscribers.html:110
+#: views/subscribers/subscribers.html:111
 #: views/homepage.html:74
 #: assets/dist/js/admin.js:2
 msgid "Dormant"
 msgstr ""
 
 #: views/segments/translations.html:182
-#: views/subscribers/subscribers.html:111
+#: views/subscribers/subscribers.html:112
 #: views/homepage.html:75
 msgid "Not enough recent data."
 msgstr ""
 
 #: views/segments/translations.html:183
-#: views/subscribers/subscribers.html:112
+#: views/subscribers/subscribers.html:113
 #: views/homepage.html:76
 msgid "Fewer than 3 emails sent in the last year"
 msgstr ""
 
 #: views/segments/translations.html:184
-#: views/subscribers/subscribers.html:113
+#: views/subscribers/subscribers.html:114
 #: views/homepage.html:77
 #: lib/Twig/Functions.php:365
 #: lib/Twig/Functions.php:375
@@ -3865,7 +3870,7 @@ msgid "50% or more"
 msgstr ""
 
 #: views/segments/translations.html:187
-#: views/subscribers/subscribers.html:116
+#: views/subscribers/subscribers.html:117
 #: views/homepage.html:80
 #: lib/Twig/Functions.php:367
 #: lib/Twig/Functions.php:377
@@ -3875,7 +3880,7 @@ msgid "Good"
 msgstr ""
 
 #: views/segments/translations.html:188
-#: views/subscribers/subscribers.html:117
+#: views/subscribers/subscribers.html:118
 #: views/homepage.html:81
 #: assets/dist/js/commons.js:2
 msgid "Good stuff."
@@ -3887,13 +3892,13 @@ msgid "between 20 and 50%"
 msgstr ""
 
 #: views/segments/translations.html:190
-#: views/subscribers/subscribers.html:119
+#: views/subscribers/subscribers.html:120
 #: views/homepage.html:83
 msgid "Low"
 msgstr ""
 
 #: views/segments/translations.html:191
-#: views/subscribers/subscribers.html:120
+#: views/subscribers/subscribers.html:121
 #: views/homepage.html:84
 #: assets/dist/js/commons.js:2
 msgid "Something to improve."
@@ -3905,7 +3910,7 @@ msgid "20% or fewer"
 msgstr ""
 
 #: views/segments/translations.html:193
-#: views/subscribers/subscribers.html:122
+#: views/subscribers/subscribers.html:123
 #: views/homepage.html:86
 msgid "Average percent of emails subscribers read in the last year"
 msgstr ""
@@ -3919,7 +3924,7 @@ msgid "Your current MailPoet plan does not support advanced segments with multip
 msgstr ""
 
 #: views/segments/translations.html:198
-#: views/subscribers/subscribers.html:97
+#: views/subscribers/subscribers.html:98
 #: lib/Config/Menu.php:438
 #: lib/Config/Menu.php:439
 #: assets/dist/js/admin.js:2
@@ -3930,7 +3935,7 @@ msgid "Upgrade"
 msgstr ""
 
 #: views/segments/translations.html:199
-#: views/subscribers/subscribers.html:99
+#: views/subscribers/subscribers.html:100
 #: lib/Util/Notices/PremiumFeaturesAvailableNotice.php:54
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
@@ -3938,7 +3943,7 @@ msgid "Your current MailPoet plan includes advanced features, but they require t
 msgstr ""
 
 #: views/segments/translations.html:200
-#: views/subscribers/subscribers.html:100
+#: views/subscribers/subscribers.html:101
 #: lib/Util/Notices/PremiumFeaturesAvailableNotice.php:58
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
@@ -3946,7 +3951,7 @@ msgid "Download MailPoet Premium plugin"
 msgstr ""
 
 #: views/segments/translations.html:201
-#: views/subscribers/subscribers.html:101
+#: views/subscribers/subscribers.html:102
 #: lib/Util/Notices/PremiumFeaturesAvailableNotice.php:62
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
@@ -3954,14 +3959,14 @@ msgid "Activate MailPoet Premium plugin"
 msgstr ""
 
 #: views/segments/translations.html:202
-#: views/subscribers/subscribers.html:96
-#: views/subscribers/subscribers.html:102
+#: views/subscribers/subscribers.html:97
+#: views/subscribers/subscribers.html:103
 #: assets/dist/js/admin.js:2
 msgid "Congratulations, you now have [subscribersCount] subscribers! Your plan is limited to [subscribersLimit] subscribers. You need to upgrade now to be able to continue using MailPoet."
 msgstr ""
 
 #: views/segments/translations.html:203
-#: views/subscribers/subscribers.html:103
+#: views/subscribers/subscribers.html:104
 #: assets/dist/js/admin.js:2
 msgid "Upgrade your plan"
 msgstr ""
@@ -4213,7 +4218,7 @@ msgstr ""
 
 #: views/subscribers/importExport/import.html:56
 #: views/subscribers/importExport/import.html:127
-#: views/subscribers/subscribers.html:24
+#: views/subscribers/subscribers.html:25
 msgid "Show more details"
 msgstr ""
 
@@ -4583,26 +4588,26 @@ msgctxt "This is a value in a select box for \"Set new subscribers’ status to\
 msgid "Don’t update"
 msgstr ""
 
-#: views/subscribers/subscribers.html:19
+#: views/subscribers/subscribers.html:20
 #: assets/dist/js/admin.js:2
 msgid "Email addresses that are invalid or don't exist anymore are called \"bounced addresses\". It's a good practice not to send emails to bounced addresses to keep a good reputation with spam filters. Send your emails with MailPoet and we'll automatically ensure to keep a list of bounced addresses without any setup."
 msgstr ""
 
-#: views/subscribers/subscribers.html:20
+#: views/subscribers/subscribers.html:21
 #: assets/dist/js/admin.js:2
 msgid "Get premium version!"
 msgstr ""
 
-#: views/subscribers/subscribers.html:25
+#: views/subscribers/subscribers.html:26
 msgid "Last engagement"
 msgstr ""
 
-#: views/subscribers/subscribers.html:28
+#: views/subscribers/subscribers.html:29
 msgid "E-mail"
 msgstr ""
 
-#: views/subscribers/subscribers.html:31
-#: views/subscribers/subscribers.html:52
+#: views/subscribers/subscribers.html:32
+#: views/subscribers/subscribers.html:53
 #: views/help.html:52
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:104
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:196
@@ -4615,172 +4620,172 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: views/subscribers/subscribers.html:37
+#: views/subscribers/subscribers.html:38
 #: assets/dist/js/admin.js:2
 msgid "Select a list"
 msgstr ""
 
-#: views/subscribers/subscribers.html:38
+#: views/subscribers/subscribers.html:39
 msgid "Unsubscribed on %1$s"
 msgstr ""
 
-#: views/subscribers/subscribers.html:39
+#: views/subscribers/subscribers.html:40
 msgid "Subscriber was updated successfully!"
 msgstr ""
 
-#: views/subscribers/subscribers.html:40
+#: views/subscribers/subscribers.html:41
 msgid "Subscriber was added successfully!"
 msgstr ""
 
-#: views/subscribers/subscribers.html:41
+#: views/subscribers/subscribers.html:42
 msgid "This subscriber will receive Welcome Emails if any are active for your lists."
 msgstr ""
 
-#: views/subscribers/subscribers.html:43
+#: views/subscribers/subscribers.html:44
 msgid "Unsubscribed at %1$d, from newsletter [link]."
 msgstr ""
 
-#: views/subscribers/subscribers.html:44
+#: views/subscribers/subscribers.html:45
 msgid "Unsubscribed at %1$d, using the “Manage my Subscription” page."
 msgstr ""
 
-#: views/subscribers/subscribers.html:45
+#: views/subscribers/subscribers.html:46
 msgid "Unsubscribed at %1$d, by admin \"%2$d\"."
 msgstr ""
 
-#: views/subscribers/subscribers.html:46
+#: views/subscribers/subscribers.html:47
 msgid "Unsubscribed at %1$d, via the MP API."
 msgstr ""
 
-#: views/subscribers/subscribers.html:47
+#: views/subscribers/subscribers.html:48
 msgid "Unsubscribed at %1$d, for an unknown reason."
 msgstr ""
 
-#: views/subscribers/subscribers.html:48
+#: views/subscribers/subscribers.html:49
 msgid "Reason: %1$s."
 msgstr ""
 
-#: views/subscribers/subscribers.html:49
+#: views/subscribers/subscribers.html:50
 msgid "Reason: %1$s. Details: %2$s"
 msgstr ""
 
-#: views/subscribers/subscribers.html:53
+#: views/subscribers/subscribers.html:54
 #: lib/Config/Menu.php:386
 #: lib/Config/Menu.php:387
 #: assets/dist/js/admin.js:2
 msgid "Lists"
 msgstr ""
 
-#: views/subscribers/subscribers.html:54
+#: views/subscribers/subscribers.html:55
 #: assets/dist/js/admin.js:2
 msgid "Score"
 msgstr ""
 
-#: views/subscribers/subscribers.html:55
+#: views/subscribers/subscribers.html:56
 #: assets/dist/js/admin.js:2
 msgid "Subscribed on"
 msgstr ""
 
-#: views/subscribers/subscribers.html:57
+#: views/subscribers/subscribers.html:58
 #: assets/dist/js/admin.js:2
 msgid "Last modified on"
 msgstr ""
 
-#: views/subscribers/subscribers.html:58
+#: views/subscribers/subscribers.html:59
 #: assets/dist/js/admin.js:2
 msgid "1 subscriber was moved to the trash."
 msgstr ""
 
-#: views/subscribers/subscribers.html:59
+#: views/subscribers/subscribers.html:60
 #: assets/dist/js/admin.js:2
 msgid "%1$d subscribers were moved to the trash."
 msgstr ""
 
-#: views/subscribers/subscribers.html:60
+#: views/subscribers/subscribers.html:61
 msgid "1 subscriber was permanently deleted."
 msgstr ""
 
-#: views/subscribers/subscribers.html:61
-msgid "%1$d subscribers were permanently deleted."
-msgstr ""
-
 #: views/subscribers/subscribers.html:62
-#: assets/dist/js/admin.js:2
-msgid "1 subscriber has been restored from the trash."
+msgid "%1$d subscribers were permanently deleted."
 msgstr ""
 
 #: views/subscribers/subscribers.html:63
 #: assets/dist/js/admin.js:2
-msgid "%1$d subscribers have been restored from the trash."
+msgid "1 subscriber has been restored from the trash."
 msgstr ""
 
 #: views/subscribers/subscribers.html:64
 #: assets/dist/js/admin.js:2
-msgid "Move to list..."
+msgid "%1$d subscribers have been restored from the trash."
 msgstr ""
 
 #: views/subscribers/subscribers.html:65
-msgid "%1$d subscribers were moved to list <strong>%2$s</strong>"
+#: assets/dist/js/admin.js:2
+msgid "Move to list..."
 msgstr ""
 
 #: views/subscribers/subscribers.html:66
-#: assets/dist/js/admin.js:2
-msgid "Add to list..."
+msgid "%1$d subscribers were moved to list <strong>%2$s</strong>"
 msgstr ""
 
 #: views/subscribers/subscribers.html:67
 #: assets/dist/js/admin.js:2
-msgid "%1$d subscribers were added to list <strong>%2$s</strong>."
+msgid "Add to list..."
 msgstr ""
 
 #: views/subscribers/subscribers.html:68
 #: assets/dist/js/admin.js:2
-msgid "Remove from list..."
+msgid "%1$d subscribers were added to list <strong>%2$s</strong>."
 msgstr ""
 
 #: views/subscribers/subscribers.html:69
-msgid "%1$d subscribers were removed from list <strong>%2$s</strong>"
+#: assets/dist/js/admin.js:2
+msgid "Remove from list..."
 msgstr ""
 
 #: views/subscribers/subscribers.html:70
+msgid "%1$d subscribers were removed from list <strong>%2$s</strong>"
+msgstr ""
+
+#: views/subscribers/subscribers.html:71
 #: assets/dist/js/admin.js:2
 msgid "Remove from all lists"
 msgstr ""
 
-#: views/subscribers/subscribers.html:72
+#: views/subscribers/subscribers.html:73
 #: assets/dist/js/admin.js:2
 msgid "This action will unsubscribe %s subscribers from all lists. This action cannot be undone. Are you sure, you want to continue?"
 msgstr ""
 
-#: views/subscribers/subscribers.html:73
+#: views/subscribers/subscribers.html:74
 #: assets/dist/js/admin.js:2
 msgid "%1$d subscribers were removed from all lists."
 msgstr ""
 
-#: views/subscribers/subscribers.html:74
+#: views/subscribers/subscribers.html:75
 #: assets/dist/js/admin.js:2
 msgid "Resend confirmation email"
 msgstr ""
 
-#: views/subscribers/subscribers.html:75
+#: views/subscribers/subscribers.html:76
 #: assets/dist/js/admin.js:2
 msgid "1 confirmation email has been sent."
 msgstr ""
 
-#: views/subscribers/subscribers.html:76
+#: views/subscribers/subscribers.html:77
 msgid "Lists to which the subscriber was subscribed."
 msgstr ""
 
-#: views/subscribers/subscribers.html:77
+#: views/subscribers/subscribers.html:78
 #: lib/Segments/SegmentsRepository.php:96
 msgid "WordPress Users"
 msgstr ""
 
-#: views/subscribers/subscribers.html:78
+#: views/subscribers/subscribers.html:79
 msgid "This subscriber is a registered WordPress user. [link]Edit their profile[/link] to change their email."
 msgstr ""
 
-#: views/subscribers/subscribers.html:79
+#: views/subscribers/subscribers.html:80
 #: lib/Newsletter/Statistics/Export/StatisticsExporter.php:258
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
@@ -4788,62 +4793,62 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: views/subscribers/subscribers.html:80
+#: views/subscribers/subscribers.html:81
 msgid "Sent email"
 msgstr ""
 
-#: views/subscribers/subscribers.html:83
+#: views/subscribers/subscribers.html:84
 #: assets/dist/js/admin.js:2
 msgid "A machine-opened email is an email opened by a computer in the background without the user’s explicit request or knowledge. [link]Read more[/link]"
 msgstr ""
 
-#: views/subscribers/subscribers.html:85
+#: views/subscribers/subscribers.html:86
 msgid "Not opened"
 msgstr ""
 
-#: views/subscribers/subscribers.html:86
+#: views/subscribers/subscribers.html:87
 msgid "Tip:"
 msgstr ""
 
-#: views/subscribers/subscribers.html:87
+#: views/subscribers/subscribers.html:88
 msgid "Need to add new fields, like a telephone number or street address? You can add custom fields by editing the subscription form on the Forms page."
 msgstr ""
 
-#: views/subscribers/subscribers.html:93
+#: views/subscribers/subscribers.html:94
 #: assets/dist/js/admin.js:2
 msgid "This is a Premium feature"
 msgstr ""
 
-#: views/subscribers/subscribers.html:94
+#: views/subscribers/subscribers.html:95
 msgid "Upgrade required"
 msgstr ""
 
-#: views/subscribers/subscribers.html:95
+#: views/subscribers/subscribers.html:96
 msgid "Congratulations, you now have [subscribersCount] subscribers! Our free version is limited to [subscribersLimit] subscribers. You need to upgrade now to be able to continue using MailPoet."
 msgstr ""
 
-#: views/subscribers/subscribers.html:98
+#: views/subscribers/subscribers.html:99
 #: views/layout.html:131
 msgid "Upgrade Now"
 msgstr ""
 
-#: views/subscribers/subscribers.html:115
+#: views/subscribers/subscribers.html:116
 msgid "Read 50% or more of sent emails"
 msgstr ""
 
-#: views/subscribers/subscribers.html:118
+#: views/subscribers/subscribers.html:119
 msgid "Read between 20 and 50% of sent emails"
 msgstr ""
 
-#: views/subscribers/subscribers.html:121
+#: views/subscribers/subscribers.html:122
 msgid "Read 20% or fewer of sent emails"
 msgstr ""
 
-#: views/subscribers/subscribers.html:124
+#: views/subscribers/subscribers.html:125
 msgid "Recalculate now"
 msgstr ""
 
-#: views/subscribers/subscribers.html:125
+#: views/subscribers/subscribers.html:126
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:214
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:253
 #: lib/Config/Menu.php:360
@@ -4854,52 +4859,52 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: views/subscribers/subscribers.html:127
+#: views/subscribers/subscribers.html:128
 #: assets/dist/js/admin.js:2
 msgid "Tag <strong>%1$s</strong> was added to %2$d subscribers."
 msgstr ""
 
-#: views/subscribers/subscribers.html:128
+#: views/subscribers/subscribers.html:129
 #: assets/dist/js/admin.js:2
 msgid "Tag <strong>%1$s</strong> was removed from %2$d subscribers."
 msgstr ""
 
-#: views/subscribers/subscribers.html:129
+#: views/subscribers/subscribers.html:130
 #: assets/dist/js/admin.js:2
 msgid "Add tag..."
 msgstr ""
 
-#: views/subscribers/subscribers.html:130
+#: views/subscribers/subscribers.html:131
 #: assets/dist/js/admin.js:2
 msgid "Remove tag..."
 msgstr ""
 
-#: views/subscribers/subscribers.html:26
+#: views/subscribers/subscribers.html:27
 msgctxt "when was the last time the subscriber engaged with the website?"
 msgid "never"
 msgstr ""
 
-#: views/subscribers/subscribers.html:71
+#: views/subscribers/subscribers.html:72
 msgctxt "This is an action on the subscribers page"
 msgid "Unsubscribe"
 msgstr ""
 
-#: views/subscribers/subscribers.html:82
+#: views/subscribers/subscribers.html:83
 msgctxt "Percentage of newsletters that were opened by a machine"
 msgid "Machine-opened"
 msgstr ""
 
-#: views/subscribers/subscribers.html:104
+#: views/subscribers/subscribers.html:105
 msgctxt "Table column label for subscriber actions e.g. email open, link clicked"
 msgid "Action"
 msgstr ""
 
-#: views/subscribers/subscribers.html:105
+#: views/subscribers/subscribers.html:106
 msgctxt "Table column label for date when subscriber action happened"
 msgid "Action on"
 msgstr ""
 
-#: views/subscribers/subscribers.html:106
+#: views/subscribers/subscribers.html:107
 msgctxt "Table column label for count of subscriber actions"
 msgid "Count"
 msgstr ""
@@ -7205,6 +7210,7 @@ msgstr ""
 #: lib/Config/Menu.php:218
 #: lib/Config/Menu.php:709
 #: lib/Config/PrivacyPolicy.php:12
+#: lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/LatestPosts.php:164
 #: lib/WooCommerce/MultichannelMarketing/MPMarketingChannel.php:49
 #: lib/WooCommerce/WooSystemInfoController.php:41
 msgid "MailPoet"
@@ -9831,7 +9837,7 @@ msgid "The characters you entered did not match the CAPTCHA image. Please try ag
 msgstr ""
 
 #: lib/Captcha/PageRenderer.php:68
-#: lib/Subscription/Pages.php:345
+#: lib/Subscription/Pages.php:346
 msgid "MailPoet Page"
 msgstr ""
 
@@ -10243,8 +10249,8 @@ msgstr ""
 #: lib/Config/PopulatorData/Templates/WordPressTheme.php:1266
 #: lib/Config/PopulatorData/Templates/WorldCup.php:725
 #: lib/Config/PopulatorData/Templates/YogaStudio.php:699
-#: lib/Subscription/Pages.php:456
-#: lib/Subscription/Pages.php:663
+#: lib/Subscription/Pages.php:457
+#: lib/Subscription/Pages.php:673
 msgid "Manage your subscription"
 msgstr ""
 
@@ -11225,6 +11231,11 @@ msgstr ""
 
 #: lib/CustomFields/RestApi/Endpoints/CustomFieldsPutEndpoint.php:48
 msgid "The custom field type cannot be changed because subscribers have values stored for this field."
+msgstr ""
+
+#: lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/LatestPosts.php:1012
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "No posts found."
 msgstr ""
 
 #. translators: %s is the specific coupon generation failure.
@@ -14380,76 +14391,76 @@ msgstr ""
 msgid "Choose Yes for lists you want to receive and No for lists you do not want to receive."
 msgstr ""
 
-#: lib/Subscription/Pages.php:327
+#: lib/Subscription/Pages.php:328
 msgid "If you confirm, tracking of email opens and link clicks will stop. This is separate from unsubscribing: you will keep receiving emails."
 msgstr ""
 
-#: lib/Subscription/Pages.php:352
+#: lib/Subscription/Pages.php:353
 msgid "Hmmm... we don't have a record of you."
 msgstr ""
 
-#: lib/Subscription/Pages.php:379
+#: lib/Subscription/Pages.php:380
 msgid "Your email address doesn't appear in our lists anymore. Sign up again or contact us if this appears to be a mistake."
 msgstr ""
 
-#: lib/Subscription/Pages.php:442
+#: lib/Subscription/Pages.php:443
 msgid "You are now subscribed!"
 msgstr ""
 
 #. translators: %s is the website title or website name.
-#: lib/Subscription/Pages.php:446
+#: lib/Subscription/Pages.php:447
 msgid "You have subscribed to %s"
 msgstr ""
 
-#: lib/Subscription/Pages.php:462
+#: lib/Subscription/Pages.php:463
 msgid "You are now unsubscribed."
 msgstr ""
 
-#: lib/Subscription/Pages.php:468
+#: lib/Subscription/Pages.php:469
 msgid "Thank you for letting us know!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:475
+#: lib/Subscription/Pages.php:476
 msgid "You have opted out of email activity tracking."
 msgstr ""
 
-#: lib/Subscription/Pages.php:477
+#: lib/Subscription/Pages.php:478
 msgid "Opt out of email activity tracking"
 msgstr ""
 
-#: lib/Subscription/Pages.php:483
+#: lib/Subscription/Pages.php:484
 msgid "Confirm you want to unsubscribe"
 msgstr ""
 
-#: lib/Subscription/Pages.php:489
+#: lib/Subscription/Pages.php:490
 msgid "Yup, we've added you to our email list. You'll hear from us shortly."
 msgstr ""
 
-#: lib/Subscription/Pages.php:506
+#: lib/Subscription/Pages.php:507
 msgid "Subscription management form is only available to mailing lists subscribers."
 msgstr ""
 
-#: lib/Subscription/Pages.php:529
+#: lib/Subscription/Pages.php:539
 msgid "Accidentally unsubscribed?"
 msgstr ""
 
-#: lib/Subscription/Pages.php:535
+#: lib/Subscription/Pages.php:545
 msgid "Thank you for letting us know why you unsubscribed."
 msgstr ""
 
-#: lib/Subscription/Pages.php:613
+#: lib/Subscription/Pages.php:623
 msgid "We appreciate your continued interest in our updates. Expect to hear from us again soon!"
 msgstr ""
 
-#: lib/Subscription/Pages.php:624
+#: lib/Subscription/Pages.php:634
 msgid "Tracking of email opens and link clicks is now off. You will keep receiving emails as usual."
 msgstr ""
 
-#: lib/Subscription/Pages.php:631
+#: lib/Subscription/Pages.php:641
 msgid "Stop tracking my activity"
 msgstr ""
 
-#: lib/Subscription/Pages.php:658
+#: lib/Subscription/Pages.php:668
 msgid "Link to subscription management page is only available to mailing lists subscribers."
 msgstr ""
 
@@ -20627,6 +20638,64 @@ msgstr ""
 msgid "Custom field \"%s\" updated."
 msgstr ""
 
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Latest posts"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Manual selection"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Newest to oldest"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Oldest to newest"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "(no title)"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "(tag)"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+#: assets/dist/js/newsletter_editor.js:2
+msgid "Categories & tags"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Choose posts"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Selection"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Content type"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Number of posts"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
+msgid "Exclude selected categories & tags"
+msgstr ""
+
+#. translators: %d is the post ID.
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:4
+msgid "Could not load the post (ID: %d). Was it deleted?"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-block.js:4
+msgid "Displays the content of each post."
+msgstr ""
+
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:1
 msgid "This embed is not supported in emails. It will be sent as a link."
 msgstr ""
@@ -21534,10 +21603,6 @@ msgid "There is no content to display."
 msgstr ""
 
 #: assets/dist/js/newsletter_editor.js:2
-msgid "Categories & tags"
-msgstr ""
-
-#: assets/dist/js/newsletter_editor.js:2
 msgid "Failed to fetch available posts"
 msgstr ""
 
@@ -21967,6 +22032,61 @@ msgstr ""
 
 #: assets/dist/js/tags.js:1
 msgid "Tag \"%s\" created."
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-post-content/block.json
+msgctxt "block title"
+msgid "Post Content"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-post-content/block.json
+msgctxt "block description"
+msgid "Displays the full content of each post. Blocks that cannot be rendered in emails are left out when the email is sent."
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-template/block.json
+msgctxt "block title"
+msgid "Post Template"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts-template/block.json
+msgctxt "block description"
+msgid "Block layout that repeats for each of the latest posts."
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts/block.json
+msgctxt "block title"
+msgid "Latest Posts"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts/block.json
+msgctxt "block description"
+msgid "Automatically displays your most recent posts in the email when it is sent."
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts/block.json
+msgctxt "block keyword"
+msgid "latest"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts/block.json
+msgctxt "block keyword"
+msgid "blog"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts/block.json
+msgctxt "block keyword"
+msgid "automated"
+msgstr ""
+
+#: assets/dist/js/email-editor-blocks/latest-posts/block.json
+msgctxt "block keyword"
+msgid "dynamic"
 msgstr ""
 
 #: assets/dist/js/email-editor-blocks/powered-by-mailpoet/block.json

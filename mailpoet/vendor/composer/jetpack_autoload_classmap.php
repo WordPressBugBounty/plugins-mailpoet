@@ -9500,6 +9500,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/AbstractBlock.php'
  ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\LatestPosts' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/LatestPosts.php'
+ ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/PoweredByMailpoet.php'

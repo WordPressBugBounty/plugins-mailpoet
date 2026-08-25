@@ -2405,6 +2405,7 @@ class ComposerStaticInit872900f5b87449668837c6f68e6176ac
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\BlockEmailContentDetector' => __DIR__ . '/../..' . '/lib/EmailEditor/Integrations/MailPoet/BlockEmailContentDetector.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypesController' => __DIR__ . '/../..' . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypesController.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\AbstractBlock' => __DIR__ . '/../..' . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/AbstractBlock.php',
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\LatestPosts' => __DIR__ . '/../..' . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/LatestPosts.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Blocks\\BlockTypes\\PoweredByMailpoet' => __DIR__ . '/../..' . '/lib/EmailEditor/Integrations/MailPoet/Blocks/BlockTypes/PoweredByMailpoet.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Cli' => __DIR__ . '/../..' . '/lib/EmailEditor/Integrations/MailPoet/Cli.php',
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\Coupons\\CouponBlock' => __DIR__ . '/../..' . '/lib/EmailEditor/Integrations/MailPoet/Coupons/CouponBlock.php',
