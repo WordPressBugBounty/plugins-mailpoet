@@ -9696,10 +9696,6 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/Link.php'
  ),
- 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\LinksToShortcodesConvertor' => array(
- 'version' => 'dev-trunk',
- 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/LinksToShortcodesConvertor.php'
- ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\Newsletter' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/Newsletter.php'
@@ -9707,6 +9703,18 @@ return array(
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\OrderReviewUrl' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/OrderReviewUrl.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\PersonalizationContextBuilder' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/PersonalizationContextBuilder.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\PersonalizationTagLinkNormalizer' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/PersonalizationTagLinkNormalizer.php'
+ ),
+ 'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\PersonalizationTagLinkResolver' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/EmailEditor/Integrations/MailPoet/PersonalizationTags/PersonalizationTagLinkResolver.php'
  ),
  'MailPoet\\EmailEditor\\Integrations\\MailPoet\\PersonalizationTags\\Site' => array(
  'version' => 'dev-trunk',
@@ -10455,6 +10463,10 @@ return array(
  'MailPoet\\Mailer\\Methods\\SendGrid' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Mailer/Methods/SendGrid.php'
+ ),
+ 'MailPoet\\Mailer\\SendingLimitReachedException' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Mailer/SendingLimitReachedException.php'
  ),
  'MailPoet\\Mailer\\SubscriberError' => array(
  'version' => 'dev-trunk',

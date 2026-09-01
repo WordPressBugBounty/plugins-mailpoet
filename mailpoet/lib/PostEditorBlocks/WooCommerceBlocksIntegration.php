@@ -198,6 +198,11 @@ class WooCommerceBlocksIntegration {
     // Fetch existing woo subscriber and in case there is not any sync as guest
     $email = $order->get_billing_email();
     $subscriber = $this->subscribersRepository->findOneBy(['email' => $email, 'isWoocommerceUser' => true]);
+    // Deliberately unfiltered by isWoocommerceUser: a subscriber who signed up through a
+    // form and is now checking out as a guest already exists, and the sync only flips
+    // their flag rather than creating a row. Treating them as new would let an unticked
+    // box overwrite consent they gave earlier, which STOMAIL-8305 forbids.
+    $isNewSubscriber = $this->subscribersRepository->findOneBy(['email' => $email]) === null;
     if (!$subscriber instanceof SubscriberEntity) {
       $this->wooSegment->synchronizeGuestCustomer($order->get_id());
       $subscriber = $this->subscribersRepository->findOneBy(['email' => $email, 'isWoocommerceUser' => true]);
@@ -208,6 +213,6 @@ class WooCommerceBlocksIntegration {
       return null;
     }
 
-    $this->woocommerceSubscription->handleSubscriberOptin($subscriber, $checkoutOptin, $trackingConsent);
+    $this->woocommerceSubscription->handleSubscriberOptin($subscriber, $checkoutOptin, $trackingConsent, $isNewSubscriber);
   }
 }

@@ -13,7 +13,6 @@ use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Column 
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Columns as ColumnsRenderer;
 use Automattic\WooCommerce\EmailEditor\Integrations\Core\Renderer\Blocks\Image as ImageRenderer;
 use MailPoet\Config\Env;
-use MailPoet\EmailEditor\Integrations\MailPoet\EmailEditor;
 use MailPoet\Entities\NewsletterEntity;
 use MailPoet\Entities\NewsletterPostEntity;
 use MailPoet\Newsletter\AutomatedLatestContent;
@@ -135,7 +134,6 @@ class LatestPosts extends AbstractBlock {
     $this->registerTemplateBlock();
     $this->registerPostContentBlock();
     $this->wp->addFilter('block_categories_all', [$this, 'addBlockCategory']);
-    $this->wp->addFilter('allowed_block_types_all', [$this, 'restrictBlocksToEmailEditor'], 10, 2);
     $this->wp->addFilter('block_type_metadata_settings', [$this, 'enableEmailSupportForCoreBlocks']);
     $this->wp->addFilter('woocommerce_email_content_renderer_styles', [$this, 'makeLinkColorStylesInlineable']);
     $this->enableEmailSupportForRegisteredCoreBlocks();
@@ -167,39 +165,6 @@ class LatestPosts extends AbstractBlock {
       'title' => __('MailPoet', 'mailpoet'),
     ];
     return $categories;
-  }
-
-  /**
-   * The block is registered globally so it can render when emails are sent, but
-   * it is only meant to be used inside the MailPoet email editor. Hide it (and
-   * its template block) from the inserter of every other editor.
-   *
-   * @param bool|string[] $allowedBlocks
-   * @param \WP_Block_Editor_Context $editorContext
-   * @return bool|string[]
-   */
-  public function restrictBlocksToEmailEditor($allowedBlocks, $editorContext) {
-    $post = $editorContext->post ?? null;
-    $postType = $post instanceof \WP_Post ? $post->post_type : null; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
-    if ($postType === EmailEditor::MAILPOET_EMAIL_POST_TYPE) {
-      return $allowedBlocks;
-    }
-
-    // Another integration may have disallowed every block
-    if ($allowedBlocks === false) {
-      return $allowedBlocks;
-    }
-
-    // When every block is allowed the value is `true` rather than a list. Build
-    // the full list of block names first so we have something to remove ours from.
-    if (!is_array($allowedBlocks)) {
-      $allowedBlocks = array_keys(\WP_Block_Type_Registry::get_instance()->get_all_registered());
-    }
-
-    $ownBlocks = [$this->getBlockType(), self::TEMPLATE_BLOCK, self::POST_CONTENT_BLOCK];
-    return array_values(array_filter($allowedBlocks, static function ($blockName) use ($ownBlocks) {
-      return !in_array($blockName, $ownBlocks, true);
-    }));
   }
 
   /**
@@ -376,7 +341,7 @@ class LatestPosts extends AbstractBlock {
         $html .= render_block($this->normalizeBlock($contentBlock));
       }
     }
-    return $html;
+    return $this->wp->stripShortcodes($html);
   }
 
   private function renderClassicPostContent(\WP_Post $post): string {

@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) exit;
 
 use MailPoet\Entities\SubscriberEntity;
 use MailPoet\Segments\SegmentsRepository;
+use MailPoet\Segments\WooCommerce as WooCommerceSegment;
 use MailPoet\Settings\SettingsController;
 use MailPoet\Subscribers\ConfirmationEmailMailer;
 use MailPoet\Subscribers\Source;
@@ -74,6 +75,9 @@ class Subscription {
   /** @var TrackingConsentCapture */
   private $trackingConsentCapture;
 
+  /** @var WooCommerceSegment */
+  private $woocommerceSegment;
+
   public function __construct(
     SettingsController $settings,
     ConfirmationEmailMailer $confirmationEmailMailer,
@@ -82,7 +86,8 @@ class Subscription {
     SubscribersRepository $subscribersRepository,
     SegmentsRepository $segmentsRepository,
     SubscriberSegmentRepository $subscriberSegmentRepository,
-    TrackingConsentCapture $trackingConsentCapture
+    TrackingConsentCapture $trackingConsentCapture,
+    WooCommerceSegment $woocommerceSegment
   ) {
     $this->settings = $settings;
     $this->wp = $wp;
@@ -92,6 +97,7 @@ class Subscription {
     $this->segmentsRepository = $segmentsRepository;
     $this->subscriberSegmentRepository = $subscriberSegmentRepository;
     $this->trackingConsentCapture = $trackingConsentCapture;
+    $this->woocommerceSegment = $woocommerceSegment;
   }
 
   public function extendWooCommerceCheckoutForm() {
@@ -207,8 +213,12 @@ class Subscription {
 
     $checkoutOptin = !empty($_POST[self::CHECKOUT_OPTIN_INPUT_NAME]);
     $trackingConsent = !empty($_POST[self::CHECKOUT_TRACKING_CONSENT_INPUT_NAME]);
+    // Classic checkout has no pre-sync lookup of its own: the guest sync runs on
+    // this same hook three priorities earlier, so by now a brand new guest's row
+    // is already there. Ask the sync what it actually inserted.
+    $isNewSubscriber = $this->woocommerceSegment->wasNewlyCreatedByGuestSync($data['billing_email']);
 
-    return $this->handleSubscriberOptin($subscriber, $checkoutOptin, $trackingConsent);
+    return $this->handleSubscriberOptin($subscriber, $checkoutOptin, $trackingConsent, $isNewSubscriber);
   }
 
   /**
@@ -218,11 +228,11 @@ class Subscription {
    * @param bool $shouldSubscribe Whether the subscriber should be subscribed
    * @param bool $trackingConsent Whether the separate tracking-consent box was ticked
    */
-  public function handleSubscriberOptin(SubscriberEntity $subscriber, bool $shouldSubscribe, bool $trackingConsent = false): bool {
+  public function handleSubscriberOptin(SubscriberEntity $subscriber, bool $shouldSubscribe, bool $trackingConsent = false, bool $isNewSubscriber = false): bool {
     // Recorded before the opt-in branch, and independently of it: consenting to
     // tracking and subscribing are two separate decisions, so a customer who
     // declines the newsletter can still allow tracking and vice versa.
-    $this->applyTrackingConsent($subscriber, $trackingConsent);
+    $this->applyTrackingConsent($subscriber, $trackingConsent, $isNewSubscriber);
 
     $wcSegment = $this->segmentsRepository->getWooCommerceSegment();
 
@@ -259,7 +269,7 @@ class Subscription {
    * choice alone rather than revoking it. Persisted here because this path
    * writes the entity itself instead of going through SubscriberSaveController.
    */
-  private function applyTrackingConsent(SubscriberEntity $subscriber, bool $granted): void {
+  private function applyTrackingConsent(SubscriberEntity $subscriber, bool $granted, bool $isNewSubscriber = false): void {
     $method = SubscriberEntity::TRACKING_CONSENT_METHOD_WOOCOMMERCE_CHECKOUT;
     $before = $subscriber->getTrackingConsent();
 
@@ -268,7 +278,7 @@ class Subscription {
       $granted,
       $method,
       $this->trackingConsentCapture->getCopy($method),
-      false
+      $isNewSubscriber
     );
 
     if ($subscriber->getTrackingConsent() !== $before) {
