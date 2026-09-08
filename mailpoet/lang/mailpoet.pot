@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.37.0\n"
+"Project-Id-Version: MailPoet 5.38.0\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-01T14:09:31+00:00\n"
+"POT-Creation-Date: 2026-09-07T14:00:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -341,7 +341,7 @@ msgstr ""
 #: views/form/templatesLegacy/blocks/date_years.hbs:5
 #: views/form/editor.html:147
 #: views/subscribers/subscribers.html:89
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:247
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:258
 #: lib/Form/Block/Date.php:89
 #: lib/Form/Block/Date.php:105
 #: lib/Form/Block/Date.php:182
@@ -355,7 +355,7 @@ msgstr ""
 
 #: views/form/templatesLegacy/settings/date_formats.hbs:9
 #: views/form/editor.html:143
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:473
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:489
 #: assets/dist/js/email-editor-blocks/latest-posts-block.js:1
 msgid "Order"
 msgstr ""
@@ -414,12 +414,12 @@ msgstr ""
 
 #: views/form/templatesLegacy/settings/field_form.hbs:41
 #: views/form/editor.html:141
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:204
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:213
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:222
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:231
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:210
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:220
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:230
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:240
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:249
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:250
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:260
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:62
 #: assets/dist/js/automation_analytics.js:1
 #: assets/dist/js/commons.js:2
@@ -852,7 +852,7 @@ msgstr ""
 #: lib/API/MP/v1/CustomFields.php:27
 #: lib/Automation/Integrations/WordPress/Subjects/UserSubject.php:73
 #: lib/EmailEditor/Integrations/MailPoet/EmailEditor.php:87
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:152
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:154
 #: lib/Form/Templates/Templates/InitialForm.php:22
 #: lib/Newsletter/Sharing/ShareMetadataBuilder.php:83
 #: lib/Newsletter/Sharing/ShareMetadataBuilder.php:113
@@ -1741,10 +1741,10 @@ msgstr ""
 #: views/newsletter/templates/blocks/posts/settingsDisplayOptions.hbs:223
 #: views/newsletter/templates/blocks/products/settingsDisplayOptions.hbs:186
 #: views/newsletter/templates/blocks/social/settingsIcon.hbs:42
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:289
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:298
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:307
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:316
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:303
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:312
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:321
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:330
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:28
 msgid "Link"
 msgstr ""
@@ -3434,12 +3434,12 @@ msgstr ""
 #: views/help.html:77
 #: lib/Automation/Integrations/MailPoet/Subjects/SubscriberSubject.php:49
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:136
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:145
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:154
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:163
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:172
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:181
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:346
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:146
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:156
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:166
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:175
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:185
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:360
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:20
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:143
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:144
@@ -6281,7 +6281,7 @@ msgid "Read our guide"
 msgstr ""
 
 #: views/settings_translations.html:74
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:49
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:59
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:50
 msgid "Invalid email address"
 msgstr ""
@@ -7561,7 +7561,7 @@ msgstr ""
 #: lib/API/JSON/v1/Newsletters.php:236
 #: lib/API/JSON/v1/Newsletters.php:264
 #: lib/API/JSON/v1/StatisticsExport.php:203
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:62
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:72
 #: lib/Newsletter/RestApi/Endpoints/NewsletterDuplicateEndpoint.php:58
 #: lib/Newsletter/RestApi/Endpoints/NewsletterStatusEndpoint.php:60
 #: assets/dist/js/admin.js:2
@@ -9971,10 +9971,13 @@ msgid "Thank you for using MailPoet."
 msgstr ""
 
 #: lib/Config/Hooks.php:700
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:40
+#: lib/Util/Notices/PermanentNotices.php:204
 msgid "You do not have permission to perform this action."
 msgstr ""
 
 #: lib/Config/Hooks.php:701
+#: lib/Util/Notices/PermanentNotices.php:205
 msgid "Unauthorized"
 msgstr ""
 
@@ -9982,10 +9985,12 @@ msgstr ""
 #: lib/Logging/LogsDownload.php:38
 #: lib/Router/Endpoints/Subscription.php:109
 #: lib/Router/Endpoints/Subscription.php:131
+#: lib/Util/Notices/PermanentNotices.php:214
 msgid "Security check failed."
 msgstr ""
 
 #: lib/Config/Hooks.php:711
+#: lib/Util/Notices/PermanentNotices.php:215
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
 #: assets/dist/js/email_editor_integration/email_editor_integration.js:50
@@ -10017,7 +10022,7 @@ msgstr ""
 #. translators: Name of a content pattern used as starting content of an email
 #: lib/Config/Menu.php:260
 #: lib/EmailEditor/Integrations/MailPoet/Patterns/Library/NewsletterPattern.php:69
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:193
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:198
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:21
 #: lib/EmailEditor/Integrations/MailPoet/Templates/Library/Newsletter.php:25
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:42
@@ -11269,39 +11274,39 @@ msgstr ""
 msgid "This email was created using the new editor, which requires WordPress version %1$s or higher. Please update your setup to continue editing or previewing this email."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:45
+#: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:55
 msgid "Missing required data"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:38
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:39
 msgid "AI text generation is not available."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:47
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:48
 msgid "Email not found."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:55
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:56
 msgid "You are not allowed to generate suggestions for this email."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:67
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:68
 msgid "Email body is empty. Add content before generating suggestions."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:109
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:110
 msgid "AI text generation is not available. Please check your AI provider configuration."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:124
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:125
 msgid "Failed to generate suggestions. Please check your AI provider configuration and try again."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:139
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:140
 msgid "AI returned an unexpected response."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:176
+#: lib/EmailEditor/Integrations/MailPoet/Endpoints/GenerateSubjectSuggestionsEndpoint.php:177
 msgid "AI did not return any valid suggestions. Please try again."
 msgstr ""
 
@@ -12357,102 +12362,102 @@ msgid "First Name"
 msgstr ""
 
 #: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:138
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:147
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:148
 #: assets/dist/js/commons.js:2
 msgid "subscriber"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:143
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:144
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:26
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:80
 msgid "Last Name"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:161
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:164
 msgid "Activation Link"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:170
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:173
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:34
 msgid "WordPress User Display Name"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:174
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:177
 msgid "member"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:179
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:183
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:38
 msgid "Total Number of Subscribers"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:191
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:196
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:44
 msgid "Newsletter Subject"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:202
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:208
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:64
 msgid "Current day of the month number"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:211
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:218
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:68
 msgid "Current day of the month in ordinal form, i.e. 2nd, 3rd, 4th, etc."
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:220
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:228
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:72
 msgid "Full name of current day"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:229
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:238
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:76
 msgid "Current month number"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:238
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:248
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:80
 msgid "Full name of current month"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:258
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:270
 msgid "Site Title"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:260
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:269
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:278
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:272
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:282
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:292
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:122
 msgid "Site"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:267
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:280
 msgid "Site Description"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:276
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:290
 #: lib/Newsletter/Shortcodes/ShortcodesHelper.php:136
 msgid "Homepage URL"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:287
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:301
 msgid "Unsubscribe URL"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:296
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:310
 msgid "Manage subscription URL"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:305
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:319
 msgid "View in browser URL"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:314
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:328
 msgid "Tracking opt-out URL"
 msgstr ""
 
-#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:471
+#: lib/EmailEditor/Integrations/MailPoet/PersonalizationTagManager.php:487
 msgid "Order Review URL"
 msgstr ""
 
@@ -13318,7 +13323,7 @@ msgstr ""
 msgid "Sending frequency limit has been reached."
 msgstr ""
 
-#: lib/Mailer/Methods/AmazonSES.php:85
+#: lib/Mailer/Methods/AmazonSES.php:57
 msgid "Unsupported Amazon SES region"
 msgstr ""
 
@@ -14920,7 +14925,7 @@ msgstr ""
 msgid "The URL which needs to be pinged to get the cron started?"
 msgstr ""
 
-#: lib/WP/Notice.php:42
+#: lib/WP/Notice.php:49
 msgid "MailPoet Error:"
 msgstr ""
 
