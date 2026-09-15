@@ -10712,6 +10712,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260715_100000_Db.php'
  ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260907_120000_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260907_120000_Db.php'
+ ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrator/AppMigration.php'
@@ -12148,6 +12152,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Util/DateConverter.php'
  ),
+ 'MailPoet\\Util\\FormulaFreeXLSXWriter' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Util/FormulaFreeXLSXWriter.php'
+ ),
  'MailPoet\\Util\\FreeDomains' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Util/FreeDomains.php'
@@ -12279,6 +12287,10 @@ return array(
  'MailPoet\\Util\\Security' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Util/Security.php'
+ ),
+ 'MailPoet\\Util\\SpreadsheetCellFormatter' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Util/SpreadsheetCellFormatter.php'
  ),
  'MailPoet\\Util\\ThirdPartyOutput' => array(
  'version' => 'dev-trunk',

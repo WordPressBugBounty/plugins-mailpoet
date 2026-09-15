@@ -12,6 +12,7 @@ use MailPoet\API\JSON\ResponseBuilders\NewslettersResponseBuilder;
 use MailPoet\Config\AccessControl;
 use MailPoet\Doctrine\Validator\ValidationException;
 use MailPoet\Entities\NewsletterEntity;
+use MailPoet\Newsletter\ApiDataSanitizer;
 use MailPoet\Newsletter\NewsletterDeleteController;
 use MailPoet\Newsletter\NewsletterResendController;
 use MailPoet\Newsletter\NewsletterSaveController;
@@ -21,7 +22,6 @@ use MailPoet\Newsletter\Preview\SendPreviewException;
 use MailPoet\Newsletter\Url as NewsletterUrl;
 use MailPoet\Subscribers\ConfirmationEmailCustomizer;
 use MailPoet\UnexpectedValueException;
-use MailPoet\WP\Emoji;
 use MailPoet\WP\Functions as WPFunctions;
 
 class Newsletters extends APIEndpoint {
@@ -38,9 +38,6 @@ class Newsletters extends APIEndpoint {
 
   /** @var NewslettersResponseBuilder */
   private $newslettersResponseBuilder;
-
-  /** @var Emoji */
-  private $emoji;
 
   /** @var SendPreviewController */
   private $sendPreviewController;
@@ -59,28 +56,31 @@ class Newsletters extends APIEndpoint {
   /** @var ConfirmationEmailCustomizer */
   private $confirmationEmailCustomizer;
 
+  /** @var ApiDataSanitizer */
+  private $apiDataSanitizer;
+
   public function __construct(
     WPFunctions $wp,
     NewslettersRepository $newslettersRepository,
     NewslettersResponseBuilder $newslettersResponseBuilder,
-    Emoji $emoji,
     SendPreviewController $sendPreviewController,
     NewsletterSaveController $newsletterSaveController,
     NewsletterDeleteController $newsletterDeleteController,
     NewsletterResendController $newsletterResendController,
     NewsletterUrl $newsletterUrl,
-    ConfirmationEmailCustomizer $confirmationEmailCustomizer
+    ConfirmationEmailCustomizer $confirmationEmailCustomizer,
+    ApiDataSanitizer $apiDataSanitizer
   ) {
     $this->wp = $wp;
     $this->newslettersRepository = $newslettersRepository;
     $this->newslettersResponseBuilder = $newslettersResponseBuilder;
-    $this->emoji = $emoji;
     $this->sendPreviewController = $sendPreviewController;
     $this->newsletterSaveController = $newsletterSaveController;
     $this->newsletterDeleteController = $newsletterDeleteController;
     $this->newsletterResendController = $newsletterResendController;
     $this->newsletterUrl = $newsletterUrl;
     $this->confirmationEmailCustomizer = $confirmationEmailCustomizer;
+    $this->apiDataSanitizer = $apiDataSanitizer;
   }
 
   public function get($data = []) {
@@ -97,6 +97,9 @@ class Newsletters extends APIEndpoint {
       NewslettersResponseBuilder::RELATION_QUEUE,
     ]);
     $response = $this->wp->applyFilters('mailpoet_api_newsletters_get_after', $response);
+    if (is_array($response)) {
+      $response = $this->sanitizeResponseBody($response);
+    }
     return $this->successResponse($response, ['preview_url' => $this->getViewInBrowserUrl($newsletter)]);
   }
 
@@ -119,8 +122,16 @@ class Newsletters extends APIEndpoint {
     if (!is_array($response)) {
       $response = [];
     }
+    $response = $this->sanitizeResponseBody($response);
     $response['preview_url'] = $this->getViewInBrowserUrl($newsletter);
     return $this->successResponse($response);
+  }
+
+  private function sanitizeResponseBody(array $response): array {
+    if (is_array($response['body'] ?? null)) {
+      $response['body'] = $this->apiDataSanitizer->sanitizeBody($response['body']);
+    }
+    return $response;
   }
 
   public function save($data = []) {
@@ -203,7 +214,7 @@ class Newsletters extends APIEndpoint {
   }
 
   public function showPreview($data = []) {
-    if (empty($data['body'])) {
+    if (empty($data['body']) || !is_string($data['body'])) {
       return $this->badRequest([
         APIError::BAD_REQUEST => __('Newsletter data is missing.', 'mailpoet'),
       ]);
@@ -216,10 +227,14 @@ class Newsletters extends APIEndpoint {
       ]);
     }
 
-    $newslettersTableName = $this->newslettersRepository->getTableName();
-    $newsletter->setBody(
-      json_decode($this->emoji->encodeForUTF8Column($newslettersTableName, 'body', $data['body']), true)
-    );
+    $body = $this->newsletterSaveController->decodeAndSanitizeBody($data['body']);
+    if ($body === null) {
+      return $this->badRequest([
+        APIError::BAD_REQUEST => __('Invalid newsletter body payload.', 'mailpoet'),
+      ]);
+    }
+
+    $newsletter->setBody($body);
     $this->newslettersRepository->flush();
 
     $response = $this->newslettersResponseBuilder->build($newsletter);

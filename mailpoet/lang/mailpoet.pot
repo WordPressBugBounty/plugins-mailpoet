@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the MailPoet plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailPoet 5.38.0\n"
+"Project-Id-Version: MailPoet 5.38.1\n"
 "Report-Msgid-Bugs-To: http://support.mailpoet.com/\n"
 "Last-Translator: MailPoet i18n (https://www.transifex.com/organization/wysija)\n"
 "Language-Team: MailPoet i18n <https://www.transifex.com/organization/wysija>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-07T14:00:31+00:00\n"
+"POT-Creation-Date: 2026-09-14T14:00:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -218,7 +218,7 @@ msgstr ""
 #: views/emails/statsNotificationAutomatedEmailsGarden.html:107
 #: views/emails/statsNotificationGarden.html:68
 #: views/subscribers/subscribers.html:85
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:147
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:148
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
 #: assets/dist/js/commons.js:2
@@ -228,7 +228,7 @@ msgstr ""
 #: views/emails/statsNotificationAutomatedEmailsGarden.html:161
 #: views/emails/statsNotificationGarden.html:122
 #: views/subscribers/subscribers.html:82
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:143
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:144
 #: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:82
 #: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:91
 #: assets/dist/js/admin.js:2
@@ -249,7 +249,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:35
 #: views/subscription/admin_user_status_field.html:23
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:120
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:150
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:151
 #: lib/Subscribers/SubscriberListingRepository.php:1040
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:250
 #: assets/dist/js/admin.js:2
@@ -262,7 +262,7 @@ msgstr ""
 #: views/segments/translations.html:11
 #: views/subscribers/subscribers.html:37
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:128
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:149
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:150
 #: lib/Subscribers/SubscriberListingRepository.php:1050
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:258
 #: assets/dist/js/admin.js:2
@@ -772,7 +772,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:30
 #: lib/API/MP/v1/CustomFields.php:35
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:72
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:140
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:141
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:61
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:292
 #: assets/dist/js/admin.js:2
@@ -788,7 +788,7 @@ msgstr ""
 #: views/subscribers/subscribers.html:31
 #: lib/API/MP/v1/CustomFields.php:43
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:80
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:141
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:142
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:62
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:301
 #: assets/dist/js/admin.js:2
@@ -856,7 +856,7 @@ msgstr ""
 #: lib/Form/Templates/Templates/InitialForm.php:22
 #: lib/Newsletter/Sharing/ShareMetadataBuilder.php:83
 #: lib/Newsletter/Sharing/ShareMetadataBuilder.php:113
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:139
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:140
 #: lib/Subscribers/ImportExport/ImportExportFactory.php:60
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:84
 #: assets/dist/js/admin.js:2
@@ -3206,7 +3206,8 @@ msgid "List successfully added!"
 msgstr ""
 
 #: views/segments/translations.html:6
-#: lib/Subscribers/ImportExport/Export/Export.php:68
+#: lib/Subscribers/ImportExport/Export/Export.php:69
+#: lib/Subscribers/ImportExport/Import/Cli.php:559
 msgid "List"
 msgstr ""
 
@@ -4620,7 +4621,7 @@ msgstr ""
 #: views/help.html:52
 #: lib/Automation/Integrations/MailPoet/Fields/SubscriberFieldsFactory.php:104
 #: lib/Automation/Integrations/WooCommerce/Fields/OrderFieldsFactory.php:196
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:142
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:143
 #: lib/Subscribers/ImportExport/PersonalDataExporters/SubscriberExporter.php:88
 #: lib/Subscription/ManageSubscriptionFormRenderer.php:238
 #: assets/dist/js/admin.js:2
@@ -4795,7 +4796,7 @@ msgid "This subscriber is a registered WordPress user. [link]Edit their profile[
 msgstr ""
 
 #: views/subscribers/subscribers.html:80
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:258
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:259
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/automation_analytics.js:1
 #: assets/dist/js/commons.js:2
@@ -7323,7 +7324,7 @@ msgid "You need to have WooCommerce active to access the MailPoet email customiz
 msgstr ""
 
 #: lib/AdminPages/Pages/StaticSegments.php:70
-#: lib/API/JSON/v1/Newsletters.php:311
+#: lib/API/JSON/v1/Newsletters.php:326
 #: assets/dist/js/admin.js:2
 msgid "(no subject)"
 msgstr ""
@@ -7552,14 +7553,14 @@ msgid "The email could not be sent: %s"
 msgstr ""
 
 #: lib/API/JSON/v1/Newsletters.php:87
-#: lib/API/JSON/v1/Newsletters.php:104
-#: lib/API/JSON/v1/Newsletters.php:147
-#: lib/API/JSON/v1/Newsletters.php:167
-#: lib/API/JSON/v1/Newsletters.php:183
-#: lib/API/JSON/v1/Newsletters.php:197
-#: lib/API/JSON/v1/Newsletters.php:212
-#: lib/API/JSON/v1/Newsletters.php:236
-#: lib/API/JSON/v1/Newsletters.php:264
+#: lib/API/JSON/v1/Newsletters.php:107
+#: lib/API/JSON/v1/Newsletters.php:158
+#: lib/API/JSON/v1/Newsletters.php:178
+#: lib/API/JSON/v1/Newsletters.php:194
+#: lib/API/JSON/v1/Newsletters.php:208
+#: lib/API/JSON/v1/Newsletters.php:223
+#: lib/API/JSON/v1/Newsletters.php:251
+#: lib/API/JSON/v1/Newsletters.php:279
 #: lib/API/JSON/v1/StatisticsExport.php:203
 #: lib/EmailEditor/Integrations/MailPoet/EmailEditorPreviewEmail.php:72
 #: lib/Newsletter/RestApi/Endpoints/NewsletterDuplicateEndpoint.php:58
@@ -7568,15 +7569,19 @@ msgstr ""
 msgid "This email does not exist."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:140
+#: lib/API/JSON/v1/Newsletters.php:151
 msgid "You need to specify a sharing visibility."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:205
+#: lib/API/JSON/v1/Newsletters.php:216
 msgid "Newsletter data is missing."
 msgstr ""
 
-#: lib/API/JSON/v1/Newsletters.php:229
+#: lib/API/JSON/v1/Newsletters.php:230
+msgid "Invalid newsletter body payload."
+msgstr ""
+
+#: lib/API/JSON/v1/Newsletters.php:244
 msgid "Please specify receiver information."
 msgstr ""
 
@@ -7611,7 +7616,7 @@ msgstr ""
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:188
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:238
 #: lib/Segments/RestApi/Endpoints/SegmentsBulkActionEndpoint.php:264
-#: lib/Subscribers/BulkActionController.php:191
+#: lib/Subscribers/BulkActionController.php:190
 msgid "This list does not exist."
 msgid_plural "These lists do not exist."
 msgstr[0] ""
@@ -7672,7 +7677,7 @@ msgid "This newsletter does not exist."
 msgstr ""
 
 #: lib/API/JSON/v1/SendingQueue.php:143
-#: lib/Newsletter/NewsletterSaveController.php:502
+#: lib/Newsletter/NewsletterSaveController.php:504
 #: lib/Newsletter/Sending/TimeZoneCampaignScheduler.php:88
 #: assets/dist/js/commons.js:2
 msgid "This email can no longer be edited because one or more time zone batches have already started."
@@ -8193,33 +8198,33 @@ msgid "after abandoning the cart"
 msgstr ""
 
 #: lib/AutomaticEmails/WooCommerce/Events/AbandonedCart.php:68
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:86
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:87
 msgid "Must-have"
 msgstr ""
 
 #: lib/AutomaticEmails/WooCommerce/Events/AbandonedCart.php:73
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:95
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:96
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedInCategory.php:65
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedProduct.php:92
 msgid "minute(s)"
 msgstr ""
 
 #: lib/AutomaticEmails/WooCommerce/Events/AbandonedCart.php:77
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:99
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:100
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedInCategory.php:69
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedProduct.php:96
 msgid "hour(s)"
 msgstr ""
 
 #: lib/AutomaticEmails/WooCommerce/Events/AbandonedCart.php:81
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:103
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:104
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedInCategory.php:73
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedProduct.php:100
 msgid "day(s)"
 msgstr ""
 
 #: lib/AutomaticEmails/WooCommerce/Events/AbandonedCart.php:85
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:107
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:108
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedInCategory.php:77
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedProduct.php:104
 msgid "week(s)"
@@ -8229,34 +8234,34 @@ msgstr ""
 msgid "We recommend setting up 3 abandoned cart emails. Here’s why."
 msgstr ""
 
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:81
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:82
 msgid "First Purchase"
 msgstr ""
 
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:82
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:83
 msgid "Let MailPoet send an email to customers who make their first purchase."
 msgstr ""
 
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:83
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:84
 msgid "Email sent when a customer makes their first purchase."
 msgstr ""
 
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:84
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:85
 msgid "after the first purchase"
 msgstr ""
 
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:91
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:92
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedInCategory.php:61
 #: lib/AutomaticEmails/WooCommerce/Events/PurchasedProduct.php:88
 #: assets/dist/js/admin.js:2
 msgid "immediately"
 msgstr ""
 
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:113
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:114
 msgid "Order amount"
 msgstr ""
 
-#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:117
+#: lib/AutomaticEmails/WooCommerce/Events/FirstPurchase.php:118
 msgid "Order date"
 msgstr ""
 
@@ -8327,8 +8332,8 @@ msgstr ""
 #. translators: %s is the name of the segment
 #: lib/Automation/Engine/Builder/DuplicateAutomationController.php:79
 #: lib/Form/FormSaveController.php:22
-#: lib/Newsletter/NewsletterSaveController.php:217
-#: lib/Newsletter/NewsletterSaveController.php:246
+#: lib/Newsletter/NewsletterSaveController.php:219
+#: lib/Newsletter/NewsletterSaveController.php:248
 #: lib/Segments/DynamicSegments/SegmentSaveController.php:55
 #: lib/Segments/SegmentSaveController.php:62
 msgid "Copy of %s"
@@ -8795,7 +8800,7 @@ msgid "Send email"
 msgstr ""
 
 #: lib/Automation/Integrations/MailPoet/Actions/SendEmailAction.php:174
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:170
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:171
 #: lib/WooCommerce/Emails/MarketingConfirmation.php:141
 #: assets/dist/js/admin.js:2
 #: assets/dist/js/commons.js:2
@@ -9069,7 +9074,7 @@ msgid "Subscriber with ID '%d' not found."
 msgstr ""
 
 #: lib/Automation/Integrations/MailPoet/Templates/EmailFactory.php:135
-#: lib/Newsletter/NewsletterSaveController.php:542
+#: lib/Newsletter/NewsletterSaveController.php:544
 msgid "New Email"
 msgstr ""
 
@@ -13387,8 +13392,8 @@ msgstr ""
 
 #. translators: %s is the offending bulk-action name.
 #: lib/Newsletter/BulkActionController.php:59
-#: lib/Subscribers/BulkActionController.php:94
-#: lib/Subscribers/BulkActionController.php:170
+#: lib/Subscribers/BulkActionController.php:93
+#: lib/Subscribers/BulkActionController.php:169
 msgid "Invalid bulk action '%s' provided."
 msgstr ""
 
@@ -13698,87 +13703,87 @@ msgstr ""
 msgid "Homepage link"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:138
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:139
 msgid "Subscriber ID"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:144
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:145
 msgid "First open at"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:145
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:146
 msgid "Open count"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:146
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:147
 msgid "Machine opened"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:148
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:149
 msgid "Click count"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:153
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:154
 msgid "Delivery timezone"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:154
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:155
 msgid "Timezone fallback used"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:155
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:156
 msgid "Local send time"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:169
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:170
 msgid "Newsletter ID"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:171
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:172
 msgid "Campaign name"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:172
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:173
 #: lib/Subscribers/ImportExport/PersonalDataExporters/NewslettersExporter.php:75
 msgid "Sent at"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:173
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:174
 msgid "Total sent"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:174
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:175
 msgid "Unique opens"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:175
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:176
 msgid "Machine opens"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:176
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:177
 msgid "Unique clicks"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:177
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:178
 msgid "Bounces"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:178
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:179
 #: assets/dist/js/admin.js:2
 msgid "Unsubscribes"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:179
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:180
 #: assets/dist/js/automation_analytics.js:1
 #: assets/dist/js/commons.js:2
 msgid "Revenue"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:180
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:181
 msgid "Currency"
 msgstr ""
 
-#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:181
+#: lib/Newsletter/Statistics/Export/StatisticsExporter.php:182
 #: assets/dist/js/automation_analytics.js:1
 #: assets/dist/js/commons.js:2
 msgid "Orders"
@@ -14050,25 +14055,25 @@ msgstr ""
 msgid "The emails are spam and should be reported"
 msgstr ""
 
-#: lib/Subscribers/BulkActionController.php:183
+#: lib/Subscribers/BulkActionController.php:182
 msgid "A list is required for this bulk action."
 msgstr ""
 
-#: lib/Subscribers/BulkActionController.php:205
+#: lib/Subscribers/BulkActionController.php:204
 msgid "A tag is required for this bulk action."
 msgstr ""
 
-#: lib/Subscribers/BulkActionController.php:213
+#: lib/Subscribers/BulkActionController.php:212
 msgid "This tag does not exist."
 msgstr ""
 
 #. translators: %s is the action name.
-#: lib/Subscribers/BulkActionController.php:225
+#: lib/Subscribers/BulkActionController.php:224
 msgid "The '%s' bulk action requires a list."
 msgstr ""
 
 #. translators: %s is the action name.
-#: lib/Subscribers/BulkActionController.php:237
+#: lib/Subscribers/BulkActionController.php:236
 msgid "The '%s' bulk action requires a tag."
 msgstr ""
 
@@ -14090,15 +14095,15 @@ msgstr ""
 msgid "There was an error when sending a confirmation email for your subscription. Please contact the website owner."
 msgstr ""
 
-#: lib/Subscribers/ImportExport/Export/Export.php:88
+#: lib/Subscribers/ImportExport/Export/Export.php:89
 msgid "The export file could not be saved on the server."
 msgstr ""
 
-#: lib/Subscribers/ImportExport/Export/Export.php:91
+#: lib/Subscribers/ImportExport/Export/Export.php:92
 msgid "Export requires a ZIP extension to be installed on the host."
 msgstr ""
 
-#: lib/Subscribers/ImportExport/Export/Export.php:114
+#: lib/Subscribers/ImportExport/Export/Export.php:115
 msgid "Failed opening file for export."
 msgstr ""
 
@@ -14110,7 +14115,7 @@ msgstr ""
 msgid "No valid subscribers were found."
 msgstr ""
 
-#: lib/Subscribers/ImportExport/Import/Import.php:222
+#: lib/Subscribers/ImportExport/Import/Import.php:226
 msgid "Unable to save imported subscribers."
 msgstr ""
 
@@ -14552,7 +14557,7 @@ msgid "Unsupported data inconsistency check."
 msgstr ""
 
 #. translators: the %1$s is the link, the %2$s is the error message.
-#: lib/Util/Helpers.php:130
+#: lib/Util/Helpers.php:164
 msgid "Please see %1$s for more information. %2$s."
 msgstr ""
 
