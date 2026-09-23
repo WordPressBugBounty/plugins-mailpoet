@@ -12,12 +12,24 @@ use MailPoet\Entities\SendingQueueEntity;
 use MailPoet\Entities\StatisticsClickEntity;
 use MailPoet\Entities\SubscriberEntity;
 use MailPoet\Entities\UserAgentEntity;
+use MailPoetVendor\Doctrine\ORM\EntityManager;
 use MailPoetVendor\Doctrine\ORM\QueryBuilder;
 
 /**
  * @extends Repository<StatisticsClickEntity>
  */
 class StatisticsClicksRepository extends Repository {
+  /** @var StatisticsNewslettersRepository */
+  private $statisticsNewslettersRepository;
+
+  public function __construct(
+    EntityManager $entityManager,
+    StatisticsNewslettersRepository $statisticsNewslettersRepository
+  ) {
+    parent::__construct($entityManager);
+    $this->statisticsNewslettersRepository = $statisticsNewslettersRepository;
+  }
+
   protected function getEntityClassName(): string {
     return StatisticsClickEntity::class;
   }
@@ -42,6 +54,9 @@ class StatisticsClicksRepository extends Repository {
         $statistics->setUserAgentType($userAgent->getUserAgentType());
       }
       $this->persist($statistics);
+      // Covers the one-click unsubscribe too, which never reaches the tracking endpoint.
+      // A repeat click cannot change anything, the first one already marked the row.
+      $this->statisticsNewslettersRepository->markSentWithTracking($newsletter, $queue, $subscriber);
     } else {
       $statistics->setCount($statistics->getCount() + 1);
     }

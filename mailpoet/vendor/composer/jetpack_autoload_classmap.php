@@ -8456,6 +8456,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Captcha/CaptchaConstants.php'
  ),
+ 'MailPoet\\Captcha\\CaptchaDisabledNotice' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Captcha/CaptchaDisabledNotice.php'
+ ),
  'MailPoet\\Captcha\\CaptchaFormRenderer' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Captcha/CaptchaFormRenderer.php'
@@ -10572,6 +10576,10 @@ return array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/App/Migration_20260805_120000_App.php'
  ),
+ 'MailPoet\\Migrations\\App\\Migration_20260826_120000_App' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/App/Migration_20260826_120000_App.php'
+ ),
  'MailPoet\\Migrations\\App\\Migration_20260902_130046_App' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/App/Migration_20260902_130046_App.php'
@@ -10715,6 +10723,14 @@ return array(
  'MailPoet\\Migrations\\Db\\Migration_20260907_120000_Db' => array(
  'version' => 'dev-trunk',
  'path' => $baseDir . '/lib/Migrations/Db/Migration_20260907_120000_Db.php'
+ ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260914_143939_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260914_143939_Db.php'
+ ),
+ 'MailPoet\\Migrations\\Db\\Migration_20260914_145549_Db' => array(
+ 'version' => 'dev-trunk',
+ 'path' => $baseDir . '/lib/Migrations/Db/Migration_20260914_145549_Db.php'
  ),
  'MailPoet\\Migrator\\AppMigration' => array(
  'version' => 'dev-trunk',

@@ -5,6 +5,7 @@ namespace MailPoet\Util\Notices;
 if (!defined('ABSPATH')) exit;
 
 
+use MailPoet\Captcha\CaptchaDisabledNotice;
 use MailPoet\Config\AccessControl;
 use MailPoet\Config\Menu;
 use MailPoet\Config\ServicesChecker;
@@ -85,6 +86,9 @@ class PermanentNotices {
   /** @var StuckPostNotificationNotice */
   private $stuckPostNotificationNotice;
 
+  /** @var CaptchaDisabledNotice */
+  private $captchaDisabledNotice;
+
   public function __construct(
     WPFunctions $wp,
     CronHelper $cronHelper,
@@ -97,7 +101,8 @@ class PermanentNotices {
     MailerFactory $mailerFactory,
     SenderDomainAuthenticationNotices $senderDomainAuthenticationNotices,
     AuthorizedSenderDomainController $senderDomainController,
-    NewslettersRepository $newslettersRepository
+    NewslettersRepository $newslettersRepository,
+    CaptchaDisabledNotice $captchaDisabledNotice
   ) {
     $this->wp = $wp;
     $this->phpVersionWarnings = new PHPVersionWarnings();
@@ -120,6 +125,7 @@ class PermanentNotices {
     $this->sendingQueueBodyCleanupNotice = new SendingQueueBodyCleanupNotice($settings, $wp);
     $this->stuckPostNotificationNotice = new StuckPostNotificationNotice($wp, $newslettersRepository);
     $this->senderDomainAuthenticationNotices = $senderDomainAuthenticationNotices;
+    $this->captchaDisabledNotice = $captchaDisabledNotice;
   }
 
   public function init() {
@@ -189,6 +195,9 @@ class PermanentNotices {
       Menu::isOnMailPoetAdminPage($excludeSetupWizard)
     );
     $this->stuckPostNotificationNotice->init(
+      Menu::isOnMailPoetAdminPage($excludeSetupWizard)
+    );
+    $this->captchaDisabledNotice->init(
       Menu::isOnMailPoetAdminPage($excludeSetupWizard)
     );
     $excludeDomainAuthenticationNotices = [
@@ -264,6 +273,9 @@ class PermanentNotices {
         break;
       case (StuckPostNotificationNotice::OPTION_NAME):
         $this->stuckPostNotificationNotice->disable();
+        break;
+      case (CaptchaDisabledNotice::OPTION_NAME):
+        $this->captchaDisabledNotice->disable();
         break;
     }
   }

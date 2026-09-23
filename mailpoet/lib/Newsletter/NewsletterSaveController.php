@@ -5,6 +5,7 @@ namespace MailPoet\Newsletter;
 if (!defined('ABSPATH')) exit;
 
 
+use MailPoet\API\JSON\Error as APIError;
 use MailPoet\Cron\Workers\SendingQueue\Tasks\Newsletter as NewsletterQueueTask;
 use MailPoet\EmailEditor\Integrations\MailPoet\EmailEditor;
 use MailPoet\Entities\NewsletterEntity;
@@ -287,6 +288,9 @@ class NewsletterSaveController {
     $ignoredOptions = [
       NewsletterOptionFieldEntity::NAME_IS_SCHEDULED,
       NewsletterOptionFieldEntity::NAME_SCHEDULED_AT,
+      NewsletterOptionFieldEntity::NAME_SCHEDULE_MODE,
+      NewsletterOptionFieldEntity::NAME_SCHEDULED_LOCAL_DATE,
+      NewsletterOptionFieldEntity::NAME_SCHEDULED_LOCAL_TIME,
       NewsletterOptionFieldEntity::NAME_EXCLUDE_FROM_ARCHIVE,
     ];
     foreach ($newsletter->getOptions() as $newsletterOption) {
@@ -314,7 +318,8 @@ class NewsletterSaveController {
 
     $newsletter = $this->newslettersRepository->findOneById((int)$data['id']);
     if (!$newsletter) {
-      throw new NotFoundException('Newsletter not found');
+      throw (new NotFoundException('Newsletter not found'))
+        ->withError(APIError::NOT_FOUND, __('This email does not exist.', 'mailpoet'));
     }
     return $newsletter;
   }

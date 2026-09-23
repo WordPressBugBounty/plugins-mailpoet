@@ -138,7 +138,7 @@ class PageRenderer {
   public function displayPage($template, array $data = []) {
     $installer = new Installer(Installer::PREMIUM_PLUGIN_SLUG);
     $premiumDownloadUrl = $this->subscribersFeature->hasValidPremiumKey()
-      ? $installer->generatePluginDownloadUrl()
+      ? $installer->buildDownloadUrl()
       : null;
 
     $wpSegment = $this->segmentRepository->getWPUsersSegment();

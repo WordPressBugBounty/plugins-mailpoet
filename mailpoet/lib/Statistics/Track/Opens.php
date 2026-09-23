@@ -10,6 +10,7 @@ use MailPoet\Entities\SendingQueueEntity;
 use MailPoet\Entities\StatisticsOpenEntity;
 use MailPoet\Entities\SubscriberEntity;
 use MailPoet\Entities\UserAgentEntity;
+use MailPoet\Statistics\StatisticsNewslettersRepository;
 use MailPoet\Statistics\StatisticsOpensRepository;
 use MailPoet\Statistics\UserAgentsRepository;
 use MailPoet\Subscribers\SubscribersRepository;
@@ -18,6 +19,9 @@ use MailPoet\Subscribers\TrackingConsentController;
 class Opens {
   /** @var StatisticsOpensRepository */
   private $statisticsOpensRepository;
+
+  /** @var StatisticsNewslettersRepository */
+  private $statisticsNewslettersRepository;
 
   /** @var UserAgentsRepository */
   private $userAgentsRepository;
@@ -30,11 +34,13 @@ class Opens {
 
   public function __construct(
     StatisticsOpensRepository $statisticsOpensRepository,
+    StatisticsNewslettersRepository $statisticsNewslettersRepository,
     UserAgentsRepository $userAgentsRepository,
     SubscribersRepository $subscribersRepository,
     TrackingConsentController $trackingConsentController
   ) {
     $this->statisticsOpensRepository = $statisticsOpensRepository;
+    $this->statisticsNewslettersRepository = $statisticsNewslettersRepository;
     $this->userAgentsRepository = $userAgentsRepository;
     $this->subscribersRepository = $subscribersRepository;
     $this->trackingConsentController = $trackingConsentController;
@@ -90,6 +96,7 @@ class Opens {
       }
       $this->statisticsOpensRepository->persist($statistics);
       $this->statisticsOpensRepository->flush();
+      $this->statisticsNewslettersRepository->markSentWithTracking($newsletter, $queue, $subscriber);
       $this->subscribersRepository->maybeUpdateLastOpenAt($subscriber);
       $this->statisticsOpensRepository->recalculateSubscriberScore($subscriber);
     }
