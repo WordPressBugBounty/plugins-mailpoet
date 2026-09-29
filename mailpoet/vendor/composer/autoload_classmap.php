@@ -2673,6 +2673,7 @@ return array(
  'MailPoet\\Migrations\\Db\\Migration_20260907_120000_Db' => $baseDir . '/lib/Migrations/Db/Migration_20260907_120000_Db.php',
  'MailPoet\\Migrations\\Db\\Migration_20260914_143939_Db' => $baseDir . '/lib/Migrations/Db/Migration_20260914_143939_Db.php',
  'MailPoet\\Migrations\\Db\\Migration_20260914_145549_Db' => $baseDir . '/lib/Migrations/Db/Migration_20260914_145549_Db.php',
+ 'MailPoet\\Migrations\\Db\\Migration_20260922_082011_Db' => $baseDir . '/lib/Migrations/Db/Migration_20260922_082011_Db.php',
  'MailPoet\\Migrator\\AppMigration' => $baseDir . '/lib/Migrator/AppMigration.php',
  'MailPoet\\Migrator\\Cli' => $baseDir . '/lib/Migrator/Cli.php',
  'MailPoet\\Migrator\\DbMigration' => $baseDir . '/lib/Migrator/DbMigration.php',

@@ -2713,6 +2713,7 @@ class ComposerStaticInit7fd7cc363b46f5d66294ecced91be0cc
  'MailPoet\\Migrations\\Db\\Migration_20260907_120000_Db' => __DIR__ . '/../..' . '/lib/Migrations/Db/Migration_20260907_120000_Db.php',
  'MailPoet\\Migrations\\Db\\Migration_20260914_143939_Db' => __DIR__ . '/../..' . '/lib/Migrations/Db/Migration_20260914_143939_Db.php',
  'MailPoet\\Migrations\\Db\\Migration_20260914_145549_Db' => __DIR__ . '/../..' . '/lib/Migrations/Db/Migration_20260914_145549_Db.php',
+ 'MailPoet\\Migrations\\Db\\Migration_20260922_082011_Db' => __DIR__ . '/../..' . '/lib/Migrations/Db/Migration_20260922_082011_Db.php',
  'MailPoet\\Migrator\\AppMigration' => __DIR__ . '/../..' . '/lib/Migrator/AppMigration.php',
  'MailPoet\\Migrator\\Cli' => __DIR__ . '/../..' . '/lib/Migrator/Cli.php',
  'MailPoet\\Migrator\\DbMigration' => __DIR__ . '/../..' . '/lib/Migrator/DbMigration.php',
