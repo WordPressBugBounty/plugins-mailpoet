@@ -9,6 +9,7 @@ use MailPoet\Config\Renderer as TemplateRenderer;
 use MailPoet\Cron\Workers\StatsNotifications\NewsletterLinkRepository;
 use MailPoet\Entities\NewsletterLinkEntity;
 use MailPoet\Entities\SegmentEntity;
+use MailPoet\Entities\SendingQueueEntity;
 use MailPoet\Entities\StatisticsUnsubscribeEntity;
 use MailPoet\Entities\SubscriberEntity;
 use MailPoet\Form\AssetsController;
@@ -292,7 +293,7 @@ class Pages {
       && (!is_null($this->subscriber))
       && ($this->subscriber->getStatus() !== SubscriberEntity::STATUS_UNSUBSCRIBED)
     ) {
-      $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
+      $queueId = $this->getQueueId();
       if ($queueId !== null) {
         if (
           $this->trackingConfig->isEmailTrackingEnabled()
@@ -390,6 +391,10 @@ class Pages {
   }
 
   public function setPageContent($pageContent = '[mailpoet_page]') {
+    if (strpos($pageContent, '[mailpoet_page]') === false && !$this->isMainQueriedPost()) {
+      return $pageContent;
+    }
+
     if ($this->isPreview() === false && $this->subscriber === null) {
       return __("Your email address doesn't appear in our lists anymore. Sign up again or contact us if this appears to be a mistake.", 'mailpoet');
     }
@@ -423,6 +428,13 @@ class Pages {
     } else {
       return $pageContent;
     }
+  }
+
+  private function isMainQueriedPost(): bool {
+    return $this->wp->isSingular()
+      && $this->wp->inTheLoop()
+      && $this->wp->isMainQuery()
+      && (int)$this->wp->getTheId() === (int)$this->wp->getQueriedObjectId();
   }
 
   public function setWindowTitle($title, $separator = '', $separatorLocation = 'right') {
@@ -574,7 +586,7 @@ class Pages {
       return false;
     }
 
-    $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
+    $queueId = $this->getQueueId();
     $result = $this->unsubscribeReasonTracker->saveReason(
       $this->subscriber,
       $queueId,
@@ -587,7 +599,7 @@ class Pages {
   }
 
   public function getUnsubscribeReasonRedirectUrl(bool $saved): string {
-    $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
+    $queueId = $this->getQueueId();
     $url = $this->subscriber instanceof SubscriberEntity
       ? $this->subscriptionUrlFactory->getUnsubscribeUrl($this->subscriber, $queueId)
       : $this->wp->homeUrl();
@@ -608,12 +620,12 @@ class Pages {
       return false;
     }
 
-    $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
+    $queueId = $this->getQueueId();
     return $this->unsubscribeReasonTracker->findTargetUnsubscribe($this->subscriber, $queueId) instanceof StatisticsUnsubscribeEntity;
   }
 
   private function renderUnsubscribeReasonSurvey(): string {
-    $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
+    $queueId = $this->getQueueId();
     $allowOtherText = $this->settings->isSettingEnabled('subscription.unsubscribe_survey.allow_other_text');
     $reasons = $this->unsubscribeReasonTracker->getReasonLabels();
 
@@ -660,7 +672,7 @@ class Pages {
     if (!$this->isPreview() && $this->subscriber === null) {
       return '';
     }
-    $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
+    $queueId = $this->getQueueId();
     $unsubscribeUrl = $this->subscriptionUrlFactory->getUnsubscribeUrl($this->subscriber, $queueId);
     $unsubscribeUrl = $unsubscribeUrl . (parse_url($unsubscribeUrl, PHP_URL_QUERY) ? '&' : '?') . 'request_method=POST';
     $templateData = [
@@ -687,6 +699,18 @@ class Pages {
       : __('Manage your subscription', 'mailpoet');
 
     return '<a href="' . $this->subscriptionUrlFactory->getManageUrl($subscriber) . '">' . $text . '</a>';
+  }
+
+  private function getQueueId(): ?int {
+    $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
+    if (!$queueId || !$this->subscriber instanceof SubscriberEntity) {
+      return null;
+    }
+    $queue = $this->sendingQueuesRepository->findOneById($queueId);
+    if (!$queue instanceof SendingQueueEntity || !$this->sendingQueuesRepository->isSubscriberProcessed($queue, $this->subscriber)) {
+      return null;
+    }
+    return $queueId;
   }
 
   private function updateClickStatistics(int $queueId): void {

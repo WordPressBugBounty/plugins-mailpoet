@@ -43,10 +43,21 @@ class Installer {
   }
 
   public function buildDownloadUrl(): string {
+    return self::buildDownloadUrlForVersion(self::getFreeMinorVersionZero());
+  }
+
+  public static function buildDownloadUrlForVersion(string $version): string {
     return sprintf(
       'https://release.mailpoet.com/downloads/mailpoet-premium/%s/mailpoet-premium.zip',
-      rawurlencode(self::getFreeMinorVersionZero())
+      rawurlencode($version)
     );
+  }
+
+  public static function getMinorVersionZero(string $version): string {
+    $parts = explode('.', $version);
+    $major = $parts[0];
+    $minor = $parts[1] ?? '0';
+    return $major . '.' . $minor . '.0';
   }
 
   public function getPremiumKey(): string {
@@ -124,9 +135,6 @@ class Installer {
       return 'latest';
     }
 
-    $parts = explode('.', $version);
-    $major = $parts[0] ?? '0';
-    $minor = $parts[1] ?? '0';
-    return $major . '.' . $minor . '.0';
+    return self::getMinorVersionZero($version);
   }
 }

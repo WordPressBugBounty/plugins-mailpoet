@@ -173,12 +173,17 @@ class Newsletter {
     SendingQueueEntity $queue,
     ?array $personalizationContext
   ): string {
-    $resolveTokenUrl = function (string $url) use ($personalizationContext): string {
+    $resolveTokenUrl = function (string $url) use ($newsletter, $personalizationContext): string {
       if ($personalizationContext === null || !$this->personalizationTagLinkResolver->isTokenUrl($url)) {
         return $url;
       }
+      $resolvedUrl = $this->personalizationTagLinkResolver->resolveWithContext($url, $personalizationContext);
       // An unresolvable token would otherwise ship as literal text.
-      return $this->personalizationTagLinkResolver->resolveWithContext($url, $personalizationContext) ?? '';
+      if ($resolvedUrl === null) {
+        return '';
+      }
+      // Restored ordinary links carry the GA params baked in at send time; match them.
+      return $this->gaTracking->addParamsToUrl($resolvedUrl, $newsletter);
     };
     // true = convert every hashed link, not only the shortcode ones.
     $content = $this->newsletterLinks->convertHashedLinksToShortcodesAndUrls(
@@ -358,7 +363,8 @@ class Newsletter {
         $renderedNewsletter['html'],
         $newsletter,
         null,
-        $queue
+        $queue,
+        $isPlainText = true
       )
     );
 

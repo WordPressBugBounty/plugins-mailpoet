@@ -294,17 +294,17 @@
         },
         {
             "name": "woocommerce/email-editor",
-            "version": "2.17.1",
-            "version_normalized": "2.17.1.0",
+            "version": "2.18.0",
+            "version_normalized": "2.18.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/woocommerce/email-editor.git",
-                "reference": "a55136a6c07f57391a1932d53abb199e5757c078"
+                "reference": "f636bf3beef655dc0037ee7206ef10b4100cc1da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/woocommerce/email-editor/zipball/a55136a6c07f57391a1932d53abb199e5757c078",
-                "reference": "a55136a6c07f57391a1932d53abb199e5757c078",
+                "url": "https://api.github.com/repos/woocommerce/email-editor/zipball/f636bf3beef655dc0037ee7206ef10b4100cc1da",
+                "reference": "f636bf3beef655dc0037ee7206ef10b4100cc1da",
                 "shasum": ""
             },
             "require": {
@@ -316,7 +316,7 @@
                 "woocommerce/woocommerce-sniffs": "1.0.0",
                 "yoast/phpunit-polyfills": "^4.0"
             },
-            "time": "2026-09-07T09:23:35+00:00",
+            "time": "2026-10-05T11:46:48+00:00",
             "type": "wordpress-plugin",
             "extra": {
                 "changelogger": {
@@ -348,7 +348,7 @@
             ],
             "description": "Email editor based on WordPress Gutenberg package.",
             "support": {
-                "source": "https://github.com/woocommerce/email-editor/tree/2.17.1"
+                "source": "https://github.com/woocommerce/email-editor/tree/2.18.0"
             },
             "install-path": "../woocommerce/email-editor"
         }

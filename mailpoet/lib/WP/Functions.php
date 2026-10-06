@@ -167,6 +167,10 @@ class Functions {
     return current_user_can($capability);
   }
 
+  public function wpDoingAjax() {
+    return wp_doing_ajax();
+  }
+
   public function userCan($user, $capability) {
     return user_can($user, $capability);
   }
@@ -184,8 +188,8 @@ class Functions {
     return delete_comment_meta($commentId, $metaKey, $metaValue);
   }
 
-  public function addOption($option, $value) {
-    return add_option($option, $value);
+  public function addOption($option, $value, $autoload = null) {
+    return add_option($option, $value, '', $autoload);
   }
 
   public function deleteOption($option) {
@@ -1095,6 +1099,10 @@ class Functions {
    */
   public function updatePostMeta(int $postId, string $metaKey, $metaValue, $prevValue = '') {
     return update_post_meta($postId, $metaKey, $metaValue, $prevValue);
+  }
+
+  public function deletePostMeta(int $postId, string $metaKey, $metaValue = ''): bool {
+    return delete_post_meta($postId, $metaKey, $metaValue);
   }
 
   public function getFileData(string $file, array $default_headers, string $context = 'plugin'): array {
